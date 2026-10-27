@@ -10,7 +10,7 @@
   const eventDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const era = y => y < -1200 ? '早期文明' : y < 500 ? '古典時代' : y < 1450 ? '中古世界' : y < 1800 ? '航海與帝國' : y < 1945 ? '近代浪潮' : '當代世界';
   const status = (message = '') => { $('map-status').textContent = message; $('map-status').hidden = !message; };
-  let map, eventLayer, labelLayer;
+  let map, eventLayer, labelLayer, borderRenderer, borderTimer, prefetchHandle;
 
   function hash(s) { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; }
   const color = name => name.trim() ? `hsl(${hash(name) % 360} ${24 + (hash(name) >>> 9) % 16}% ${52 + (hash(name) >>> 17) % 13}%)` : '#60716b';
@@ -27,9 +27,21 @@
     state.cache.set(s.file, promise);
     try {
       const data = await promise;
-      if (state.cache.size > 5) state.cache.delete(state.cache.keys().next().value);
       return data;
     } catch (error) { state.cache.delete(s.file); throw error; }
+  }
+  function prefetchAdjacent(s) {
+    const idle = window.requestIdleCallback || (callback => setTimeout(callback, 250));
+    const cancelIdle = window.cancelIdleCallback || clearTimeout;
+    if (prefetchHandle != null) cancelIdle(prefetchHandle);
+    prefetchHandle = idle(async () => {
+      prefetchHandle = null;
+      const index = state.snapshots.indexOf(s);
+      for (const adjacent of [state.snapshots[index + 1], state.snapshots[index - 1]]) {
+        if (state.snapshot !== s) return;
+        if (adjacent) await snapshotData(adjacent).catch(() => {});
+      }
+    });
   }
   function snapshotFor(year) { return state.snapshots.filter(s => s.year <= year).at(-1) || state.snapshots[0]; }
   function updateSnapshotCaption(s, pending = false) {
@@ -51,6 +63,7 @@
       if (token !== state.request) return;
       state.snapshot = s;
       const layer = L.geoJSON(data, {
+        renderer: borderRenderer,
         style: f => ({color: color(f.properties?.NAME || ''), weight: .8, opacity: .85, fillColor: color(f.properties?.NAME || ''), fillOpacity: .42, smoothFactor: 1.2}),
         onEachFeature: (f, polygon) => {
           const key = f.properties?.NAME || '未命名區域';
@@ -63,6 +76,7 @@
       $('polity-count').textContent = `${new Set(data.features.map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
       updateSnapshotCaption(s);
       renderLabels(); status();
+      prefetchAdjacent(s);
     } catch (error) {
       if (token !== state.request) return;
       console.error('疆界載入失敗', error);
@@ -90,7 +104,7 @@
     state.layer.eachLayer(layer => {
       if (!layer.getBounds) return;
       const key=layer.feature.properties?.NAME, bounds=layer.getBounds();
-      if (!key?.trim() || !map.getBounds().intersects(bounds)) return;
+      if (!key?.trim() || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
       const geometry=layer.feature.geometry;
       const polygons=geometry.type==='MultiPolygon'?geometry.coordinates:[geometry.coordinates];
       const area=polygons.reduce((sum,p)=>sum+Math.max(0,ringArea(p[0])-p.slice(1).reduce((v,r)=>v+ringArea(r),0)),0);
@@ -177,7 +191,7 @@
       list.append(empty);
     }
   }
-  function setYear(raw, direction = 1) {
+  function setYear(raw, direction = 1, debounceBorders = false) {
     let y = Math.min(MAX,Math.max(MIN,Math.round(Number(raw))));
     if (!Number.isFinite(y)) return;
     if (y === 0) y = direction < 0 ? -1 : 1;
@@ -189,6 +203,13 @@
     document.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active',Number(b.dataset.year)===y));
     map.closePopup(); renderEvents();
     const url = new URL(location.href); url.searchParams.set('year',y); history.replaceState(null,'',url);
+    clearTimeout(borderTimer);
+    if (debounceBorders) {
+      // Invalidate an in-flight swap immediately, while the slider keeps moving.
+      ++state.request;
+      borderTimer = setTimeout(loadBorders, 150);
+      return;
+    }
     return loadBorders();
   }
   function setPlaying(playing) {
@@ -209,11 +230,12 @@
   async function init() {
     if (!window.L) { status('地圖元件未載入，請確認網路連線後重新整理。'); return; }
     map = L.map('map',{center:[26,45],zoom:2.25,minZoom:2,maxZoom:8,zoomSnap:.25,worldCopyJump:true,preferCanvas:true,zoomControl:true});
+    borderRenderer = L.canvas();
     map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
     map.createPane('land'); map.getPane('land').style.zIndex = 200;
     map.createPane('grid'); map.getPane('grid').style.zIndex = 210;
     map.attributionControl.addAttribution('疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0');
-    json('data/world_2010.geojson').then(data => L.geoJSON(data,{pane:'land',interactive:false,style:{stroke:false,fillColor:'#354247',fillOpacity:1}}).addTo(map)).catch(()=>{});
+    snapshotData({file:'world_2010.geojson'}).then(data => L.geoJSON(data,{renderer:L.canvas({pane:'land'}),pane:'land',interactive:false,style:{stroke:false,fillColor:'#354247',fillOpacity:1}}).addTo(map)).catch(()=>{});
     for (let lat = -60; lat <= 60; lat += 30) L.polyline([[lat,-180],[lat,180]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     for (let lon = -180; lon <= 180; lon += 30) L.polyline([[-85,lon],[85,lon]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     eventLayer=L.layerGroup().addTo(map); labelLayer=L.layerGroup().addTo(map);
@@ -238,7 +260,7 @@
     try {
       const [snapshots,names,events] = await Promise.all([json('data/snapshots.json'),json('data/names.json'),json('data/events.json')]);
       state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.names=names;state.events=events;
-      $('year-slider').oninput=e=>{setPlaying(false);setYear(e.target.value,Number(e.target.value)<state.year?-1:1);};
+      $('year-slider').oninput=e=>{setPlaying(false);setYear(e.target.value,Number(e.target.value)<state.year?-1:1,true);};
       $('year-form').onsubmit=e=>{e.preventDefault();if(!$('year-input').value.trim())return;setPlaying(false);setYear($('year-input').value);};
       $('play-button').onclick=async()=>{if(!state.playing&&state.year>=MAX)await setYear(MIN);setPlaying(!state.playing);};
       document.querySelectorAll('[data-year]').forEach(b=>b.onclick=()=>{setPlaying(false);setYear(b.dataset.year);});
