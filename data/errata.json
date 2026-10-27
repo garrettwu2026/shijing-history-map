@@ -117,5 +117,55 @@
       "nameStatus": "corrected",
       "geometryStatus": "needs-review"
     }
+  ],
+  "featureReviews": [
+    {
+      "match": "Mongol Empire",
+      "fromYear": 1200,
+      "toYear": 1200,
+      "status": "needs-review",
+      "note": "1206年立國；僅覆寫名稱，上游幾何仍待考證。",
+      "source": "https://royalarmouries.org/objects-and-stories/stories/the-mongols/rise-of-the-mongols"
+    },
+    {
+      "match": "Zaire",
+      "fromYear": 1908,
+      "toYear": 1959,
+      "status": "needs-review",
+      "note": "名稱依快照所屬時期修正；1971年10月及1997年5月更名，年尺度採新名。疆界未重新考證。",
+      "source": "https://www.larousse.fr/encyclopedie/pays/République_démocratique_du_Congo/114374"
+    },
+    {
+      "match": "Zaire",
+      "fromYear": 1960,
+      "toYear": 1963,
+      "status": "needs-review",
+      "note": "名稱依快照所屬時期修正；1971年10月及1997年5月更名，年尺度採新名。疆界未重新考證。",
+      "source": "https://www.larousse.fr/encyclopedie/pays/République_démocratique_du_Congo/114374"
+    },
+    {
+      "match": "Zaire",
+      "fromYear": 1964,
+      "toYear": 1970,
+      "status": "needs-review",
+      "note": "名稱依快照所屬時期修正；1971年10月及1997年5月更名，年尺度採新名。疆界未重新考證。",
+      "source": "https://www.larousse.fr/encyclopedie/pays/République_démocratique_du_Congo/114374"
+    },
+    {
+      "match": "Zaire",
+      "fromYear": 1971,
+      "toYear": 1996,
+      "status": "needs-review",
+      "note": "名稱依快照所屬時期修正；1971年10月及1997年5月更名，年尺度採新名。疆界未重新考證。",
+      "source": "https://www.larousse.fr/encyclopedie/pays/République_démocratique_du_Congo/114374"
+    },
+    {
+      "match": "Zaire",
+      "fromYear": 1997,
+      "toYear": 2026,
+      "status": "needs-review",
+      "note": "名稱依快照所屬時期修正；1971年10月及1997年5月更名，年尺度採新名。疆界未重新考證。",
+      "source": "https://www.larousse.fr/encyclopedie/pays/République_démocratique_du_Congo/114374"
+    }
   ]
 }

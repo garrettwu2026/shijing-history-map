@@ -19,12 +19,15 @@ services:
       - path: /
         name: Cache-Control
         value: no-cache
-      - path: /app.js
+      - path: /app.*.js
         name: Cache-Control
-        value: no-cache
-      - path: /data-worker.js
+        value: public, max-age=31536000, immutable
+      - path: /style.*.css
         name: Cache-Control
-        value: no-cache
-      - path: /modules/*.js
+        value: public, max-age=31536000, immutable
+      - path: /data-worker.*.js
         name: Cache-Control
-        value: no-cache
+        value: public, max-age=31536000, immutable
+      - path: /modules/*.*.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

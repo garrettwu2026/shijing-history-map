@@ -42,7 +42,7 @@
     "Ahé (Kawahib)": "p-6861c47148f86b1c",
     "Aikanã": "p-2e14e15eb671d9f6",
     "Ainu": "p-f2575579e8b82c98",
-    "Ainus": "p-534ed2e7888a57ba",
+    "Ainus": "p-f2575579e8b82c98",
     "Air": "p-aa42ff595bdb92d6",
     "Ais": "p-07b78efacf25f6c8",
     "Akaitcho": "p-5f63729be77cf12a",
@@ -3857,29 +3857,7 @@
       "validFrom": -5000,
       "validTo": 1700,
       "datasetNames": [
-        "Ainu"
-      ],
-      "endonyms": [],
-      "exonyms": [],
-      "geographicAliases": [],
-      "periods": [],
-      "sources": [
-        "https://github.com/aourednik/historical-basemaps"
-      ],
-      "legacyNative": "",
-      "translationNote": "通用譯名或原文地理描述的意譯；實體性質及疆界仍須另行考證。",
-      "translationReference": "https://zh.wikipedia.org/zh-tw/%E9%98%BF%E4%BC%8A%E5%8A%AA%E6%97%8F",
-      "entityType": "polity-or-community"
-    },
-    "p-534ed2e7888a57ba": {
-      "id": "p-534ed2e7888a57ba",
-      "zh": "阿伊努族",
-      "confidence": "medium",
-      "translationStatus": "curated",
-      "importance": 0,
-      "validFrom": 1279,
-      "validTo": 1500,
-      "datasetNames": [
+        "Ainu",
         "Ainus"
       ],
       "endonyms": [],
@@ -3892,7 +3870,10 @@
       "legacyNative": "",
       "translationNote": "通用譯名或原文地理描述的意譯；實體性質及疆界仍須另行考證。",
       "translationReference": "https://zh.wikipedia.org/zh-tw/%E9%98%BF%E4%BC%8A%E5%8A%AA%E6%97%8F",
-      "entityType": "polity-or-community"
+      "entityType": "people",
+      "identityAliases": [
+        "p-534ed2e7888a57ba"
+      ]
     },
     "p-aa42ff595bdb92d6": {
       "id": "p-aa42ff595bdb92d6",

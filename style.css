@@ -489,3 +489,16 @@ a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 }
 #time-options .leaflet-control-attribution{float:none;clear:both;margin:12px 0 0;padding:4px 8px;background:#22353c;color:var(--muted);white-space:normal}
 #time-options .leaflet-control-attribution a{color:var(--gold)}
+
+/* v9: year values never ellipsize; warnings have their own disclosure. */
+.time-controls .selected-year{overflow:visible;position:relative}
+#boundary-indicator{overflow:visible;text-overflow:clip;flex-shrink:0}
+#boundary-warning{position:absolute;right:0;bottom:35px;width:44px;height:44px;background:#283b41;color:#ffe3a3;border:1px solid #d5ba78;border-radius:8px}
+#boundary-warning[hidden]{display:none}
+#boundary-warning-text{position:absolute;bottom:calc(100% + 55px);left:0;max-width:340px;background:#17262c;padding:12px;border:1px solid #d5ba78;border-radius:8px}
+.review-swatch{display:inline-block;width:22px;border-top:3px dashed #ffe3a3}
+#data-retries{position:absolute;z-index:1500;top:100px;left:50%;transform:translateX(-50%);background:#17262c;border-radius:8px}
+.data-retry{padding:12px}.data-retry button{min-height:44px;margin-left:8px}
+@media(max-width:760px){.time-controls .selected-year{gap:4px}.time-controls #year-display{font-size:11px}#boundary-indicator{font-size:10px}.time-controls .selected-year .eyebrow{display:none}}
+#boundary-warning{position:fixed;top:80px;right:370px;bottom:auto;z-index:900}
+@media(max-width:760px){#boundary-warning{top:74px;right:8px}}

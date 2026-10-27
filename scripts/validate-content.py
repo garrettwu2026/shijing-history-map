@@ -33,5 +33,5 @@ const e={startYear:1337,endYear:1453};
 assert(intersects(e,1400,0));assert(intersects(e,1480,27));assert(!intersects(e,1481,27));assert.equal(eventDistance(e,1400),0);assert.equal(eventDistance(e,1500),47);
 assert.equal(stableColor('stable-id'),stableColor('stable-id'));
 """],cwd=R,check=True)
-assert (R/'dist/modules/map.js').exists() and (R/'dist/modules/events.js').exists()
+assert list((R/'dist/modules').glob('map.*.js')) and list((R/'dist/modules').glob('events.*.js'))
 print('Content semantics passed:',len(c['polities']),'polities;',sum(n['translationStatus']=='untranslated' for n in c['polities'].values()),'untranslated;',sum(e['startYear']!=e['endYear'] for e in events),'event intervals')

@@ -7,7 +7,18 @@ function ringArea(ring) {
 }
 // Interior label candidates are computed once off the main thread.
 function inside(point,ring){let yes=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const a=ring[i],b=ring[j];if((a[1]>point[1])!==(b[1]>point[1])&&point[0]<(b[0]-a[0])*(point[1]-a[1])/(b[1]-a[1])+a[0])yes=!yes;}return yes;}
-function anchorsFor(parts){const anchors=[];for(const part of parts.slice(0,4)){const xs=part[0].map(p=>p[0]),ys=part[0].map(p=>p[1]);const left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys);for(const fy of [.5,.35,.65,.2,.8])for(const fx of [.5,.35,.65,.2,.8]){const point=[left+(right-left)*fx,top+(bottom-top)*fy];if(inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))anchors.push(point);}}return anchors;}
+function scanlineAnchor(part){
+  const ys=[...new Set(part.flatMap(r=>r.map(p=>p[1])))].sort((a,b)=>a-b);
+  for(let i=1;i<ys.length;i++){
+    const y=(ys[i-1]+ys[i])/2,xs=[];
+    for(const ring of part)for(let a=0,b=ring.length-1;a<ring.length;b=a++){
+      const p=ring[a],q=ring[b];if((p[1]>y)!==(q[1]>y))xs.push(p[0]+(y-p[1])*(q[0]-p[0])/(q[1]-p[1]));
+    }
+    xs.sort((a,b)=>a-b);
+    for(let j=1;j<xs.length;j+=2){const point=[(xs[j-1]+xs[j])/2,y];if(xs[j]>xs[j-1]&&inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))return point;}
+  }
+}
+function anchorsFor(parts){const anchors=[];for(const part of parts.slice(0,4)){const xs=part[0].map(p=>p[0]),ys=part[0].map(p=>p[1]);const left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys);for(const fy of [.5,.35,.65,.2,.8])for(const fx of [.5,.35,.65,.2,.8]){const point=[left+(right-left)*fx,top+(bottom-top)*fy];if(inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))anchors.push(point);}if(!anchors.length){const point=scanlineAnchor(part);if(point)anchors.push(point);}}return anchors;}
 self.onmessage=async({data:{id,path,cancel}})=>{
   if(cancel){requests.get(id)?.abort();return;}
   const controller=new AbortController();requests.set(id,controller);
