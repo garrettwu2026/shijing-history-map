@@ -380,3 +380,6 @@ button,select{min-width:44px}
 }
 
 .compass span,.map-key span,.snapshot-meta span,#year-form label,.era-shortcuts span,.era-shortcuts button{font-size:12px!important}
+
+/* Fixed dimensions let label placement write all markers without layout reads. */
+.leaflet-marker-icon.polity-label{box-sizing:border-box;border-radius:3px}

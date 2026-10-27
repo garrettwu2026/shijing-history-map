@@ -10,7 +10,7 @@
   const eventDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const era = y => y < -1200 ? '早期文明' : y < 500 ? '古典時代' : y < 1450 ? '中古世界' : y < 1800 ? '航海與帝國' : y < 1945 ? '近代浪潮' : '當代世界';
   const status = (message = '') => { $('map-status').textContent = message; $('map-status').hidden = !message; };
-  let map, eventLayer, labelLayer, borderRenderer, borderTimer, prefetchHandle;
+  let map, eventLayer, labelLayer, borderTimer, prefetchHandle;
 
   function hash(s) { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; }
   const polityColors=new Map();
@@ -29,30 +29,40 @@
     return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh)}</h3>${(n.endonyms||[]).map(e=>`<p dir="auto">當時自稱：${esc(e.original)}<br>${esc(e.transliteration)}<br>中文意譯：${esc(e.meaning)}</p>`).join('')}<p>他稱／後世稱呼：${esc((n.exonyms||[]).join('、')||'未收錄')}</p><p>地理別稱：${esc((n.geographicAliases||[]).join('、')||'未收錄')}</p><p>資料集名稱：${esc(key)}</p><p>譯名可信度：${esc(n.confidence)}；${n.translationStatus==='untranslated'?'中文譯名待考證':'既有譯名仍待逐筆複核'}</p>${n.correction?`<p class="correction">勘誤：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>穩定 ID：${esc(n.id)}。疆界為概略重建。</small>`;
   }
   function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(e.title)}</h3><p>${esc(e.description)}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='research-link-unverified'?'尚未逐筆核實':'已核實'}）</a></p></div>`; }
-  async function json(path) { const response = await fetch(`${path}?v=v3-20261027`, {signal:AbortSignal.timeout(20000)}); if (!response.ok) throw new Error(`${path} (${response.status})`); return response.json(); }
-  async function snapshotData(s) {
-    if (state.cache.has(s.file)) { const hit=state.cache.get(s.file); state.cache.delete(s.file);state.cache.set(s.file,hit);return hit; }
-    const promise = json(`data/${s.file}`);
-    state.cache.set(s.file, promise);
-    while(state.cache.size>6)state.cache.delete(state.cache.keys().next().value);
-    try {
-      const data = await promise;
-      return data;
-    } catch (error) { state.cache.delete(s.file); throw error; }
+  const worker = new Worker('data-worker.js');
+  const pending = new Map(); let workerID=0;
+  worker.onmessage=({data:{id,data,error,name}})=>{const task=pending.get(id);if(!task)return;pending.delete(id);task.cleanup();error?task.reject(Object.assign(new Error(error),{name})):task.resolve(data);};
+  worker.onerror=()=>{for(const task of pending.values()){task.cleanup();task.reject(new Error('資料 Worker 無法執行'));}pending.clear();};
+  function json(path, signal) {
+    return new Promise((resolve,reject)=>{
+      const id=++workerID;
+      const abort=()=>{worker.postMessage({id,cancel:true});pending.delete(id);reject(new DOMException('Aborted','AbortError'));};
+      if(signal?.aborted){reject(new DOMException('Aborted','AbortError'));return;}
+      pending.set(id,{resolve,reject,cleanup:()=>signal?.removeEventListener('abort',abort)});
+      signal?.addEventListener('abort',abort,{once:true});
+      worker.postMessage({id,path:`${path}?v=v3-20261027`});
+    });
+  }
+  function snapshotData(s) {
+    if(state.cache.has(s.file)){const hit=state.cache.get(s.file);state.cache.delete(s.file);state.cache.set(s.file,hit);return hit.promise;}
+    const controller=new AbortController();
+    const entry={controller,promise:null,ready:false};
+    entry.promise=json(`data/${s.file}`,controller.signal).then(data=>{entry.ready=true;return data;}).catch(error=>{if(state.cache.get(s.file)===entry)state.cache.delete(s.file);throw error;});
+    state.cache.set(s.file,entry);
+    while(state.cache.size>10){const key=state.cache.keys().next().value;state.cache.get(key).controller.abort();state.cache.delete(key);}
+    return entry.promise;
+  }
+  function cancelObsolete(s) {
+    if(prefetchHandle!=null){(window.cancelIdleCallback || clearTimeout)(prefetchHandle);prefetchHandle=null;}
+    const i=state.snapshots.indexOf(s), keep=new Set(state.snapshots.slice(Math.max(0,i-2),i+3).map(x=>x.file));
+    keep.add('world_2010.geojson');
+    for(const [key,entry] of state.cache)if(!entry.ready&&!keep.has(key)){entry.controller.abort();state.cache.delete(key);}
   }
   function prefetchAdjacent(s) {
     if(navigator.connection?.saveData || /2g/.test(navigator.connection?.effectiveType||''))return;
-    const idle = window.requestIdleCallback || (callback => setTimeout(callback, 250));
-    const cancelIdle = window.cancelIdleCallback || clearTimeout;
-    if (prefetchHandle != null) cancelIdle(prefetchHandle);
-    prefetchHandle = idle(async () => {
-      prefetchHandle = null;
-      const index = state.snapshots.indexOf(s);
-      for (const adjacent of [state.snapshots[index + 1]]) {
-        if (state.snapshot !== s) return;
-        if (adjacent) await snapshotData(adjacent).catch(() => {});
-      }
-    });
+    const idle=window.requestIdleCallback || (callback=>setTimeout(callback,250));
+    (window.cancelIdleCallback || clearTimeout)(prefetchHandle);
+    prefetchHandle=idle(()=>{prefetchHandle=null;if(state.snapshot!==s)return;const i=state.snapshots.indexOf(s);for(const offset of [-1,1,-2,2]){const next=state.snapshots[i+offset];if(next)snapshotData(next).catch(()=>{});}});
   }
   function snapshotFor(year) { return state.snapshots.filter(s => s.year <= year).at(-1) || state.snapshots[0]; }
   function updateSnapshotCaption(s, pending = false) {
@@ -63,22 +73,22 @@
   async function loadBorders() {
     const s = snapshotFor(state.year);
     const token = ++state.request;
-    if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); return; }
+    cancelObsolete(s);
+    if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); if(state.labelsPending)renderLabels(); prefetchAdjacent(s); return; }
     updateSnapshotCaption(s, true);
     // Keep the previous snapshot until its replacement is ready.
     const previousLayer=state.layer;
-    labelLayer.clearLayers();
     status('正在展開歷史疆界…');
     try {
       const data = await snapshotData(s);
       if (token !== state.request) return;
-      state.snapshot = s;
+      const nextRenderer=L.canvas();
       polityColors.clear();
       const colors=['#dcaa70','#78b3b0','#bba0d1','#b8c879','#d78f9b','#86a9d5','#d1ba92','#80bd91'];
       const neighbors=[];
-      for(const f of data.features){if(!f.geometry)continue;const name=f.properties?.NAME||'';if(polityColors.has(name))continue;const bounds=L.latLngBounds([]);const visit=c=>{if(typeof c[0]==='number'){bounds.extend([c[1],c[0]]);}else c.forEach(visit);};visit(f.geometry.coordinates);if(!bounds.isValid())continue;const used=new Set(neighbors.filter(n=>n.bounds.intersects(bounds)).map(n=>n.color));const chosen=colors.find(c=>!used.has(c))||colors[hash(name)%colors.length];polityColors.set(name,chosen);neighbors.push({bounds,color:chosen});}
+      for(const f of data.features){if(!f.geometry)continue;const name=f.properties?.NAME||'';if(polityColors.has(name))continue;const b=f.labelGeometry.bounds;const bounds=L.latLngBounds([[b[1],b[0]],[b[3],b[2]]]);if(!bounds.isValid())continue;const used=new Set(neighbors.filter(n=>n.bounds.intersects(bounds)).map(n=>n.color));const chosen=colors.find(c=>!used.has(c))||colors[hash(name)%colors.length];polityColors.set(name,chosen);neighbors.push({bounds,color:chosen});}
       const layer = L.geoJSON(data, {
-        renderer: borderRenderer,
+        renderer: nextRenderer,
         style: f => ({color: color(f.properties?.NAME || ''), weight: .8, opacity: .85, fillColor: color(f.properties?.NAME || ''), fillOpacity: .42, smoothFactor: 1.2}),
         onEachFeature: (f, polygon) => {
           const key = f.properties?.NAME || '未命名區域';
@@ -87,14 +97,20 @@
           polygon.on('mouseout', () => layer.resetStyle(polygon));
         }
       }).addTo(map);
-      if(previousLayer)map.removeLayer(previousLayer);
+      // Leaflet schedules Canvas drawing in rAF. Keep the old canvas through a
+      // complete paint opportunity, and discard a superseded staged snapshot.
+      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+      if(token!==state.request){map.removeLayer(layer);map.removeLayer(nextRenderer);return;}
+      state.snapshot=s;
+      if(previousLayer){const oldRenderer=state.borderRenderer;map.removeLayer(previousLayer);if(oldRenderer)map.removeLayer(oldRenderer);}
+      state.borderRenderer=nextRenderer;
       state.layer = layer; renderPolities();
       $('polity-count').textContent = `${new Set(data.features.map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
       updateSnapshotCaption(s);
       renderLabels(); status();
       prefetchAdjacent(s);
     } catch (error) {
-      if (token !== state.request) return;
+      if (token !== state.request || error.name==='AbortError') return;
       console.error('疆界載入失敗', error);
       $('snapshot-label').textContent = '疆界載入失敗';
       $('snapshot-note').textContent = '連線失敗，請重新選取年份重試；舊疆界仍保留';
@@ -102,18 +118,9 @@
       setPlaying(false);
     }
   }
-  // Spherical polygon area prevents a long, narrow bounding box from winning priority.
-  function ringArea(ring) {
-    let sum = 0;
-    for (let i=0; i<ring.length; i++) {
-      const a=ring[i], b=ring[(i+1)%ring.length];
-      let dx=(b[0]-a[0])*Math.PI/180;
-      if(dx>Math.PI) dx-=2*Math.PI; if(dx < -Math.PI) dx+=2*Math.PI;
-      sum += dx*(2+Math.sin(a[1]*Math.PI/180)+Math.sin(b[1]*Math.PI/180));
-    }
-    return Math.abs(sum);
-  }
   function renderLabels() {
+    if(state.dragging)return;
+    state.labelsPending=false;
     labelLayer.clearLayers();
     if (!state.labels || !state.layer) return;
     const candidates=[], zoom=map.getZoom(), size=map.getSize();
@@ -121,17 +128,28 @@
       if (!layer.getBounds) return;
       const key=layer.feature.properties?.NAME, bounds=layer.getBounds();
       if (!key?.trim() || key.trim()==='?' || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
-      const geometry=layer.feature.geometry;
-      const polygons=geometry.type==='MultiPolygon'?geometry.coordinates:[geometry.coordinates];
-      const area=polygons.reduce((sum,p)=>sum+Math.max(0,ringArea(p[0])-p.slice(1).reduce((v,r)=>v+ringArea(r),0)),0);
+      const area=layer.feature.labelGeometry.area;
       const n=nameFor(key), importance=n.importance || 0;
       const projected=area*Math.pow(2,2*zoom)*1200;
       if(projected < 3000/Math.max(1,zoom-1) && importance<8) return;
-      const parts=polygons.filter(p=>p[0]?.length).sort((a,b)=>ringArea(b[0])-ringArea(a[0]));
+      const parts=layer.feature.labelGeometry.parts;
       const center=layer.getCenter ? layer.getCenter() : bounds.getCenter();
       candidates.push({key,n,center,parts,area,importance,score:Math.log1p(area*10000)+importance*1.6});
     });
     const occupied=[...document.querySelectorAll('.intro-card,.events-panel,.time-dock,.map-toolbar,.map-key,.leaflet-control-zoom')].filter(el=>el.getClientRects().length).map(el=>el.getBoundingClientRect());
+    // Write every candidate first, then measure in one read phase. Anchor
+    // collision trials use these dimensions and never read layout again.
+    const mapRect=map.getContainer().getBoundingClientRect();
+    const measurements=document.createElement('div');
+    measurements.style.cssText='position:absolute;visibility:hidden;pointer-events:none';
+    for(const c of candidates){
+      c.html=`<span class="label-zh">${esc(c.n.zh)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
+      c.className=`polity-label${c.importance>=8?' label-major':''}`;
+      c.measure=document.createElement('div');c.measure.className=`leaflet-tooltip ${c.className}`;c.measure.innerHTML=c.html;measurements.append(c.measure);
+    }
+    map.getPane('tooltipPane').append(measurements);
+    for(const c of candidates){const r=c.measure.getBoundingClientRect();c.width=r.width;c.height=r.height;delete c.measure;}
+    measurements.remove();
     const seen=new Set();let count=0;
     const inside=(point,ring)=> {
       let yes=false;
@@ -156,16 +174,13 @@
         }
       }
       const major=c.importance>=8;
-      const html=`<span class="label-zh">${esc(c.n.zh)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
       let placed=false;
-      const mapRect=map.getContainer().getBoundingClientRect();
       for(const anchor of anchors) {
         const p=map.latLngToContainerPoint(anchor);
         if(p.x<15||p.y<15||p.x>size.x-15||p.y>size.y-15)continue;
-        const tip=L.tooltip({permanent:true,direction:'center',className:`polity-label${major?' label-major':''}`,opacity:1,interactive:false}).setLatLng(anchor).setContent(html).addTo(labelLayer);
-        const r=tip.getElement().getBoundingClientRect();
-        const box={left:r.left-7,right:r.right+7,top:r.top-5,bottom:r.bottom+5};
-        if(box.left<mapRect.left||box.right>mapRect.right||box.top<mapRect.top||box.bottom>mapRect.bottom||occupied.some(q=>box.left<q.right&&box.right>q.left&&box.top<q.bottom&&box.bottom>q.top)) {labelLayer.removeLayer(tip);continue;}
+        const box={left:mapRect.left+p.x-c.width/2-7,right:mapRect.left+p.x+c.width/2+7,top:mapRect.top+p.y-c.height/2-5,bottom:mapRect.top+p.y+c.height/2+5};
+        if(box.left<mapRect.left||box.right>mapRect.right||box.top<mapRect.top||box.bottom>mapRect.bottom||occupied.some(q=>box.left<q.right&&box.right>q.left&&box.top<q.bottom&&box.bottom>q.top))continue;
+        L.marker(anchor,{pane:'tooltipPane',interactive:false,keyboard:false,icon:L.divIcon({className:c.className,html:c.html,iconSize:[c.width,c.height],iconAnchor:[c.width/2,c.height/2]})}).addTo(labelLayer);
         occupied.push(box);seen.add(c.n.id);count++;placed=true;break;
       }
       if(placed&&count>=limit)break;
@@ -236,7 +251,8 @@
     if (debounceBorders) {
       // Invalidate an in-flight swap immediately, while the slider keeps moving.
       ++state.request;
-      borderTimer = setTimeout(loadBorders, 150);
+      cancelObsolete(snapshotFor(y));
+      if(!state.dragging)borderTimer = setTimeout(loadBorders, 150);
       return;
     }
     return loadBorders();
@@ -272,7 +288,6 @@
     new ResizeObserver(()=>{document.documentElement.style.setProperty('--dock-height',`${document.querySelector('.time-dock').offsetHeight}px`);}).observe(document.querySelector('.time-dock'));
     if (!window.L) { status('地圖元件未載入，請確認網路連線後重新整理。'); return; }
     map = L.map('map',{center:[26,45],zoom:2.25,minZoom:2,maxZoom:8,zoomSnap:.25,worldCopyJump:true,preferCanvas:true,zoomControl:true});
-    borderRenderer = L.canvas();
     map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
     map.createPane('land'); map.getPane('land').style.zIndex = 200;
     map.createPane('grid'); map.getPane('grid').style.zIndex = 210;
@@ -305,6 +320,11 @@
     try {
       const [snapshots,events,catalog,errata] = await Promise.all([json('data/snapshots.json'),json('data/events.json').catch(()=>{state.eventsUnavailable=true;return []}),json('data/polities.json'),json('data/errata.json')]);state.catalog=catalog;state.errata=errata;
       state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.events=events;
+      const finishDrag=()=>{if(!state.dragging)return;state.dragging=false;clearTimeout(borderTimer);clearTimeout(state.eventTimer);renderEvents();state.labelsPending=true;loadBorders();};
+      $('year-slider').addEventListener('pointerdown',()=>{state.dragging=true;});
+      window.addEventListener('pointerup',finishDrag);
+      window.addEventListener('pointercancel',finishDrag);
+      $('year-slider').addEventListener('change',finishDrag);
       $('year-slider').oninput=e=>{setPlaying(false);setYear(yearFor(Number(e.target.value)),yearFor(Number(e.target.value))<state.year?-1:1,true);};
       $('year-form').onsubmit=e=>{e.preventDefault();if(!$('year-input').value.trim())return;setPlaying(false);setYear($('year-input').value);};
       $('play-button').onclick=async()=>{if(!state.playing&&state.year>=MAX)await setYear(MIN);setPlaying(!state.playing);};

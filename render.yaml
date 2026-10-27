@@ -10,9 +10,6 @@ services:
       - path: /data/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
-      - path: /data/*.geojson
-        name: Content-Type
-        value: application/geo+json; charset=utf-8
       - path: /data/*.json
         name: Content-Type
         value: application/json; charset=utf-8
@@ -20,5 +17,11 @@ services:
         name: Cache-Control
         value: no-cache
       - path: /
+        name: Cache-Control
+        value: no-cache
+      - path: /app.js
+        name: Cache-Control
+        value: no-cache
+      - path: /data-worker.js
         name: Cache-Control
         value: no-cache

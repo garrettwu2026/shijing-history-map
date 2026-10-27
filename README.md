@@ -94,6 +94,6 @@ NODE_PATH=/path/to/node_modules node scripts/verify-v3.cjs
 python3 scripts/build-static.py
 ```
 
-Render Blueprint 使用 static runtime、main 分支、`autoDeployTrigger: commit`（[官方規格](https://render.com/docs/blueprint-spec)）。發布內容只包含 `dist/` 公開資產；data 請求 query 會加上全部資料內容 SHA-256 的前16碼。資料採一年 immutable 快取；HTML no-cache；GeoJSON 使用 application/geo+json。可用 `SITE_URL` 指定正式站點完整網址，建置時會補上絕對分享圖網址與 canonical。此輪未連接 Render 帳號或部署，正式環境回應標頭仍需部署後驗證。
+Render Blueprint 使用 static runtime、main 分支、`autoDeployTrigger: commit`（[官方規格](https://render.com/docs/blueprint-spec)）。發布內容只包含 `dist/` 公開資產；資料輸出為每檔 SHA-256 前16碼雜湊檔名（疆界改為 `.json`），manifest 與底圖 URL 同步重寫。資料採一年 immutable 快取；HTML、app.js 與 data-worker.js 為 no-cache；資料使用 application/json 以支援 CDN 壓縮。可用 `SITE_URL` 指定正式站點完整網址，建置時會補上絕對分享圖網址與 canonical。此輪未連接 Render 帳號或部署，正式環境回應標頭仍需部署後驗證。
 
 1492 簡化需 Shapely：`python3 scripts/simplify-1492.py`。以 NAME 分組、保留各多邊形部分，0.12°拓撲保留簡化，再取座標小數3位；細節精度降低，不能作精密疆界研究。新分享圖使用本地疆界幾何繪製，延續原資料 GPL-3.0 來源。

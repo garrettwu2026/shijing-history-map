@@ -35,3 +35,9 @@
 - 結果／截圖存於 `artifacts/`（沿用專案設定，不納入git）。最終量測數字依同資料夾JSON報告。
 
 最終本機未限速量測：桌機首次疆界繪製中位數505ms、手機模擬322ms（各3次）；所有可選快照均成功載入，三組瀏覽器腳本結果皆零JS／console錯誤。另驗證1945年搜尋不會命中「中華人民共和國」的未來別名。1492原始985,027 bytes，現431,039 bytes（減少56.2%），多邊形部件數維持1,886。
+
+## v3 時間軸效能追加（2026-10-27）
+
+上述完成清單為原 v3 紀錄；目前時間軸已改為放開 pointer 後更新疆界與國名，國名批次量測後使用固定尺寸 divIcon 排版。新快照 Canvas 繪製完成後才移除舊 Canvas。資料 fetch／JSON.parse、面積／片段排序／bounds 前處理由 Web Worker 執行；LRU 上限10期、前後各兩期預載，過時請求以 AbortController 取消。
+
+建置輸出改為每檔內容雜湊 `.json`，同步重寫 manifest／底圖／metadata URL；HTML／app.js／Worker no-cache。實測既有線上站的 `.geojson` 未壓縮、`.json` 有 Brotli，但仍是預設 CDN 快取；本次未部署，新設定線上生效仍待驗證。既有驗證及新增 Worker／拖曳／圖層交換測試均完成，含桌機、手機與實際 mouse／touch 手勢。詳細前後量測、已知長幀限制及重現方式見 [PERFORMANCE.md](PERFORMANCE.md)。未 commit／push。

@@ -35,7 +35,7 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
   assert(await page.locator('.leaflet-land-pane canvas').count(),'land canvas');
   assert(await page.locator('.leaflet-overlay-pane canvas').count(),'border canvas');
   assert.equal(await page.locator('.leaflet-overlay-pane svg path').count(),0,'no SVG polygons');
-  await page.evaluate(()=>{window.borderBuilds=0;const original=L.geoJSON;L.geoJSON=function(data,options){if(options?.onEachFeature){window.borderBuilds++;window.testMap=options.renderer._map;}return original.call(this,data,options)}});
+  await page.evaluate(()=>{window.borderBuilds=0;const original=L.geoJSON;L.geoJSON=function(data,options){if(options?.onEachFeature){window.borderBuilds++;queueMicrotask(()=>{window.testMap=options.renderer._map;});}return original.call(this,data,options)}});
   // Inputs stay responsive, while geometry waits for a pause.
   await page.evaluate(()=>{const slider=document.querySelector('#year-slider');for(const year of [200,400,600,700]){slider.value=year;slider.dispatchEvent(new Event('input'))}});
   assert.equal(await page.evaluate(()=>window.borderBuilds),0,'slider did not render immediately');
