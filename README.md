@@ -103,3 +103,19 @@ Render Blueprint 使用 static runtime、main 分支、`autoDeployTrigger: commi
 空名稱區域以幾何範圍辨識：逐一檢查54份快照：53份包含橫跨全球經度、延伸至南極點且完全位於南緯60度以南的南極洲；1945與1960年有名稱，1492年混在未命名的多重多邊形中，於Worker拆分後辨識；前5000年缺少該輪廓，補用底圖的南極洲輪廓。該區域以中性色與「南極洲 Antarctica」地理區域彈窗呈現，不列入政體搜尋與政體計數。選取年1959年起補充《南極條約》體系，區分1959年簽署與1961年生效（[南極條約秘書處](https://www.ats.aq/e/antarctictreaty.html)）；無永久居民說明參考[英國南極調查局](https://www.bas.ac.uk/about/education-and-schools/antarctic-factsheet/)。其他空名稱區域採淡色且不可互動；名稱彈窗省略空白欄位。原始GeoJSON不變。
 
 此輪驗證：既有事件／v3／靜態輸出驗證，以及Chrome headless的browser、v3、timeline、performance腳本；新增 `scripts/verify-compact.cjs` 檢查1440×900、390×844、320×568及844×390的控制列高度、展開功能、空欄位、空名稱區域及1958／1959／1961／2026條約說明。截圖與報告位於 `artifacts/compact-*`、`artifacts/antarctica-*`。
+
+### v7 本機驗證
+
+需 Python 3、Node.js 與 Chrome。`npm ci --cache /tmp/history-map-npm-cache` 安裝鎖定的 Playwright；可用 `CHROME_PATH` 配置既有腳本的瀏覽器位置。v7 腳本預設使用 `/usr/bin/google-chrome`。
+
+```sh
+python3 scripts/build-static.py
+npm run validate
+python3 -m http.server 8000
+# 另一個終端機，測試建置後 dist
+npm run test:browser
+npm run test:performance
+node scripts/verify-snapshots-v7.cjs
+```
+
+完整完成狀況、補譯統計與未核實內容見 [V4-STATUS.md](V4-STATUS.md)；測試截圖及 JSON 報告產生於 `artifacts/`。資料編輯腳本是編輯工具，不是建置必要步驟；請勿把編輯結果的結構驗證視為歷史事實已完成考證。

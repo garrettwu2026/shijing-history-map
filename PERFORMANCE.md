@@ -82,3 +82,35 @@ BASE_URL=http://localhost:8082 node scripts/measure-drag.cjs artifacts/drag-dist
 ```
 
 既有資料驗證、browser、v3、performance 全通過；新增 timeline 測試檢查四期預載、10 期上限、拖曳零國名量測、放開排版、Canvas 實際 draw 後才移除舊層、舊 renderer 清除與取消過時請求。桌機／手機零 JS 與 console errors；v3 額外涵蓋 320×568、844×390。建置驗證覆核 62 個 JSON 的檔名雜湊、54 期 URL 與 Render MIME／cache 規則。
+
+## v7 分段效能量測（2026-10-28）
+
+先執行既有 `measure-drag.cjs`，修改前報告保存在 `artifacts/v7-before-profile.json`。六次未降速量測的 P95 為 16.7–16.8ms、最長幀 33.3–83.4ms，沒有觀測到 >50ms 長任務。該舊腳本把拖曳及放開後一秒混合統計，與下方新腳本的方法不同，**不能以兩組數字直接推算改善百分比**。
+
+修改內容：
+
+- 政體色改成穩定 ID 雜湊，移除逐對鄰接掃描；每期預算樣式並快取名稱及期間覆寫。
+- Worker 預算多邊形內部標籤候選，主執行緒只投影及避讓；標籤避開事件標記與面板。
+- 每 24 個 feature 建圖後讓出主執行緒，完成新 Canvas 繪製才移除舊圖。仍有單一大 feature、Canvas 畫圖及 DOM 排版無法完全切小的成本。
+- Leaflet 在縮放 <4 使用 smoothFactor=3，其餘為 1；以 Leaflet 原生投影／剪裁／簡化減少低縮放幾何繪製成本，未修改原始座標或改用 MapLibre。這不是另行發布三套離線 LOD 幾何。
+- 時間軸拖曳時保持原圖，放開才換圖；同一期不重建；保留 Worker、LRU、預載與取消機制。
+
+`profile-v7.cjs` 在乾淨 context 清除瀏覽器快取、禁用 HTTP cache，Chrome CDP CPU 1×／4×，1492 複雜快照冷啟動；桌機原生 mouse 拖曳、手機 CDP touchStart／touchMove／touchEnd 拖曳。分開觀測 cold、drag、release、playback，各情境一次，屬回歸基準而非穩健的多次抽樣統計。初次顯示時間含入口、metadata、Worker、疆界到完成的等待。
+
+| CPU／尺寸 | 冷啟動至完成 ms | 放開至完成 ms | 拖曳 P95／最長幀 ms | 放開最長幀 ms | 放開長任務數 | 播放最長幀 ms |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1×／1440×900 | 1029 | 213 | 16.8／33.4 | 33.4 | 0 | 16.8 |
+| 1×／390×844 | 978 | 226 | 16.8／16.8 | 50.0 | 1 | 16.8 |
+| 4×／1440×900 | 2236 | 665 | 16.8／33.4 | 216.7 | 5 | 100.0 |
+| 4×／390×844 | 1716 | 567 | 16.8／16.8 | 133.2 | 5 | 83.3 |
+
+原始分段資料位於 `artifacts/v7-performance.json`，含每期 fetch、prepare、build、labels 及 total 耗時。正常 CPU 的拖曳保持接近 60fps；四倍降速後，放開及播放仍有可見長幀，**尚未達成全流程穩定 60fps**。分批建圖降低單段工作但增加總等待時間，不能只以載入總時間判斷輸入是否順暢。
+
+重現（先建置並啟動 8000 埠 HTTP server）：
+
+```sh
+NODE_PATH=/tmp/history-map-check/node_modules node scripts/profile-v7.cjs
+# 或 npm ci 後 npm run test:performance
+```
+
+未測實機 Android／iOS、慢速行動網路、正式站 Brotli／CDN。這些測試沒有部署或修改任何遠端資料。

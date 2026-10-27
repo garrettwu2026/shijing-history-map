@@ -6,7 +6,7 @@ dist=root/'dist'
 headers=[dict(re.findall(r'(path|name|value): (.+)',block)) for block in (root/'render.yaml').read_text().split('      - ')[1:]]
 assert any(h['path']=='/data/*' and h['name']=='Cache-Control' and h['value']=='public, max-age=31536000, immutable' for h in headers)
 assert any(h['path']=='/data/*.json' and h['value'].startswith('application/json') for h in headers)
-for path in ['/','/*.html','/app.js','/data-worker.js']:
+for path in ['/','/*.html','/app.js','/data-worker.js','/modules/*.js']:
  assert any(h['path']==path and h['value']=='no-cache' for h in headers)
 files=list((dist/'data').glob('*.json'))
 assert not list((dist/'data').glob('*.geojson'))
@@ -18,6 +18,6 @@ assert manifest.name in app
 rows=json.loads(manifest.read_text())
 for row in rows:assert (dist/'data'/row['file']).exists()
 assert next((dist/'data').glob('world_2010.*.json')).name in app
-assert 'new Worker(\'data-worker.js\')' in app and (dist/'data-worker.js').exists()
+assert 'new Worker(\'data-worker.js\')' in (dist/'modules/data.js').read_text() and (dist/'data-worker.js').exists()
 print(f'{len(files)} hashed JSON assets; {len(rows)} snapshot URLs; Render MIME/cache rules passed')
 print('Snapshot bytes:',sum((dist/'data'/s['file']).stat().st_size for s in rows),'gzip:',sum(len(gzip.compress((dist/'data'/s['file']).read_bytes())) for s in rows))

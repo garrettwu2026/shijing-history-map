@@ -25,3 +25,6 @@ services:
       - path: /data-worker.js
         name: Cache-Control
         value: no-cache
+      - path: /modules/*.js
+        name: Cache-Control
+        value: no-cache
