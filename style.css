@@ -458,3 +458,34 @@ button,select{min-width:44px}
 a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 .leaflet-control-attribution{line-height:1.4}
 .leaflet-control-attribution a{vertical-align:middle}
+
+/* v8: a 62px dock, with secondary controls in the settings disclosure. */
+.time-controls .selected-year{display:flex;align-items:center;gap:8px;flex:0 1 440px;overflow:hidden}
+.time-controls #year-display{flex-shrink:0}
+#boundary-indicator{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+#time-options .time-steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.time-steps button{background:#263d43;border:1px solid #71858a;border-radius:4px;padding:0 8px}
+.time-steps span{align-self:center;color:var(--muted)}
+.map-toolbar button{width:44px;height:44px}
+.leaflet-top.leaflet-left{top:391px}
+/* Keep settings above the dock without displacing the map overlays. */
+#time-options{position:absolute;bottom:calc(100% + 8px);left:0;right:0;padding:12px;background:#17262cfb;border:1px solid var(--line);border-radius:8px;max-height: min(440px,65dvh);margin:0}
+.leaflet-control-attribution{max-width:100%;}
+@media(max-width:760px){
+ .time-dock{padding:8px;bottom:12px}
+ .time-controls{grid-template-columns:minmax(0,1fr) 44px 52px;grid-template-rows:22px 22px;gap:0 6px}
+ .time-controls .selected-year{grid-column:1;grid-row:1;gap:5px;width:100%;line-height:20px}
+ .time-controls #year-display{font-size:12px;line-height:20px}
+ #boundary-indicator{font-size:11px;line-height:20px}
+ .time-controls .slider-wrap{grid-column:1;grid-row:2;height:22px;position:relative}
+ #year-slider{position:absolute;top:-11px;height:44px;opacity:1}
+ .time-controls .play-button,#time-options-toggle{grid-row:1 / 3}
+ .map-toolbar{top:75px;right:8px;left:auto}
+ .leaflet-top.leaflet-left{top:219px;right:8px;left:auto}
+ .leaflet-top.leaflet-left .leaflet-control{margin:0}
+ .events-panel{bottom:calc(var(--dock-height) + 24px)}
+ main:has(.events-panel.expanded) .map-toolbar,main:has(.events-panel.expanded) .leaflet-control-zoom{visibility:hidden}
+ .time-steps span{display:none}
+}
+#time-options .leaflet-control-attribution{float:none;clear:both;margin:12px 0 0;padding:4px 8px;background:#22353c;color:var(--muted);white-space:normal}
+#time-options .leaflet-control-attribution a{color:var(--gold)}

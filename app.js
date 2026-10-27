@@ -215,6 +215,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
     map.createPane('land'); map.getPane('land').style.zIndex = 200;
     map.createPane('grid'); map.getPane('grid').style.zIndex = 210;
     map.attributionControl.addAttribution('疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0');
+    $('time-options').append(document.querySelector('.leaflet-control-attribution'));
     async function loadBaseline(){
       $('baseline-status').hidden=true;
       try{const data=await json('data/world_2010.geojson');state.baseline=data;
@@ -255,6 +256,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
       window.addEventListener('pointerup',finishDrag);
       window.addEventListener('pointercancel',finishDrag);
       $('year-slider').addEventListener('change',finishDrag);
+      $('year-slider').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();const delta=['ArrowLeft','ArrowDown'].includes(e.key)?-1:1;setPlaying(false);setYear(state.year+delta,delta);});
       $('year-slider').oninput=e=>{setPlaying(false);setYear(yearFor(Number(e.target.value)),yearFor(Number(e.target.value))<state.year?-1:1,true);};
       $('year-form').onsubmit=e=>{e.preventDefault();if(!$('year-input').value.trim())return;setPlaying(false);setYear($('year-input').value);};
       $('play-button').onclick=async()=>{if(!state.playing&&state.year>=MAX)await setYear(MIN);setPlaying(!state.playing);};

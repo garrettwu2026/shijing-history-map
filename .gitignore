@@ -7,3 +7,5 @@ artifacts/
 .agents/
 
 dist/
+
+node_modules/
