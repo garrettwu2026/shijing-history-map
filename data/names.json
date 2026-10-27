@@ -1,0 +1,2737 @@
+{
+  "Achaemenid Empire": {
+    "zh": "阿契美尼德帝國",
+    "native": "𐎧𐏁𐏂 Xšaça",
+    "aliases": [
+      "波斯第一帝國",
+      "阿契美尼德王朝",
+      "Achaemenian Empire"
+    ],
+    "importance": 8
+  },
+  "Assyria": {
+    "zh": "亞述",
+    "native": "𒀸𒋗𒁺 Aššur",
+    "aliases": [
+      "亞述帝國",
+      "Assyrian Empire"
+    ],
+    "importance": 0
+  },
+  "Babylonia": {
+    "zh": "巴比倫尼亞",
+    "native": "𒆍𒀭𒊏𒆠 Bābili",
+    "aliases": [
+      "巴比倫",
+      "Babylon"
+    ],
+    "importance": 0
+  },
+  "Ur": {
+    "zh": "烏爾",
+    "native": "𒋀𒀕𒆠 Urim",
+    "aliases": [
+      "Urim",
+      "吾珥"
+    ],
+    "importance": 0
+  },
+  "Elam": {
+    "zh": "埃蘭",
+    "native": "Haltamti",
+    "aliases": [
+      "以攔",
+      "Elamite civilization"
+    ],
+    "importance": 0
+  },
+  "Hittites": {
+    "zh": "赫梯",
+    "native": "Ḫatti / 𒄩𒀜𒋾",
+    "aliases": [
+      "西臺",
+      "Hittite Empire",
+      "Ḫatti"
+    ],
+    "importance": 0
+  },
+  "Urartu": {
+    "zh": "烏拉爾圖",
+    "native": "Biainili",
+    "aliases": [
+      "凡湖王國",
+      "Kingdom of Van"
+    ],
+    "importance": 0
+  },
+  "Egypt": {
+    "zh": "埃及",
+    "native": "مصر Miṣr",
+    "aliases": [
+      "Egypt",
+      "埃及文明",
+      "Kemet（古埃及）"
+    ],
+    "importance": 0
+  },
+  "Kush": {
+    "zh": "庫施",
+    "native": "Kush",
+    "aliases": [
+      "古實",
+      "Kingdom of Kush"
+    ],
+    "importance": 0
+  },
+  "Kushites": {
+    "zh": "庫施人",
+    "native": "Kush",
+    "aliases": [
+      "古實人",
+      "Kushites"
+    ],
+    "importance": 0
+  },
+  "Kerma": {
+    "zh": "凱爾馬",
+    "native": "Kerma",
+    "aliases": [
+      "克爾瑪文化"
+    ],
+    "importance": 0
+  },
+  "Carthage": {
+    "zh": "迦太基",
+    "native": "𐤒𐤓𐤕 𐤇𐤃𐤔𐤕 Qart-ḥadašt",
+    "aliases": [
+      "Carthago",
+      "迦太基共和國"
+    ],
+    "importance": 0
+  },
+  "Carthaginian Empire": {
+    "zh": "迦太基帝國",
+    "native": "𐤒𐤓𐤕 𐤇𐤃𐤔𐤕 Qart-ḥadašt",
+    "aliases": [
+      "Punic Empire",
+      "迦太基"
+    ],
+    "importance": 0
+  },
+  "Macedonia": {
+    "zh": "馬其頓",
+    "native": "Μακεδονία",
+    "aliases": [
+      "Makedonia",
+      "古馬其頓"
+    ],
+    "importance": 0
+  },
+  "Macedon and Hellenic League": {
+    "zh": "馬其頓與希臘同盟",
+    "native": "Μακεδονία",
+    "aliases": [
+      "科林斯同盟",
+      "League of Corinth"
+    ],
+    "importance": 0
+  },
+  "Empire of Alexander": {
+    "zh": "亞歷山大帝國",
+    "native": "Μακεδονία",
+    "aliases": [
+      "馬其頓帝國",
+      "Alexander's Empire"
+    ],
+    "importance": 0
+  },
+  "Greek city-states": {
+    "zh": "希臘城邦",
+    "native": "πόλεις",
+    "aliases": [
+      "古希臘",
+      "Hellenic poleis",
+      "Ἀθῆναι（雅典）",
+      "Σπάρτη（斯巴達）"
+    ],
+    "importance": 0
+  },
+  "Greek colonies": {
+    "zh": "希臘殖民城邦",
+    "native": "ἀποικίαι",
+    "aliases": [
+      "Greek apoikiai"
+    ],
+    "importance": 0
+  },
+  "Greece": {
+    "zh": "希臘",
+    "native": "Ελλάδα",
+    "aliases": [
+      "Hellas",
+      "Hellenic Republic"
+    ],
+    "importance": 0
+  },
+  "Ptolemaic Kingdom": {
+    "zh": "托勒密王國",
+    "native": "Πτολεμαϊκὴ βασιλεία",
+    "aliases": [
+      "托勒密埃及",
+      "Ptolemaic Egypt"
+    ],
+    "importance": 0
+  },
+  "Parthia": {
+    "zh": "安息",
+    "native": "𐭐𐭓𐭕𐭅 Parθaw",
+    "aliases": [
+      "帕提亞",
+      "Parthian Empire",
+      "阿爾薩息王朝"
+    ],
+    "importance": 0
+  },
+  "Parthian Empire": {
+    "zh": "安息帝國",
+    "native": "𐭐𐭓𐭕𐭅 Parθaw",
+    "aliases": [
+      "帕提亞帝國",
+      "Arsacid Empire"
+    ],
+    "importance": 0
+  },
+  "Sasanian Empire": {
+    "zh": "薩珊帝國",
+    "native": "Ērānšahr",
+    "aliases": [
+      "Sassanid Empire",
+      "波斯第二帝國"
+    ],
+    "importance": 0
+  },
+  "Roman Empire": {
+    "zh": "羅馬帝國",
+    "native": "Imperium Rōmānum",
+    "aliases": [
+      "羅馬",
+      "Imperium Romanum"
+    ],
+    "importance": 10
+  },
+  "Roman Republic": {
+    "zh": "羅馬共和國",
+    "native": "Rēs pūblica Rōmāna",
+    "aliases": [
+      "Res publica Romana",
+      "羅馬共和政體"
+    ],
+    "importance": 0
+  },
+  "Western Roman Empire": {
+    "zh": "西羅馬帝國",
+    "native": "Imperium Rōmānum",
+    "aliases": [
+      "Western Rome"
+    ],
+    "importance": 0
+  },
+  "Eastern Roman Empire": {
+    "zh": "東羅馬帝國",
+    "native": "Βασιλεία Ῥωμαίων",
+    "aliases": [
+      "拜占庭帝國",
+      "Byzantine Empire",
+      "Romania"
+    ],
+    "importance": 0
+  },
+  "Byzantine Empire": {
+    "zh": "拜占庭帝國",
+    "native": "Βασιλεία Ῥωμαίων",
+    "aliases": [
+      "東羅馬帝國",
+      "Eastern Roman Empire",
+      "Ῥωμανία"
+    ],
+    "importance": 0
+  },
+  "Holy Roman Empire": {
+    "zh": "神聖羅馬帝國",
+    "native": "Sacrum Imperium Romanum",
+    "aliases": [
+      "Heiliges Römisches Reich",
+      "神聖羅馬帝國德意志民族"
+    ],
+    "importance": 0
+  },
+  "Frankish Kingdom": {
+    "zh": "法蘭克王國",
+    "native": "Regnum Francorum",
+    "aliases": [
+      "法蘭克",
+      "Francia"
+    ],
+    "importance": 0
+  },
+  "Franks": {
+    "zh": "法蘭克人",
+    "native": "Franci",
+    "aliases": [
+      "Frankish peoples"
+    ],
+    "importance": 0
+  },
+  "Carolingian Empire": {
+    "zh": "加洛林帝國",
+    "native": "Imperium Francorum",
+    "aliases": [
+      "查理曼帝國",
+      "Carolingian Francia"
+    ],
+    "importance": 0
+  },
+  "East Francia": {
+    "zh": "東法蘭克王國",
+    "native": "Francia orientalis",
+    "aliases": [
+      "東法蘭克",
+      "East Frankish Kingdom"
+    ],
+    "importance": 0
+  },
+  "West Francia": {
+    "zh": "西法蘭克王國",
+    "native": "Francia occidentalis",
+    "aliases": [
+      "西法蘭克",
+      "West Frankish Kingdom"
+    ],
+    "importance": 0
+  },
+  "Visigothic Kingdom": {
+    "zh": "西哥德王國",
+    "native": "Regnum Visigothorum",
+    "aliases": [
+      "西哥德",
+      "Visigothic Spain"
+    ],
+    "importance": 0
+  },
+  "Visigoths": {
+    "zh": "西哥德人",
+    "native": "Visigothi",
+    "aliases": [
+      "西哥特人"
+    ],
+    "importance": 0
+  },
+  "Vandals": {
+    "zh": "汪達爾人",
+    "native": "Vandali",
+    "aliases": [
+      "汪達爾王國",
+      "Vandal Kingdom"
+    ],
+    "importance": 0
+  },
+  "Hunnic Empire": {
+    "zh": "匈人帝國",
+    "native": "Hunni",
+    "aliases": [
+      "匈人聯盟",
+      "Hunnic confederation"
+    ],
+    "importance": 0
+  },
+  "Huns": {
+    "zh": "匈人",
+    "native": "Hunni",
+    "aliases": [
+      "Huns"
+    ],
+    "importance": 0
+  },
+  "Ostrogoths": {
+    "zh": "東哥德人",
+    "native": "Ostrogothi",
+    "aliases": [
+      "東哥特人"
+    ],
+    "importance": 0
+  },
+  "Kievan Rus": {
+    "zh": "基輔羅斯",
+    "native": "Русь",
+    "aliases": [
+      "Kyivan Rus",
+      "Kievan Rus'",
+      "羅斯"
+    ],
+    "importance": 0
+  },
+  "Kyivan Rus": {
+    "zh": "基輔羅斯",
+    "native": "Русь",
+    "aliases": [
+      "Kievan Rus",
+      "羅斯"
+    ],
+    "importance": 0
+  },
+  "Grand Duchy of Moscow": {
+    "zh": "莫斯科大公國",
+    "native": "Великое княжество Московское",
+    "aliases": [
+      "Muscovy",
+      "莫斯科公國"
+    ],
+    "importance": 0
+  },
+  "Tsardom of Muscovy": {
+    "zh": "俄羅斯沙皇國",
+    "native": "Русское царство",
+    "aliases": [
+      "莫斯科沙皇國",
+      "Tsardom of Russia"
+    ],
+    "importance": 0
+  },
+  "Russian Empire": {
+    "zh": "俄羅斯帝國",
+    "native": "Россійская Имперія",
+    "aliases": [
+      "沙俄",
+      "Imperial Russia"
+    ],
+    "importance": 8
+  },
+  "Russia": {
+    "zh": "俄羅斯",
+    "native": "Россия",
+    "aliases": [
+      "俄羅斯聯邦",
+      "Russian Federation"
+    ],
+    "importance": 0
+  },
+  "USSR": {
+    "zh": "蘇聯",
+    "native": "Союз Советских Социалистических Республик",
+    "aliases": [
+      "蘇維埃社會主義共和國聯盟",
+      "Soviet Union",
+      "СССР"
+    ],
+    "importance": 0
+  },
+  "Ottoman Empire": {
+    "zh": "鄂圖曼帝國",
+    "native": "دولت عليه عثمانيه Devlet-i ʿAlīye-i ʿOsmānīye",
+    "aliases": [
+      "奧斯曼帝國",
+      "Ottoman State"
+    ],
+    "importance": 8
+  },
+  "Turkey": {
+    "zh": "土耳其",
+    "native": "Türkiye",
+    "aliases": [
+      "Türkiye Cumhuriyeti",
+      "土耳其共和國"
+    ],
+    "importance": 0
+  },
+  "Seljuk Empire": {
+    "zh": "塞爾柱帝國",
+    "native": "آل سلجوق Āl-e Saljūq",
+    "aliases": [
+      "大塞爾柱帝國",
+      "Great Seljuk Empire"
+    ],
+    "importance": 0
+  },
+  "Umayyad Caliphate": {
+    "zh": "倭馬亞哈里發國",
+    "native": "الخلافة الأموية",
+    "aliases": [
+      "伍麥葉王朝",
+      "Umayyad dynasty",
+      "白衣大食"
+    ],
+    "importance": 8
+  },
+  "Abbasid Caliphate": {
+    "zh": "阿拔斯哈里發國",
+    "native": "الخلافة العباسية",
+    "aliases": [
+      "阿拔斯王朝",
+      "Abbasid dynasty",
+      "黑衣大食"
+    ],
+    "importance": 8
+  },
+  "Fatimid Caliphate": {
+    "zh": "法蒂瑪哈里發國",
+    "native": "الخلافة الفاطمية",
+    "aliases": [
+      "法蒂瑪王朝",
+      "Fatimid dynasty"
+    ],
+    "importance": 0
+  },
+  "Mamluke Sultanate": {
+    "zh": "馬木路克蘇丹國",
+    "native": "سلطنة المماليك",
+    "aliases": [
+      "Mamluk Sultanate",
+      "奴隸王朝"
+    ],
+    "importance": 0
+  },
+  "Caliphate of Córdoba": {
+    "zh": "哥多華哈里發國",
+    "native": "خلافة قرطبة",
+    "aliases": [
+      "後倭馬亞王朝",
+      "Caliphate of Cordoba"
+    ],
+    "importance": 0
+  },
+  "Emirate of Córdoba": {
+    "zh": "哥多華酋長國",
+    "native": "إمارة قرطبة",
+    "aliases": [
+      "Emirate of Cordoba",
+      "安達魯斯"
+    ],
+    "importance": 0
+  },
+  "Almoravid dynasty": {
+    "zh": "穆拉比特王朝",
+    "native": "المرابطون",
+    "aliases": [
+      "Almoravids"
+    ],
+    "importance": 0
+  },
+  "Almohad Caliphate": {
+    "zh": "穆瓦希德哈里發國",
+    "native": "الموحدون",
+    "aliases": [
+      "Almohad dynasty",
+      "穆瓦希德王朝"
+    ],
+    "importance": 0
+  },
+  "Safavid Empire": {
+    "zh": "薩法維帝國",
+    "native": "دولت صفویه",
+    "aliases": [
+      "薩非王朝",
+      "Safavid Iran"
+    ],
+    "importance": 0
+  },
+  "Iran": {
+    "zh": "伊朗",
+    "native": "ایران",
+    "aliases": [
+      "波斯",
+      "Persia",
+      "Iran"
+    ],
+    "importance": 0
+  },
+  "Arabia": {
+    "zh": "阿拉伯",
+    "native": "الجزيرة العربية",
+    "aliases": [
+      "阿拉伯半島",
+      "Arabian Peninsula"
+    ],
+    "importance": 0
+  },
+  "Saudi Arabia": {
+    "zh": "沙烏地阿拉伯",
+    "native": "المملكة العربية السعودية",
+    "aliases": [
+      "沙國",
+      "Saudi Arabia"
+    ],
+    "importance": 0
+  },
+  "Israel": {
+    "zh": "以色列",
+    "native": "יִשְׂרָאֵל",
+    "aliases": [
+      "Israel",
+      "以色列國"
+    ],
+    "importance": 0
+  },
+  "Judea": {
+    "zh": "猶太",
+    "native": "יהודה Yehuda",
+    "aliases": [
+      "Judaea",
+      "Judah"
+    ],
+    "importance": 0
+  },
+  "Armenia": {
+    "zh": "亞美尼亞",
+    "native": "Հայաստան",
+    "aliases": [
+      "Hayastan",
+      "Armenia"
+    ],
+    "importance": 0
+  },
+  "Georgia": {
+    "zh": "喬治亞",
+    "native": "საქართველო",
+    "aliases": [
+      "Sakartvelo",
+      "格魯吉亞"
+    ],
+    "importance": 0
+  },
+  "China": {
+    "zh": "中國",
+    "native": "中國",
+    "aliases": [
+      "China",
+      "中華人民共和國（現代）"
+    ],
+    "importance": 0
+  },
+  "Zhou states": {
+    "zh": "周代列國",
+    "native": "周",
+    "aliases": [
+      "諸侯國",
+      "周朝",
+      "Zhou dynasty"
+    ],
+    "importance": 0
+  },
+  "Qin": {
+    "zh": "秦",
+    "native": "秦",
+    "aliases": [
+      "秦朝",
+      "Qin dynasty"
+    ],
+    "importance": 0
+  },
+  "Han": {
+    "zh": "漢朝",
+    "native": "漢",
+    "aliases": [
+      "漢朝",
+      "兩漢",
+      "Han dynasty"
+    ],
+    "importance": 10
+  },
+  "Han Empire": {
+    "zh": "漢朝",
+    "native": "漢",
+    "aliases": [
+      "漢朝",
+      "Han dynasty"
+    ],
+    "importance": 10
+  },
+  "Jin": {
+    "zh": "晉",
+    "native": "晉",
+    "aliases": [
+      "晉朝",
+      "Jin dynasty"
+    ],
+    "importance": 0
+  },
+  "Jin Empire": {
+    "zh": "金帝國",
+    "native": "大金",
+    "aliases": [
+      "金朝",
+      "Jurchen Jin dynasty"
+    ],
+    "importance": 0
+  },
+  "Tang Empire": {
+    "zh": "唐帝國",
+    "native": "大唐",
+    "aliases": [
+      "唐朝",
+      "Tang dynasty"
+    ],
+    "importance": 8
+  },
+  "Song Empire": {
+    "zh": "宋帝國",
+    "native": "大宋",
+    "aliases": [
+      "宋朝",
+      "Song dynasty"
+    ],
+    "importance": 8
+  },
+  "Liao": {
+    "zh": "遼",
+    "native": "大遼",
+    "aliases": [
+      "契丹",
+      "Liao dynasty",
+      "Khitan Empire"
+    ],
+    "importance": 0
+  },
+  "Xixia": {
+    "zh": "西夏",
+    "native": "𗴂𗹭𗂧𘜶",
+    "aliases": [
+      "大白高國",
+      "Western Xia",
+      "党項"
+    ],
+    "importance": 0
+  },
+  "Manchu Empire": {
+    "zh": "滿清帝國",
+    "native": "大清 / ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
+    "aliases": [
+      "清朝",
+      "Qing Empire"
+    ],
+    "importance": 0
+  },
+  "Mongol Empire": {
+    "zh": "蒙古帝國",
+    "native": "ᠶᠡᠬᠡ ᠮᠣᠩᠭᠣᠯ ᠤᠯᠤᠰ",
+    "aliases": [
+      "大蒙古國",
+      "Yeke Mongγol Ulus"
+    ],
+    "importance": 10
+  },
+  "Great Khanate": {
+    "zh": "蒙古大汗國",
+    "native": "ᠮᠣᠩᠭᠣᠯ",
+    "aliases": [
+      "蒙古帝國",
+      "Great Khanate"
+    ],
+    "importance": 0
+  },
+  "Golden Horde": {
+    "zh": "金帳汗國",
+    "native": "Jochi Ulus",
+    "aliases": [
+      "欽察汗國",
+      "兀魯思",
+      "Khanate of the Golden Horde"
+    ],
+    "importance": 0
+  },
+  "Khanate of the Golden Horde": {
+    "zh": "金帳汗國",
+    "native": "Jochi Ulus",
+    "aliases": [
+      "Golden Horde",
+      "欽察汗國"
+    ],
+    "importance": 0
+  },
+  "Chagatai Khanate": {
+    "zh": "察合台汗國",
+    "native": "Čaγatai Ulus",
+    "aliases": [
+      "Chaghatay Khanate"
+    ],
+    "importance": 0
+  },
+  "Ilkhanate": {
+    "zh": "伊兒汗國",
+    "native": "ایلخانان",
+    "aliases": [
+      "旭烈兀汗國",
+      "Ilkhanid dynasty"
+    ],
+    "importance": 0
+  },
+  "Timurid Empire": {
+    "zh": "帖木兒帝國",
+    "native": "تیموریان",
+    "aliases": [
+      "帖木兒王朝",
+      "Timurids"
+    ],
+    "importance": 0
+  },
+  "Xiongnu": {
+    "zh": "匈奴",
+    "native": "匈奴",
+    "aliases": [
+      "Xiongnu confederation"
+    ],
+    "importance": 0
+  },
+  "Göktürks": {
+    "zh": "突厥",
+    "native": "𐱅𐰇𐰼𐰰 Türk",
+    "aliases": [
+      "突厥汗國",
+      "Göktürk Khaganate"
+    ],
+    "importance": 0
+  },
+  "Western Gokturk Khaganate": {
+    "zh": "西突厥汗國",
+    "native": "𐱅𐰇𐰼𐰰 Türk",
+    "aliases": [
+      "Western Turkic Khaganate"
+    ],
+    "importance": 0
+  },
+  "Uyghurs": {
+    "zh": "回鶻",
+    "native": "ئۇيغۇر",
+    "aliases": [
+      "回紇",
+      "Uyghur"
+    ],
+    "importance": 0
+  },
+  "Tufan Empire": {
+    "zh": "吐蕃帝國",
+    "native": "བོད་",
+    "aliases": [
+      "Tibetan Empire",
+      "吐蕃"
+    ],
+    "importance": 0
+  },
+  "Tibet": {
+    "zh": "西藏",
+    "native": "བོད་",
+    "aliases": [
+      "Bod",
+      "Tibet"
+    ],
+    "importance": 0
+  },
+  "Koguryo": {
+    "zh": "高句麗",
+    "native": "고구려 / 高句麗",
+    "aliases": [
+      "Goguryeo",
+      "Koguryŏ"
+    ],
+    "importance": 0
+  },
+  "Goryeo": {
+    "zh": "高麗",
+    "native": "고려 / 高麗",
+    "aliases": [
+      "Koryŏ",
+      "Goryeo"
+    ],
+    "importance": 0
+  },
+  "Silla": {
+    "zh": "新羅",
+    "native": "신라 / 新羅",
+    "aliases": [
+      "Silla"
+    ],
+    "importance": 0
+  },
+  "Balhae": {
+    "zh": "渤海",
+    "native": "발해 / 渤海",
+    "aliases": [
+      "Bohai",
+      "Parhae"
+    ],
+    "importance": 0
+  },
+  "Gojoseon": {
+    "zh": "古朝鮮",
+    "native": "고조선 / 古朝鮮",
+    "aliases": [
+      "Old Joseon"
+    ],
+    "importance": 0
+  },
+  "Korea": {
+    "zh": "朝鮮",
+    "native": "조선 / 朝鮮",
+    "aliases": [
+      "韓國",
+      "Korea",
+      "Joseon（朝鮮王朝）"
+    ],
+    "importance": 0
+  },
+  "Korea, Republic of": {
+    "zh": "大韓民國",
+    "native": "대한민국",
+    "aliases": [
+      "南韓",
+      "South Korea",
+      "Republic of Korea"
+    ],
+    "importance": 0
+  },
+  "Korea, Democratic People's Republic of": {
+    "zh": "朝鮮民主主義人民共和國",
+    "native": "조선민주주의인민공화국",
+    "aliases": [
+      "北韓",
+      "North Korea",
+      "DPRK"
+    ],
+    "importance": 0
+  },
+  "Japan": {
+    "zh": "日本",
+    "native": "日本",
+    "aliases": [
+      "Nihon",
+      "Nippon",
+      "Japan"
+    ],
+    "importance": 0
+  },
+  "Empire of Japan": {
+    "zh": "大日本帝國",
+    "native": "大日本帝國",
+    "aliases": [
+      "日本帝國",
+      "Imperial Japan"
+    ],
+    "importance": 0
+  },
+  "Imperial Japan": {
+    "zh": "日本帝國",
+    "native": "大日本帝國",
+    "aliases": [
+      "Empire of Japan"
+    ],
+    "importance": 0
+  },
+  "Imperial Japan (Fujiwara)": {
+    "zh": "藤原氏攝關時期日本",
+    "native": "日本",
+    "aliases": [
+      "平安時代",
+      "Fujiwara Japan"
+    ],
+    "importance": 0
+  },
+  "Yamato": {
+    "zh": "大和",
+    "native": "倭 / 大和",
+    "aliases": [
+      "大和王權",
+      "Yamato polity"
+    ],
+    "importance": 0
+  },
+  "Japan (Warring States)": {
+    "zh": "日本戰國諸國",
+    "native": "日本",
+    "aliases": [
+      "戰國時代",
+      "Sengoku Japan"
+    ],
+    "importance": 0
+  },
+  "Vietnam": {
+    "zh": "越南",
+    "native": "Việt Nam",
+    "aliases": [
+      "越南社會主義共和國",
+      "Vietnam"
+    ],
+    "importance": 0
+  },
+  "Đại Việt": {
+    "zh": "大越",
+    "native": "大越 / Đại Việt",
+    "aliases": [
+      "大越國",
+      "Dai Viet"
+    ],
+    "importance": 0
+  },
+  "Annam": {
+    "zh": "安南",
+    "native": "An Nam / 安南",
+    "aliases": [
+      "Annam",
+      "越南歷史名稱"
+    ],
+    "importance": 0
+  },
+  "Champa": {
+    "zh": "占婆",
+    "native": "Campā",
+    "aliases": [
+      "林邑",
+      "環王",
+      "占城",
+      "Champa"
+    ],
+    "importance": 0
+  },
+  "Champa City States": {
+    "zh": "占婆城邦",
+    "native": "Campā",
+    "aliases": [
+      "占城",
+      "Champa"
+    ],
+    "importance": 0
+  },
+  "Funan": {
+    "zh": "扶南",
+    "native": "Funan",
+    "aliases": [
+      "扶南國"
+    ],
+    "importance": 0
+  },
+  "Chen-La": {
+    "zh": "真臘",
+    "native": "ចេនឡា",
+    "aliases": [
+      "Chenla",
+      "Zhenla"
+    ],
+    "importance": 0
+  },
+  "Khmer Empire": {
+    "zh": "高棉帝國",
+    "native": "ចក្រភពខ្មែរ",
+    "aliases": [
+      "吳哥帝國",
+      "Angkor Empire"
+    ],
+    "importance": 0
+  },
+  "Cambodia": {
+    "zh": "柬埔寨",
+    "native": "កម្ពុជា",
+    "aliases": [
+      "Kampuchea",
+      "Cambodia"
+    ],
+    "importance": 0
+  },
+  "Ayutthaya": {
+    "zh": "阿瑜陀耶",
+    "native": "อยุธยา",
+    "aliases": [
+      "大城王國",
+      "Ayutthaya Kingdom"
+    ],
+    "importance": 0
+  },
+  "Sukhothai": {
+    "zh": "素可泰",
+    "native": "สุโขทัย",
+    "aliases": [
+      "Sukhothai Kingdom"
+    ],
+    "importance": 0
+  },
+  "Kingdom of Sukhotai": {
+    "zh": "素可泰王國",
+    "native": "สุโขทัย",
+    "aliases": [
+      "Sukhothai",
+      "素可泰"
+    ],
+    "importance": 0
+  },
+  "Siam": {
+    "zh": "暹羅",
+    "native": "สยาม",
+    "aliases": [
+      "泰國歷史名稱",
+      "Siam"
+    ],
+    "importance": 0
+  },
+  "Thailand": {
+    "zh": "泰國",
+    "native": "ประเทศไทย",
+    "aliases": [
+      "Prathet Thai",
+      "Thailand"
+    ],
+    "importance": 0
+  },
+  "Burma": {
+    "zh": "緬甸",
+    "native": "မြန်မာ",
+    "aliases": [
+      "Myanmar",
+      "Burma"
+    ],
+    "importance": 0
+  },
+  "Bagan": {
+    "zh": "蒲甘",
+    "native": "ပုဂံ",
+    "aliases": [
+      "Pagan",
+      "蒲甘王國"
+    ],
+    "importance": 0
+  },
+  "Kingdom of Pagan": {
+    "zh": "蒲甘王國",
+    "native": "ပုဂံ",
+    "aliases": [
+      "Bagan",
+      "Pagan Kingdom"
+    ],
+    "importance": 0
+  },
+  "Ava": {
+    "zh": "阿瓦",
+    "native": "အင်းဝ",
+    "aliases": [
+      "Inwa",
+      "阿瓦王國"
+    ],
+    "importance": 0
+  },
+  "Malacca": {
+    "zh": "麻六甲",
+    "native": "ملايو / Melaka",
+    "aliases": [
+      "馬六甲",
+      "Malacca Sultanate"
+    ],
+    "importance": 0
+  },
+  "Aceh": {
+    "zh": "亞齊",
+    "native": "Aceh / اچيه",
+    "aliases": [
+      "亞齊蘇丹國",
+      "Aceh Sultanate"
+    ],
+    "importance": 0
+  },
+  "Brunei": {
+    "zh": "汶萊",
+    "native": "بروني دارالسلام",
+    "aliases": [
+      "Brunei Darussalam",
+      "汶萊達魯薩蘭國"
+    ],
+    "importance": 0
+  },
+  "Indonesia": {
+    "zh": "印度尼西亞",
+    "native": "Indonesia",
+    "aliases": [
+      "印尼",
+      "Republic of Indonesia"
+    ],
+    "importance": 0
+  },
+  "Malaysia": {
+    "zh": "馬來西亞",
+    "native": "Malaysia / مليسيا",
+    "aliases": [
+      "大馬",
+      "Malaysia"
+    ],
+    "importance": 0
+  },
+  "Philippines": {
+    "zh": "菲律賓",
+    "native": "Pilipinas",
+    "aliases": [
+      "Filipinas",
+      "Philippines"
+    ],
+    "importance": 0
+  },
+  "Mauryan Empire": {
+    "zh": "孔雀帝國",
+    "native": "मौर्य Maurya",
+    "aliases": [
+      "孔雀王朝",
+      "Maurya Empire"
+    ],
+    "importance": 8
+  },
+  "Gupta Empire": {
+    "zh": "笈多帝國",
+    "native": "गुप्त Gupta",
+    "aliases": [
+      "笈多王朝",
+      "Gupta dynasty"
+    ],
+    "importance": 0
+  },
+  "Kushan Empire": {
+    "zh": "貴霜帝國",
+    "native": "कुषाण Kuṣāṇa",
+    "aliases": [
+      "Kuṣāṇa",
+      "Kushan"
+    ],
+    "importance": 0
+  },
+  "Magadha": {
+    "zh": "摩揭陀",
+    "native": "मगध",
+    "aliases": [
+      "Magadha Kingdom"
+    ],
+    "importance": 0
+  },
+  "Indus valley civilization": {
+    "zh": "印度河文明",
+    "native": "Indus civilization",
+    "aliases": [
+      "哈拉帕文明",
+      "Harappan civilization",
+      "原語未解讀"
+    ],
+    "importance": 0
+  },
+  "Chola Empire": {
+    "zh": "朱羅帝國",
+    "native": "சோழர்",
+    "aliases": [
+      "Chola dynasty",
+      "朱羅王朝"
+    ],
+    "importance": 0
+  },
+  "Chola": {
+    "zh": "朱羅",
+    "native": "சோழர்",
+    "aliases": [
+      "Cholas",
+      "朱羅王朝"
+    ],
+    "importance": 0
+  },
+  "Cholas": {
+    "zh": "朱羅",
+    "native": "சோழர்",
+    "aliases": [
+      "Chola dynasty",
+      "朱羅王朝"
+    ],
+    "importance": 0
+  },
+  "Chalukya Empire": {
+    "zh": "遮婁其帝國",
+    "native": "ಚಾಲುಕ್ಯ",
+    "aliases": [
+      "Chalukya dynasty",
+      "遮婁其王朝"
+    ],
+    "importance": 0
+  },
+  "Chalukyas": {
+    "zh": "遮婁其",
+    "native": "ಚಾಲುಕ್ಯ",
+    "aliases": [
+      "Chalukya dynasty"
+    ],
+    "importance": 0
+  },
+  "Pallavas": {
+    "zh": "帕拉瓦",
+    "native": "பல்லவர்",
+    "aliases": [
+      "Pallava dynasty",
+      "帕拉瓦王朝"
+    ],
+    "importance": 0
+  },
+  "Vijayanagara": {
+    "zh": "毗奢耶那伽羅",
+    "native": "ವಿಜಯನಗರ",
+    "aliases": [
+      "勝利城王國",
+      "Vijayanagara Empire"
+    ],
+    "importance": 0
+  },
+  "Mughal Empire": {
+    "zh": "蒙兀兒帝國",
+    "native": "سلطنت مغلیہ",
+    "aliases": [
+      "莫臥兒帝國",
+      "Mughal India"
+    ],
+    "importance": 0
+  },
+  "Maratha Confederacy": {
+    "zh": "馬拉塔聯盟",
+    "native": "मराठा साम्राज्य",
+    "aliases": [
+      "Maratha Empire",
+      "馬拉塔帝國"
+    ],
+    "importance": 0
+  },
+  "Maratha": {
+    "zh": "馬拉塔",
+    "native": "मराठा",
+    "aliases": [
+      "Maratha Empire"
+    ],
+    "importance": 0
+  },
+  "British Raj": {
+    "zh": "英屬印度",
+    "native": "British Raj / भारत",
+    "aliases": [
+      "British India",
+      "印度帝國"
+    ],
+    "importance": 0
+  },
+  "British East India Company": {
+    "zh": "英國東印度公司",
+    "native": "East India Company",
+    "aliases": [
+      "EIC",
+      "不列顛東印度公司"
+    ],
+    "importance": 0
+  },
+  "India": {
+    "zh": "印度",
+    "native": "भारत / India",
+    "aliases": [
+      "Bhārat",
+      "印度共和國"
+    ],
+    "importance": 0
+  },
+  "Pakistan": {
+    "zh": "巴基斯坦",
+    "native": "پاکستان",
+    "aliases": [
+      "Pakistan",
+      "巴基斯坦伊斯蘭共和國"
+    ],
+    "importance": 0
+  },
+  "Bangladesh": {
+    "zh": "孟加拉",
+    "native": "বাংলাদেশ",
+    "aliases": [
+      "Bangladesh",
+      "孟加拉人民共和國"
+    ],
+    "importance": 0
+  },
+  "Nepal": {
+    "zh": "尼泊爾",
+    "native": "नेपाल",
+    "aliases": [
+      "Nepāl",
+      "Nepal"
+    ],
+    "importance": 0
+  },
+  "Bhutan": {
+    "zh": "不丹",
+    "native": "འབྲུག་ཡུལ་",
+    "aliases": [
+      "Druk Yul",
+      "雷龍之國"
+    ],
+    "importance": 0
+  },
+  "Sri Lanka": {
+    "zh": "斯里蘭卡",
+    "native": "ශ්‍රී ලංකා / இலங்கை",
+    "aliases": [
+      "錫蘭",
+      "Ceylon"
+    ],
+    "importance": 0
+  },
+  "Ceylon": {
+    "zh": "錫蘭",
+    "native": "ශ්‍රී ලංකා / இலங்கை",
+    "aliases": [
+      "斯里蘭卡",
+      "Sri Lanka"
+    ],
+    "importance": 0
+  },
+  "France": {
+    "zh": "法國",
+    "native": "France",
+    "aliases": [
+      "法蘭西",
+      "French Republic"
+    ],
+    "importance": 0
+  },
+  "Kingdom of France": {
+    "zh": "法蘭西王國",
+    "native": "Royaume de France",
+    "aliases": [
+      "法國王國",
+      "Kingdom of France"
+    ],
+    "importance": 0
+  },
+  "England": {
+    "zh": "英格蘭",
+    "native": "England",
+    "aliases": [
+      "英格蘭王國",
+      "Kingdom of England"
+    ],
+    "importance": 0
+  },
+  "Scotland": {
+    "zh": "蘇格蘭",
+    "native": "Scotland / Alba",
+    "aliases": [
+      "蘇格蘭王國",
+      "Kingdom of Scotland"
+    ],
+    "importance": 0
+  },
+  "Ireland": {
+    "zh": "愛爾蘭",
+    "native": "Éire",
+    "aliases": [
+      "Ireland",
+      "愛爾蘭共和國"
+    ],
+    "importance": 0
+  },
+  "United Kingdom": {
+    "zh": "英國",
+    "native": "United Kingdom",
+    "aliases": [
+      "聯合王國",
+      "大不列顛及北愛爾蘭聯合王國",
+      "UK"
+    ],
+    "importance": 0
+  },
+  "United Kingdom of Great Britain and Ireland": {
+    "zh": "大不列顛及愛爾蘭聯合王國",
+    "native": "United Kingdom of Great Britain and Ireland",
+    "aliases": [
+      "英國",
+      "UK"
+    ],
+    "importance": 0
+  },
+  "Spain": {
+    "zh": "西班牙",
+    "native": "España",
+    "aliases": [
+      "西班牙王國",
+      "Kingdom of Spain"
+    ],
+    "importance": 0
+  },
+  "Castile": {
+    "zh": "卡斯提爾",
+    "native": "Castilla",
+    "aliases": [
+      "卡斯蒂利亞",
+      "Castile"
+    ],
+    "importance": 0
+  },
+  "Castilla": {
+    "zh": "卡斯提爾",
+    "native": "Castilla",
+    "aliases": [
+      "Castile",
+      "卡斯蒂利亞"
+    ],
+    "importance": 0
+  },
+  "Castille": {
+    "zh": "卡斯提爾",
+    "native": "Castilla",
+    "aliases": [
+      "Castile",
+      "卡斯蒂利亞"
+    ],
+    "importance": 0
+  },
+  "Aragón": {
+    "zh": "亞拉岡",
+    "native": "Aragón",
+    "aliases": [
+      "阿拉貢",
+      "Aragon"
+    ],
+    "importance": 0
+  },
+  "Portugal": {
+    "zh": "葡萄牙",
+    "native": "Portugal",
+    "aliases": [
+      "葡萄牙共和國",
+      "Portuguese Republic"
+    ],
+    "importance": 0
+  },
+  "Dutch Republic": {
+    "zh": "荷蘭共和國",
+    "native": "Republiek der Zeven Verenigde Nederlanden",
+    "aliases": [
+      "尼德蘭七省聯合共和國",
+      "United Provinces"
+    ],
+    "importance": 0
+  },
+  "Netherlands": {
+    "zh": "荷蘭",
+    "native": "Nederland",
+    "aliases": [
+      "尼德蘭",
+      "Kingdom of the Netherlands"
+    ],
+    "importance": 0
+  },
+  "Belgium": {
+    "zh": "比利時",
+    "native": "België / Belgique / Belgien",
+    "aliases": [
+      "比利時王國",
+      "Belgium"
+    ],
+    "importance": 0
+  },
+  "Germany": {
+    "zh": "德國",
+    "native": "Deutschland",
+    "aliases": [
+      "德意志",
+      "Germany"
+    ],
+    "importance": 0
+  },
+  "German Empire": {
+    "zh": "德意志帝國",
+    "native": "Deutsches Reich",
+    "aliases": [
+      "德國第二帝國",
+      "Kaiserreich"
+    ],
+    "importance": 0
+  },
+  "Prussia": {
+    "zh": "普魯士",
+    "native": "Preußen",
+    "aliases": [
+      "Prussia",
+      "普魯士王國"
+    ],
+    "importance": 0
+  },
+  "Austria": {
+    "zh": "奧地利",
+    "native": "Österreich",
+    "aliases": [
+      "Austria",
+      "奧地利共和國"
+    ],
+    "importance": 0
+  },
+  "Austrian Empire": {
+    "zh": "奧地利帝國",
+    "native": "Kaisertum Österreich",
+    "aliases": [
+      "Austrian Empire",
+      "哈布斯堡帝國"
+    ],
+    "importance": 0
+  },
+  "Austria Hungary": {
+    "zh": "奧匈帝國",
+    "native": "Österreich-Ungarn / Ausztria–Magyarország",
+    "aliases": [
+      "Austria-Hungary",
+      "雙元帝國"
+    ],
+    "importance": 0
+  },
+  "Austro-Hungarian Empire": {
+    "zh": "奧匈帝國",
+    "native": "Österreich-Ungarn / Ausztria–Magyarország",
+    "aliases": [
+      "Austria-Hungary",
+      "雙元帝國"
+    ],
+    "importance": 0
+  },
+  "Hungary": {
+    "zh": "匈牙利",
+    "native": "Magyarország",
+    "aliases": [
+      "Hungary",
+      "馬札爾"
+    ],
+    "importance": 0
+  },
+  "Poland": {
+    "zh": "波蘭",
+    "native": "Polska",
+    "aliases": [
+      "Poland",
+      "波蘭共和國"
+    ],
+    "importance": 0
+  },
+  "Lithuania": {
+    "zh": "立陶宛",
+    "native": "Lietuva",
+    "aliases": [
+      "Lithuania"
+    ],
+    "importance": 0
+  },
+  "Denmark": {
+    "zh": "丹麥",
+    "native": "Danmark",
+    "aliases": [
+      "Denmark",
+      "丹麥王國"
+    ],
+    "importance": 0
+  },
+  "Denmark-Norway": {
+    "zh": "丹麥－挪威",
+    "native": "Danmark–Norge",
+    "aliases": [
+      "Denmark–Norway"
+    ],
+    "importance": 0
+  },
+  "Sweden": {
+    "zh": "瑞典",
+    "native": "Sverige",
+    "aliases": [
+      "Sweden",
+      "瑞典王國"
+    ],
+    "importance": 0
+  },
+  "Norway": {
+    "zh": "挪威",
+    "native": "Norge / Noreg",
+    "aliases": [
+      "Norway",
+      "挪威王國"
+    ],
+    "importance": 0
+  },
+  "Finland": {
+    "zh": "芬蘭",
+    "native": "Suomi / Finland",
+    "aliases": [
+      "Finland",
+      "芬蘭共和國"
+    ],
+    "importance": 0
+  },
+  "Iceland": {
+    "zh": "冰島",
+    "native": "Ísland",
+    "aliases": [
+      "Iceland"
+    ],
+    "importance": 0
+  },
+  "Icelandic Commonwealth": {
+    "zh": "冰島自由邦",
+    "native": "Þjóðveldið",
+    "aliases": [
+      "Icelandic Free State",
+      "冰島聯邦"
+    ],
+    "importance": 0
+  },
+  "Italy": {
+    "zh": "義大利",
+    "native": "Italia",
+    "aliases": [
+      "Italy",
+      "義大利共和國"
+    ],
+    "importance": 0
+  },
+  "Venice": {
+    "zh": "威尼斯",
+    "native": "Venezia / Venèsia",
+    "aliases": [
+      "威尼斯共和國",
+      "Serenissima"
+    ],
+    "importance": 0
+  },
+  "Genoa": {
+    "zh": "熱那亞",
+    "native": "Genova / Zêna",
+    "aliases": [
+      "熱那亞共和國",
+      "Republic of Genoa"
+    ],
+    "importance": 0
+  },
+  "Papal States": {
+    "zh": "教宗國",
+    "native": "Stato Pontificio",
+    "aliases": [
+      "教皇國",
+      "Papal State"
+    ],
+    "importance": 0
+  },
+  "Kingdom of Sardinia": {
+    "zh": "薩丁尼亞王國",
+    "native": "Regno di Sardegna",
+    "aliases": [
+      "撒丁王國",
+      "Sardinia-Piedmont"
+    ],
+    "importance": 0
+  },
+  "Kingdom of the Two Sicilies": {
+    "zh": "兩西西里王國",
+    "native": "Regno delle Due Sicilie",
+    "aliases": [
+      "Two Sicilies"
+    ],
+    "importance": 0
+  },
+  "Switzerland": {
+    "zh": "瑞士",
+    "native": "Schweiz / Suisse / Svizzera / Svizra",
+    "aliases": [
+      "Swiss Confederation",
+      "瑞士邦聯"
+    ],
+    "importance": 0
+  },
+  "Czechoslovakia": {
+    "zh": "捷克斯洛伐克",
+    "native": "Československo",
+    "aliases": [
+      "Czechoslovakia"
+    ],
+    "importance": 0
+  },
+  "Czech Republic": {
+    "zh": "捷克",
+    "native": "Česko",
+    "aliases": [
+      "Czechia",
+      "捷克共和國"
+    ],
+    "importance": 0
+  },
+  "Serbia": {
+    "zh": "塞爾維亞",
+    "native": "Србија",
+    "aliases": [
+      "Srbija",
+      "Serbia"
+    ],
+    "importance": 0
+  },
+  "Bulgaria": {
+    "zh": "保加利亞",
+    "native": "България",
+    "aliases": [
+      "Bulgaria"
+    ],
+    "importance": 0
+  },
+  "Romania": {
+    "zh": "羅馬尼亞",
+    "native": "România",
+    "aliases": [
+      "Romania"
+    ],
+    "importance": 0
+  },
+  "Albania": {
+    "zh": "阿爾巴尼亞",
+    "native": "Shqipëria",
+    "aliases": [
+      "Albania"
+    ],
+    "importance": 0
+  },
+  "Croatia": {
+    "zh": "克羅埃西亞",
+    "native": "Hrvatska",
+    "aliases": [
+      "Croatia"
+    ],
+    "importance": 0
+  },
+  "Ukraine": {
+    "zh": "烏克蘭",
+    "native": "Україна",
+    "aliases": [
+      "Ukraina",
+      "Ukraine"
+    ],
+    "importance": 0
+  },
+  "Yugoslavia": {
+    "zh": "南斯拉夫",
+    "native": "Југославија / Jugoslavija",
+    "aliases": [
+      "Yugoslavia"
+    ],
+    "importance": 0
+  },
+  "Ghana": {
+    "zh": "迦納",
+    "native": "Ghana",
+    "aliases": [
+      "迦納共和國",
+      "Republic of Ghana"
+    ],
+    "importance": 0
+  },
+  "Empire of Ghana": {
+    "zh": "迦納帝國",
+    "native": "Wagadu",
+    "aliases": [
+      "加納帝國",
+      "瓦加杜",
+      "Ghana Empire"
+    ],
+    "importance": 0
+  },
+  "Mali": {
+    "zh": "馬利",
+    "native": "Mali",
+    "aliases": [
+      "馬里",
+      "Mali"
+    ],
+    "importance": 8
+  },
+  "Songhai": {
+    "zh": "桑海",
+    "native": "Songhay",
+    "aliases": [
+      "桑海帝國",
+      "Songhai Empire"
+    ],
+    "importance": 0
+  },
+  "Kanem-Bornu": {
+    "zh": "加涅姆－博爾努",
+    "native": "Kanem–Bornu",
+    "aliases": [
+      "Kanem–Bornu Empire"
+    ],
+    "importance": 0
+  },
+  "Benin": {
+    "zh": "貝南",
+    "native": "Bénin",
+    "aliases": [
+      "Benin",
+      "貝南共和國"
+    ],
+    "importance": 0
+  },
+  "Asante": {
+    "zh": "阿散蒂",
+    "native": "Asanteman",
+    "aliases": [
+      "阿散蒂王國",
+      "Ashanti Empire"
+    ],
+    "importance": 0
+  },
+  "Dahomey": {
+    "zh": "達荷美",
+    "native": "Danxomè",
+    "aliases": [
+      "Dahomey",
+      "達荷美王國"
+    ],
+    "importance": 0
+  },
+  "Ethiopia": {
+    "zh": "衣索比亞",
+    "native": "ኢትዮጵያ",
+    "aliases": [
+      "Ethiopia",
+      "阿比西尼亞"
+    ],
+    "importance": 0
+  },
+  "Abyssinia": {
+    "zh": "阿比西尼亞",
+    "native": "ኢትዮጵያ",
+    "aliases": [
+      "衣索比亞帝國",
+      "Ethiopian Empire"
+    ],
+    "importance": 0
+  },
+  "Axum": {
+    "zh": "阿克蘇姆",
+    "native": "አክሱም",
+    "aliases": [
+      "Aksum",
+      "阿克蘇姆王國"
+    ],
+    "importance": 0
+  },
+  "Great Zimbabwe": {
+    "zh": "大辛巴威",
+    "native": "Zimbabwe",
+    "aliases": [
+      "Great Zimbabwe",
+      "大津巴布韋"
+    ],
+    "importance": 0
+  },
+  "Zulu": {
+    "zh": "祖魯",
+    "native": "amaZulu",
+    "aliases": [
+      "祖魯王國",
+      "Zulu Kingdom"
+    ],
+    "importance": 0
+  },
+  "Zululand": {
+    "zh": "祖魯蘭",
+    "native": "KwaZulu",
+    "aliases": [
+      "Zululand"
+    ],
+    "importance": 0
+  },
+  "South Africa": {
+    "zh": "南非",
+    "native": "South Africa / Suid-Afrika",
+    "aliases": [
+      "南非共和國",
+      "Republic of South Africa"
+    ],
+    "importance": 0
+  },
+  "Morocco": {
+    "zh": "摩洛哥",
+    "native": "المغرب",
+    "aliases": [
+      "al-Maghrib",
+      "Morocco"
+    ],
+    "importance": 0
+  },
+  "Algeria": {
+    "zh": "阿爾及利亞",
+    "native": "الجزائر",
+    "aliases": [
+      "al-Jazāʾir",
+      "Algeria"
+    ],
+    "importance": 0
+  },
+  "Tunisia": {
+    "zh": "突尼西亞",
+    "native": "تونس",
+    "aliases": [
+      "Tūnis",
+      "Tunisia"
+    ],
+    "importance": 0
+  },
+  "Nigeria": {
+    "zh": "奈及利亞",
+    "native": "Nigeria",
+    "aliases": [
+      "Nigeria",
+      "奈及利亞聯邦共和國"
+    ],
+    "importance": 0
+  },
+  "Kenya": {
+    "zh": "肯亞",
+    "native": "Kenya",
+    "aliases": [
+      "Kenya",
+      "肯亞共和國"
+    ],
+    "importance": 0
+  },
+  "Madagascar": {
+    "zh": "馬達加斯加",
+    "native": "Madagasikara",
+    "aliases": [
+      "Madagascar"
+    ],
+    "importance": 0
+  },
+  "Imerina": {
+    "zh": "伊默里納",
+    "native": "Imerina",
+    "aliases": [
+      "梅里納王國",
+      "Merina Kingdom"
+    ],
+    "importance": 0
+  },
+  "Aztec Empire": {
+    "zh": "阿茲特克帝國",
+    "native": "Ēxcān Tlahtōlōyān",
+    "aliases": [
+      "墨西加三方同盟",
+      "Mexica",
+      "Triple Alliance"
+    ],
+    "importance": 0
+  },
+  "Inca Empire": {
+    "zh": "印加帝國",
+    "native": "Tawantinsuyu",
+    "aliases": [
+      "塔萬廷蘇尤",
+      "Inka Empire"
+    ],
+    "importance": 8
+  },
+  "Maya": {
+    "zh": "馬雅",
+    "native": "Maya",
+    "aliases": [
+      "馬雅文明",
+      "Mayan civilization"
+    ],
+    "importance": 0
+  },
+  "Teotihuacan": {
+    "zh": "特奧蒂瓦坎",
+    "native": "Teōtīhuacān",
+    "aliases": [
+      "眾神之城",
+      "Teotihuacán（後世納瓦特爾語名稱）"
+    ],
+    "importance": 0
+  },
+  "Zapotec": {
+    "zh": "薩波特克",
+    "native": "Binnizá",
+    "aliases": [
+      "Zapotec",
+      "薩波特克文明"
+    ],
+    "importance": 0
+  },
+  "Huari Empire": {
+    "zh": "瓦里帝國",
+    "native": "Wari",
+    "aliases": [
+      "Huari",
+      "瓦里文明"
+    ],
+    "importance": 0
+  },
+  "Chimú Empire": {
+    "zh": "奇穆帝國",
+    "native": "Chimor",
+    "aliases": [
+      "Chimú",
+      "奇莫爾"
+    ],
+    "importance": 0
+  },
+  "Chimú": {
+    "zh": "奇穆",
+    "native": "Chimor",
+    "aliases": [
+      "Chimú",
+      "Chimor"
+    ],
+    "importance": 0
+  },
+  "Mapuche": {
+    "zh": "馬普切",
+    "native": "Mapuche",
+    "aliases": [
+      "阿勞坎人",
+      "Araucanians"
+    ],
+    "importance": 0
+  },
+  "Iroquois": {
+    "zh": "易洛魁聯盟",
+    "native": "Haudenosaunee",
+    "aliases": [
+      "豪德諾索尼",
+      "Iroquois Confederacy",
+      "六族聯盟"
+    ],
+    "importance": 0
+  },
+  "Cherokee": {
+    "zh": "切羅基",
+    "native": "ᏣᎳᎩ Tsalagi",
+    "aliases": [
+      "Cherokee",
+      "切羅基族"
+    ],
+    "importance": 0
+  },
+  "United States of America": {
+    "zh": "美利堅合眾國",
+    "native": "United States of America",
+    "aliases": [
+      "美國",
+      "USA",
+      "United States"
+    ],
+    "importance": 0
+  },
+  "United States": {
+    "zh": "美國",
+    "native": "United States of America",
+    "aliases": [
+      "美利堅合眾國",
+      "USA"
+    ],
+    "importance": 0
+  },
+  "Canada": {
+    "zh": "加拿大",
+    "native": "Canada",
+    "aliases": [
+      "Canada"
+    ],
+    "importance": 0
+  },
+  "Mexico": {
+    "zh": "墨西哥",
+    "native": "México",
+    "aliases": [
+      "墨西哥合眾國",
+      "United Mexican States"
+    ],
+    "importance": 0
+  },
+  "Brazil": {
+    "zh": "巴西",
+    "native": "Brasil",
+    "aliases": [
+      "巴西聯邦共和國",
+      "Brazil"
+    ],
+    "importance": 0
+  },
+  "Argentina": {
+    "zh": "阿根廷",
+    "native": "Argentina",
+    "aliases": [
+      "阿根廷共和國",
+      "Argentine Republic"
+    ],
+    "importance": 0
+  },
+  "Peru": {
+    "zh": "秘魯",
+    "native": "Perú / Piruw",
+    "aliases": [
+      "Peru",
+      "秘魯共和國"
+    ],
+    "importance": 0
+  },
+  "Chile": {
+    "zh": "智利",
+    "native": "Chile",
+    "aliases": [
+      "Chile",
+      "智利共和國"
+    ],
+    "importance": 0
+  },
+  "Colombia": {
+    "zh": "哥倫比亞",
+    "native": "Colombia",
+    "aliases": [
+      "Colombia",
+      "哥倫比亞共和國"
+    ],
+    "importance": 0
+  },
+  "Venezuela": {
+    "zh": "委內瑞拉",
+    "native": "Venezuela",
+    "aliases": [
+      "Venezuela"
+    ],
+    "importance": 0
+  },
+  "Bolivia": {
+    "zh": "玻利維亞",
+    "native": "Bolivia / Buliwya",
+    "aliases": [
+      "Bolivia"
+    ],
+    "importance": 0
+  },
+  "Ecuador": {
+    "zh": "厄瓜多",
+    "native": "Ecuador",
+    "aliases": [
+      "Ecuador"
+    ],
+    "importance": 0
+  },
+  "Haiti": {
+    "zh": "海地",
+    "native": "Haïti / Ayiti",
+    "aliases": [
+      "Haiti"
+    ],
+    "importance": 0
+  },
+  "Cuba": {
+    "zh": "古巴",
+    "native": "Cuba",
+    "aliases": [
+      "Cuba",
+      "古巴共和國"
+    ],
+    "importance": 0
+  },
+  "Australia": {
+    "zh": "澳洲",
+    "native": "Australia",
+    "aliases": [
+      "澳大利亞",
+      "Commonwealth of Australia"
+    ],
+    "importance": 0
+  },
+  "New Zealand": {
+    "zh": "紐西蘭",
+    "native": "Aotearoa / New Zealand",
+    "aliases": [
+      "New Zealand"
+    ],
+    "importance": 0
+  },
+  "Maori": {
+    "zh": "毛利人",
+    "native": "Māori",
+    "aliases": [
+      "紐西蘭毛利族",
+      "Māori"
+    ],
+    "importance": 0
+  },
+  "Maoris": {
+    "zh": "毛利人",
+    "native": "Māori",
+    "aliases": [
+      "Maori",
+      "紐西蘭毛利族"
+    ],
+    "importance": 0
+  },
+  "Tuʻi Tonga Empire": {
+    "zh": "東加帝國",
+    "native": "Tuʻi Tonga",
+    "aliases": [
+      "湯加帝國",
+      "Tongan Empire"
+    ],
+    "importance": 0
+  },
+  "Kingdom of Hawaii": {
+    "zh": "夏威夷王國",
+    "native": "Ke Aupuni Hawaiʻi",
+    "aliases": [
+      "Hawaiian Kingdom"
+    ],
+    "importance": 0
+  },
+  "Taiwan": {
+    "zh": "臺灣",
+    "native": "臺灣",
+    "aliases": [
+      "Taiwan",
+      "Formosa",
+      "中華民國（現代）"
+    ],
+    "importance": 0
+  },
+  "Dutch Formosa": {
+    "zh": "荷屬臺灣",
+    "native": "Nederlands-Formosa",
+    "aliases": [
+      "荷蘭福爾摩沙",
+      "Dutch Taiwan"
+    ],
+    "importance": 0
+  },
+  "Seleucid Kingdom": {
+    "zh": "塞琉古王國",
+    "native": "Βασιλεία τῶν Σελευκιδῶν",
+    "aliases": [
+      "塞流古王朝",
+      "Seleucid Empire"
+    ],
+    "importance": 0
+  },
+  "Ming Chinese Empire": {
+    "zh": "大明帝國",
+    "native": "大明",
+    "aliases": [
+      "明朝",
+      "Ming dynasty"
+    ],
+    "importance": 0
+  },
+  "Ming Empire": {
+    "zh": "明帝國",
+    "native": "大明",
+    "aliases": [
+      "明朝",
+      "Ming dynasty"
+    ],
+    "importance": 8
+  },
+  "Qing Empire": {
+    "zh": "清帝國",
+    "native": "大清 / ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
+    "aliases": [
+      "清朝",
+      "Qing dynasty"
+    ],
+    "importance": 8
+  },
+  "Sui Empire": {
+    "zh": "隋帝國",
+    "native": "大隋",
+    "aliases": [
+      "隋朝",
+      "Sui dynasty"
+    ],
+    "importance": 0
+  },
+  "Srivijaya Empire": {
+    "zh": "室利佛逝帝國",
+    "native": "Śrīvijaya",
+    "aliases": [
+      "三佛齊",
+      "Sriwijaya"
+    ],
+    "importance": 0
+  },
+  "Sultanate of Delhi": {
+    "zh": "德里蘇丹國",
+    "native": "سلطنت دهلی",
+    "aliases": [
+      "Delhi Sultanate",
+      "德里諸蘇丹王朝"
+    ],
+    "importance": 0
+  },
+  "Seljuk Caliphate": {
+    "zh": "塞爾柱政權",
+    "native": "آل سلجوق",
+    "aliases": [
+      "Seljuk Empire",
+      "塞爾柱帝國（資料集沿用名稱）"
+    ],
+    "importance": 0
+  },
+  "Tanzania, United Republic of": {
+    "zh": "坦尚尼亞",
+    "native": "Tanzania",
+    "aliases": [
+      "坦尚尼亞聯合共和國",
+      "Tanzania"
+    ],
+    "importance": 0
+  },
+  "Poland-Lithuania": {
+    "zh": "波蘭立陶宛聯邦",
+    "native": "Rzeczpospolita Obojga Narodów",
+    "aliases": [
+      "兩國共和國",
+      "Polish–Lithuanian Commonwealth"
+    ],
+    "importance": 0
+  },
+  "Olmec": {
+    "zh": "奧爾梅克",
+    "native": "Olmec",
+    "aliases": [
+      "奧爾梅克文明",
+      "原自稱未詳"
+    ],
+    "importance": 0
+  },
+  "Mongolia": {
+    "zh": "蒙古國",
+    "native": "Монгол Улс / ᠮᠣᠩᠭᠣᠯ",
+    "aliases": [
+      "Mongolia",
+      "蒙古"
+    ],
+    "importance": 0
+  },
+  "Georgian Kingdom": {
+    "zh": "喬治亞王國",
+    "native": "საქართველოს სამეფო",
+    "aliases": [
+      "格魯吉亞王國",
+      "Kingdom of Georgia"
+    ],
+    "importance": 0
+  },
+  "Celts": {
+    "zh": "凱爾特人",
+    "native": "Keltoi / Celtae",
+    "aliases": [
+      "Celtic peoples",
+      "塞爾特人"
+    ],
+    "importance": 0
+  },
+  "Saami": {
+    "zh": "薩米人",
+    "native": "Sámi",
+    "aliases": [
+      "Sami",
+      "拉普人（歷史他稱）"
+    ],
+    "importance": 0
+  },
+  "Finno-Ugric taiga hunter-gatherers": {
+    "zh": "芬蘭－烏戈爾針葉林狩獵採集社群",
+    "native": "Finno-Ugric taiga hunter-gatherers",
+    "aliases": [
+      "芬烏語族社群",
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Subarctic forest hunter-gatherers": {
+    "zh": "亞北極森林狩獵採集社群",
+    "native": "Subarctic forest hunter-gatherers",
+    "aliases": [
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Eastern North American hunter-gatherers": {
+    "zh": "北美東部狩獵採集社群",
+    "native": "Eastern North American hunter-gatherers",
+    "aliases": [
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Manioc farmers": {
+    "zh": "樹薯農耕社群",
+    "native": "Manioc farmers",
+    "aliases": [
+      "木薯種植社群",
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "West African cereal farmers": {
+    "zh": "西非穀物農耕社群",
+    "native": "West African cereal farmers",
+    "aliases": [
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Savanna hunter-gatherers": {
+    "zh": "稀樹草原狩獵採集社群",
+    "native": "Savanna hunter-gatherers",
+    "aliases": [
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Paleo-Siberian hunter-gatherers": {
+    "zh": "古西伯利亞狩獵採集社群",
+    "native": "Paleo-Siberian hunter-gatherers",
+    "aliases": [
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Australian aboriginal hunter-gatherers": {
+    "zh": "澳洲原住民族狩獵採集社群",
+    "native": "Australian aboriginal hunter-gatherers",
+    "aliases": [
+      "澳洲原住民族",
+      "資料集文化區域分類"
+    ],
+    "importance": 0
+  },
+  "Khoisan": {
+    "zh": "科伊桑諸族",
+    "native": "Khoisan",
+    "aliases": [
+      "Khoesan",
+      "科伊科伊人與桑人"
+    ],
+    "importance": 0
+  },
+  "Bantu peoples": {
+    "zh": "班圖諸族",
+    "native": "Bantu",
+    "aliases": [
+      "班圖語族群",
+      "Bantu-speaking peoples"
+    ],
+    "importance": 0
+  },
+  "Bantu": {
+    "zh": "班圖諸族",
+    "native": "Bantu",
+    "aliases": [
+      "班圖語族群",
+      "Bantu peoples"
+    ],
+    "importance": 0
+  },
+  "Cuman Khanates": {
+    "zh": "庫曼諸汗國",
+    "native": "Quman",
+    "aliases": [
+      "欽察－庫曼聯盟",
+      "Cuman–Kipchak confederation"
+    ],
+    "importance": 0
+  },
+  "Khazars": {
+    "zh": "可薩",
+    "native": "Khazar",
+    "aliases": [
+      "哈札爾",
+      "Khazar Khaganate"
+    ],
+    "importance": 0
+  },
+  "Avars": {
+    "zh": "阿瓦爾人",
+    "native": "Avar",
+    "aliases": [
+      "阿瓦爾汗國",
+      "Avar Khaganate"
+    ],
+    "importance": 0
+  },
+  "Mongols": {
+    "zh": "蒙古諸部",
+    "native": "ᠮᠣᠩᠭᠣᠯ",
+    "aliases": [
+      "蒙古人",
+      "Mongol peoples"
+    ],
+    "importance": 0
+  },
+  "Cuman-Kipchak confederation": {
+    "zh": "庫曼－欽察聯盟",
+    "native": "Quman / Qïpchaq",
+    "aliases": [
+      "Cumania",
+      "庫曼汗國"
+    ],
+    "importance": 0
+  },
+  "Ghaznavid Emirate": {
+    "zh": "加茲尼王朝",
+    "native": "غزنویان",
+    "aliases": [
+      "Ghaznavids",
+      "伽色尼王朝"
+    ],
+    "importance": 0
+  },
+  "Khwarazmian dynasty": {
+    "zh": "花剌子模王朝",
+    "native": "خوارزمشاهیان",
+    "aliases": [
+      "Khwarazmian Empire",
+      "花剌子模沙王朝"
+    ],
+    "importance": 0
+  },
+  "Kara Khitai Khaganate": {
+    "zh": "西遼",
+    "native": "大遼 / Qara Khitai",
+    "aliases": [
+      "喀喇契丹",
+      "Western Liao"
+    ],
+    "importance": 0
+  },
+  "Karkhanids": {
+    "zh": "喀喇汗王朝",
+    "native": "Qarakhanid",
+    "aliases": [
+      "黑汗王朝",
+      "Kara-Khanid Khanate"
+    ],
+    "importance": 0
+  },
+  "Khitans": {
+    "zh": "契丹",
+    "native": "契丹 / Khitan",
+    "aliases": [
+      "Khitan people",
+      "遼"
+    ],
+    "importance": 0
+  },
+  "Simhala": {
+    "zh": "僧伽羅",
+    "native": "සිංහල",
+    "aliases": [
+      "Sinhala",
+      "僧伽羅王國"
+    ],
+    "importance": 0
+  },
+  "Monte Albán": {
+    "zh": "蒙特阿爾班",
+    "native": "Monte Albán",
+    "aliases": [
+      "阿爾班山",
+      "薩波特克文明中心（原名未詳）"
+    ],
+    "importance": 0
+  },
+  "Chavin": {
+    "zh": "查文",
+    "native": "Chavín",
+    "aliases": [
+      "查文文化",
+      "Chavín culture"
+    ],
+    "importance": 0
+  },
+  "Ubaid": {
+    "zh": "歐貝德文化",
+    "native": "Ubaid",
+    "aliases": [
+      "烏拜德文化",
+      "原名未詳"
+    ],
+    "importance": 0
+  },
+  "Dapenkeng culture": {
+    "zh": "大坌坑文化",
+    "native": "大坌坑",
+    "aliases": [
+      "Dapenkeng",
+      "臺灣新石器文化"
+    ],
+    "importance": 0
+  },
+  "Dakapeng culture": {
+    "zh": "大坌坑文化",
+    "native": "大坌坑",
+    "aliases": [
+      "Dapenkeng culture",
+      "資料集拼寫變體"
+    ],
+    "importance": 0
+  },
+  "Yamnaya culture": {
+    "zh": "顏那亞文化",
+    "native": "Ямная культура",
+    "aliases": [
+      "繩紋墳文化",
+      "Yamnaya"
+    ],
+    "importance": 0
+  },
+  "Arctic marine mammal hunters": {
+    "zh": "北極海洋狩獵社群",
+    "native": "Arctic marine mammal hunters",
+    "aliases": [
+      "Arctic marine mammal hunters"
+    ],
+    "importance": 0
+  },
+  "Plain bison hunters": {
+    "zh": "大平原野牛狩獵社群",
+    "native": "Plains bison hunters",
+    "aliases": [
+      "Plain bison hunters"
+    ],
+    "importance": 0
+  },
+  "Desert hunter-gatherers": {
+    "zh": "沙漠狩獵採集社群",
+    "native": "Desert hunter-gatherers",
+    "aliases": [
+      "Desert hunter-gatherers"
+    ],
+    "importance": 0
+  },
+  "Saka Kingdom": {
+    "zh": "塞迦王國",
+    "native": "Saka",
+    "aliases": [
+      "Saka Kingdom"
+    ],
+    "importance": 0
+  },
+  "Buwayhid Emirates": {
+    "zh": "白益諸酋長國",
+    "native": "آل بویه",
+    "aliases": [
+      "Buwayhid Emirates"
+    ],
+    "importance": 0
+  },
+  "Tuareg Nomadic Tribes": {
+    "zh": "圖阿雷格遊牧部族",
+    "native": "Imuhagh",
+    "aliases": [
+      "Tuareg Nomadic Tribes"
+    ],
+    "importance": 0
+  }
+}
