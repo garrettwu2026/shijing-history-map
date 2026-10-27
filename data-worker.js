@@ -13,6 +13,11 @@ self.onmessage=async({data:{id,path,cancel}})=>{
     const response=await fetch(path,{signal:controller.signal});
     if(!response.ok)throw Error(`${path} (${response.status})`);
     const data=await response.json();
+    // Some snapshots merge all unnamed land into one MultiPolygon (1492).
+    // Split its parts so the Antarctic continent can be classified separately.
+    if(data.type==='FeatureCollection')data.features=data.features.flatMap(f=>
+      !f.properties?.NAME?.trim() && f.geometry?.type==='MultiPolygon'
+        ? f.geometry.coordinates.filter(p=>p[0]?.length).map(coordinates=>({...f,geometry:{type:'Polygon',coordinates}})) : [f]);
     if(data.type==='FeatureCollection')for(const f of data.features){
       if(!f.geometry?.coordinates)continue;
       const parts=f.geometry.type==='MultiPolygon'?f.geometry.coordinates:[f.geometry.coordinates];

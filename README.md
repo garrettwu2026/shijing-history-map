@@ -97,3 +97,9 @@ python3 scripts/build-static.py
 Render Blueprint 使用 static runtime、main 分支、`autoDeployTrigger: commit`（[官方規格](https://render.com/docs/blueprint-spec)）。發布內容只包含 `dist/` 公開資產；資料輸出為每檔 SHA-256 前16碼雜湊檔名（疆界改為 `.json`），manifest 與底圖 URL 同步重寫。資料採一年 immutable 快取；HTML、app.js 與 data-worker.js 為 no-cache；資料使用 application/json 以支援 CDN 壓縮。可用 `SITE_URL` 指定正式站點完整網址，建置時會補上絕對分享圖網址與 canonical。此輪未連接 Render 帳號或部署，正式環境回應標頭仍需部署後驗證。
 
 1492 簡化需 Shapely：`python3 scripts/simplify-1492.py`。以 NAME 分組、保留各多邊形部分，0.12°拓撲保留簡化，再取座標小數3位；細節精度降低，不能作精密疆界研究。新分享圖使用本地疆界幾何繪製，延續原資料 GPL-3.0 來源。
+
+時間控制列預設收合為「年份、滑桿、播放、設定」，桌機與手機實測高度皆為62px。「設定」可展開年份輸入、快照與年代差異說明、刻度、播放步幅及時代捷徑，保留既有功能。
+
+空名稱區域以幾何範圍辨識：逐一檢查54份快照：53份包含橫跨全球經度、延伸至南極點且完全位於南緯60度以南的南極洲；1945與1960年有名稱，1492年混在未命名的多重多邊形中，於Worker拆分後辨識；前5000年缺少該輪廓，補用底圖的南極洲輪廓。該區域以中性色與「南極洲 Antarctica」地理區域彈窗呈現，不列入政體搜尋與政體計數。選取年1959年起補充《南極條約》體系，區分1959年簽署與1961年生效（[南極條約秘書處](https://www.ats.aq/e/antarctictreaty.html)）；無永久居民說明參考[英國南極調查局](https://www.bas.ac.uk/about/education-and-schools/antarctic-factsheet/)。其他空名稱區域採淡色且不可互動；名稱彈窗省略空白欄位。原始GeoJSON不變。
+
+此輪驗證：既有事件／v3／靜態輸出驗證，以及Chrome headless的browser、v3、timeline、performance腳本；新增 `scripts/verify-compact.cjs` 檢查1440×900、390×844、320×568及844×390的控制列高度、展開功能、空欄位、空名稱區域及1958／1959／1961／2026條約說明。截圖與報告位於 `artifacts/compact-*`、`artifacts/antarctica-*`。

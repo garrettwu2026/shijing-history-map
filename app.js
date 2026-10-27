@@ -10,7 +10,7 @@
   const eventDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const era = y => y < -1200 ? '早期文明' : y < 500 ? '古典時代' : y < 1450 ? '中古世界' : y < 1800 ? '航海與帝國' : y < 1945 ? '近代浪潮' : '當代世界';
   const status = (message = '') => { $('map-status').textContent = message; $('map-status').hidden = !message; };
-  let map, eventLayer, labelLayer, borderTimer, prefetchHandle;
+  let map, eventLayer, labelLayer, borderTimer, prefetchHandle, baselinePromise;
 
   function hash(s) { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; }
   const polityColors=new Map();
@@ -24,9 +24,18 @@
     const endonyms=p.endonyms.filter(n=>year>=n.fromYear&&year<=n.toYear);
     return {...p,zh:correction?.zh||period?.zh||p.zh,native:endonyms[0]?.original||'',endonyms,aliases:period?.aliases||[],correction};
   }
+  // Identify the continent by geometry, including snapshots with a name.
+  function isAntarctica(f) {
+    const b=f.labelGeometry?.bounds;
+    return b && b[1]<=-85 && b[3]<-60 && b[2]-b[0]>300;
+  }
+  function antarcticaHTML() {
+    return `<div class="popup-kicker">地理區域 · ${esc(yearText(state.year))}</div><h3 class="popup-title">南極洲 Antarctica</h3><p>地理區域，非政體。無人定居（無永久居民；近現代有季節性與全年科研人員）。</p>${state.year>=1959?'<p>《南極條約》體系：條約於 1959 年簽署，1961 年生效；以和平利用及科學合作為原則。</p><p><a href="https://www.ats.aq/e/antarctictreaty.html" target="_blank" rel="noopener">南極條約秘書處</a></p>':''}`;
+  }
   function polityHTML(key) {
     const n=nameFor(key);
-    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh)}</h3>${(n.endonyms||[]).map(e=>`<p dir="auto">當時自稱：${esc(e.original)}<br>${esc(e.transliteration)}<br>中文意譯：${esc(e.meaning)}</p>`).join('')}<p>他稱／後世稱呼：${esc((n.exonyms||[]).join('、')||'未收錄')}</p><p>地理別稱：${esc((n.geographicAliases||[]).join('、')||'未收錄')}</p><p>資料集名稱：${esc(key)}</p><p>譯名可信度：${esc(n.confidence)}；${n.translationStatus==='untranslated'?'中文譯名待考證':'既有譯名仍待逐筆複核'}</p>${n.correction?`<p class="correction">勘誤：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>穩定 ID：${esc(n.id)}。疆界為概略重建。</small>`;
+    const field=(label,value)=>value?.trim()?`<p dir="auto">${label}：${esc(value)}</p>`:'';
+    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh||key)}</h3>${(n.endonyms||[]).map(e=>field('當時自稱',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.confidence?`<p>譯名可信度：${esc(n.confidence)}；${n.translationStatus==='untranslated'?'中文譯名待考證':'既有譯名仍待逐筆複核'}</p>`:''}${n.correction?`<p class="correction">勘誤：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>${n.id?`穩定 ID：${esc(n.id)}。`:''}疆界為概略重建。</small>`;
   }
   function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(e.title)}</h3><p>${esc(e.description)}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='research-link-unverified'?'尚未逐筆核實':'已核實'}）</a></p></div>`; }
   const worker = new Worker('data-worker.js');
@@ -80,19 +89,24 @@
     const previousLayer=state.layer;
     status('正在展開歷史疆界…');
     try {
-      const data = await snapshotData(s);
+      const [snapshot,base] = await Promise.all([snapshotData(s),baselinePromise]);
+      // The 5000 BCE snapshot omits Antarctica; use the same neutral land outline.
+      const antarctica=base.features.find(isAntarctica);
+      const data=snapshot.features.some(isAntarctica)||!antarctica?snapshot:{...snapshot,features:[...snapshot.features,antarctica]};
       if (token !== state.request) return;
       const nextRenderer=L.canvas();
       polityColors.clear();
       const colors=['#dcaa70','#78b3b0','#bba0d1','#b8c879','#d78f9b','#86a9d5','#d1ba92','#80bd91'];
       const neighbors=[];
-      for(const f of data.features){if(!f.geometry)continue;const name=f.properties?.NAME||'';if(polityColors.has(name))continue;const b=f.labelGeometry.bounds;const bounds=L.latLngBounds([[b[1],b[0]],[b[3],b[2]]]);if(!bounds.isValid())continue;const used=new Set(neighbors.filter(n=>n.bounds.intersects(bounds)).map(n=>n.color));const chosen=colors.find(c=>!used.has(c))||colors[hash(name)%colors.length];polityColors.set(name,chosen);neighbors.push({bounds,color:chosen});}
+      for(const f of data.features){if(!f.geometry || isAntarctica(f) || !f.properties?.NAME?.trim())continue;const name=f.properties.NAME;if(polityColors.has(name))continue;const b=f.labelGeometry.bounds;const bounds=L.latLngBounds([[b[1],b[0]],[b[3],b[2]]]);if(!bounds.isValid())continue;const used=new Set(neighbors.filter(n=>n.bounds.intersects(bounds)).map(n=>n.color));const chosen=colors.find(c=>!used.has(c))||colors[hash(name)%colors.length];polityColors.set(name,chosen);neighbors.push({bounds,color:chosen});}
       const layer = L.geoJSON(data, {
         renderer: nextRenderer,
-        style: f => ({color: color(f.properties?.NAME || ''), weight: .8, opacity: .85, fillColor: color(f.properties?.NAME || ''), fillOpacity: .42, smoothFactor: 1.2}),
+        style: f => isAntarctica(f) || !f.properties?.NAME?.trim() ? {color:'#91a6ab',weight:.5,opacity:.35,fillColor:'#91a6ab',fillOpacity:isAntarctica(f)?.22:.12,interactive:isAntarctica(f)} : ({color: color(f.properties?.NAME || ''), weight: .8, opacity: .85, fillColor: color(f.properties?.NAME || ''), fillOpacity: .42, smoothFactor: 1.2}),
         onEachFeature: (f, polygon) => {
-          const key = f.properties?.NAME || '未命名區域';
-          polygon.bindPopup(() => polityHTML(key), {maxWidth: 330, autoPanPadding: [45, 60]});
+          const key = f.properties?.NAME?.trim();
+          if(!key && !isAntarctica(f)){polygon.options.interactive=false;return;}
+          if(isAntarctica(f))polygon.bindTooltip('南極洲 Antarctica · 地理區域');
+          polygon.bindPopup(() => isAntarctica(f) ? antarcticaHTML() : polityHTML(key), {maxWidth: Math.min(330,innerWidth-100), autoPanPaddingTopLeft:[15,70], autoPanPaddingBottomRight:[15,document.querySelector('.time-dock').offsetHeight+65]});
           polygon.on('mouseover', () => polygon.setStyle({weight: 1.8, fillOpacity: .65, color: '#ead6a6'}));
           polygon.on('mouseout', () => layer.resetStyle(polygon));
         }
@@ -105,7 +119,7 @@
       if(previousLayer){const oldRenderer=state.borderRenderer;map.removeLayer(previousLayer);if(oldRenderer)map.removeLayer(oldRenderer);}
       state.borderRenderer=nextRenderer;
       state.layer = layer; renderPolities();
-      $('polity-count').textContent = `${new Set(data.features.map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
+      $('polity-count').textContent = `${new Set(data.features.filter(f=>!isAntarctica(f)).map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
       updateSnapshotCaption(s);
       renderLabels(); status();
       prefetchAdjacent(s);
@@ -125,7 +139,7 @@
     if (!state.labels || !state.layer) return;
     const candidates=[], zoom=map.getZoom(), size=map.getSize();
     state.layer.eachLayer(layer => {
-      if (!layer.getBounds) return;
+      if (!layer.getBounds || isAntarctica(layer.feature)) return;
       const key=layer.feature.properties?.NAME, bounds=layer.getBounds();
       if (!key?.trim() || key.trim()==='?' || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
       const area=layer.feature.labelGeometry.area;
@@ -278,9 +292,10 @@
   function renderPolities(){
     const list=$('polity-list');if(!state.layer)return;list.replaceChildren();
     const q=$('polity-search').value.toLowerCase(),seen=new Set();
-    state.layer.eachLayer(layer=>{const key=layer.feature.properties?.NAME,n=nameFor(key);if(!n.zh||seen.has(n.id)||!JSON.stringify([n.zh,n.native,n.aliases,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))return;seen.add(n.id);const b=document.createElement('button');b.textContent=n.zh;b.onclick=()=>{state.returnFocus=$('polity-open');$('polity-dialog').close();layer.openPopup(layer.getBounds().getCenter());};list.append(b);});
+    state.layer.eachLayer(layer=>{const key=layer.feature.properties?.NAME;if(!key?.trim()||isAntarctica(layer.feature))return;const n=nameFor(key);if(!n.zh||seen.has(n.id)||!JSON.stringify([n.zh,n.native,n.aliases,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))return;seen.add(n.id);const b=document.createElement('button');b.textContent=n.zh;b.onclick=()=>{state.returnFocus=$('polity-open');$('polity-dialog').close();layer.openPopup(layer.getBounds().getCenter());};list.append(b);});
   }
   async function init() {
+    $('time-options-toggle').onclick=()=>{const open=$('time-options').hidden;$('time-options').hidden=!open;$('time-options-toggle').setAttribute('aria-expanded',String(open));$('time-options-toggle').textContent=open?'收合 ▾':'設定 ▴';renderLabels();};
     $('polity-search').oninput=renderPolities;
     $('polity-open').onclick=()=>{$('polity-dialog').showModal();$('polity-search').focus();};
     $('polity-close').onclick=()=>$('polity-dialog').close();
@@ -292,7 +307,8 @@
     map.createPane('land'); map.getPane('land').style.zIndex = 200;
     map.createPane('grid'); map.getPane('grid').style.zIndex = 210;
     map.attributionControl.addAttribution('疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0');
-    snapshotData({file:'world_2010.geojson'}).then(data => L.geoJSON(data,{renderer:L.canvas({pane:'land'}),pane:'land',interactive:false,style:{stroke:false,fillColor:'#354247',fillOpacity:1}}).addTo(map)).catch(()=>{});
+    baselinePromise=snapshotData({file:'world_2010.geojson'});
+    baselinePromise.then(data => L.geoJSON(data,{renderer:L.canvas({pane:'land'}),pane:'land',interactive:false,style:{stroke:false,fillColor:'#354247',fillOpacity:1}}).addTo(map)).catch(()=>{});
     for (let lat = -60; lat <= 60; lat += 30) L.polyline([[lat,-180],[lat,180]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     for (let lon = -180; lon <= 180; lon += 30) L.polyline([[-85,lon],[85,lon]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     eventLayer=L.layerGroup().addTo(map); labelLayer=L.layerGroup().addTo(map);

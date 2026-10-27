@@ -43,7 +43,7 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
   assert.equal(await page.evaluate(()=>window.borderBuilds),0,'slider waited at least 90ms');
   await page.waitForFunction(()=>window.borderBuilds===1);
   const select=async year=>{
-   await page.locator('#year-input').fill(String(year));await page.locator('#year-form').evaluate(form=>form.requestSubmit());
+   await page.locator('#time-options-toggle').click();await page.locator('#year-input').fill(String(year));await page.locator('#time-options-toggle').click();await page.locator('#year-form').evaluate(form=>form.requestSubmit());
    await page.waitForFunction(()=>document.querySelector('#map-status').hidden && document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));
   };
   // Disable the browser HTTP cache: returning to a snapshot must use the app cache.

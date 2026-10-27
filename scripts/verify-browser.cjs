@@ -43,7 +43,7 @@ const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{r
  await page.locator('#labels-toggle').click();await page.waitForTimeout(300);if(await page.locator('.polity-label').count())throw Error('Labels not hidden');
  await page.locator('#about-button').click();await page.locator('#close-about').click();
  if(width===390){await page.locator('#sheet-toggle').click();await page.screenshot({path:path.join(artifacts,'mobile-expanded.png')});if(await page.locator('#sheet-toggle').getAttribute('aria-expanded')==='true')await page.locator('#sheet-toggle').click();}
- await page.locator('#year-input').fill('1200');await page.locator('#year-form button').click();await page.waitForTimeout(300);
+ await page.locator('#time-options-toggle').click();await page.locator('#year-input').fill('1200');await page.locator('#time-options-toggle').click();await page.locator('#year-form').evaluate(f=>f.requestSubmit());await page.waitForTimeout(300);
  await page.locator('#play-button').click();await page.waitForTimeout(1600);await page.locator('#play-button').click();
  if(await page.locator('#year-input').inputValue()==='1200')throw Error('Playback did not advance');
  await page.close();
