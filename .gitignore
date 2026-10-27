@@ -5,3 +5,5 @@ artifacts/
 .codex/
 .aws/
 .agents/
+
+dist/

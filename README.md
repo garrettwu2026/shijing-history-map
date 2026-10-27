@@ -28,7 +28,7 @@ python3 -m http.server 8000
 - `data/world_*.geojson`：以 **curl 實際下載的54份完整上游快照**，包含上游提供的早期史前快照。無需執行下載腳本即可使用。
 - `data/snapshots.json`：按年份排序的檔案索引。
 - `data/names.json`：以 GeoJSON 的 `NAME` **精確值**為鍵；包含政體、文明或文化區域的名稱。欄位為 `zh`（繁體中文）、`native`（原語文字／歷史慣用名）、`aliases`（常見別稱陣列）、`importance`（標籤優先級，0為一般、8以上為主要政體）。查無字典時顯示資料集原名，彈出視窗會說明。標籤依球面多邊形面積、名稱重要度、縮放級別與實際文字矩形取捨，並避開介面；中文大字、原語小字，別稱僅在彈出視窗；點選任一疆域仍可讀取全部收錄別稱。
-- `data/events.json`：191件事件，從西元前5000年至2026年。欄位為 `id`、`year`、`lat`、`lon`、`title`、`description`、`dateNote`。`約`表示近似年代，`傳統`表示傳統紀年。座標是相關地點，例如航太任務使用發射地點，並非事件影響範圍。
+- `data/events.json`：880件事件，從西元前5000年至2026年。欄位為 `id`、`year`、`lat`、`lon`、`title`、`description`、`dateNote`。`約`表示近似年代，`傳統`表示傳統紀年。座標是相關地點，例如航太任務使用發射地點，並非事件影響範圍。
 - `scripts/download-data.py`：可選的更新腳本，透過 GitHub 檔案清單與 curl 重新下載快照，成功解析後才替換檔案。執行 `python3 scripts/download-data.py`；需連網與 curl，可能受到 GitHub API 流量限制。
 
 ## 資料來源與編輯原則
@@ -48,7 +48,7 @@ python3 -m http.server 8000
 - [大阪關西世博官方概述](https://www.expo2025.or.jp/en/overview/)：2025年事件。
 - [國家發展委員會檔案管理局](https://www.archives.gov.tw/)：臺灣歷史檔案與近現代史資料。
 
-## v2 資料分布與驗證
+## 事件資料分布與驗證
 
 事件的可重建來源、編輯規則與查考連結見 [EVENTS-SOURCES.md](data/EVENTS-SOURCES.md)。
 
@@ -75,3 +75,25 @@ node scripts/verify-browser.cjs
 ```
 
 若Playwright不在本專案，可設定 `NODE_PATH=/path/to/node_modules`。瀏覽器腳本使用 `/usr/bin/google-chrome`。
+
+
+## v3 實作與目前限制
+
+完整交付紀錄與待考證項目見 [V3-STATUS.md](V3-STATUS.md)。v3 使用 `data/polities.json` 的穩定 ID 索引；舊 `names.json` 僅保留作為遷移輸入。`validFrom/validTo` 表示資料集中觀察到的快照年代，不等同歷史上的建國／滅亡日期；`periods`、`endonyms` 各有獨立有效年代。未知中文保留資料集名稱並標記 low/untranslated，沒有偽造中文譯名或自稱。
+
+事件 `id` 由 `event-id-registry.json` 固定，新增事件採內容衍生 ID；既有 ID 不因排序改變。`sourceStatus: research-link-unverified` 只是查考入口，**不是已核實的逐筆史料**；`chronologyStatus` 說明起訖是否已複核。所有單年事件暫以同年起訖，長期過程仍待人工編輯。
+
+```sh
+python3 scripts/validate-events.py
+python3 scripts/validate-v3.py
+node --check app.js
+# 啟動 8000 HTTP server 後
+NODE_PATH=/path/to/node_modules node scripts/verify-browser.cjs
+BASE_URL=http://localhost:8000 NODE_PATH=/path/to/node_modules node scripts/verify-performance.cjs
+NODE_PATH=/path/to/node_modules node scripts/verify-v3.cjs
+python3 scripts/build-static.py
+```
+
+Render Blueprint 使用 static runtime、main 分支、`autoDeployTrigger: commit`（[官方規格](https://render.com/docs/blueprint-spec)）。發布內容只包含 `dist/` 公開資產；data 請求 query 會加上全部資料內容 SHA-256 的前16碼。資料採一年 immutable 快取；HTML no-cache；GeoJSON 使用 application/geo+json。可用 `SITE_URL` 指定正式站點完整網址，建置時會補上絕對分享圖網址與 canonical。此輪未連接 Render 帳號或部署，正式環境回應標頭仍需部署後驗證。
+
+1492 簡化需 Shapely：`python3 scripts/simplify-1492.py`。以 NAME 分組、保留各多邊形部分，0.12°拓撲保留簡化，再取座標小數3位；細節精度降低，不能作精密疆界研究。新分享圖使用本地疆界幾何繪製，延續原資料 GPL-3.0 來源。

@@ -25,7 +25,15 @@ def compile_events():
         if e['title'] in ['大衛營協議','岱頓和平協議']:e['region']='美洲'
         if e['title']=='加加林首次載人太空飛行':e['region']='亞洲'
     events.sort(key=lambda e:(e['year'],e['title']))
-    for i,e in enumerate(events,1):e['id']=f'e{i:04d}'
+    import hashlib
+    registry=json.loads((ROOT/'data/event-id-registry.json').read_text())
+    previous={e['id']:e for e in json.loads((ROOT/'data/events.json').read_text())}
+    for e in events:
+        e['id']=registry.get(e['title'],'evt-'+hashlib.sha256((str(e['year'])+e['title']).encode()).hexdigest()[:16])
+        registry[e['title']]=e['id']
+        for key in ['startYear','endYear','precision','sourceUrl','sourceStatus','chronologyStatus']:
+            if key in previous.get(e['id'],{}):e[key]=previous[e['id']][key]
+    (ROOT/'data/event-id-registry.json').write_text(json.dumps(registry,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'data/events.json').write_text(json.dumps(events,ensure_ascii=False,indent=2)+'\n')
     return events
 if __name__=='__main__':compile_events()

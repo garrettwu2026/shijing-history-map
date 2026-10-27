@@ -1,0 +1,62 @@
+{
+  "overrides": [
+    {
+      "id": "err-mongol-1200",
+      "year": 1200,
+      "match": "Mongol Empire",
+      "zh": "蒙古各部",
+      "note": "1206年立國；僅覆寫名稱，上游幾何仍待考證。",
+      "source": "https://royalarmouries.org/objects-and-stories/stories/the-mongols/rise-of-the-mongols"
+    },
+    {
+      "id": "err-zaire-2010",
+      "year": 2010,
+      "match": "Zaire",
+      "zh": "剛果民主共和國",
+      "note": "1997年恢復國名；名稱勘誤不代表重新考證幾何。",
+      "source": "https://www.britannica.com/place/Democratic-Republic-of-the-Congo"
+    }
+  ],
+  "scan": [
+    {
+      "name": "Mongol Empire",
+      "year": 1200,
+      "expectedFrom": 1206,
+      "expectedTo": 1368,
+      "status": "needs-review",
+      "kind": "name/geometry chronology"
+    },
+    {
+      "name": "Zaire",
+      "year": 1945,
+      "expectedFrom": 1971,
+      "expectedTo": 1997,
+      "status": "needs-review",
+      "kind": "name/geometry chronology"
+    },
+    {
+      "name": "Zaire",
+      "year": 1960,
+      "expectedFrom": 1971,
+      "expectedTo": 1997,
+      "status": "needs-review",
+      "kind": "name/geometry chronology"
+    },
+    {
+      "name": "Zaire",
+      "year": 2000,
+      "expectedFrom": 1971,
+      "expectedTo": 1997,
+      "status": "needs-review",
+      "kind": "name/geometry chronology"
+    },
+    {
+      "name": "Zaire",
+      "year": 2010,
+      "expectedFrom": 1971,
+      "expectedTo": 1997,
+      "status": "needs-review",
+      "kind": "name/geometry chronology"
+    }
+  ]
+}

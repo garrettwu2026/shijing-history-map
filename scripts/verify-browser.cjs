@@ -19,7 +19,7 @@ const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{r
  if(year>2010&&!metrics.note.includes('止於 2010'))throw Error('Post-2010 border note missing');
  if(width===1440&&year===200&&!metrics.labels.some(l=>l.includes('羅馬帝國')))throw Error('Rome label missing');
  if(width===1440&&year===200&&!metrics.labels.some(l=>l.includes('漢朝')))throw Error('Han label missing');
- if(width===1440&&year===1200&&!metrics.labels.some(l=>l.includes('蒙古帝國')))throw Error('Mongol label missing');
+ if(width===1440&&year===1200&&!metrics.labels.some(l=>l.includes('蒙古各部')))throw Error('Mongol correction label missing');
  const collisions=await page.evaluate(()=> {
    const rects=[...document.querySelectorAll('.polity-label')].map(el=>el.getBoundingClientRect());
    return rects.some((r,i)=>rects.slice(i+1).some(q=>r.left<q.right&&r.right>q.left&&r.top<q.bottom&&r.bottom>q.top));

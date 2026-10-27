@@ -13,31 +13,42 @@
   let map, eventLayer, labelLayer, borderRenderer, borderTimer, prefetchHandle;
 
   function hash(s) { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return h >>> 0; }
-  const color = name => name.trim() ? `hsl(${hash(name) % 360} ${24 + (hash(name) >>> 9) % 16}% ${52 + (hash(name) >>> 17) % 13}%)` : '#60716b';
-  function nameFor(key) { return state.names[key] || {zh: key || '未命名區域', native: key || '未命名區域', aliases: []}; }
-  function polityHTML(key) {
-    const n = nameFor(key), known = !!state.names[key];
-    return `<div class="popup-kicker">歷史政體 · ${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh)}</h3><div class="popup-native" dir="auto">${esc(n.native)}</div><div class="popup-aliases"><strong>別稱與資料集名稱</strong>${[...new Set([...(n.aliases || []),key])].map(esc).join(' · ')}</div>${known ? '' : '<div class="popup-note">尚無核實譯名，暫顯示資料集原名。</div>'}<div class="popup-note">疆界為歷史概略；不表示現代領土主張。</div>`;
+  const polityColors=new Map();
+  const color = name => polityColors.get(name) || (name.trim() ? `hsl(${hash(name) % 360} ${24 + (hash(name) >>> 9) % 16}% ${52 + (hash(name) >>> 17) % 13}%)` : '#60716b');
+  function nameFor(key) {
+    const p=state.catalog?.polities[state.catalog.index[key]];
+    if(!p)return {zh:'',native:'',aliases:[],importance:0};
+    const year=state.snapshot?.year ?? state.year;
+    const period=p.periods.find(n=>year>=n.fromYear&&year<=n.toYear);
+    const correction=state.errata?.overrides.find(n=>n.year===year&&n.match===key);
+    const endonyms=p.endonyms.filter(n=>year>=n.fromYear&&year<=n.toYear);
+    return {...p,zh:correction?.zh||period?.zh||p.zh,native:endonyms[0]?.original||'',endonyms,aliases:period?.aliases||[],correction};
   }
-  function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(e.title)}</h3><p>${esc(e.description)}</p></div>`; }
-  async function json(path) { const response = await fetch(path); if (!response.ok) throw new Error(`${path} (${response.status})`); return response.json(); }
+  function polityHTML(key) {
+    const n=nameFor(key);
+    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh)}</h3>${(n.endonyms||[]).map(e=>`<p dir="auto">當時自稱：${esc(e.original)}<br>${esc(e.transliteration)}<br>中文意譯：${esc(e.meaning)}</p>`).join('')}<p>他稱／後世稱呼：${esc((n.exonyms||[]).join('、')||'未收錄')}</p><p>地理別稱：${esc((n.geographicAliases||[]).join('、')||'未收錄')}</p><p>資料集名稱：${esc(key)}</p><p>譯名可信度：${esc(n.confidence)}；${n.translationStatus==='untranslated'?'中文譯名待考證':'既有譯名仍待逐筆複核'}</p>${n.correction?`<p class="correction">勘誤：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>穩定 ID：${esc(n.id)}。疆界為概略重建。</small>`;
+  }
+  function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(e.title)}</h3><p>${esc(e.description)}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='research-link-unverified'?'尚未逐筆核實':'已核實'}）</a></p></div>`; }
+  async function json(path) { const response = await fetch(`${path}?v=v3-20261027`, {signal:AbortSignal.timeout(20000)}); if (!response.ok) throw new Error(`${path} (${response.status})`); return response.json(); }
   async function snapshotData(s) {
-    if (state.cache.has(s.file)) return state.cache.get(s.file);
+    if (state.cache.has(s.file)) { const hit=state.cache.get(s.file); state.cache.delete(s.file);state.cache.set(s.file,hit);return hit; }
     const promise = json(`data/${s.file}`);
     state.cache.set(s.file, promise);
+    while(state.cache.size>6)state.cache.delete(state.cache.keys().next().value);
     try {
       const data = await promise;
       return data;
     } catch (error) { state.cache.delete(s.file); throw error; }
   }
   function prefetchAdjacent(s) {
+    if(navigator.connection?.saveData || /2g/.test(navigator.connection?.effectiveType||''))return;
     const idle = window.requestIdleCallback || (callback => setTimeout(callback, 250));
     const cancelIdle = window.cancelIdleCallback || clearTimeout;
     if (prefetchHandle != null) cancelIdle(prefetchHandle);
     prefetchHandle = idle(async () => {
       prefetchHandle = null;
       const index = state.snapshots.indexOf(s);
-      for (const adjacent of [state.snapshots[index + 1], state.snapshots[index - 1]]) {
+      for (const adjacent of [state.snapshots[index + 1]]) {
         if (state.snapshot !== s) return;
         if (adjacent) await snapshotData(adjacent).catch(() => {});
       }
@@ -45,6 +56,7 @@
   }
   function snapshotFor(year) { return state.snapshots.filter(s => s.year <= year).at(-1) || state.snapshots[0]; }
   function updateSnapshotCaption(s, pending = false) {
+    $('snapshot-note').classList.toggle('boundary-warning',state.year>2010);
     $('snapshot-label').textContent = `${pending ? '正在載入' : '疆界快照'}：${yearText(s.year)}`;
     $('snapshot-note').textContent = pending ? '地圖正在更新，請稍候' : state.year < s.year ? '早於最早可用資料，顯示最早快照' : state.year > state.snapshots.at(-1).year ? '最新疆界資料止於 2010 年，並非當代精確國界' : s.year === state.year ? '選取年份與疆界快照相同' : `使用選取年份之前最近的快照，相差 ${state.year - s.year} 年`;
   }
@@ -53,15 +65,18 @@
     const token = ++state.request;
     if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); return; }
     updateSnapshotCaption(s, true);
-    // Remove the previous snapshot so its boundaries cannot be mistaken for the requested year.
-    if (state.layer) { map.removeLayer(state.layer); state.layer = null; }
-    state.snapshot = null;
+    // Keep the previous snapshot until its replacement is ready.
+    const previousLayer=state.layer;
     labelLayer.clearLayers();
     status('正在展開歷史疆界…');
     try {
       const data = await snapshotData(s);
       if (token !== state.request) return;
       state.snapshot = s;
+      polityColors.clear();
+      const colors=['#dcaa70','#78b3b0','#bba0d1','#b8c879','#d78f9b','#86a9d5','#d1ba92','#80bd91'];
+      const neighbors=[];
+      for(const f of data.features){if(!f.geometry)continue;const name=f.properties?.NAME||'';if(polityColors.has(name))continue;const bounds=L.latLngBounds([]);const visit=c=>{if(typeof c[0]==='number'){bounds.extend([c[1],c[0]]);}else c.forEach(visit);};visit(f.geometry.coordinates);if(!bounds.isValid())continue;const used=new Set(neighbors.filter(n=>n.bounds.intersects(bounds)).map(n=>n.color));const chosen=colors.find(c=>!used.has(c))||colors[hash(name)%colors.length];polityColors.set(name,chosen);neighbors.push({bounds,color:chosen});}
       const layer = L.geoJSON(data, {
         renderer: borderRenderer,
         style: f => ({color: color(f.properties?.NAME || ''), weight: .8, opacity: .85, fillColor: color(f.properties?.NAME || ''), fillOpacity: .42, smoothFactor: 1.2}),
@@ -72,7 +87,8 @@
           polygon.on('mouseout', () => layer.resetStyle(polygon));
         }
       }).addTo(map);
-      state.layer = layer;
+      if(previousLayer)map.removeLayer(previousLayer);
+      state.layer = layer; renderPolities();
       $('polity-count').textContent = `${new Set(data.features.map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
       updateSnapshotCaption(s);
       renderLabels(); status();
@@ -81,8 +97,8 @@
       if (token !== state.request) return;
       console.error('疆界載入失敗', error);
       $('snapshot-label').textContent = '疆界載入失敗';
-      $('snapshot-note').textContent = '請確認 data 資料夾完整，重新選取年份即可重試';
-      status('無法載入疆界。請確認伺服器與 data 資料夾，再重選年份。');
+      $('snapshot-note').textContent = '連線失敗，請重新選取年份重試；舊疆界仍保留';
+      status('無法更新疆界，請檢查連線並重試。'); const retry=document.createElement('button');retry.textContent='重試疆界';retry.onclick=loadBorders;$('map-status').append(retry);
       setPlaying(false);
     }
   }
@@ -104,7 +120,7 @@
     state.layer.eachLayer(layer => {
       if (!layer.getBounds) return;
       const key=layer.feature.properties?.NAME, bounds=layer.getBounds();
-      if (!key?.trim() || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
+      if (!key?.trim() || key.trim()==='?' || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
       const geometry=layer.feature.geometry;
       const polygons=geometry.type==='MultiPolygon'?geometry.coordinates:[geometry.coordinates];
       const area=polygons.reduce((sum,p)=>sum+Math.max(0,ringArea(p[0])-p.slice(1).reduce((v,r)=>v+ringArea(r),0)),0);
@@ -127,7 +143,7 @@
     };
     const limit=Math.round(8+zoom*5);
     for(const c of candidates.sort((a,b)=>b.score-a.score)) {
-      if(seen.has(c.key)) continue;
+      if(seen.has(c.n.id)) continue;
       const anchors=[c.center];
       // Interior fallback anchors keep large empires readable beside interface panels.
       for(const part of c.parts) {
@@ -140,7 +156,7 @@
         }
       }
       const major=c.importance>=8;
-      const html=`<span class="label-zh">${esc(c.n.zh)}</span>${c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
+      const html=`<span class="label-zh">${esc(c.n.zh)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
       let placed=false;
       const mapRect=map.getContainer().getBoundingClientRect();
       for(const anchor of anchors) {
@@ -150,39 +166,49 @@
         const r=tip.getElement().getBoundingClientRect();
         const box={left:r.left-7,right:r.right+7,top:r.top-5,bottom:r.bottom+5};
         if(box.left<mapRect.left||box.right>mapRect.right||box.top<mapRect.top||box.bottom>mapRect.bottom||occupied.some(q=>box.left<q.right&&box.right>q.left&&box.top<q.bottom&&box.bottom>q.top)) {labelLayer.removeLayer(tip);continue;}
-        occupied.push(box);seen.add(c.key);count++;placed=true;break;
+        occupied.push(box);seen.add(c.n.id);count++;placed=true;break;
       }
       if(placed&&count>=limit)break;
     }
   }
 
   function selectEvent(e) {
-    state.activeEvent = e.id;
+    state.returnFocus=matchMedia('(max-width:760px)').matches ? $('sheet-toggle') : document.activeElement; state.activeEvent = e.id;
     if(matchMedia('(max-width:760px)').matches && $('events-panel').classList.contains('expanded')) $('sheet-toggle').click();
     document.querySelectorAll('.event-item').forEach(el => el.classList.toggle('active', el.dataset.id === e.id));
     const target = [e.lat,e.lon];
     const zoom = Math.max(map.getZoom(), 4);
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) map.setView(target,zoom); else map.flyTo(target,zoom,{duration:1.2});
-    L.popup({maxWidth:310, autoPan:false}).setLatLng(target).setContent(eventHTML(e)).openOn(map);
+    map.stop(); map.setView(target,zoom,{animate:false});
+    L.popup({maxWidth:Math.min(310,innerWidth-60), autoPan:true,autoPanPaddingTopLeft:[15,70],autoPanPaddingBottomRight:[15,document.querySelector('.time-dock').offsetHeight+65]}).setLatLng(target).setContent(eventHTML(e)).openOn(map);
   }
   function renderEvents() {
+    const signature=[state.year,state.window,[...enabledCategories].join(','),state.markers,map.getZoom(),state.events.length].join('|');
+    if(state.eventsSignature===signature)return;state.eventsSignature=signature;
     eventLayer.clearLayers();
+    const groups=new Map();
     const visible = state.events.filter(e => enabledCategories.has(e.category) && Math.abs(e.year - state.year) <= state.window);
     $('event-count').textContent = `${visible.length} 件`;
     const expanded=$('sheet-toggle').getAttribute('aria-expanded')==='true';
     $('sheet-toggle').textContent=`${expanded?'收合事件 ▾':'探索事件 ▴'} · ${visible.length} 件`;
     const list = $('event-list'); list.replaceChildren();
+    if(state.eventsUnavailable){list.textContent='事件資料暫時無法載入；疆界與政體搜尋仍可使用。';return;}
     for (const e of visible) {
       const button = document.createElement('button'); button.type = 'button'; button.className = 'event-item'; button.dataset.id = e.id; button.classList.toggle('active',e.id===state.activeEvent);
       button.style.setProperty('--event-color',categories[e.category][0]);
-      button.innerHTML = `<time>${categories[e.category][1]} ${esc(e.category)} · ${esc(eventDate(e))}</time><span class="event-arrow">↗</span><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p>`;
+      button.innerHTML = `<time>${Math.abs(e.year-state.year)} 年${e.year<state.year?'前':'後'} · ${categories[e.category][1]} ${esc(e.category)} · ${esc(eventDate(e))}</time><span class="event-arrow">↗</span><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p>`;
       button.addEventListener('click', () => selectEvent(e)); list.append(button);
       if (state.markers) {
-        const [tint,symbol]=categories[e.category];
-        const marker = L.marker([e.lat,e.lon], {icon:L.divIcon({className:'event-marker',html:`<span style="--event-color:${tint}">${symbol}</span>`,iconSize:[24,24],iconAnchor:[12,12]}),title:e.title,alt:e.title, keyboard:true,riseOnHover:true});
-        marker.on('click', () => selectEvent(e)); eventLayer.addLayer(marker);
+        const point=map.project([e.lat,e.lon],map.getZoom());
+        const cell=map.getZoom()<4?`${Math.floor(point.x/58)},${Math.floor(point.y/58)}`:e.id;
+        if(!groups.has(cell))groups.set(cell,[]);groups.get(cell).push(e);
       }
     }
+    for(const group of groups.values()) {
+      const e=group[0], [tint,symbol]=categories[e.category], many=group.length>1;
+      const marker=L.marker([e.lat,e.lon],{icon:L.divIcon({className:'event-marker',html:`<span style="--event-color:${tint}">${many?group.length:symbol}</span>`,iconSize:[44,44],iconAnchor:[22,22]}),title:many?`${group.length} 件事件，放大展開`:e.title});
+      marker.on('click',()=>many?map.setView([e.lat,e.lon],Math.min(8,map.getZoom()+2)):selectEvent(e));eventLayer.addLayer(marker);
+    }
+    $('announcer').textContent=`${yearText(state.year)}，${visible.length} 件事件`;
     if (!visible.length) {
       const empty = document.createElement('div'); empty.className = 'empty-events';
       empty.textContent = '這段時間沒有符合分類的事件。試著擴大探索範圍，或移動至鄰近年代。';
@@ -196,14 +222,17 @@
     if (!Number.isFinite(y)) return;
     if (y === 0) y = direction < 0 ? -1 : 1;
     state.year = y;
-    $('year-slider').value = y; $('year-input').value = y;
+    $('year-slider').value = positionFor(y); $('year-input').value = y;
     $('year-display').textContent = yearText(y); $('era-label').textContent = era(y);
     $('year-slider').setAttribute('aria-valuetext',yearText(y));
-    $('year-slider').style.setProperty('--progress',`${(y-MIN)/(MAX-MIN)*100}%`);
+    $('year-slider').style.setProperty('--progress',`${positionFor(y)/10}%`);
     document.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active',Number(b.dataset.year)===y));
-    map.closePopup(); renderEvents();
-    const url = new URL(location.href); url.searchParams.set('year',y); history.replaceState(null,'',url);
+    map.closePopup();
+    const updateURL=()=>{const url=new URL(location.href);url.searchParams.set('year',y);history.replaceState(null,'',url);};
+    clearTimeout(state.urlTimer);if(debounceBorders)state.urlTimer=setTimeout(updateURL,160);else updateURL();
     clearTimeout(borderTimer);
+    clearTimeout(state.eventTimer);
+    if(debounceBorders)state.eventTimer=setTimeout(renderEvents,160);else renderEvents();
     if (debounceBorders) {
       // Invalidate an in-flight swap immediately, while the slider keeps moving.
       ++state.request;
@@ -227,7 +256,20 @@
     if (!state.playing || generation !== state.playGeneration) return;
     if (next >= MAX) setPlaying(false); else state.timer = setTimeout(tick,1100);
   }
+  const segments=[[-5000,0],[-1000,200],[500,400],[1500,600],[1900,800],[2026,1000]];
+  function interpolate(value,from,to){let i=0;while(i<segments.length-2&&value>segments[i+1][from])i++;const a=segments[i],b=segments[i+1];return a[to]+(value-a[from])/(b[from]-a[from])*(b[to]-a[to]);}
+  const positionFor=y=>interpolate(y,0,1), yearFor=p=>Math.round(interpolate(p,1,0));
+  function renderPolities(){
+    const list=$('polity-list');if(!state.layer)return;list.replaceChildren();
+    const q=$('polity-search').value.toLowerCase(),seen=new Set();
+    state.layer.eachLayer(layer=>{const key=layer.feature.properties?.NAME,n=nameFor(key);if(!n.zh||seen.has(n.id)||!JSON.stringify([n.zh,n.native,n.aliases,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))return;seen.add(n.id);const b=document.createElement('button');b.textContent=n.zh;b.onclick=()=>{state.returnFocus=$('polity-open');$('polity-dialog').close();layer.openPopup(layer.getBounds().getCenter());};list.append(b);});
+  }
   async function init() {
+    $('polity-search').oninput=renderPolities;
+    $('polity-open').onclick=()=>{$('polity-dialog').showModal();$('polity-search').focus();};
+    $('polity-close').onclick=()=>$('polity-dialog').close();
+    $('intro-toggle').onclick=()=>{const card=document.querySelector('.intro-card');card.classList.toggle('compact');$('intro-toggle').setAttribute('aria-expanded',String(!card.classList.contains('compact')));renderLabels();};
+    new ResizeObserver(()=>{document.documentElement.style.setProperty('--dock-height',`${document.querySelector('.time-dock').offsetHeight}px`);}).observe(document.querySelector('.time-dock'));
     if (!window.L) { status('地圖元件未載入，請確認網路連線後重新整理。'); return; }
     map = L.map('map',{center:[26,45],zoom:2.25,minZoom:2,maxZoom:8,zoomSnap:.25,worldCopyJump:true,preferCanvas:true,zoomControl:true});
     borderRenderer = L.canvas();
@@ -239,7 +281,10 @@
     for (let lat = -60; lat <= 60; lat += 30) L.polyline([[lat,-180],[lat,180]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     for (let lon = -180; lon <= 180; lon += 30) L.polyline([[-85,lon],[85,lon]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
     eventLayer=L.layerGroup().addTo(map); labelLayer=L.layerGroup().addTo(map);
-    map.on('moveend zoomend resize',renderLabels);
+    map.on('moveend zoomend resize',()=>{renderLabels();if(state.events.length)renderEvents();});
+    map.on('popupopen',e=>{const el=e.popup.getElement();el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
+    map.on('popupclose',()=>{if(state.returnFocus?.isConnected)state.returnFocus.focus({preventScroll:true});});
+    document.addEventListener('click',e=>{const b=e.target.closest('.goto-event');if(b){const event=state.events.find(x=>x.id===b.dataset.event);setYear(event.year);}});
     document.fonts?.ready.then(renderLabels);
     const sheet=$('events-panel'), sheetButton=$('sheet-toggle');
     sheet.addEventListener('transitionend',renderLabels);
@@ -258,9 +303,9 @@
     $('about-dialog').addEventListener('click',e=>{if(e.target===$('about-dialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
     status('正在整理歷史資料…');
     try {
-      const [snapshots,names,events] = await Promise.all([json('data/snapshots.json'),json('data/names.json'),json('data/events.json')]);
-      state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.names=names;state.events=events;
-      $('year-slider').oninput=e=>{setPlaying(false);setYear(e.target.value,Number(e.target.value)<state.year?-1:1,true);};
+      const [snapshots,events,catalog,errata] = await Promise.all([json('data/snapshots.json'),json('data/events.json').catch(()=>{state.eventsUnavailable=true;return []}),json('data/polities.json'),json('data/errata.json')]);state.catalog=catalog;state.errata=errata;
+      state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.events=events;
+      $('year-slider').oninput=e=>{setPlaying(false);setYear(yearFor(Number(e.target.value)),yearFor(Number(e.target.value))<state.year?-1:1,true);};
       $('year-form').onsubmit=e=>{e.preventDefault();if(!$('year-input').value.trim())return;setPlaying(false);setYear($('year-input').value);};
       $('play-button').onclick=async()=>{if(!state.playing&&state.year>=MAX)await setYear(MIN);setPlaying(!state.playing);};
       document.querySelectorAll('[data-year]').forEach(b=>b.onclick=()=>{setPlaying(false);setYear(b.dataset.year);});

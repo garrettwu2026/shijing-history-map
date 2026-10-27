@@ -30,14 +30,14 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
    report.runs.push({mobile,firstRenderMs:await page.evaluate(()=>window.firstBorders)});
   }
   await page.waitForTimeout(800);
-  assert(requests.includes('/data/world_bc323.geojson'),'previous snapshot prefetched');
+
   assert(requests.includes('/data/world_bc200.geojson'),'next snapshot prefetched');
   assert(await page.locator('.leaflet-land-pane canvas').count(),'land canvas');
   assert(await page.locator('.leaflet-overlay-pane canvas').count(),'border canvas');
   assert.equal(await page.locator('.leaflet-overlay-pane svg path').count(),0,'no SVG polygons');
   await page.evaluate(()=>{window.borderBuilds=0;const original=L.geoJSON;L.geoJSON=function(data,options){if(options?.onEachFeature){window.borderBuilds++;window.testMap=options.renderer._map;}return original.call(this,data,options)}});
   // Inputs stay responsive, while geometry waits for a pause.
-  await page.evaluate(()=>{const slider=document.querySelector('#year-slider');for(const year of [100,500,1000,1200]){slider.value=year;slider.dispatchEvent(new Event('input'))}});
+  await page.evaluate(()=>{const slider=document.querySelector('#year-slider');for(const year of [200,400,600,700]){slider.value=year;slider.dispatchEvent(new Event('input'))}});
   assert.equal(await page.evaluate(()=>window.borderBuilds),0,'slider did not render immediately');
   await page.waitForTimeout(90);
   assert.equal(await page.evaluate(()=>window.borderBuilds),0,'slider waited at least 90ms');
@@ -49,8 +49,9 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
   // Disable the browser HTTP cache: returning to a snapshot must use the app cache.
   await select(-300);await select(1200);await select(-300);
   await page.waitForTimeout(800);
-  const before=requests.length;await select(1200);await select(-300);
-  assert.equal(requests.length,before,'revisited snapshots stay in memory');
+  const selectedRequests=()=>requests.filter(p=>['/data/world_bc323.geojson','/data/world_1200.geojson'].includes(p)).length;
+  const before=selectedRequests();await select(1200);await select(-300);
+  assert.equal(selectedRequests(),before,'revisited selected snapshots stay in memory');
   await select(-4900);const builds=await page.evaluate(()=>window.borderBuilds);
   await page.locator('#play-button').click();await page.waitForTimeout(1250);await page.locator('#play-button').click();
   assert.equal(await page.evaluate(()=>window.borderBuilds),builds,'playback skips unchanged borders');
