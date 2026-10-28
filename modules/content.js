@@ -11,6 +11,16 @@ export function nameDisplay(value, status='', showStatus=true){
  const text=raw.replace(/(?:（[^（）]*待考[^（）]*）|\(\s*待考\s*\))+/g,'');
  return text+(pending&&showStatus?(markers[0]||'（待考）'):'');
 }
+// Parenthetical sovereignty, region and subtitle notes belong in details, not symbols.
+// Strip whole notes before any glyph filtering so their text cannot join the name.
+export function cleanMapLabel(value){
+ let text=nameDisplay(value,'',false);
+ let previous;
+ do {previous=text;text=text.replace(/（[^（）]*）|\([^()]*\)/gu,'');} while(text!==previous);
+ text=text.trim();
+ // Untranslated names stay in search/details; never manufacture a partial name.
+ return /[\u3400-\u9fff\uf900-\ufaff]/u.test(text)?text:'';
+}
 export function createNameDisplay(glossary){
  const terms=new Map();
  for(const e of glossary.entries){

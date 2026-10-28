@@ -3,16 +3,53 @@ const {chromium}=require('playwright');const assert=require('node:assert/strict'
  const page=await browser.newPage({viewport:{width:1440,height:900}});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text())});
  // Labels and geometry must work with all outbound requests forbidden.
  await page.route('**/*',route=>new URL(route.request().url()).hostname==='localhost'?route.continue():route.abort());
+ // Expand only the test's input range to cover the three pre-UI snapshots too.
+ await page.route('**/app.*.js',async route=>{const response=await route.fetch();await route.fulfill({response,body:(await response.text()).replace('const MIN = -5000','const MIN = -123000')});});
  await page.goto('http://localhost:8000/dist/?year=500');await page.waitForFunction(()=>window.historyProfiles?.at(-1)?.labelPasses===1);
  await page.evaluate(async()=>{window.sources={polities:historyMap.getSource('polities'),disputed:historyMap.getSource('disputed')};window.oldData=JSON.stringify(await sources.polities.getData());window.layerIDs=historyMap.getStyle().layers.map(l=>l.id).join('|');});
  for(const [year,expected] of [[500,'南齊'],[700,'武周'],[1200,'蒙古各部'],[1900,'巴西共和國']]){
   await page.locator('#year-input').evaluate((el,y)=>{el.value=y;el.form.requestSubmit()},year);
   await page.waitForFunction(y=>historyState.snapshot?.year===y&&!historyState.boundariesPending,year);
   await page.waitForFunction(name=>historyMap.queryRenderedFeatures({layers:['polity-labels']}).some(f=>f.properties.name===name),expected);
-  const labels=await page.evaluate(()=>historyMap.queryRenderedFeatures({layers:['polity-labels']}).map(f=>f.properties.name));assert(labels.length>0);assert(labels.every(s=>/^[\u3400-\u9fff\uf900-\ufaff]+$/u.test(s)));assert(!labels.some(s=>s.includes('待考')));
+  const labels=await page.evaluate(()=>historyMap.queryRenderedFeatures({layers:['polity-labels']}).map(f=>f.properties.name));assert(labels.length>0);assert(labels.every(s=>/[\u3400-\u9fff\uf900-\ufaff]/u.test(s)&&!/[（()）]/u.test(s)));assert(!labels.some(s=>s.includes('待考')));
   assert(await page.evaluate(()=>sources.polities===historyMap.getSource('polities')&&sources.disputed===historyMap.getSource('disputed')&&layerIDs===historyMap.getStyle().layers.map(l=>l.id).join('|')));
   report.years.push({year,expected,renderedLabels:labels.length});
  }
+ // Audit every snapshot, including offscreen/collision-hidden labels in the source.
+ report.labelAudit=[];
+ for(const snapshot of JSON.parse(fs.readFileSync('data/snapshots.json','utf8'))){
+  await page.locator('#year-input').evaluate((el,y)=>{el.min=-123000;el.value=y;el.form.requestSubmit()},snapshot.year);
+  await page.waitForFunction(y=>historyState.snapshot?.year===y&&!historyState.boundariesPending&&historyState.labelSignature?.startsWith(y+'|'),snapshot.year);
+  await page.waitForFunction(()=>historyMap.loaded());
+  const audit=await page.evaluate(async()=>{
+   const state=historyState, source=await historyMap.getSource('labels').getData();
+   const expected=new Map(),changes=[];
+   for(const f of state.layer.features){
+    const key=f.properties?.NAME,p=state.catalog.polities[state.catalog.index[key]],b=f.labelGeometry?.bounds;
+    if(!p||!f.labelGeometry?.anchors?.[0]||(b&&b[1]<=-85&&b[3]<-60&&b[2]-b[0]>300))continue;
+    const year=state.snapshot.year,period=p.periods.find(n=>year>=n.fromYear&&year<=n.toYear);
+    const correction=state.errata.overrides.find(n=>year>=(n.fromYear??n.year)&&year<=(n.toYear??n.year)&&n.match===key);
+    const raw=correction?.zh||period?.zh||p.zh;
+    // Independent oracle: the name before its first parenthetical note, intact.
+    const clean=raw.split(/[（(]/u)[0].trim();
+    if(!/[\u3400-\u9fff\uf900-\ufaff]/u.test(clean))continue;
+    expected.set(p.id,clean);
+    const old=raw.replace(/(?:（[^（）]*待考[^（）]*）|\(\s*待考\s*\))+/g,'').replace(/[^\u3400-\u9fff\uf900-\ufaff]/gu,'');
+    if(old!==clean)changes.push({key,raw,old,clean});
+   }
+   const errors=[];
+   if(source.features.length!==expected.size)errors.push('source count differs from expected');
+   for(const f of [...source.features,...historyMap.queryRenderedFeatures({layers:['polity-labels']})]){
+    if(f.properties.name!==expected.get(f.properties.polityId))errors.push(f.properties);
+   }
+   return {year:state.snapshot.year,sourceLabels:source.features.length,renderedLabels:historyMap.queryRenderedFeatures({layers:['polity-labels']}).length,changes,errors};
+  });
+  assert.deepEqual(audit.errors,[],`clean labels in ${snapshot.year}`);report.labelAudit.push(audit);
+ }
+ await page.locator('#year-input').evaluate(el=>{el.value=1900;el.form.requestSubmit()});
+ await page.waitForFunction(()=>historyState.snapshot.year===1900&&!historyState.boundariesPending);
+ await page.locator('#polity-open').click();await page.locator('#polity-search').fill('夏威夷');await page.locator('#polity-list button').first().click();
+ assert((await page.locator('.popup-title').innerText()).includes('夏威夷領地（美屬）'));await page.keyboard.press('Escape');
  assert(await page.evaluate(async()=>oldData!==JSON.stringify(await sources.polities.getData())));assert.deepEqual(await page.evaluate(()=>historyMap.getPaintProperty('disputed-line','line-dasharray')),[9,4,2,4]);
  await page.locator('#year-input').evaluate(el=>{el.value=1800;el.form.requestSubmit()});await page.waitForFunction(()=>historyState.snapshot.year===1800&&!historyState.boundariesPending);
  await page.locator('#polity-open').click();await page.locator('#polity-search').fill('Darkinung');await page.locator('#polity-list button').first().click();assert.equal(((await page.locator('.popup-title').innerText()).match(/待考/g)||[]).length,1);await page.keyboard.press('Escape');

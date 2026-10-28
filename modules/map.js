@@ -1,4 +1,4 @@
-import {nameDisplay} from './content.js';
+import {cleanMapLabel} from './content.js';
 const empty=()=>({type:'FeatureCollection',features:[]});
 export async function createMap(){
   const map=new maplibregl.Map({container:'map',center:[45,26],zoom:1.25,minZoom:1,maxZoom:8,renderWorldCopies:true,fadeDuration:0,canvasContextAttributes:{antialias:false},pixelRatio:Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1:2),localIdeographFontFamily:"'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif",style:{version:8,glyphs:new URL('vendor/maplibre/glyphs/',location.href).href+'{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#18282d'}}]},attributionControl:false});
@@ -51,10 +51,10 @@ export function renderLabelsView({state,map,isAntarctica,nameFor}){
   const features=[],seen=new Set();
   for(const f of [...(state.layer?.features||[])].sort((a,b)=>(b.labelGeometry?.area||0)-(a.labelGeometry?.area||0))){
     if(isAntarctica(f))continue;const n=nameFor(f.properties?.NAME),point=f.labelGeometry?.anchors?.[0];
-    // CJK only: every glyph is generated locally; never request a Latin PBF or invent a name.
-    const name=nameDisplay(n.zh,n.nameStatus,false).replace(/[^\u3400-\u9fff\uf900-\ufaff]/gu,'');
+    // Keep the clean spelling intact; details retain the annotated display name.
+    const name=cleanMapLabel(n.zh);
     if(!point||!name||seen.has(n.id))continue;seen.add(n.id);
-    features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{name,priority:-(n.importance||0)}});
+    features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{name,polityId:n.id,NAME:f.properties.NAME,priority:-(n.importance||0)}});
   }
   const visibility=state.labels?'visible':'none';
   if(map.getLayoutProperty('polity-labels','visibility')!==visibility)map.setLayoutProperty('polity-labels','visibility',visibility);

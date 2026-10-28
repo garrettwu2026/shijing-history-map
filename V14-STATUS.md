@@ -62,3 +62,13 @@
 - 未取得可靠中文譯名者仍在搜尋／彈窗保留來源原文與單一待考狀態；純漢字常駐標籤不顯示純外文名稱，不製造新譯名。
 - symbol 碰撞涵蓋地圖符號之間，HTML 介面面板仍可能遮住其後方標籤；原語自稱完整保留在詳情。
 - 疆界與年代沿用原本資料品質／2010 年上限；本次渲染遷移未重新查核史料。
+
+## v14.1：修正地圖標籤註記黏連（TASK15）
+
+- 根因位於 `modules/map.js`：原先對完整顯示名稱刪除所有非漢字，將「夏威夷領地（美屬）」變成「夏威夷領地美屬」。改由 `modules/content.js` 的 `cleanMapLabel()` 先移除完整括號註記與待考標記，再保留名稱本身的拼寫及連接符號；不再靠刪標點產生標籤。純外文名稱仍保留在搜尋／詳情，不製造局部中文標籤。
+- 1900 年夏威夷地圖 source 標籤為「夏威夷領地」，彈窗標題保留「夏威夷領地（美屬）」及原有待考狀態。`app.js` 的 `nameFor()` 仍按快照年套用 errata／period／catalog 優先序，彈窗沿用完整名稱；`data-worker.js`、`scripts/prepare-geometry.cjs`、`build-static.py` 僅預算幾何／錨點，不預算或拼接文字，因此無須修改。
+- 保留既有名稱中的「－／—」等連接符號。MapLibre 的本機字形涵蓋漢字及全形符號，但不涵蓋 em dash；新增原創矩形筆畫的本機 U+2014 SDF PBF（附說明），由既有靜態建置複製，無外部字型請求。
+- `scripts/verify-v14.cjs` 新增全部 54 個快照年的獨立名稱比對：依各年的 catalog／period／errata 取得預期乾淨名稱，檢查每個 source 標籤及每個實際 rendered 標籤完全一致，並核對 source 數量以避免漏標籤。測試專用範圍擴充涵蓋 UI 最小年份之前的三個快照，不改產品年份範圍；另實際開啟夏威夷彈窗驗證括號註記。
+- 全年掃描結果：6,035 個 source 標籤通過；舊演算法與乾淨名稱有 180 個 feature/year 差異，涵蓋 47 個快照年、73 種不同修正，包括夏威夷、各殖民地的屬地註記、區域副標與被刪除的連接符號。逐年差異保存在 `artifacts/v14-report.json` 的 `labelAudit`。
+- 驗證結果：`python3 scripts/build-static.py`、`npm run validate`、全部 11 支 `scripts/verify-*.cjs` 均通過（browser、compact、performance、snapshots-v7、timeline、v11、v11b、v13、v14、v3、v7）。最終整套執行中 v7 的 metadata retry 等待曾逾時；單獨重跑完整 v7 通過，三種 metadata retry、baseline retry 及 Worker restart 均成功，零錯誤。其餘十支最終整套執行均 exit 0。
+- `git diff --check` 通過；`data/**` 沒有任何變更，所有既有名稱保持原樣；未建立 commit。
