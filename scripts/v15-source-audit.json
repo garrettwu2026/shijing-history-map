@@ -1,0 +1,2524 @@
+[
+  {
+    "id": "p-d683f0ae30750d54",
+    "name": "阿契美尼德王朝",
+    "source": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Achaemenid_Empire",
+    "title": "Achaemenid Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "08edebfd8dcc39bf14df0ffe53d2cbd5e3a80a907a8d37b10e53ae59cad78b06",
+    "extractCharacters": 482,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d2dbcec03e47a3ad",
+    "name": "孔雀王朝",
+    "source": "https://en.wikipedia.org/wiki/Maurya_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Maurya_Empire",
+    "title": "Maurya Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "7481514ae584b9a1c0ae9043b0fbbf5029681105e8db2cfeeeb51a22a8c0eba6",
+    "extractCharacters": 525,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-b3b1896a008a2c75",
+    "name": "漢朝",
+    "source": "https://en.wikipedia.org/wiki/Han_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Han_dynasty",
+    "title": "Han dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "a9b82bfd330a38aad31d26254863aca0901fb5db8613278b5184c22579ba9b8f",
+    "extractCharacters": 751,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%BC%A2%E6%9C%9D",
+        "status": 200,
+        "sha256": "ba452d562832b2b4c0b540afb40e103067a21a22607fe47b31ec9351d8e23720",
+        "bytes": 777542
+      }
+    ]
+  },
+  {
+    "id": "p-861af54f72de981d",
+    "name": "漢朝",
+    "source": "https://en.wikipedia.org/wiki/Han_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Han_dynasty",
+    "title": "Han dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "a9b82bfd330a38aad31d26254863aca0901fb5db8613278b5184c22579ba9b8f",
+    "extractCharacters": 751,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%BC%A2%E6%9C%9D",
+        "status": 200,
+        "sha256": "ba452d562832b2b4c0b540afb40e103067a21a22607fe47b31ec9351d8e23720",
+        "bytes": 777542
+      }
+    ]
+  },
+  {
+    "id": "p-3acefcfa65fa8884",
+    "name": "羅馬帝國",
+    "source": "https://en.wikipedia.org/wiki/Roman_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Roman_Empire",
+    "title": "Roman Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "294199ca84d27712b95115e6261e9869888afbf00c0d79faf2751a5fb2b68612",
+    "extractCharacters": 557,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E7%BE%85%E9%A6%AC%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "a53acafc543bb8bcc091b97ae9650cc077bdc74d2b7344ef62d0da9e43cdecae",
+        "bytes": 1110911
+      }
+    ]
+  },
+  {
+    "id": "p-a950053239793dff",
+    "name": "羅馬共和國",
+    "source": "https://en.wikipedia.org/wiki/Roman_Republic",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Roman_Republic",
+    "title": "Roman Republic",
+    "retrieved": "2026-10-28",
+    "sha256": "029628c71620b324191bcfaf44e3325c2f12ef0ad7d242540daeedef701cf8e5",
+    "extractCharacters": 336,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-570cde77956fc13e",
+    "name": "拜占庭帝國",
+    "source": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Byzantine_Empire",
+    "title": "Byzantine Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "12282d29f936e916c039b90182c80c36601d9d05b3aa55ced9cf67bacf821b2f",
+    "extractCharacters": 478,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%8B%9C%E5%8D%A0%E5%BA%AD%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "e5db995c9bdc3f30dbce0f356723adc4aee6a159c0035c09e40e333d5115c7ef",
+        "bytes": 1592115
+      }
+    ]
+  },
+  {
+    "id": "p-3c8cc1689e22fee9",
+    "name": "東羅馬帝國",
+    "source": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Byzantine_Empire",
+    "title": "Byzantine Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "12282d29f936e916c039b90182c80c36601d9d05b3aa55ced9cf67bacf821b2f",
+    "extractCharacters": 478,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d37fcae25c90f637",
+    "name": "蒙古帝國",
+    "source": "https://en.wikipedia.org/wiki/Mongol_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mongol_Empire",
+    "title": "Mongol Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "3a69d62ff981b348668ab7b78b6b3f094e9e2a3dcf9e2a63b2abc230702da0f3",
+    "extractCharacters": 431,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E8%92%99%E5%8F%A4%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "50093f07fd8abe0456d1b3e9519d1f59ffc5f600a57071c42d5cd0e074203824",
+        "bytes": 1814721
+      }
+    ]
+  },
+  {
+    "id": "p-9b4a3303eb34c9b4",
+    "name": "蒙兀兒帝國",
+    "source": "https://en.wikipedia.org/wiki/Mughal_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mughal_Empire",
+    "title": "Mughal Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "34b15e21f8465757db0a520c8e7896fba8ef5afaf86a56be73cdec79b9e4a812",
+    "extractCharacters": 339,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-6c4b2c322e844cb1",
+    "name": "鄂圖曼帝國",
+    "source": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ottoman_Empire",
+    "title": "Ottoman Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "ed618ac164e7344411b5a1d0d3da6a627e2c8d1be04cae1683e0070da3286288",
+    "extractCharacters": 342,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E9%84%82%E5%9C%96%E6%9B%BC%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "88042d3ed2de61fe69c7e48edb4e547b575a3f613c56648e3a97d1aeb0e3fee8",
+        "bytes": 1034226
+      }
+    ]
+  },
+  {
+    "id": "p-3137907a3ce7d637",
+    "name": "阿拔斯王朝",
+    "source": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Abbasid_Caliphate",
+    "title": "Abbasid Caliphate",
+    "retrieved": "2026-10-28",
+    "sha256": "f7ba90e88d579f08707d2dd46ebf1e2d1c5e4d11b6ecb18dba359ea01fb1800c",
+    "extractCharacters": 423,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E9%98%BF%E6%8B%94%E6%96%AF%E7%8E%8B%E6%9C%9D",
+        "status": 200,
+        "sha256": "752a5f41e80a4087d5043f16744fbe2bc57c4e9ef2eb957d36bc1384dd8d3544",
+        "bytes": 507703
+      }
+    ]
+  },
+  {
+    "id": "p-e9e78a0d9384479a",
+    "name": "倭馬亞王朝",
+    "source": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Umayyad_Caliphate",
+    "title": "Umayyad Caliphate",
+    "retrieved": "2026-10-28",
+    "sha256": "ff6e2b4daef4416333ae3961f0c375da0c0d5152f4b0965e8c72f7caf7aec6cd",
+    "extractCharacters": 517,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a913bf064aa840f3",
+    "name": "唐朝",
+    "source": "https://en.wikipedia.org/wiki/Tang_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Tang_dynasty",
+    "title": "Tang dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "daf7f89635326e343c4bba74d639361537731a1dc0de3be09d1c1540fd870337",
+    "extractCharacters": 445,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E5%94%90%E6%9C%9D",
+        "status": 200,
+        "sha256": "bbc6855eef1f00a03c5b2681b55a3c8f19800c0452470652fdbb292d9a1872ca",
+        "bytes": 759967
+      }
+    ]
+  },
+  {
+    "id": "p-cd116cc42fd55ace",
+    "name": "宋朝",
+    "source": "https://en.wikipedia.org/wiki/Song_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Song_dynasty",
+    "title": "Song dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "4a0e96beba25293baf396435104c950baadd26dddefd25278f579569ad8a246b",
+    "extractCharacters": 535,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E5%AE%8B%E6%9C%9D",
+        "status": 200,
+        "sha256": "c29d4c1d4d64179a119af6fe209bbafabd3280cb2535d70e486d11d431fa5ed3",
+        "bytes": 788410
+      }
+    ]
+  },
+  {
+    "id": "p-bfa774a14d4b3239",
+    "name": "明朝",
+    "source": "https://en.wikipedia.org/wiki/Ming_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ming_dynasty",
+    "title": "Ming dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "7ca20a5d138a2ca4fb6e7c984140cf13b886368088b344e02ad6877ed0fb1a21",
+    "extractCharacters": 487,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%98%8E%E6%9C%9D",
+        "status": 200,
+        "sha256": "9211d0c6094ce5cf20758f5febd6115c2ebabbb4c3bfb65fc8c19a909c2cef2e",
+        "bytes": 864381
+      }
+    ]
+  },
+  {
+    "id": "p-d39d88e90d195079",
+    "name": "清朝",
+    "source": "https://en.wikipedia.org/wiki/Qing_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Qing_dynasty",
+    "title": "Qing dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "c2bbbc1b005b033fc934d59b1ddca8097c41e5d5b9d75e4ee5fdcee09889cd6b",
+    "extractCharacters": 1222,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%B8%85%E6%9C%9D",
+        "status": 200,
+        "sha256": "d2d74984e5b9fd31a113681df7371bed7892efad145f332c50557e5154aa1561",
+        "bytes": 1534928
+      }
+    ]
+  },
+  {
+    "id": "p-06b7a1607f603173",
+    "name": "清朝",
+    "source": "https://en.wikipedia.org/wiki/Qing_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Qing_dynasty",
+    "title": "Qing dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "c2bbbc1b005b033fc934d59b1ddca8097c41e5d5b9d75e4ee5fdcee09889cd6b",
+    "extractCharacters": 1222,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a0c361b8939ee52e",
+    "name": "俄羅斯帝國",
+    "source": "https://en.wikipedia.org/wiki/Russian_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Russian_Empire",
+    "title": "Russian Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "1ec1cb6509781d14378fb92f96b3c7ab1dc1835db6901611e1eaa5fadb36a32b",
+    "extractCharacters": 433,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-9852f61c3a676896",
+    "name": "神聖羅馬帝國",
+    "source": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Holy_Roman_Empire",
+    "title": "Holy Roman Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "efd27a5fd4779134a2190a03b7a5d648b1d65f1d9f5378536b222d632402ce8f",
+    "extractCharacters": 702,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-287e690ad19f9373",
+    "name": "阿茲特克帝國",
+    "source": "https://en.wikipedia.org/wiki/Aztec_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Aztec_Empire",
+    "title": "Aztec Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "5ab09efa556821a78054157ade6174a7c9eb21fd3be25b741e8df6b502fc9bba",
+    "extractCharacters": 546,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E9%98%BF%E8%8C%B2%E7%89%B9%E5%85%8B%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "f796d4d8acf755cecdfa473a00ca532088fda9bfc44961a117eb2641891fa737",
+        "bytes": 252260
+      }
+    ]
+  },
+  {
+    "id": "p-28963423986bd9dc",
+    "name": "印加帝國",
+    "source": "https://en.wikipedia.org/wiki/Inca_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Inca_Empire",
+    "title": "Inca Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "d1651ced5c6cb3816499257cb2f6c947181e154ed39002f677899eea67c25814",
+    "extractCharacters": 511,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E5%8D%B0%E5%8A%A0%E5%B8%9D%E5%9C%8B",
+        "status": 200,
+        "sha256": "6c4d9df4625e5d7db0f28e92b740b0df260827dacc3747db614ad4b9329c1b8d",
+        "bytes": 408955
+      }
+    ]
+  },
+  {
+    "id": "p-1c15d062e7d485e8",
+    "name": "亞述",
+    "source": "https://en.wikipedia.org/wiki/Assyria",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Assyria",
+    "title": "Assyria",
+    "retrieved": "2026-10-28",
+    "sha256": "139513aa1bbd1cc1eeece046cc96aedb744256f4ba695e6d94a9e55835e1ebaf",
+    "extractCharacters": 531,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8a8c76c9439cade3",
+    "name": "巴比倫尼亞",
+    "source": "https://en.wikipedia.org/wiki/Babylonia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Babylonia",
+    "title": "Babylonia",
+    "retrieved": "2026-10-28",
+    "sha256": "5069d6a4be139af82e431cb037040d6a7f5981a01180ceeedf2ad30fbb59d52d",
+    "extractCharacters": 924,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d14eb70bc3121404",
+    "name": "西臺",
+    "source": "https://en.wikipedia.org/wiki/Hittites",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Hittites",
+    "title": "Hittites",
+    "retrieved": "2026-10-28",
+    "sha256": "4b4960f5d8bc9d771da3dc8e7de6806a1aaae7fa4d78632845687d2d2359a911",
+    "extractCharacters": 664,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-74de2f939fa725cd",
+    "name": "埃蘭",
+    "source": "https://en.wikipedia.org/wiki/Elam",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Elam",
+    "title": "Elam",
+    "retrieved": "2026-10-28",
+    "sha256": "b3a2b9f200eaf17465a06c457fbd738500a0652a161c8cac8b0600a3250daddf",
+    "extractCharacters": 494,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-56702e8b90f11df8",
+    "name": "庫施",
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kingdom_of_Kush",
+    "title": "Kingdom of Kush",
+    "retrieved": "2026-10-28",
+    "sha256": "bd5991c9e54174a9379b2b438f4598ee872c8a44ca1a8cc05cca66c8216e1faf",
+    "extractCharacters": 184,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0a55f267f83407c0",
+    "name": "烏拉爾圖",
+    "source": "https://en.wikipedia.org/wiki/Urartu",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Urartu",
+    "title": "Urartu",
+    "retrieved": "2026-10-28",
+    "sha256": "9c86bc2c79fd57cd826ff48b3d85e22a399b6a571acea9a439a83a7cb7fd746c",
+    "extractCharacters": 373,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-bbe414f450639c64",
+    "name": "迦太基",
+    "source": "https://en.wikipedia.org/wiki/Ancient_Carthage",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ancient_Carthage",
+    "title": "Ancient Carthage",
+    "retrieved": "2026-10-28",
+    "sha256": "af5a0ff0b04e25bd229a0cc96b633370ea24a2daf050c834ab0df7581b3ccd70",
+    "extractCharacters": 224,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4a11528382288e83",
+    "name": "迦太基帝國",
+    "source": "https://en.wikipedia.org/wiki/Ancient_Carthage",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ancient_Carthage",
+    "title": "Ancient Carthage",
+    "retrieved": "2026-10-28",
+    "sha256": "af5a0ff0b04e25bd229a0cc96b633370ea24a2daf050c834ab0df7581b3ccd70",
+    "extractCharacters": 224,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-960f05525e07d50e",
+    "name": "亞歷山大帝國",
+    "source": "https://en.wikipedia.org/wiki/Alexander_the_Great",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Alexander_the_Great",
+    "title": "Alexander the Great",
+    "retrieved": "2026-10-28",
+    "sha256": "c9d2c55e3fa7001b6cfe9a11fac0c668d6b6da32a3bd0d3494807700031a0f5f",
+    "extractCharacters": 641,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-171ae4ba38f11997",
+    "name": "托勒密王國",
+    "source": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ptolemaic_Kingdom",
+    "title": "Ptolemaic Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "67342a234f21d6b8d476e0df26ccc7562b6ef433ff3f41232ec5a1f5877bbc66",
+    "extractCharacters": 307,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a52221b0360b50b6",
+    "name": "塞琉古王國",
+    "source": "https://en.wikipedia.org/wiki/Seleucid_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Seleucid_Empire",
+    "title": "Seleucid Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "7ab2fcacafe2380049cd4ad79fcdeeab89026f7fe036efa3df02f1ba5ee98e2b",
+    "extractCharacters": 344,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-017c364910b567c6",
+    "name": "安息帝國",
+    "source": "https://en.wikipedia.org/wiki/Parthian_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Parthian_Empire",
+    "title": "Parthian Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "a15996315e5ccd974a9a059f6fae5f80bb817a6f3abfef852a6c8b41cc76b93b",
+    "extractCharacters": 816,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a847fccc71432051",
+    "name": "安息",
+    "source": "https://en.wikipedia.org/wiki/Parthian_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Parthian_Empire",
+    "title": "Parthian Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "a15996315e5ccd974a9a059f6fae5f80bb817a6f3abfef852a6c8b41cc76b93b",
+    "extractCharacters": 816,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-09e6bfdaf012bf9d",
+    "name": "薩珊王朝",
+    "source": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sasanian_Empire",
+    "title": "Sasanian Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "224dc6bbcb9c77b8ef8d5e94668f4e286643b16ab199fe5486711e1d4b77df42",
+    "extractCharacters": 316,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E8%96%A9%E7%8F%8A%E7%8E%8B%E6%9C%9D",
+        "status": 200,
+        "sha256": "a145dcf89c29fc1baa6bc4cbd0e31d9e5af9a5d8da9731dd6356cb83faabb741",
+        "bytes": 739808
+      }
+    ]
+  },
+  {
+    "id": "p-27a47c22c6931728",
+    "name": "笈多王朝",
+    "source": "https://en.wikipedia.org/wiki/Gupta_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Gupta_Empire",
+    "title": "Gupta Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "5fd2642755d1f537c862a78553d6e093c268e26a95d84021fb88981fa52669a0",
+    "extractCharacters": 449,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-177723d053434207",
+    "name": "貴霜王朝",
+    "source": "https://en.wikipedia.org/wiki/Kushan_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kushan_Empire",
+    "title": "Kushan Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "1b0f60218febd88d0772409423656f500f076ba9abcc6eff18bfa68e6cb72277",
+    "extractCharacters": 432,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-7deb946fd808b31a",
+    "name": "察合臺汗國",
+    "source": "https://en.wikipedia.org/wiki/Chagatai_Khanate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Chagatai_Khanate",
+    "title": "Chagatai Khanate",
+    "retrieved": "2026-10-28",
+    "sha256": "37165b208f4bb46328b1067f498f1d86be61bab84a3ca7c65c4453e99dafaa27",
+    "extractCharacters": 938,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2641ca9b35500ddb",
+    "name": "欽察汗國",
+    "source": "https://en.wikipedia.org/wiki/Golden_Horde",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Golden_Horde",
+    "title": "Golden Horde",
+    "retrieved": "2026-10-28",
+    "sha256": "aa484a34fa75413aac8b6d9d9bccb42410f88bb025c2808907567f0c820e8f84",
+    "extractCharacters": 411,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-141076b9004236fe",
+    "name": "伊兒汗國",
+    "source": "https://en.wikipedia.org/wiki/Ilkhanate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ilkhanate",
+    "title": "Ilkhanate",
+    "retrieved": "2026-10-28",
+    "sha256": "1aec563e61aa2dbb9153ad75cefec4866003cfb6bca3816dedb385df09262797",
+    "extractCharacters": 479,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-f5204a10c242538d",
+    "name": "西遼",
+    "source": "https://en.wikipedia.org/wiki/Qara_Khitai",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Qara_Khitai",
+    "title": "Qara Khitai",
+    "retrieved": "2026-10-28",
+    "sha256": "a3b92ae52fd3eb05dcf1a7250061789c0aa2156e58be6e0d30500dcd5ebdfabb",
+    "extractCharacters": 706,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5df92b89902a16be",
+    "name": "基輔羅斯",
+    "source": "https://en.wikipedia.org/wiki/Kievan_Rus'",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kievan_Rus'",
+    "title": "Kievan Rus'",
+    "retrieved": "2026-10-28",
+    "sha256": "2b4cd134f8b123b7d569a55aa72176769a39ace8d51e2b23e34c468aec4fca65",
+    "extractCharacters": 695,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-f48717f446edea50",
+    "name": "莫斯科大公國",
+    "source": "https://en.wikipedia.org/wiki/Grand_Principality_of_Moscow",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Grand_Principality_of_Moscow",
+    "title": "Grand Principality of Moscow",
+    "retrieved": "2026-10-28",
+    "sha256": "f6c1c8f5218270d0d007de5bd7937051f8ea9cca6542a3741b15605dc8f194ad",
+    "extractCharacters": 421,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0eb6f76d216aaa47",
+    "name": "查理曼帝國",
+    "source": "https://en.wikipedia.org/wiki/Carolingian_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Carolingian_Empire",
+    "title": "Carolingian Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "6c2bcbd8cefea8b6b004f74aa6ff0b2bb1bdf246b87790fee059e4dd705b28fe",
+    "extractCharacters": 546,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ff38eda437045c71",
+    "name": "德意志帝國",
+    "source": "https://en.wikipedia.org/wiki/German_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/German_Empire",
+    "title": "German Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "d570a60072a7629a828153be168ac0d982c2aa29100129cc906a7c44c00793d6",
+    "extractCharacters": 709,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-136ea1b55b280279",
+    "name": "奧匈帝國",
+    "source": "https://en.wikipedia.org/wiki/Austria-Hungary",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Austria-Hungary",
+    "title": "Austria-Hungary",
+    "retrieved": "2026-10-28",
+    "sha256": "78215a629d08aac1d67687968fdcc631a801401cd4f268138081f2c210e4824e",
+    "extractCharacters": 807,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-aef33704e6be3aaa",
+    "name": "奧匈帝國",
+    "source": "https://en.wikipedia.org/wiki/Austria-Hungary",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Austria-Hungary",
+    "title": "Austria-Hungary",
+    "retrieved": "2026-10-28",
+    "sha256": "78215a629d08aac1d67687968fdcc631a801401cd4f268138081f2c210e4824e",
+    "extractCharacters": 807,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4126d8a52aefafd7",
+    "name": "普魯士",
+    "source": "https://en.wikipedia.org/wiki/Prussia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Prussia",
+    "title": "Prussia",
+    "retrieved": "2026-10-28",
+    "sha256": "2792b6329e218bee251563651db17120fc848fddbb24d34938d261ce1efb92eb",
+    "extractCharacters": 670,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c5565bc74cde89ae",
+    "name": "兩西西里王國",
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_the_Two_Sicilies",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kingdom_of_the_Two_Sicilies",
+    "title": "Kingdom of the Two Sicilies",
+    "retrieved": "2026-10-28",
+    "sha256": "0c9119a8dd2d5d1d1f7eb5cf8196540573f3c2583454e84a54cf80c7d3e81606",
+    "extractCharacters": 423,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-57df0fa284276a9d",
+    "name": "高麗",
+    "source": "https://en.wikipedia.org/wiki/Goryeo",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Goryeo",
+    "title": "Goryeo",
+    "retrieved": "2026-10-28",
+    "sha256": "4cc4d9dd31c063fc66ea31ae9ee31177d36178d785291fab40f03db575d99e2a",
+    "extractCharacters": 914,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E9%AB%98%E9%BA%97",
+        "status": 200,
+        "sha256": "dc4685b1fc9021638a58946c31252a124596ccd11b964d7dda511a7c60ac5c83",
+        "bytes": 336070
+      }
+    ]
+  },
+  {
+    "id": "p-aff5f72fedd7d1c3",
+    "name": "高句麗",
+    "source": "https://en.wikipedia.org/wiki/Goguryeo",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Goguryeo",
+    "title": "Goguryeo",
+    "retrieved": "2026-10-28",
+    "sha256": "d570aa6df79fb7cafdcefb4b7a87e266a224ee1582a149cdc49a010675f13656",
+    "extractCharacters": 450,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-11f50d0ae2b4ebaa",
+    "name": "百濟",
+    "source": "https://en.wikipedia.org/wiki/Paekche",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Paekche",
+    "title": "Paekche",
+    "retrieved": "2026-10-28",
+    "sha256": "2ff0a9273cfb979e37cd1c34affb53302c8ec8287b0f70f3aaab3b26985839f7",
+    "extractCharacters": 354,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5d87541364c52cd5",
+    "name": "渤海",
+    "source": "https://en.wikipedia.org/wiki/Parhae",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Parhae",
+    "title": "Parhae",
+    "retrieved": "2026-10-28",
+    "sha256": "2384e9e16b76654f1cea19aecbe0430db43a26c1c6603c3263c81bdae3eb865a",
+    "extractCharacters": 375,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d6d59ca9400634da",
+    "name": "渤海國",
+    "source": "https://en.wikipedia.org/wiki/Parhae",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Parhae",
+    "title": "Parhae",
+    "retrieved": "2026-10-28",
+    "sha256": "2384e9e16b76654f1cea19aecbe0430db43a26c1c6603c3263c81bdae3eb865a",
+    "extractCharacters": 375,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c5db0627568f988d",
+    "name": "遼",
+    "source": "https://en.wikipedia.org/wiki/Liao_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Liao_dynasty",
+    "title": "Liao dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "a8399725f33a31f64368bd06dc8c1f5e4efb0e086297cfdcdae19d23ad2cb2e1",
+    "extractCharacters": 440,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ba66e35f09ef2ab5",
+    "name": "秦",
+    "source": "https://en.wikipedia.org/wiki/Qin_dynasty",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Qin_dynasty",
+    "title": "Qin dynasty",
+    "retrieved": "2026-10-28",
+    "sha256": "f79b1ca9b4de6b24719c78b608d6c43133f467378ec731be0bc9336498f28901",
+    "extractCharacters": 1062,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E7%A7%A6",
+        "status": 200,
+        "sha256": "e30ce455eef7a17de875225f1ae653c1fe019083dcf9db4bcc3fe2baa82c4adc",
+        "bytes": 63977
+      }
+    ]
+  },
+  {
+    "id": "p-09ca2fe98742c111",
+    "name": "南越",
+    "source": "https://en.wikipedia.org/wiki/Nanyue",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Nanyue",
+    "title": "Nanyue",
+    "retrieved": "2026-10-28",
+    "sha256": "a16c5a17b77da6b229ed55aa2363ec28306d4d37a9c447c3de36e0d08151e1a5",
+    "extractCharacters": 500,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a6592d7d54cf062f",
+    "name": "南詔",
+    "source": "https://en.wikipedia.org/wiki/Nanzhao",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Nanzhao",
+    "title": "Nanzhao",
+    "retrieved": "2026-10-28",
+    "sha256": "5edb6913f27fe10951dd02feb6d46264e61000209fe73931d7d752e2eebdf999",
+    "extractCharacters": 419,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-e90c8b0b4d5c3279",
+    "name": "蒲甘",
+    "source": "https://en.wikipedia.org/wiki/Pagan_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Pagan_Kingdom",
+    "title": "Pagan Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "0c171e2d45a96e744528c79ce87b8583759399fd21be200e7496c02e3e6f09cb",
+    "extractCharacters": 458,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-395bbbb77040787d",
+    "name": "達荷美",
+    "source": "https://en.wikipedia.org/wiki/Dahomey",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Dahomey",
+    "title": "Dahomey",
+    "retrieved": "2026-10-28",
+    "sha256": "4a903a69cc10b403b5edd1e8134308caaef66315c8799f48d9d970726dc2a512",
+    "extractCharacters": 452,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-fea30e50e64bfce3",
+    "name": "麻六甲",
+    "source": "https://en.wikipedia.org/wiki/Malacca_Sultanate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Malacca_Sultanate",
+    "title": "Malacca Sultanate",
+    "retrieved": "2026-10-28",
+    "sha256": "78c911055c867a1f53f5b9943efca37613844f8672fec74f6a5edbbe1271c226",
+    "extractCharacters": 588,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4272988a5e887994",
+    "name": "東德",
+    "source": "https://en.wikipedia.org/wiki/East_Germany",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/East_Germany",
+    "title": "East Germany",
+    "retrieved": "2026-10-28",
+    "sha256": "823b4de0a363393b45ee43960be91fdda20c5771efba28708450684287555e32",
+    "extractCharacters": 315,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0695c5e476e6a367",
+    "name": "鎌倉幕府",
+    "source": "https://en.wikipedia.org/wiki/Kamakura_shogunate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kamakura_shogunate",
+    "title": "Kamakura shogunate",
+    "retrieved": "2026-10-28",
+    "sha256": "c30d9ae215f8af45c73b26825dcf386318b059b7739ddc0819fd60d9722ddfec",
+    "extractCharacters": 113,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-98391582daf7a886",
+    "name": "日本帝國",
+    "source": "https://en.wikipedia.org/wiki/Empire_of_Japan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Empire_of_Japan",
+    "title": "Empire of Japan",
+    "retrieved": "2026-10-28",
+    "sha256": "c8a15fb381443d97dba09555b2b5379c5641c894df2489229846b129d2ae3870",
+    "extractCharacters": 826,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0f1245681500f1c6",
+    "name": "大日本帝國",
+    "source": "https://en.wikipedia.org/wiki/Empire_of_Japan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Empire_of_Japan",
+    "title": "Empire of Japan",
+    "retrieved": "2026-10-28",
+    "sha256": "c8a15fb381443d97dba09555b2b5379c5641c894df2489229846b129d2ae3870",
+    "extractCharacters": 826,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-841af0bcc5b687f4",
+    "name": "素可泰",
+    "source": "https://en.wikipedia.org/wiki/Sukhothai_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sukhothai_Kingdom",
+    "title": "Sukhothai Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "9363a20d5866ba818bb4cd96141842f82d7a0f7c2ca75a59383b45ad3d708fac",
+    "extractCharacters": 375,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-022b385a7fbd30e4",
+    "name": "阿瑜陀耶",
+    "source": "https://en.wikipedia.org/wiki/Ayutthaya_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ayutthaya_Kingdom",
+    "title": "Ayutthaya Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "5f75d851aceb5c8a3b8530fe604db411902a1ded7dcba74c7cc49b456e689df8",
+    "extractCharacters": 388,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-da92975e389655b6",
+    "name": "高棉帝國",
+    "source": "https://en.wikipedia.org/wiki/Khmer_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Khmer_Empire",
+    "title": "Khmer Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "53f1fc54d82fcd2930bc345162b45445b64d85316778c6778d2bb80a6b55096b",
+    "extractCharacters": 473,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-72eec4c06a54c416",
+    "name": "桑海",
+    "source": "https://en.wikipedia.org/wiki/Songhai_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Songhai_Empire",
+    "title": "Songhai Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "65e095da250ae717d0b38fa492e392a7e34bbb6688a17b594a769f33d50f857e",
+    "extractCharacters": 706,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-07bab4c27f69e9e6",
+    "name": "新羅",
+    "source": "https://en.wikipedia.org/wiki/Silla",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Silla",
+    "title": "Silla",
+    "retrieved": "2026-10-28",
+    "sha256": "66ee3492fc54105fa68937f3fe45a87d60139657eb6eaf557cb6d2f9265c491e",
+    "extractCharacters": 433,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-bc2cdc0908ea217e",
+    "name": "西藏",
+    "source": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Tibetan_Empire",
+    "title": "Tibetan Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "d886b9b1a1544a5964c6f6e05c96a6cd2848f76e2db27c3b740a6bf4975a477b",
+    "extractCharacters": 429,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5b766f6abd13150f",
+    "name": "毗奢耶那伽羅",
+    "source": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Vijayanagara_Empire",
+    "title": "Vijayanagara Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "7d2c3cb4c79b3d0dd59807c02c039c440207592dd11e47f00475d560c3a635f5",
+    "extractCharacters": 254,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8683806e84733d59",
+    "name": "薩法維帝國",
+    "source": "https://en.wikipedia.org/wiki/Safavid_Iran",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Safavid_Iran",
+    "title": "Safavid Iran",
+    "retrieved": "2026-10-28",
+    "sha256": "3e2af6af5d95c57fa6c8a07e27fc5b59665b9f2ee07dd3005ffbb3ee26249b27",
+    "extractCharacters": 396,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-cf0d593bbf7bd2cf",
+    "name": "帖木兒帝國",
+    "source": "https://en.wikipedia.org/wiki/Timurid_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Timurid_Empire",
+    "title": "Timurid Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "e19f4fccfbf4efcb03805e629518754e036a63340fe16e50b77b50b410573061",
+    "extractCharacters": 469,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-b66fcc6c2a74eb9e",
+    "name": "大辛巴威",
+    "source": "https://en.wikipedia.org/wiki/Great_Zimbabwe",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Great_Zimbabwe",
+    "title": "Great Zimbabwe",
+    "retrieved": "2026-10-28",
+    "sha256": "6deba9ec2d83e330063a2873dd7d20f8266fcf7cc0d53ae9a5611fca8ad7cd43",
+    "extractCharacters": 980,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5cd8645e8311342f",
+    "name": "祖魯",
+    "source": "https://en.wikipedia.org/wiki/Zulu_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Zulu_Kingdom",
+    "title": "Zulu Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "6ea44cf3ba476a321d1e5b3199eded76a488bd1cebbfd481630124b7709ae3d5",
+    "extractCharacters": 433,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-7d94977e033dee63",
+    "name": "衣索比亞",
+    "source": "https://en.wikipedia.org/wiki/Ethiopia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ethiopia",
+    "title": "Ethiopia",
+    "retrieved": "2026-10-28",
+    "sha256": "8b5dac1983b08da4e9d7424a3ea7efd14a9668c83e716c80c8f24cd7dc31d274",
+    "extractCharacters": 703,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-f2f6ac3ee1ffc36a",
+    "name": "波斯",
+    "source": "https://en.wikipedia.org/wiki/Iran",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Iran",
+    "title": "Iran",
+    "retrieved": "2026-10-28",
+    "sha256": "6db30ad5dbc1b9adbedf4860908146bc9e19feecb7e100f47a6c35d771ec8002",
+    "extractCharacters": 600,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-310bc32509797773",
+    "name": "東加",
+    "source": "https://en.wikipedia.org/wiki/Tonga",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Tonga",
+    "title": "Tonga",
+    "retrieved": "2026-10-28",
+    "sha256": "885c47c3f01b86b75e94bbb0ee397358ac8ea7ea29af9fc4a598e710cfd31100",
+    "extractCharacters": 686,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%9D%B1%E5%8A%A0",
+        "status": 200,
+        "sha256": "09a1f9f50db6d2ac5df49ae15a33b3b6547e7a64748efb0dbccd227ae4bebf63",
+        "bytes": 455150
+      }
+    ]
+  },
+  {
+    "id": "p-0ea781cd42b6d548",
+    "name": "薩摩亞",
+    "source": "https://en.wikipedia.org/wiki/Samoa",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Samoa",
+    "title": "Samoa",
+    "retrieved": "2026-10-28",
+    "sha256": "15df00cfe7eb7179c88a7d5c7390a37950bfc4aaacef6a14bf1c8e2ce7d0a218",
+    "extractCharacters": 568,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-679c02dcd2ba58a3",
+    "name": "斐濟",
+    "source": "https://en.wikipedia.org/wiki/Fiji",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Fiji",
+    "title": "Fiji",
+    "retrieved": "2026-10-28",
+    "sha256": "7aab49c93ad3099556e51d6138fab0ec6e736db1ed253e06dafdff468bc86e7a",
+    "extractCharacters": 755,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%96%90%E6%BF%9F",
+        "status": 200,
+        "sha256": "d037601568c1b3cc173c2dc4af500d33ffadd5751cb49772072471b3e3a392db",
+        "bytes": 389499
+      }
+    ]
+  },
+  {
+    "id": "p-99a7c065a730fdac",
+    "name": "蒙古國",
+    "source": "https://en.wikipedia.org/wiki/Mongolia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mongolia",
+    "title": "Mongolia",
+    "retrieved": "2026-10-28",
+    "sha256": "eea1f94a0930c7ee63250c17af090243b75df80528a7ba29b4dd371a0a24eca2",
+    "extractCharacters": 740,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5dbddf911f9e5652",
+    "name": "阿富汗",
+    "source": "https://en.wikipedia.org/wiki/Afghanistan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Afghanistan",
+    "title": "Afghanistan",
+    "retrieved": "2026-10-28",
+    "sha256": "2187ceb8462b4e2aa144949783cc207bb875691e2e85a26bbbc82b108a883036",
+    "extractCharacters": 646,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-1af00b874ff31830",
+    "name": "阿爾巴尼亞",
+    "source": "https://en.wikipedia.org/wiki/Albania",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Albania",
+    "title": "Albania",
+    "retrieved": "2026-10-28",
+    "sha256": "35829c1c666c7c30bdbfe515d0eff73bb210ced24fbec1740e58fa5f4c6e4236",
+    "extractCharacters": 730,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-30e230229746a0c6",
+    "name": "阿爾及利亞",
+    "source": "https://en.wikipedia.org/wiki/Algeria",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Algeria",
+    "title": "Algeria",
+    "retrieved": "2026-10-28",
+    "sha256": "6f97170353f0419fb3b5138402f717db06d70aa5312b29bf61ff18f285f15cdc",
+    "extractCharacters": 353,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-3e340be4de18e6f6",
+    "name": "安道爾",
+    "source": "https://en.wikipedia.org/wiki/Andorra",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Andorra",
+    "title": "Andorra",
+    "retrieved": "2026-10-28",
+    "sha256": "d891ecd189a5c39d0088938b6b98f0cc001840f35cfeeb7c7530ff0da4235ac3",
+    "extractCharacters": 632,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-22b9653281793ae7",
+    "name": "安哥拉",
+    "source": "https://en.wikipedia.org/wiki/Angola",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Angola",
+    "title": "Angola",
+    "retrieved": "2026-10-28",
+    "sha256": "71160954d276a0088f8d5a41da82ad2f828bba336a2319c3e8a6aa23d9d2ea1c",
+    "extractCharacters": 594,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-100c4768d37d3b03",
+    "name": "安地卡及巴布達",
+    "source": "https://en.wikipedia.org/wiki/Antigua_and_Barbuda",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Antigua_and_Barbuda",
+    "title": "Antigua and Barbuda",
+    "retrieved": "2026-10-28",
+    "sha256": "e0da2a6e88fc0ea2a547d25d82cb7d12507aff817e0a267665586f0d116105b5",
+    "extractCharacters": 682,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ea0b937ea317101e",
+    "name": "阿根廷",
+    "source": "https://en.wikipedia.org/wiki/Argentina",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Argentina",
+    "title": "Argentina",
+    "retrieved": "2026-10-28",
+    "sha256": "bc047b051bffb281e6c18404ae97c504a7e44929ff0e5db59ad795e1f3d33aa8",
+    "extractCharacters": 956,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2ddc5634ff5e06c5",
+    "name": "亞美尼亞",
+    "source": "https://en.wikipedia.org/wiki/Armenia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Armenia",
+    "title": "Armenia",
+    "retrieved": "2026-10-28",
+    "sha256": "fc07a23f65b059a5ea2226a989bc3c62742b6ff6b430554aba7d0987e1f0e92d",
+    "extractCharacters": 353,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c1ef40ce0484c698",
+    "name": "澳大利亞",
+    "source": "https://en.wikipedia.org/wiki/Australia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Australia",
+    "title": "Australia",
+    "retrieved": "2026-10-28",
+    "sha256": "3bddc6d629dcf3fcfa20343d1f5999f18b98dc036290aa062443da727a78528c",
+    "extractCharacters": 506,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c9cab0238debc6e5",
+    "name": "奧地利",
+    "source": "https://en.wikipedia.org/wiki/Austria",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Austria",
+    "title": "Austria",
+    "retrieved": "2026-10-28",
+    "sha256": "d1495403252f80a806e27d82a24a441b9783669debc2757f3ba5dcd2f23505d8",
+    "extractCharacters": 523,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-efa9150afdeaa69f",
+    "name": "亞塞拜然",
+    "source": "https://en.wikipedia.org/wiki/Azerbaijan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Azerbaijan",
+    "title": "Azerbaijan",
+    "retrieved": "2026-10-28",
+    "sha256": "e62ae89e7f4f6e4e1f4b0e9f52328193caa6733837af156b999171041d0c7218",
+    "extractCharacters": 378,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-58f91a2aeffd6e0d",
+    "name": "巴哈馬",
+    "source": "https://en.wikipedia.org/wiki/The_Bahamas",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/The_Bahamas",
+    "title": "The Bahamas",
+    "retrieved": "2026-10-28",
+    "sha256": "78ab266ae252211ffc0b90ec7e8fefc91e3aaad28e09cdfef73b55d35b4a802e",
+    "extractCharacters": 608,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2f1d47eb679bb05e",
+    "name": "孟加拉",
+    "source": "https://en.wikipedia.org/wiki/Bangladesh",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Bangladesh",
+    "title": "Bangladesh",
+    "retrieved": "2026-10-28",
+    "sha256": "e3a8fb414ebefea092e875ee9673eb2316b70907dcb28187285af737bcfacc86",
+    "extractCharacters": 709,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8e8dfae9b7521209",
+    "name": "巴貝多",
+    "source": "https://en.wikipedia.org/wiki/Barbados",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Barbados",
+    "title": "Barbados",
+    "retrieved": "2026-10-28",
+    "sha256": "bb6dd2044cd5e35bf3dbb51e42744b4b8c7d60d6a2ae57ac883bcf4f35aa1d3b",
+    "extractCharacters": 296,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-348841ef53dbd5a6",
+    "name": "比利時",
+    "source": "https://en.wikipedia.org/wiki/Belgium",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Belgium",
+    "title": "Belgium",
+    "retrieved": "2026-10-28",
+    "sha256": "c6cfbaa53dad4cd95fe992592fd2f92fc2045b2624763d11bc691d8f3fd46f0c",
+    "extractCharacters": 627,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-71dc81f13c2d66fa",
+    "name": "貝里斯",
+    "source": "https://en.wikipedia.org/wiki/Belize",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Belize",
+    "title": "Belize",
+    "retrieved": "2026-10-28",
+    "sha256": "1a27160ecd653302f43e4bb2d5f991e58eb1335f463962911f2cfcff62868647",
+    "extractCharacters": 394,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-69d0a7b84cd1d5d0",
+    "name": "貝南",
+    "source": "https://en.wikipedia.org/wiki/Benin",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Benin",
+    "title": "Benin",
+    "retrieved": "2026-10-28",
+    "sha256": "fdcd4f9f5cda276fbc81643584448cd7b7c575a0d4ea28524e071b2989e85584",
+    "extractCharacters": 738,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d889e2172a211a1d",
+    "name": "不丹",
+    "source": "https://en.wikipedia.org/wiki/Bhutan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Bhutan",
+    "title": "Bhutan",
+    "retrieved": "2026-10-28",
+    "sha256": "4d1bb7461d405c0e1af557fe6e6cc2e235b74f38d944bc6d4652b5d1af24ac9f",
+    "extractCharacters": 575,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-9621c07364400953",
+    "name": "玻利維亞",
+    "source": "https://en.wikipedia.org/wiki/Bolivia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Bolivia",
+    "title": "Bolivia",
+    "retrieved": "2026-10-28",
+    "sha256": "b5d79f994264ca4cde054de316c84441a8b9d2dae59d034ce40fcf627857b5f3",
+    "extractCharacters": 1107,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-1672f60c3a9ae94f",
+    "name": "波札那",
+    "source": "https://en.wikipedia.org/wiki/Botswana",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Botswana",
+    "title": "Botswana",
+    "retrieved": "2026-10-28",
+    "sha256": "19165e9c84518207e0d56b880aa9c3500fe316db882e98c7e637a83881d526e2",
+    "extractCharacters": 485,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-07f62b021771d3cf",
+    "name": "巴西",
+    "source": "https://en.wikipedia.org/wiki/Brazil",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Brazil",
+    "title": "Brazil",
+    "retrieved": "2026-10-28",
+    "sha256": "de4a3c35187b11c1fdbaad26ea6f7873e3675b9cc7014a0aaaa21e89771632e2",
+    "extractCharacters": 538,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-99ebf7d91200600c",
+    "name": "汶萊",
+    "source": "https://en.wikipedia.org/wiki/Brunei",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Brunei",
+    "title": "Brunei",
+    "retrieved": "2026-10-28",
+    "sha256": "d7914c7233211a3c30c42ee75ecefbb5262f4d8942e48d9599ade92f32a1294e",
+    "extractCharacters": 960,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a564371ac0f23840",
+    "name": "布吉納法索",
+    "source": "https://en.wikipedia.org/wiki/Burkina_Faso",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Burkina_Faso",
+    "title": "Burkina Faso",
+    "retrieved": "2026-10-28",
+    "sha256": "ab5b45aa44f310d26d23f0bacc17df6b1c70a8f219530ad9b42b18b3d4887d53",
+    "extractCharacters": 419,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c835bd1c4578817f",
+    "name": "蒲隆地",
+    "source": "https://en.wikipedia.org/wiki/Burundi",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Burundi",
+    "title": "Burundi",
+    "retrieved": "2026-10-28",
+    "sha256": "c2d4039f17374e54ecdba102917e06417bb99d952ef12e5a33d709c1c56a80eb",
+    "extractCharacters": 522,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-085807f22f69d2c9",
+    "name": "喀麥隆",
+    "source": "https://en.wikipedia.org/wiki/Cameroon",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Cameroon",
+    "title": "Cameroon",
+    "retrieved": "2026-10-28",
+    "sha256": "565e8b702d78c9ffea019a14780ec85e62a25080e7116f227403ff955a34f2e1",
+    "extractCharacters": 703,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-be55ef3f4c4e6c2d",
+    "name": "加拿大",
+    "source": "https://en.wikipedia.org/wiki/Canada",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Canada",
+    "title": "Canada",
+    "retrieved": "2026-10-28",
+    "sha256": "36f9cfa97ba1e65496691cabacfc0aced4b6b69a3eb2282235386ec4560ecd04",
+    "extractCharacters": 698,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4256e512fcfb03ca",
+    "name": "查德",
+    "source": "https://en.wikipedia.org/wiki/Chad",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Chad",
+    "title": "Chad",
+    "retrieved": "2026-10-28",
+    "sha256": "8453225e7b9a0df7f82351381c289c7c70e75666f5a3b9f9b0ce115e4d422792",
+    "extractCharacters": 511,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-f5273e236d498c35",
+    "name": "智利",
+    "source": "https://en.wikipedia.org/wiki/Chile",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Chile",
+    "title": "Chile",
+    "retrieved": "2026-10-28",
+    "sha256": "8f66a1cb26a3c96dd1f7e985b5d47c015196e902c27fb5a54e2529adfad40d52",
+    "extractCharacters": 890,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-10436829032f361a",
+    "name": "中國",
+    "source": "https://en.wikipedia.org/wiki/China",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/China",
+    "title": "China",
+    "retrieved": "2026-10-28",
+    "sha256": "0d7b9776d68a7c89ea306253ffe6ec0218524760774c4003bd732c58e49909e7",
+    "extractCharacters": 646,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E4%B8%AD%E5%9C%8B",
+        "status": 200,
+        "sha256": "db867209c5bb2ee9d681669bcb472d3af73d910d89eaaa74e51a7741e558411b",
+        "bytes": 814587
+      }
+    ]
+  },
+  {
+    "id": "p-6b615adb1300c116",
+    "name": "哥倫比亞",
+    "source": "https://en.wikipedia.org/wiki/Colombia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Colombia",
+    "title": "Colombia",
+    "retrieved": "2026-10-28",
+    "sha256": "03a8faaf77c35cf0e1ede815e5f2be6e63eeeae3332bc2db6900524fc296b819",
+    "extractCharacters": 1149,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0d0b4e41022259f0",
+    "name": "古巴",
+    "source": "https://en.wikipedia.org/wiki/Cuba",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Cuba",
+    "title": "Cuba",
+    "retrieved": "2026-10-28",
+    "sha256": "27e5c61420b65f2bc69dfdbcc2e8c8b1a83da9aa18ff5fd4873267e16de44911",
+    "extractCharacters": 627,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5f1162c57ecf9981",
+    "name": "賽普勒斯",
+    "source": "https://en.wikipedia.org/wiki/Cyprus",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Cyprus",
+    "title": "Cyprus",
+    "retrieved": "2026-10-28",
+    "sha256": "fc0005c28426e904a87096019bc85b124cea7b6d60612118eb71b4784451b2cf",
+    "extractCharacters": 594,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-1c769ecb9e80202f",
+    "name": "捷克共和國",
+    "source": "https://en.wikipedia.org/wiki/Czech_Republic",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Czech_Republic",
+    "title": "Czech Republic",
+    "retrieved": "2026-10-28",
+    "sha256": "a4abc70d11f66e88eaa73e127fa06e2c3b9b4aa00cc587bcafc25a30b4bc9b6c",
+    "extractCharacters": 523,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c527097577600a67",
+    "name": "丹麥",
+    "source": "https://en.wikipedia.org/wiki/Denmark",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Denmark",
+    "title": "Denmark",
+    "retrieved": "2026-10-28",
+    "sha256": "d88eac51ccc6e36b8e8696b86391ed90703efad9d3b17020b4213d6b00923690",
+    "extractCharacters": 705,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4678a57b30912b23",
+    "name": "吉布地",
+    "source": "https://en.wikipedia.org/wiki/Djibouti",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Djibouti",
+    "title": "Djibouti",
+    "retrieved": "2026-10-28",
+    "sha256": "75fab06fda740715c1e1f6e60abd1f549a561984092c53e5522b18afebe78103",
+    "extractCharacters": 268,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-be2a7f5684fdd2ed",
+    "name": "多米尼克",
+    "source": "https://en.wikipedia.org/wiki/Dominica",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Dominica",
+    "title": "Dominica",
+    "retrieved": "2026-10-28",
+    "sha256": "95e459edbcec62c151f6784608f16de879faad7331e76d986aec93ea4393703f",
+    "extractCharacters": 622,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-81e884cb2e857fdd",
+    "name": "多明尼加共和國",
+    "source": "https://en.wikipedia.org/wiki/Dominican_Republic",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Dominican_Republic",
+    "title": "Dominican Republic",
+    "retrieved": "2026-10-28",
+    "sha256": "44be6a0d0f1a9af3b81909a8b3f0d85d20b799379a44dd16706a338b338ad5d1",
+    "extractCharacters": 721,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2ca26c60fe0238a7",
+    "name": "厄瓜多",
+    "source": "https://en.wikipedia.org/wiki/Ecuador",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ecuador",
+    "title": "Ecuador",
+    "retrieved": "2026-10-28",
+    "sha256": "151c7515ecf67420202ab5e3cf382d39e8120ad2c3e16d04d5c3e9dc96ad1848",
+    "extractCharacters": 391,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-557c1599d9a04895",
+    "name": "埃及",
+    "source": "https://en.wikipedia.org/wiki/Egypt",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Egypt",
+    "title": "Egypt",
+    "retrieved": "2026-10-28",
+    "sha256": "8245af674dc1468211287a1402478dc2d8f11fb17515164fd9e1a0c770f3fd83",
+    "extractCharacters": 730,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E5%9F%83%E5%8F%8A",
+        "status": 200,
+        "sha256": "b044e11b886edce82a72fdf54af0b343942aaaa0ca5efa616c88339f0b813741",
+        "bytes": 713742
+      }
+    ]
+  },
+  {
+    "id": "p-c408d26c1ec1301a",
+    "name": "薩爾瓦多",
+    "source": "https://en.wikipedia.org/wiki/El_Salvador",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/El_Salvador",
+    "title": "El Salvador",
+    "retrieved": "2026-10-28",
+    "sha256": "98c86ded0a5391a528da20f719c5154ac04fdf19b709888b4b3b46d680f4e063",
+    "extractCharacters": 404,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8994687843a38376",
+    "name": "赤道幾內亞",
+    "source": "https://en.wikipedia.org/wiki/Equatorial_Guinea",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Equatorial_Guinea",
+    "title": "Equatorial Guinea",
+    "retrieved": "2026-10-28",
+    "sha256": "4c224c398fbf0a85b15325343db797aa5dbe6300dcb389e8df0782e256a2fe16",
+    "extractCharacters": 709,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-01bc4009390083a7",
+    "name": "厄利垂亞",
+    "source": "https://en.wikipedia.org/wiki/Eritrea",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Eritrea",
+    "title": "Eritrea",
+    "retrieved": "2026-10-28",
+    "sha256": "36448886911d50445ed2b0bd92b21291e970faaeb989d0a20576c853f882e0fa",
+    "extractCharacters": 477,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-10aeba697f6ba830",
+    "name": "愛沙尼亞",
+    "source": "https://en.wikipedia.org/wiki/Estonia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Estonia",
+    "title": "Estonia",
+    "retrieved": "2026-10-28",
+    "sha256": "ec7795e3f792b851da9f747b1e7392d2389b2a6e1c079c81b6c402cded2ec4a2",
+    "extractCharacters": 758,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-aed8f531aa7e785b",
+    "name": "芬蘭",
+    "source": "https://en.wikipedia.org/wiki/Finland",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Finland",
+    "title": "Finland",
+    "retrieved": "2026-10-28",
+    "sha256": "cbbbb8240ca06fa81fced8d4c018d5f8bc94486b635faa6c9b5d787e59172ea7",
+    "extractCharacters": 644,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-7a1ca4ef7515f727",
+    "name": "法國",
+    "source": "https://en.wikipedia.org/wiki/France",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/France",
+    "title": "France",
+    "retrieved": "2026-10-28",
+    "sha256": "9c687cf6c48596d0d97789379ca28807cec657dcdc5c33d4da2be0c1f4767a56",
+    "extractCharacters": 981,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-7e222a78e771f1b9",
+    "name": "加彭",
+    "source": "https://en.wikipedia.org/wiki/Gabon",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Gabon",
+    "title": "Gabon",
+    "retrieved": "2026-10-28",
+    "sha256": "74093660f8ad2cf1e34613fea159aed365c33cfc31591c7542bc68d0587b121b",
+    "extractCharacters": 598,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c6e681b1968d02d9",
+    "name": "甘比亞",
+    "source": "https://en.wikipedia.org/wiki/The_Gambia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/The_Gambia",
+    "title": "The Gambia",
+    "retrieved": "2026-10-28",
+    "sha256": "7a7682b97f228d9fb6b1299ba5876e4cbc42f092576e3a7e6bfb45991665ee03",
+    "extractCharacters": 261,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-80db4ccdca106d37",
+    "name": "德國",
+    "source": "https://en.wikipedia.org/wiki/Germany",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Germany",
+    "title": "Germany",
+    "retrieved": "2026-10-28",
+    "sha256": "bd38e5440713fa095ac10cc2e10cc94ff2740f297eaed6097dfbbf65b61615d9",
+    "extractCharacters": 644,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-583201c1efbf30eb",
+    "name": "迦納",
+    "source": "https://en.wikipedia.org/wiki/Ghana",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ghana",
+    "title": "Ghana",
+    "retrieved": "2026-10-28",
+    "sha256": "a5b114d1e6c15b08e393901ed2ce24d0d9207b8dfbebac0aeb443e16a7333eab",
+    "extractCharacters": 559,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-9c93ad439373b4ee",
+    "name": "希臘",
+    "source": "https://en.wikipedia.org/wiki/Greece",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Greece",
+    "title": "Greece",
+    "retrieved": "2026-10-28",
+    "sha256": "6c63a10cc9464546ec85a558017faf5b9f109ed1d45847e639d14a0220930401",
+    "extractCharacters": 565,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-0593aa0c8ed587bb",
+    "name": "格瑞那達",
+    "source": "https://en.wikipedia.org/wiki/Grenada",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Grenada",
+    "title": "Grenada",
+    "retrieved": "2026-10-28",
+    "sha256": "315af0fbd37ff613ce990631ec3b5d2e7b5998158ed234c1de128d85bb3817e8",
+    "extractCharacters": 263,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-45a15a2470e1d182",
+    "name": "瓜地馬拉",
+    "source": "https://en.wikipedia.org/wiki/Guatemala",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Guatemala",
+    "title": "Guatemala",
+    "retrieved": "2026-10-28",
+    "sha256": "514713ddb21026d7dc242e3df86df8549650931fbbd4f6be96f9b625cb9465e1",
+    "extractCharacters": 319,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-dd591d77ea53db0b",
+    "name": "幾內亞",
+    "source": "https://en.wikipedia.org/wiki/Guinea",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Guinea",
+    "title": "Guinea",
+    "retrieved": "2026-10-28",
+    "sha256": "c5f5bafb3f42ca5346fc10cebd7075bd45828f2e05f83b89ed60ab8e27d50d5e",
+    "extractCharacters": 602,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-75e8f462f9dae90e",
+    "name": "幾內亞比索",
+    "source": "https://en.wikipedia.org/wiki/Guinea-Bissau",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Guinea-Bissau",
+    "title": "Guinea-Bissau",
+    "retrieved": "2026-10-28",
+    "sha256": "e202b28a52a7e1ba1bd3a0f9547db014cad798faa6ca687bfbf046e18314d6ca",
+    "extractCharacters": 240,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d090b87e4a3bbce3",
+    "name": "海地",
+    "source": "https://en.wikipedia.org/wiki/Haiti",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Haiti",
+    "title": "Haiti",
+    "retrieved": "2026-10-28",
+    "sha256": "acbf3a3c768853e0b7c45795ba61f07f2527aeaf490a541f30e478b14e6b1115",
+    "extractCharacters": 462,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-b79b5f97bc67a30a",
+    "name": "宏都拉斯",
+    "source": "https://en.wikipedia.org/wiki/Honduras",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Honduras",
+    "title": "Honduras",
+    "retrieved": "2026-10-28",
+    "sha256": "cd8ad0f4feebdbb414a85ae6dd72017f5d88a6d09bc7db1f998713647245d423",
+    "extractCharacters": 365,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-595d6d914950b8a2",
+    "name": "冰島",
+    "source": "https://en.wikipedia.org/wiki/Iceland",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Iceland",
+    "title": "Iceland",
+    "retrieved": "2026-10-28",
+    "sha256": "68860efc3cf35a3a36cd96190da73aefda31b8d1c22f4366f46f17219013d5e0",
+    "extractCharacters": 893,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-abd149214539d9f2",
+    "name": "印度",
+    "source": "https://en.wikipedia.org/wiki/India",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/India",
+    "title": "India",
+    "retrieved": "2026-10-28",
+    "sha256": "c900e430f181ff279bf02e373fbbbb77ea1977279e70575f92210e073baaba30",
+    "extractCharacters": 449,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-dbc74a36d8e7439c",
+    "name": "印尼",
+    "source": "https://en.wikipedia.org/wiki/Indonesia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Indonesia",
+    "title": "Indonesia",
+    "retrieved": "2026-10-28",
+    "sha256": "72845082810f7b86e98225b7d64a55a1892f07913e427b3886e4ba38913b39ef",
+    "extractCharacters": 457,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-de5008d194a73211",
+    "name": "伊拉克",
+    "source": "https://en.wikipedia.org/wiki/Iraq",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Iraq",
+    "title": "Iraq",
+    "retrieved": "2026-10-28",
+    "sha256": "631371279af0d59c8c8f3cc5d9af479115aeb818e97aa4856dfcac8c8528dc6a",
+    "extractCharacters": 564,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-02bf1dfa9a0365a8",
+    "name": "愛爾蘭",
+    "source": "https://en.wikipedia.org/wiki/Republic_of_Ireland",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Republic_of_Ireland",
+    "title": "Republic of Ireland",
+    "retrieved": "2026-10-28",
+    "sha256": "f657156928098bc9dd7d835804bc2a8d7a11db993b7e071efb3297f020bbeb5d",
+    "extractCharacters": 963,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5a9cf672c8be6b5a",
+    "name": "義大利",
+    "source": "https://en.wikipedia.org/wiki/Italy",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Italy",
+    "title": "Italy",
+    "retrieved": "2026-10-28",
+    "sha256": "9c12c9a774d812dfb2fb1f3c54c3f4e9b62ca16a1fe52abc229c1e88169ca5f1",
+    "extractCharacters": 742,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d9b67dbdfbf1cf29",
+    "name": "象牙海岸",
+    "source": "https://en.wikipedia.org/wiki/Ivory_Coast",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ivory_Coast",
+    "title": "Ivory Coast",
+    "retrieved": "2026-10-28",
+    "sha256": "93cc3674f907168989f6d8a7afe403508ba98acdb004cd4162de8292adb5b3ed",
+    "extractCharacters": 948,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-42c298ba17fed5da",
+    "name": "牙買加",
+    "source": "https://en.wikipedia.org/wiki/Jamaica",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Jamaica",
+    "title": "Jamaica",
+    "retrieved": "2026-10-28",
+    "sha256": "49640504a47f2a67efcd896b9d2776c5a90b5c11427db5e66e9252318c213bd5",
+    "extractCharacters": 529,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-647294383b2cbc24",
+    "name": "日本",
+    "source": "https://en.wikipedia.org/wiki/Japan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Japan",
+    "title": "Japan",
+    "retrieved": "2026-10-28",
+    "sha256": "38a7006e1ca8bd6ba591374e217960c76862ccfc9d494a19098a9567bc7d4955",
+    "extractCharacters": 722,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E6%97%A5%E6%9C%AC",
+        "status": 200,
+        "sha256": "c00c27de9eb91a98815098611c09b6109da8bcdeffd4fd86807edb5680008080",
+        "bytes": 1547467
+      }
+    ]
+  },
+  {
+    "id": "p-75c02b8d2f91ba67",
+    "name": "哈薩克",
+    "source": "https://en.wikipedia.org/wiki/Kazakhstan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kazakhstan",
+    "title": "Kazakhstan",
+    "retrieved": "2026-10-28",
+    "sha256": "3dbbef576b889cdf1b8bb32a714bc85267fdd09b10e2e3ad16a656dedb829309",
+    "extractCharacters": 516,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-74e1891dc615b22f",
+    "name": "肯亞",
+    "source": "https://en.wikipedia.org/wiki/Kenya",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kenya",
+    "title": "Kenya",
+    "retrieved": "2026-10-28",
+    "sha256": "1966ecb6b687f2ed1aab491f6ca1d029335de1675f6bc4a069e41c21856e90d2",
+    "extractCharacters": 972,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-10c3c2e2edc1f1f0",
+    "name": "科威特",
+    "source": "https://en.wikipedia.org/wiki/Kuwait",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kuwait",
+    "title": "Kuwait",
+    "retrieved": "2026-10-28",
+    "sha256": "22f1363a822929658c9d7e3382b156536e5266108eca650febc609a0bb3f3322",
+    "extractCharacters": 854,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-6f189bf077b6247d",
+    "name": "吉爾吉斯",
+    "source": "https://en.wikipedia.org/wiki/Kyrgyzstan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kyrgyzstan",
+    "title": "Kyrgyzstan",
+    "retrieved": "2026-10-28",
+    "sha256": "8a91d3bfb4bc8f5f58141582d5f6aa2de424548b3e005aa43f0163928eecc031",
+    "extractCharacters": 512,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-98e18f46684be4fe",
+    "name": "寮國",
+    "source": "https://en.wikipedia.org/wiki/Laos",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Laos",
+    "title": "Laos",
+    "retrieved": "2026-10-28",
+    "sha256": "c0c95ac4c8fa94778c83d5af1aed69ff0d531faf7cb0e2e0c7962bed334b98e6",
+    "extractCharacters": 730,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-988c8160b754c01d",
+    "name": "拉脫維亞",
+    "source": "https://en.wikipedia.org/wiki/Latvia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Latvia",
+    "title": "Latvia",
+    "retrieved": "2026-10-28",
+    "sha256": "f7b70296958db52aa5fa5441c5b1c1fbffd0cf418d91e61c2c76f7d2a4bb454c",
+    "extractCharacters": 789,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-e34dd616b94ba254",
+    "name": "黎巴嫩",
+    "source": "https://en.wikipedia.org/wiki/Lebanon",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Lebanon",
+    "title": "Lebanon",
+    "retrieved": "2026-10-28",
+    "sha256": "44bb10b41d2fd792bd24ad9b8c9d0902a32d8dbb47f2566523acce2d642fa906",
+    "extractCharacters": 483,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5c2e4745c608d719",
+    "name": "賴索托",
+    "source": "https://en.wikipedia.org/wiki/Lesotho",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Lesotho",
+    "title": "Lesotho",
+    "retrieved": "2026-10-28",
+    "sha256": "3ad8912f3a3f10a8348c536c9acbdcc8fc532525517d89b3be82953e72851793",
+    "extractCharacters": 406,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c9d2604dd5187b6a",
+    "name": "賴比瑞亞",
+    "source": "https://en.wikipedia.org/wiki/Liberia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Liberia",
+    "title": "Liberia",
+    "retrieved": "2026-10-28",
+    "sha256": "78d297584a205ea5d80d539d03d27e7eedcfdd820bd8254d2682d1b1c814e353",
+    "extractCharacters": 509,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-6ff080c07894909d",
+    "name": "列支敦斯登",
+    "source": "https://en.wikipedia.org/wiki/Liechtenstein",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Liechtenstein",
+    "title": "Liechtenstein",
+    "retrieved": "2026-10-28",
+    "sha256": "15d5d10e9be4e9d0e85934b8cff3a522a56a5c79a706eded89d8ff564fef4da4",
+    "extractCharacters": 243,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-5c83a631bce2bffe",
+    "name": "立陶宛",
+    "source": "https://en.wikipedia.org/wiki/Lithuania",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Lithuania",
+    "title": "Lithuania",
+    "retrieved": "2026-10-28",
+    "sha256": "cec3652267cd2c608d8035ffea39b38aaf7a0f25054315ab3ac4fbdfc9011c74",
+    "extractCharacters": 683,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ed76f191621cf6ed",
+    "name": "盧森堡",
+    "source": "https://en.wikipedia.org/wiki/Luxembourg",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Luxembourg",
+    "title": "Luxembourg",
+    "retrieved": "2026-10-28",
+    "sha256": "f6c6ca114d31a867b31b300db4df9cf39cfa7ae0dc6b7427f8db24e7cca1d8c2",
+    "extractCharacters": 443,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-d6804464c5f44de8",
+    "name": "馬達加斯加",
+    "source": "https://en.wikipedia.org/wiki/Madagascar",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Madagascar",
+    "title": "Madagascar",
+    "retrieved": "2026-10-28",
+    "sha256": "f7da64e3b0360923f68e1bdbed7fbde9238b5e22bbb8bc31334aa57520807d4d",
+    "extractCharacters": 375,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-611025cdde0afeea",
+    "name": "馬拉威",
+    "source": "https://en.wikipedia.org/wiki/Malawi",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Malawi",
+    "title": "Malawi",
+    "retrieved": "2026-10-28",
+    "sha256": "2aa3cacb197ccdc484c479770d80be1b38c48a05bfc352873f329bec5e0437e1",
+    "extractCharacters": 335,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ee5721a5a60b7625",
+    "name": "馬利",
+    "source": "https://en.wikipedia.org/wiki/Mali",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mali",
+    "title": "Mali",
+    "retrieved": "2026-10-28",
+    "sha256": "e30d68239c8d4bb24d8b907d6f21ff9c53fdef6474434ce2a9fc2eb366e0a0e1",
+    "extractCharacters": 644,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E9%A6%AC%E5%88%A9",
+        "status": 200,
+        "sha256": "ff1fdedc487d9b50b8f9f9138953a341d3a006ee3247b6b942a977529db9c684",
+        "bytes": 53051
+      }
+    ]
+  },
+  {
+    "id": "p-71e9eb10755c8232",
+    "name": "馬爾他",
+    "source": "https://en.wikipedia.org/wiki/Malta",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Malta",
+    "title": "Malta",
+    "retrieved": "2026-10-28",
+    "sha256": "5b8162509d261b348a9bd762a3a4ac665c0474deb9f85561a07612bcad9b9a68",
+    "extractCharacters": 564,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-bfb0c8d36f4aaa84",
+    "name": "茅利塔尼亞",
+    "source": "https://en.wikipedia.org/wiki/Mauritania",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mauritania",
+    "title": "Mauritania",
+    "retrieved": "2026-10-28",
+    "sha256": "b660f4c911dd649b44735b7f757181034fcb553f83bfca1e95965cb4b922c8c5",
+    "extractCharacters": 633,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-a7d355b26bda6bf1",
+    "name": "墨西哥",
+    "source": "https://en.wikipedia.org/wiki/Mexico",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mexico",
+    "title": "Mexico",
+    "retrieved": "2026-10-28",
+    "sha256": "06b843c6a401addcd7b89d767f9b111c0611d56100f265f69b0a1e8f88b0879e",
+    "extractCharacters": 745,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-14ad63a1c63f01d7",
+    "name": "摩爾多瓦",
+    "source": "https://en.wikipedia.org/wiki/Moldova",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Moldova",
+    "title": "Moldova",
+    "retrieved": "2026-10-28",
+    "sha256": "8e50056727c6051d0a0ad04ae85fdba1e837bc0df9a5bc73abdbd5782b378a16",
+    "extractCharacters": 520,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-b675f5df5fe68da1",
+    "name": "摩洛哥",
+    "source": "https://en.wikipedia.org/wiki/Morocco",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Morocco",
+    "title": "Morocco",
+    "retrieved": "2026-10-28",
+    "sha256": "7f21556287e760917ae2a09e76cc5f8b25f5a7d1f9180c1a35632f940875b634",
+    "extractCharacters": 683,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c9054826f71c23b8",
+    "name": "莫三比克",
+    "source": "https://en.wikipedia.org/wiki/Mozambique",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Mozambique",
+    "title": "Mozambique",
+    "retrieved": "2026-10-28",
+    "sha256": "f98d473edd783562f461a377c375be6bfdc9c853849baef169a100411a4d5ce9",
+    "extractCharacters": 423,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ea5bd39848d8ae8b",
+    "name": "納米比亞",
+    "source": "https://en.wikipedia.org/wiki/Namibia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Namibia",
+    "title": "Namibia",
+    "retrieved": "2026-10-28",
+    "sha256": "5cba5832de775e32bda08736f3c3510db1e47f05b62e9f482da399414116f3a0",
+    "extractCharacters": 397,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-3a386c13d283dc2e",
+    "name": "荷蘭",
+    "source": "https://en.wikipedia.org/wiki/Netherlands",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Netherlands",
+    "title": "Netherlands",
+    "retrieved": "2026-10-28",
+    "sha256": "c07d0394368c675e335baa403be32a39a31b3c429786123866b36caf476efaa2",
+    "extractCharacters": 781,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2898e16d4e4ee2ae",
+    "name": "紐西蘭",
+    "source": "https://en.wikipedia.org/wiki/New_Zealand",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/New_Zealand",
+    "title": "New Zealand",
+    "retrieved": "2026-10-28",
+    "sha256": "439ad13bedd25f80d77c52b7cf5d9099b18a1cdd35112fa2560e72ea76828421",
+    "extractCharacters": 546,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-94e6bd574b6e3c55",
+    "name": "尼加拉瓜",
+    "source": "https://en.wikipedia.org/wiki/Nicaragua",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Nicaragua",
+    "title": "Nicaragua",
+    "retrieved": "2026-10-28",
+    "sha256": "9c82456293211d2335e286b604005bc95f2230bd277bed84d9f4d7c299a1a043",
+    "extractCharacters": 315,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2cbebc541f98c7a7",
+    "name": "尼日",
+    "source": "https://en.wikipedia.org/wiki/Niger",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Niger",
+    "title": "Niger",
+    "retrieved": "2026-10-28",
+    "sha256": "bfe750309cc1ebdee4ff48f56c121ecf011f96a14b5e3d89e17856bf7dbc8af8",
+    "extractCharacters": 695,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-bea54a349795017d",
+    "name": "挪威",
+    "source": "https://en.wikipedia.org/wiki/Norway",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Norway",
+    "title": "Norway",
+    "retrieved": "2026-10-28",
+    "sha256": "bdce139730f40b47f3ad9c8b6a236f9b3d603642fe761966b46ce99fcf90e134",
+    "extractCharacters": 781,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-e2567312ec53232b",
+    "name": "巴基斯坦",
+    "source": "https://en.wikipedia.org/wiki/Pakistan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Pakistan",
+    "title": "Pakistan",
+    "retrieved": "2026-10-28",
+    "sha256": "76f297a1133cf88d2a7ee0895052d73a2f00bfd0746eb2f82d20fb0abaa0da63",
+    "extractCharacters": 753,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c65742ceb289d67f",
+    "name": "巴布亞紐幾內亞",
+    "source": "https://en.wikipedia.org/wiki/Papua_New_Guinea",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Papua_New_Guinea",
+    "title": "Papua New Guinea",
+    "retrieved": "2026-10-28",
+    "sha256": "894676ee2651b9ab9c57973f9639d7c49340825477158c0999332eef87c836f5",
+    "extractCharacters": 520,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-7fb4d179ec62f241",
+    "name": "巴拉圭",
+    "source": "https://en.wikipedia.org/wiki/Paraguay",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Paraguay",
+    "title": "Paraguay",
+    "retrieved": "2026-10-28",
+    "sha256": "12ba20cb33981db738f2bb5cb7a017a4e9d28be121f20dee635628e671320a7d",
+    "extractCharacters": 586,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-508731a3c5d375cb",
+    "name": "秘魯",
+    "source": "https://en.wikipedia.org/wiki/Peru",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Peru",
+    "title": "Peru",
+    "retrieved": "2026-10-28",
+    "sha256": "f2c783862d8a87a35251f51b837d0edaf6b784c7e27eece50f0994434611739f",
+    "extractCharacters": 744,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c3782c86d8099f3f",
+    "name": "菲律賓",
+    "source": "https://en.wikipedia.org/wiki/Philippines",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Philippines",
+    "title": "Philippines",
+    "retrieved": "2026-10-28",
+    "sha256": "576cd57fddabb6dd618d5207d7daf31eb728e405a5d3a840d9854652fb022a6d",
+    "extractCharacters": 452,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4c7de2c3da6dc0ae",
+    "name": "葡萄牙",
+    "source": "https://en.wikipedia.org/wiki/Portugal",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Portugal",
+    "title": "Portugal",
+    "retrieved": "2026-10-28",
+    "sha256": "c018d8c9a160e8171e730461c705cbd0e96005ea452a09c955ac73b8b1fb68d1",
+    "extractCharacters": 632,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-55ccc5014f2a6d4c",
+    "name": "卡達",
+    "source": "https://en.wikipedia.org/wiki/Qatar",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Qatar",
+    "title": "Qatar",
+    "retrieved": "2026-10-28",
+    "sha256": "63ec5836e4ecdd5c2cd68378bb104ca9530f5b50e0bbeaa1a64e2d0c2384faf1",
+    "extractCharacters": 509,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-33a3d8ed92b0709b",
+    "name": "俄羅斯",
+    "source": "https://en.wikipedia.org/wiki/Russia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Russia",
+    "title": "Russia",
+    "retrieved": "2026-10-28",
+    "sha256": "443cdda1bb4c3cc469de7098b7112f26e733f7345af0ad493a04fe4b8c2f405c",
+    "extractCharacters": 596,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E4%BF%84%E7%BE%85%E6%96%AF",
+        "status": 200,
+        "sha256": "76abc37685bdd6f7e225bb7e15d14ad40c6b4274050c69afee44b152f0e6a9be",
+        "bytes": 923147
+      }
+    ]
+  },
+  {
+    "id": "p-12c8f8f4912cbdb3",
+    "name": "盧安達",
+    "source": "https://en.wikipedia.org/wiki/Rwanda",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Rwanda",
+    "title": "Rwanda",
+    "retrieved": "2026-10-28",
+    "sha256": "4c294228abbcc87eccfd73043ea3112281deb55dff595bdd32b06870f13eaf4e",
+    "extractCharacters": 1078,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ed9ad13611d71648",
+    "name": "沙烏地阿拉伯",
+    "source": "https://en.wikipedia.org/wiki/Saudi_Arabia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Saudi_Arabia",
+    "title": "Saudi Arabia",
+    "retrieved": "2026-10-28",
+    "sha256": "0b99af08f87fbda51e913119c93bff5d4648ae4e50d92771c85968bf9de6d75a",
+    "extractCharacters": 693,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-364e5f6525c75b81",
+    "name": "塞內加爾",
+    "source": "https://en.wikipedia.org/wiki/Senegal",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Senegal",
+    "title": "Senegal",
+    "retrieved": "2026-10-28",
+    "sha256": "a3098fbd0907a7c499524d318303a9e7e0826bb757d9b99d020f7a0b9cb38a23",
+    "extractCharacters": 553,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-e8739c839576f7ac",
+    "name": "塞爾維亞",
+    "source": "https://en.wikipedia.org/wiki/Serbia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Serbia",
+    "title": "Serbia",
+    "retrieved": "2026-10-28",
+    "sha256": "0139a7ee3da322eb5f87f448f59fb221ce3e92d1dd90a5b42699e84733dc9796",
+    "extractCharacters": 494,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-bd05d324d8a3dfad",
+    "name": "索馬利亞",
+    "source": "https://en.wikipedia.org/wiki/Somalia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Somalia",
+    "title": "Somalia",
+    "retrieved": "2026-10-28",
+    "sha256": "3cdf0ed6dc3712f2ea3b89e76c7b5130d455af4b131370008c32c62ae67d1f1d",
+    "extractCharacters": 745,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-3e049d78d958038a",
+    "name": "南非",
+    "source": "https://en.wikipedia.org/wiki/South_Africa",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/South_Africa",
+    "title": "South Africa",
+    "retrieved": "2026-10-28",
+    "sha256": "61bb3808bbd4e477b9805337d3479e432487c4e1cd4d83a3519d141fab7dcb36",
+    "extractCharacters": 870,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8ef41e6f4b07432a",
+    "name": "西班牙",
+    "source": "https://en.wikipedia.org/wiki/Spain",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Spain",
+    "title": "Spain",
+    "retrieved": "2026-10-28",
+    "sha256": "8a22dd63056c14be49b2f6f8c90a839a2ef7ea2a837f3cbef5c52cc20288174c",
+    "extractCharacters": 915,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-07f8d1144a39d456",
+    "name": "斯里蘭卡",
+    "source": "https://en.wikipedia.org/wiki/Sri_Lanka",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sri_Lanka",
+    "title": "Sri Lanka",
+    "retrieved": "2026-10-28",
+    "sha256": "0a814f53e11750ee11dcba99345d60d5b1df3eb01ab626107801c2d3ffe98302",
+    "extractCharacters": 990,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ed68d4def1af578d",
+    "name": "蘇丹",
+    "source": "https://en.wikipedia.org/wiki/Sudan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sudan",
+    "title": "Sudan",
+    "retrieved": "2026-10-28",
+    "sha256": "4cc02a75dbeae71938e5f0a52d2915151eb9ca2cf86c447ef8181b009b25b3a2",
+    "extractCharacters": 493,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-853637136575897a",
+    "name": "瑞典",
+    "source": "https://en.wikipedia.org/wiki/Sweden",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sweden",
+    "title": "Sweden",
+    "retrieved": "2026-10-28",
+    "sha256": "6e0f0488521ff858994629a6f507d9950d9bb761cad837b9d30e7926ff5f0910",
+    "extractCharacters": 795,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2275583196d79140",
+    "name": "瑞士",
+    "source": "https://en.wikipedia.org/wiki/Switzerland",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Switzerland",
+    "title": "Switzerland",
+    "retrieved": "2026-10-28",
+    "sha256": "31cde8b24f77b2e95cc9e8d0961cb2f63aee5a393dd757b0a7785af627d29730",
+    "extractCharacters": 629,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-cf6ac29be1f71a01",
+    "name": "敘利亞",
+    "source": "https://en.wikipedia.org/wiki/Syria",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Syria",
+    "title": "Syria",
+    "retrieved": "2026-10-28",
+    "sha256": "649cd06e8609ac582e7d868c297023c64c77b5a1a04a06627498d10870cd9aa5",
+    "extractCharacters": 569,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-6e49e65081b2bcb5",
+    "name": "泰國",
+    "source": "https://en.wikipedia.org/wiki/Thailand",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Thailand",
+    "title": "Thailand",
+    "retrieved": "2026-10-28",
+    "sha256": "cdac8bd79f2afe9b174513b032a522734015bfe1a50c0a1a4a952ca94736666c",
+    "extractCharacters": 556,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4609682a2f3d7a64",
+    "name": "突尼西亞",
+    "source": "https://en.wikipedia.org/wiki/Tunisia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Tunisia",
+    "title": "Tunisia",
+    "retrieved": "2026-10-28",
+    "sha256": "5e9f092405d0ff51b1a40e1227de67566cac0a4ccfdf834ee44d45a6c5cf6981",
+    "extractCharacters": 1325,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-893d538563bcd9ac",
+    "name": "烏干達",
+    "source": "https://en.wikipedia.org/wiki/Uganda",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Uganda",
+    "title": "Uganda",
+    "retrieved": "2026-10-28",
+    "sha256": "586d7336e06eb5cc9f794cc5fc63d6379927e631abcd26213bccd25e593d7880",
+    "extractCharacters": 585,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-580eedc669f3b989",
+    "name": "烏克蘭",
+    "source": "https://en.wikipedia.org/wiki/Ukraine",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ukraine",
+    "title": "Ukraine",
+    "retrieved": "2026-10-28",
+    "sha256": "81612ec2608ef8084769b08f49f7a08ebdaab3c7244792eca7b0c9007a4fc925",
+    "extractCharacters": 530,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-8d23a6e37e0a6431",
+    "name": "英國",
+    "source": "https://en.wikipedia.org/wiki/United_Kingdom",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/United_Kingdom",
+    "title": "United Kingdom",
+    "retrieved": "2026-10-28",
+    "sha256": "c97fd1e25d69e4c2cd9f2b89389ee1dceb01c9b24254c50ca864071e35a82534",
+    "extractCharacters": 927,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-49dca65f362fee40",
+    "name": "美國",
+    "source": "https://en.wikipedia.org/wiki/United_States",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/United_States",
+    "title": "United States",
+    "retrieved": "2026-10-28",
+    "sha256": "c619700e30d11bdc5a3484a3d6f14142c0ddd08677630aeda3a09b75ca6adb5a",
+    "extractCharacters": 676,
+    "additionalFetches": [
+      {
+        "url": "https://zh.wikipedia.org/zh-tw/%E7%BE%8E%E5%9C%8B",
+        "status": 200,
+        "sha256": "0a98df03e7b09900ce833c160b4100d3bd6686694a6efe046016cfb4e972f461",
+        "bytes": 1300453
+      }
+    ]
+  },
+  {
+    "id": "p-fe2403f25e8f398e",
+    "name": "烏拉圭",
+    "source": "https://en.wikipedia.org/wiki/Uruguay",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Uruguay",
+    "title": "Uruguay",
+    "retrieved": "2026-10-28",
+    "sha256": "4c8863cc8403689ec552a39bbb47eda03ed6eb9812bc24db1090868d99c8a5d0",
+    "extractCharacters": 574,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-4bc2f1c23b3d2f7e",
+    "name": "烏茲別克",
+    "source": "https://en.wikipedia.org/wiki/Uzbekistan",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Uzbekistan",
+    "title": "Uzbekistan",
+    "retrieved": "2026-10-28",
+    "sha256": "d252ab6d61f23ccf263051b8d323107e2d53d7df917be80b3f98202669a27d90",
+    "extractCharacters": 894,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-020e438bafc3a786",
+    "name": "委內瑞拉",
+    "source": "https://en.wikipedia.org/wiki/Venezuela",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Venezuela",
+    "title": "Venezuela",
+    "retrieved": "2026-10-28",
+    "sha256": "efca5fbdbf4a1e37b00542ce88c1d271de01793fffaaf35185c9ab46eea2fd41",
+    "extractCharacters": 913,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-2e5e81066a29cd66",
+    "name": "越南",
+    "source": "https://en.wikipedia.org/wiki/Vietnam",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Vietnam",
+    "title": "Vietnam",
+    "retrieved": "2026-10-28",
+    "sha256": "39388c03fd7c3877b37ce93a3e7b889c6842b5a38d29e7780c2268704d1af0f5",
+    "extractCharacters": 606,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-21c1903af25470c6",
+    "name": "葉門",
+    "source": "https://en.wikipedia.org/wiki/Yemen",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Yemen",
+    "title": "Yemen",
+    "retrieved": "2026-10-28",
+    "sha256": "0a4f5c8218ff4d80982cb4f8b0c8f956e7b2d6d789bc45e0d66d8e35e968d95e",
+    "extractCharacters": 722,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-b5f9221ae041a8f8",
+    "name": "尚比亞",
+    "source": "https://en.wikipedia.org/wiki/Zambia",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Zambia",
+    "title": "Zambia",
+    "retrieved": "2026-10-28",
+    "sha256": "d3f125e2132bc1d5b374ddcd718410419535128df6edf0e809eba9256d19f5a4",
+    "extractCharacters": 541,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-c72199a85b5423d2",
+    "name": "辛巴威",
+    "source": "https://en.wikipedia.org/wiki/Zimbabwe",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Zimbabwe",
+    "title": "Zimbabwe",
+    "retrieved": "2026-10-28",
+    "sha256": "8383d8e9430730fdba8ef59615e10ab52ed1273b3ec21331b90963c36f1ec7cd",
+    "extractCharacters": 321,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-744d7285c017aef2",
+    "name": "阿克蘇姆",
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Kingdom_of_Aksum",
+    "title": "Kingdom of Aksum",
+    "retrieved": "2026-10-28",
+    "sha256": "40628bf9a7d25716c87706b4c231337577a47a507de33ced895a2f9987bc0bc8",
+    "extractCharacters": 400,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-ce9f841d386d5ddd",
+    "name": "迦納帝國",
+    "source": "https://en.wikipedia.org/wiki/Ghana_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Ghana_Empire",
+    "title": "Ghana Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "177ffa0eba4c6e082f6b8280190f95a4406e1b3f31c828ba77e2432f285e0594",
+    "extractCharacters": 170,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-578ef9e105ef70dc",
+    "name": "馬拉塔聯盟",
+    "source": "https://en.wikipedia.org/wiki/Maratha_Empire",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Maratha_Empire",
+    "title": "Maratha Empire",
+    "retrieved": "2026-10-28",
+    "sha256": "cf7732120ef258de700a8422c87f6acf3bd4adca0fdd929aaae2abd26346bdce",
+    "extractCharacters": 341,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-fc9b1ba7b2a00291",
+    "name": "德里蘇丹國",
+    "source": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Delhi_Sultanate",
+    "title": "Delhi Sultanate",
+    "retrieved": "2026-10-28",
+    "sha256": "87419369f0511208bf0cc15e2fe7ac17d20110e3847fd38fca3682237ab2ee4c",
+    "extractCharacters": 544,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-6bdaaeb84c87eb44",
+    "name": "室利佛逝帝國",
+    "source": "https://en.wikipedia.org/wiki/Srivijaya",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Srivijaya",
+    "title": "Srivijaya",
+    "retrieved": "2026-10-28",
+    "sha256": "3ace3009a304fd87ac0fc61b3e6d3a00b18a25430fb4b16d555cae86cd51af8a",
+    "extractCharacters": 469,
+    "additionalFetches": []
+  },
+  {
+    "id": "p-acf929d0289861e1",
+    "name": "索科托哈里發國",
+    "source": "https://en.wikipedia.org/wiki/Sokoto_Caliphate",
+    "fetchedVia": "https://en.wikipedia.org/api/rest_v1/page/summary/Sokoto_Caliphate",
+    "title": "Sokoto Caliphate",
+    "retrieved": "2026-10-28",
+    "sha256": "afffa24f260200e95240a43706de5b36a8d593ccfd8cbf414e09645edc3f1c57",
+    "extractCharacters": 652,
+    "additionalFetches": []
+  }
+]

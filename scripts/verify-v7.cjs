@@ -2,6 +2,11 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');const fs=require('node:fs');
 const base=process.env.BASE_URL||'http://localhost:8000/dist';
+const recoveryTimeout=60000;
+const waitForReady=page=>page.waitForFunction(()=>
+ document.querySelector('#map-status').hidden&&
+ document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：')&&
+ !document.querySelector('#polity-open').disabled,null,{timeout:recoveryTimeout});
 (async()=>{const browser=await chromium.launch({args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader'],headless:true});const report={base,checks:[],errors:[]};
 try{
 fs.mkdirSync('artifacts',{recursive:true});
@@ -56,7 +61,18 @@ await page.goto(base+'/?year=1200');await page.waitForFunction(()=>document.quer
 for(const filename of ['polities','snapshots','events']){
  const context=await browser.newContext();const page=await context.newPage();let blocked=false;
  await context.route(`**/data/${filename}.*.json*`,route=>{if(!blocked){blocked=true;return route.abort();}return route.continue();});
- await page.goto(base+'/?year=1200');await page.locator('#data-retries button').waitFor();await page.locator('#data-retries button').click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：')&&document.querySelectorAll('.event-item').length>0);assert.equal(await page.locator('#data-retries button').count(),0);report.checks.push({retry:filename});await context.close();
+ await page.goto(base+'/?year=1200');
+ const label={polities:'政體目錄',snapshots:'快照目錄',events:'事件'}[filename];
+ const retry=page.getByRole('button',{name:'重試'+label,exact:true});
+ await retry.waitFor({state:'visible',timeout:recoveryTimeout});assert(blocked,'request was actually blocked');
+ // Events load independently. Let initialization consume its empty fallback first,
+ // so a fast retry cannot be overwritten by the initial Promise.all result.
+ if(filename==='events')await waitForReady(page);
+ await retry.click({timeout:recoveryTimeout});
+ await retry.waitFor({state:'detached',timeout:recoveryTimeout});
+ await waitForReady(page);
+ await page.waitForFunction(()=>document.querySelectorAll('.event-item').length>0&&document.querySelectorAll('#data-retries button').length===0,null,{timeout:recoveryTimeout});
+ assert.equal(await page.locator('#data-retries button').count(),0);report.checks.push({retry:filename});await context.close();
 }
 {
  const context=await browser.newContext();await context.addInitScript(()=>{const Native=window.Worker;window.workerStarts=0;window.Worker=class extends Native{constructor(...args){super(...args);this.isData=String(args[0]).includes('data-worker');if(this.isData)window.workerStarts++;}postMessage(...args){if(this.isData&&window.workerStarts===1){if(!this.failed){this.failed=true;setTimeout(()=>this.dispatchEvent(new Event('error')),0);}return;}return super.postMessage(...args);}};});const page=await context.newPage();await page.goto(base+'/?year=1200');await page.locator('#data-retries button').first().waitFor();await page.waitForFunction(()=>window.workerStarts>=2);for(let i=0;i<5&&await page.locator('#data-retries button').count();i++)await page.locator('#data-retries button').first().click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));report.checks.push({workerRestart:true});await context.close();

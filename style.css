@@ -538,3 +538,10 @@ a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 .maplibregl-popup-close-button{position:absolute;right:0;top:0}
 .event-marker{width:44px;height:44px;background:transparent;border:0;padding:0;cursor:pointer}
 .webgl-fallback{max-width:90vw;white-space:normal;line-height:1.8;z-index:900}
+/* Introductions load only after opening polity details; the map keeps its space. */
+.polity-intro{margin:10px 0;border-block:1px solid #8a795538;font-size:13px;overflow-wrap:anywhere}
+.polity-intro summary{cursor:pointer;padding:10px 0;font-weight:600;min-height:44px;box-sizing:border-box}
+.polity-intro p{margin:8px 0}
+.polity-intro h4{margin:8px 0 0}
+.polity-intro ul{padding-inline-start:20px;margin:6px 0}
+.maplibregl-popup-content{overflow-wrap:anywhere;box-sizing:border-box}

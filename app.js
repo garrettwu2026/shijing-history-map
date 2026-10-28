@@ -52,10 +52,24 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   function antarcticaHTML() {
     return `<div class="popup-kicker">地理區域 · ${esc(yearText(state.year))}</div><h3 class="popup-title">南極洲 Antarctica</h3><p>地理區域，非政體。無人定居（無永久居民；近現代有季節性與全年科研人員）。</p>${state.year>=1959?'<p>《南極條約》體系：條約於 1959 年簽署，1961 年生效；以和平利用及科學合作為原則。</p><p><a href="https://www.ats.aq/e/antarctictreaty.html" target="_blank" rel="noopener">南極條約秘書處</a></p>':''}`;
   }
+  let introsPromise;
+  function loadIntro(el) {
+    const slot=el.querySelector('[data-intro-id]');
+    if(!slot)return;
+    introsPromise ||= json('data/intros.json').catch(error=>{introsPromise=null;throw error;});
+    introsPromise.then(intros=>{
+      if(!slot.isConnected)return;
+      const intro=intros[slot.dataset.introId];
+      if(!intro){slot.remove();return;}
+      const field=(label,value)=>value?`<p>${label}：${esc(value)}</p>`:'';
+      slot.innerHTML=`<details class="polity-intro"><summary>政體介紹</summary><small>跨年代概述，不代表選取年的狀態。</small><p>${esc(intro.summary)}</p>${['存續年代','首都','主要族群/語言'].map(label=>field(label,intro[label])).join('')}${intro['重要事件'].length?'<h4>重要事件</h4><ul>'+intro['重要事件'].map(event=>`<li>${esc(event)}</li>`).join('')+'</ul>':''}${intro['前身/後繼'].length?'<p>前身／後繼：'+intro['前身/後繼'].map(item=>esc(item.name)).join('、')+'</p>':''}</details>`;
+    }).catch(()=>{if(slot.isConnected)slot.innerHTML='<button class="intro-retry" type="button">重新載入政體介紹</button>';});
+  }
+  document.addEventListener('click',event=>{if(event.target.closest('.intro-retry'))loadIntro(event.target.closest('[role="dialog"]'));});
   function polityHTML(key) {
     const n=nameFor(key);
     const field=(label,value)=>value?.trim()?`<p dir="auto">${label}：${esc(value)}</p>`:'';
-    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(nameDisplay(n.zh||key,n.nameStatus))}</h3>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+`<p>自稱出處：${e.sourceStatus==='verified'?'已查核':'待查核'} <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">參考文獻</a></p></section>`).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：保留來源原文，尚未取得合格的譯名依據。</p>':''}${n.correction?`<p class="correction">${n.correction.nameStatus==='corrected'?'名稱已修正；疆界待考證':'名稱及疆界待考證'}：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
+    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(nameDisplay(n.zh||key,n.nameStatus))}</h3><div data-intro-id="${esc(n.id||'')}"></div>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+`<p>自稱出處：${e.sourceStatus==='verified'?'已查核':'待查核'} <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">參考文獻</a></p></section>`).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：保留來源原文，尚未取得合格的譯名依據。</p>':''}${n.correction?`<p class="correction">${n.correction.nameStatus==='corrected'?'名稱已修正；疆界待考證':'名稱及疆界待考證'}：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
   }
   function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(displayText(e.title))}</h3><p>${esc(displayText(e.description))}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='verified'?'已核實':e.sourceStatus==='article-unverified'?'具體條目，內容待核實':'搜尋入口，待查證'}）</a></p></div>`; }
   const {json} = createDataClient();
@@ -233,7 +247,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       });
       map.on('mouseleave',layer,()=>{if(hover)map.setFeatureState(hover,{hover:false});hover=null;map.getCanvas().style.cursor='';$('map').title='';});
     }
-    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
+    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();loadIntro(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
     map.on('detailclose',()=>{document.body.classList.remove('popup-open');const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
     document.addEventListener('click',e=>{const b=e.target.closest('.goto-event');if(b){const event=state.events.find(x=>x.id===b.dataset.event);setYear(event.year);}});
     document.fonts?.ready.then(renderLabels);

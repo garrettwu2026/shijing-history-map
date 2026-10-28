@@ -28,10 +28,21 @@ export function showPopup(map,point,content){
   map.activePopup=popup;popup.on('close',()=>map.fire('detailclose'));popup.addTo(map);
   // Escape the map's z-index:0 stacking context so HTML panels cannot cover details.
   map.getContainer().parentElement.append(popup.getElement());popup.getElement().querySelector('.maplibregl-popup-content').style.maxHeight=Math.max(60,available-16)+'px';
-  const box=popup.getElement().getBoundingClientRect();
-  const x=Math.max(box.width/2+16,Math.min(rect.width-box.width/2-16,anchor.x));
-  const y=Math.max(box.height/2+8,Math.min(available-box.height/2-8,anchor.y));
-  popup.setOffset([x-anchor.x,y-anchor.y]);map.fire('detailopen');
+  const fit=()=>{
+    const rect=map.getContainer().getBoundingClientRect();
+    const available=Math.max(80,document.querySelector('.time-dock').getBoundingClientRect().top-rect.top-16);
+    const el=popup.getElement();
+    el.querySelector('.maplibregl-popup-content').style.maxHeight=Math.max(60,available-16)+'px';
+    const box=el.getBoundingClientRect(),anchor=map.project(point);
+    const x=Math.max(box.width/2+16,Math.min(rect.width-box.width/2-16,anchor.x));
+    const y=Math.max(box.height/2+8,Math.min(available-box.height/2-8,anchor.y));
+    popup.setOffset([x-anchor.x,y-anchor.y]);
+  };
+  // Lazy content and disclosure toggles change the height after opening.
+  const observer=new ResizeObserver(fit);
+  observer.observe(popup.getElement().querySelector('.maplibregl-popup-content'));
+  map.on('resize',fit);popup.on('close',()=>{observer.disconnect();map.off('resize',fit);});
+  fit();map.fire('detailopen');
   return popup;
 }
 export function renderGeometry(map,data,state,isAntarctica,stableColor){
