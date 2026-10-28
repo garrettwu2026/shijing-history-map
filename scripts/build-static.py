@@ -27,6 +27,12 @@ def fingerprint(p):
  s=p.read_text()
  for old,new in assets.items():s=s.replace(old,new)
  p.write_text(s);name=f'{p.stem}.{hashlib.sha256(p.read_bytes()).hexdigest()[:16]}{p.suffix}';p.rename(p.with_name(name));assets[p.name]=name
+(out/'assets/fonts').mkdir(parents=True)
+for source in (R/'assets/fonts').iterdir():
+ if source.suffix=='.woff2':
+  name=f'{source.stem}.{hashlib.sha256(source.read_bytes()).hexdigest()[:16]}{source.suffix}'
+  shutil.copy(source,out/'assets/fonts'/name);assets[source.name]=name
+ elif source.suffix=='.txt':shutil.copy(source,out/'assets/fonts'/source.name)
 fingerprint(out/'data-worker.js')
 for name in ['content.js','timeline.js','data.js','map.js','events.js']:fingerprint(out/'modules'/name)
 fingerprint(out/'vendor/maplibre/maplibre-gl.js');fingerprint(out/'vendor/maplibre/maplibre-gl.css')

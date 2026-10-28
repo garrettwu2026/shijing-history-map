@@ -269,8 +269,26 @@
       "transliteration": "",
       "meaning": "法蘭西王國",
       "language": "法語",
-      "period": "王國時期",
+      "period": "987–1792（王國時期）",
       "fromYear": 987,
+      "toYear": 1792
+    },
+    {
+      "original": "Royaume de France",
+      "transliteration": "",
+      "meaning": "法蘭西王國",
+      "language": "法語",
+      "period": "1814–1814（王國時期）",
+      "fromYear": 1814,
+      "toYear": 1814
+    },
+    {
+      "original": "Royaume de France",
+      "transliteration": "",
+      "meaning": "法蘭西王國",
+      "language": "法語",
+      "period": "1815–1848（王國時期）",
+      "fromYear": 1815,
       "toYear": 1848
     }
   ],
@@ -291,8 +309,17 @@
       "transliteration": "",
       "meaning": "匈牙利王國",
       "language": "匈牙利語",
-      "period": "王國時期",
+      "period": "1000–1918（王國時期）",
       "fromYear": 1000,
+      "toYear": 1918
+    },
+    {
+      "original": "Magyar Királyság",
+      "transliteration": "",
+      "meaning": "匈牙利王國",
+      "language": "匈牙利語",
+      "period": "1920–1946（王國時期）",
+      "fromYear": 1920,
       "toYear": 1946
     }
   ],
@@ -760,11 +787,38 @@
   ],
   "p-6e49e65081b2bcb5": [
     {
+      "original": "สยาม",
+      "transliteration": "Sayam",
+      "meaning": "暹羅",
+      "language": "泰語",
+      "period": "1782–1938（1939年改稱泰國）",
+      "fromYear": 1782,
+      "toYear": 1938
+    },
+    {
       "original": "ประเทศไทย",
       "transliteration": "Prathet Thai",
       "meaning": "泰國",
       "language": "泰語",
-      "period": "1939年起（曾短暫恢復暹羅國名）",
+      "period": "1939–1944",
+      "fromYear": 1939,
+      "toYear": 1944
+    },
+    {
+      "original": "สยาม",
+      "transliteration": "Sayam",
+      "meaning": "暹羅",
+      "language": "泰語",
+      "period": "1945–1948（1949年再改稱泰國）",
+      "fromYear": 1945,
+      "toYear": 1948
+    },
+    {
+      "original": "ประเทศไทย",
+      "transliteration": "Prathet Thai",
+      "meaning": "泰國",
+      "language": "泰語",
+      "period": "1949年至今",
       "fromYear": 1949,
       "toYear": 2026
     }
@@ -898,6 +952,44 @@
       "language": "英語",
       "period": "近現代用稱",
       "fromYear": 1801,
+      "toYear": 2026
+    }
+  ],
+  "p-029587f69bd8ba40": [
+    {
+      "original": "สยาม",
+      "transliteration": "Sayam",
+      "meaning": "暹羅",
+      "language": "泰語",
+      "period": "1782–1938（1939年改稱泰國）",
+      "fromYear": 1782,
+      "toYear": 1938
+    },
+    {
+      "original": "ประเทศไทย",
+      "transliteration": "Prathet Thai",
+      "meaning": "泰國",
+      "language": "泰語",
+      "period": "1939–1944",
+      "fromYear": 1939,
+      "toYear": 1944
+    },
+    {
+      "original": "สยาม",
+      "transliteration": "Sayam",
+      "meaning": "暹羅",
+      "language": "泰語",
+      "period": "1945–1948（1949年再改稱泰國）",
+      "fromYear": 1945,
+      "toYear": 1948
+    },
+    {
+      "original": "ประเทศไทย",
+      "transliteration": "Prathet Thai",
+      "meaning": "泰國",
+      "language": "泰語",
+      "period": "1949年至今",
+      "fromYear": 1949,
       "toYear": 2026
     }
   ]

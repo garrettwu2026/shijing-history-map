@@ -31,3 +31,6 @@ services:
       - path: /modules/*.*.js
         name: Cache-Control
         value: public, max-age=31536000, immutable
+      - path: /assets/fonts/*.*.woff2
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

@@ -545,3 +545,10 @@ a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 .polity-intro h4{margin:8px 0 0}
 .polity-intro ul{padding-inline-start:20px;margin:6px 0}
 .maplibregl-popup-content{overflow-wrap:anywhere;box-sizing:border-box}
+
+.polity-links{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}
+.polity-links a{font-size:11px;line-height:1.5;padding:3px 8px;border:1px solid #8a795566;border-radius:4px;color:#385c60;text-decoration:none}
+.polity-links a:hover,.polity-links a:focus-visible{background:#ded6c4}
+
+@font-face{font-family:'History Mongolian';src:url('./assets/fonts/mongolian-subset.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;unicode-range:U+1800-18AF,U+200C-200D,U+202F}
+.self-designation .mongolian-text{font-family:'History Mongolian','Noto Sans TC',sans-serif}
