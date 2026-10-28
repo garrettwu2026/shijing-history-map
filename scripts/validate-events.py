@@ -10,6 +10,7 @@ for e in events:
     assert -90<=e['lat']<=90 and -180<=e['lon']<=180,e
     assert e['category'] in categories,e
     assert e['title'] and e['description'],e
+    assert all('待考' not in e.get(field, '') for field in ('title', 'summary', 'description')),e
     assert e['id'] not in ids,e
     assert (e['year'],e['title']) not in titles,e
     ids.add(e['id']);titles.add((e['year'],e['title']))

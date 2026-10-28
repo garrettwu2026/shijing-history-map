@@ -3,6 +3,7 @@ Input: year|place|category index|title|description. A leading ~ marks approximat
 Coordinates represent a related site, not territorial extent.
 """
 import json
+from event_text import clean_event_text
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 CATEGORIES=['戰爭','王朝與政治','科技與發明','宗教與思想','文化與藝術','探索與貿易']
@@ -30,6 +31,8 @@ def compile_events():
     previous={e['id']:e for e in json.loads((ROOT/'data/events.json').read_text())}
     for e in events:
         e['id']=registry.get(e['title'],'evt-'+hashlib.sha256((str(e['year'])+e['title']).encode()).hexdigest()[:16])
+        for field in ('title', 'summary', 'description'):
+            if field in e:e[field]=clean_event_text(e[field])
         registry[e['title']]=e['id']
         for key in ['startYear','endYear','precision','sourceUrl','sourceStatus','chronologyStatus']:
             if key in previous.get(e['id'],{}):e[key]=previous[e['id']][key]

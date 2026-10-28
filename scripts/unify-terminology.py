@@ -4,6 +4,7 @@ Never rewrite dataset keys, IDs, geometry, citations, endonyms or chronology.
 The glossary is the reviewed input; this script performs no automatic translation.
 """
 import argparse
+from event_text import clean_event_text
 import json
 import re
 from pathlib import Path
@@ -95,8 +96,10 @@ write(DATA / 'names.json', names)
 events = read('events.json')
 registry = read('event-id-registry.json')
 for event in events:
-    event['title'] = text(event['title'])
-    event['description'] = text(event['description'])
+    # Verification status belongs in detail metadata, never in event prose.
+    for field in ('title', 'summary', 'description'):
+        if field in event:
+            event[field] = clean_event_text(text(event[field]))
     # Keep old title registrations too, so curation scripts cannot allocate new IDs.
     assert event['title'] not in registry or registry[event['title']] == event['id']
     registry[event['title']] = event['id']

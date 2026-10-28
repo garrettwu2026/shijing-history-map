@@ -58,7 +58,7 @@ for filename, expected in baseline['geometry'].items():
     assert hashlib.sha256((DATA / filename).read_bytes()).hexdigest() == expected
 
 for event in read('events.json'):
-    assert '（待考）（待考）' not in event['title'] + event['description']
+    assert all('待考' not in event.get(field, '') for field in ('title', 'summary', 'description'))
 assert any(e['title'] == '《大日本帝國憲法》頒布' for e in read('events.json')), 'Preserve quoted historical document titles'
 assert any(e['title'] == '巴拿馬運河通航' for e in read('events.json')), 'Preserve complete geographic names'
 published = next((ROOT / 'dist/data').glob('glossary.*.json'))
