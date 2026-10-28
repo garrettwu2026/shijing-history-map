@@ -49,9 +49,18 @@ for entry in entries:
     replacements[canonical(entry)] = canonical(entry)
 pattern = re.compile('|'.join(re.escape(k) for k in sorted(replacements, key=lambda k: (-len(k), k))))
 
-def text(value):
+def text(value, markers=True):
     # Original titles are citations, not prose to be modernized.
-    return ''.join(part if part.startswith('《') else pattern.sub(lambda m: replacements[m[0]], part)
+    def replace(match):
+        result = replacements[match[0]]
+        if markers:
+            return result
+        # Runtime joins glossary status to event prose. Do not insert new
+        # inline markers here, but preserve any marker supplied by an editor.
+        if '待考' in match[0]:
+            return result if '待考' in result else result + '（待考）'
+        return result.replace('（待考）', '')
+    return ''.join(part if part.startswith('《') else pattern.sub(replace, part)
                    for part in re.split(r'(《[^》]*》)', value))
 
 catalog = read('polities.json')
@@ -96,10 +105,10 @@ write(DATA / 'names.json', names)
 events = read('events.json')
 registry = read('event-id-registry.json')
 for event in events:
-    # Verification status belongs in detail metadata, never in event prose.
+    # The runtime display helper reads glossary status; preserve editor markers.
     for field in ('title', 'summary', 'description'):
         if field in event:
-            event[field] = clean_event_text(text(event[field]))
+            event[field] = clean_event_text(text(event[field], markers=False))
     # Keep old title registrations too, so curation scripts cannot allocate new IDs.
     assert event['title'] not in registry or registry[event['title']] == event['id']
     registry[event['title']] = event['id']

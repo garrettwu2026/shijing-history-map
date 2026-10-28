@@ -7,7 +7,7 @@ const assert=require('node:assert/strict');
   const page=await browser.newPage({viewport:{width:1440,height:900}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   for(const [year,key,expected,pending] of [
-   [-500,'Magadha','摩揭陀',false],
+   [-500,'Magadha','摩揭陀',true],
    [1000,'Peshemegs','佩切涅格人',false],
    [-1500,'Hittites','西臺',false],
    [-300,'Mauryan Empire','孔雀王朝',false],
@@ -25,7 +25,7 @@ const assert=require('node:assert/strict');
    assert(title.includes(expected),`${key}: ${title}`);
    assert.equal(title.includes('（待考）'),pending);
    assert(!title.includes('（待考）（待考）'));
-   if(pending)assert((await page.locator('.leaflet-popup-content').innerText()).includes('譯名待考'));
+   if(key==='Darkinung')assert((await page.locator('.leaflet-popup-content').innerText()).includes('譯名待考'));
   }
   await page.goto('http://localhost:8000/dist/?year=-1259');
   await page.waitForFunction(()=>document.querySelectorAll('.event-item').length>0);

@@ -1,5 +1,6 @@
+import {nameDisplay} from './content.js';
 export function renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc}) {
-    if(state.dragging)return;
+    if(state.dragging||state.boundariesPending)return;
     state.labelsPending=false;
     labelLayer.clearLayers();
     if (!state.labels || !state.layer) return;
@@ -13,7 +14,8 @@ export function renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc}
       const projected=area*Math.pow(2,2*zoom)*1200;
       if(projected < 3000/Math.max(1,zoom-1) && importance<8) return;
       const parts=layer.feature.labelGeometry.parts;
-      const center=layer.getCenter ? layer.getCenter() : bounds.getCenter();
+      const anchor=layer.feature.labelGeometry.anchors?.[0];
+      const center=anchor?L.latLng(anchor[1],anchor[0]):bounds.getCenter();
       candidates.push({key,n,center,parts,anchors:layer.feature.labelGeometry.anchors,area,importance,score:Math.log1p(area*10000)+importance*1.6});
     });
     const occupied=[...document.querySelectorAll('.event-marker')].map(el=>el.getBoundingClientRect());
@@ -24,7 +26,7 @@ export function renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc}
     const measurements=document.createElement('div');
     measurements.style.cssText='position:absolute;visibility:hidden;pointer-events:none';
     for(const c of candidates){
-      const cleanName=c.n.zh.replace(/（[^（）]*待考[^（）]*）/g,'');
+      const cleanName=nameDisplay(c.n.zh,c.n.nameStatus,false);
       c.html=`<span class="label-zh">${esc(cleanName)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
       c.className=`polity-label${c.importance>=8?' label-major':''}`;
       c.measure=document.createElement('div');c.measure.className=`leaflet-tooltip ${c.className}`;c.measure.innerHTML=c.html;measurements.append(c.measure);
