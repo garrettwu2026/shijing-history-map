@@ -1,7 +1,7 @@
 import {cleanMapLabel} from './content.js';
 const empty=()=>({type:'FeatureCollection',features:[]});
 export async function createMap(){
-  const map=new maplibregl.Map({container:'map',center:[45,26],zoom:1.25,minZoom:1,maxZoom:8,renderWorldCopies:true,fadeDuration:0,canvasContextAttributes:{antialias:false},pixelRatio:Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1:2),localIdeographFontFamily:"'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif",style:{version:8,glyphs:new URL('vendor/maplibre/glyphs/',location.href).href+'{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#18282d'}}]},attributionControl:false});
+  const map=new maplibregl.Map({container:'map',center:[45,26],zoom:1.25,minZoom:1,maxZoom:8,renderWorldCopies:true,fadeDuration:0,canvasContextAttributes:{antialias:false},pixelRatio:Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1:.75),localIdeographFontFamily:"'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif",style:{version:8,glyphs:new URL('vendor/maplibre/glyphs/',location.href).href+'{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#18282d'}}]},attributionControl:false});
   await new Promise((resolve,reject)=>{map.once('load',resolve);map.once('error',reject);});
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-left');
   const attribution=document.createElement('div');attribution.className='map-attribution';attribution.innerHTML='MapLibre GL JS · 疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0';document.querySelector('#time-options').append(attribution);
@@ -59,6 +59,9 @@ export function renderGeometry(map,data,state,isAntarctica,stableColor){
 }
 export function renderLabelsView({state,map,isAntarctica,nameFor}){
   if(state.dragging||state.boundariesPending)return;
+  const visibility=state.labels?'visible':'none';
+  if(map.getLayoutProperty('polity-labels','visibility')!==visibility)map.setLayoutProperty('polity-labels','visibility',visibility);
+  if(state.labelSnapshot===state.snapshot)return;
   const features=[],seen=new Set();
   for(const f of [...(state.layer?.features||[])].sort((a,b)=>(b.labelGeometry?.area||0)-(a.labelGeometry?.area||0))){
     if(isAntarctica(f))continue;const n=nameFor(f.properties?.NAME),point=f.labelGeometry?.anchors?.[0];
@@ -67,8 +70,7 @@ export function renderLabelsView({state,map,isAntarctica,nameFor}){
     if(!point||!name||seen.has(n.id))continue;seen.add(n.id);
     features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{name,polityId:n.id,NAME:f.properties.NAME,priority:-(n.importance||0)}});
   }
-  const visibility=state.labels?'visible':'none';
-  if(map.getLayoutProperty('polity-labels','visibility')!==visibility)map.setLayoutProperty('polity-labels','visibility',visibility);
+  state.labelSnapshot=state.snapshot;
   const signature=`${state.snapshot?.year}|${features.length}`;
   if(state.labelSignature!==signature){map.getSource('labels').setData({type:'FeatureCollection',features});state.labelSignature=signature;}
 }

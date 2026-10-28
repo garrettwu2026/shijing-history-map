@@ -25,22 +25,23 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if(refreshFrame!=null)return;
     refreshFrame=requestAnimationFrame(()=>{
       refreshFrame=null;
-      if(eventsDirty){eventsDirty=false;renderEventsView({state,map,eventLayer,enabledCategories,categories,$,eventDate,esc,selectEvent,displayText,yearText,setPlaying,setYear});}
+      if(eventsDirty){eventsDirty=false;renderEventsView({state,map,eventLayer,enabledCategories,categories,$,eventDate,esc,selectEvent,displayText,yearText,setPlaying,setYear});if(labelsDirty){scheduleRefresh();return;}}
       if(labelsDirty&&!state.dragging&&!state.boundariesPending&&!state.geometryPending){
         labelsDirty=false;const start=performance.now();renderLabelsView({state,map,isAntarctica,nameFor,esc});
         const profile=window.historyProfiles?.at(-1);if(profile&&profile.labelPasses===0){profile.labelsMs=performance.now()-start;profile.totalMs+=profile.labelsMs;profile.labelPasses=1;}
       }
     });
   }
+  function updateURL(){const url=new URL(location.href);url.searchParams.set('year',state.year);if(state.selectedPolity)url.searchParams.set('polity',state.selectedPolity);else url.searchParams.delete('polity');history.replaceState(null,'',url);}
   function nameFor(key) {
-    const cacheKey=`${state.snapshot?.year??state.year}|${key}`;
+    const cacheKey=`${state.snapshot?.year??state.year}|${state.year}|${key}`;
     if(state.nameCache?.has(cacheKey))return state.nameCache.get(cacheKey);
     const p=state.catalog?.polities[state.catalog.index[key]];
     if(!p)return {zh:'',native:'',aliases:[],importance:0,nameStatus:'pending'};
     const year=state.snapshot?.year ?? state.year;
     const period=p.periods.find(n=>year>=n.fromYear&&year<=n.toYear);
     const correction=state.errata?.overrides.find(n=>year>=(n.fromYear??n.year)&&year<=(n.toYear??n.year)&&n.match===key);
-    const endonyms=p.endonyms.filter(n=>n.sourceStatus==='verified'&&n.sourceUrl&&year>=n.fromYear&&year<=n.toYear);
+    const endonyms=[...(state.endonyms?.[p.id]||[]).filter(n=>state.year>=n.fromYear&&state.year<=n.toYear),...p.endonyms.filter(n=>n.sourceStatus==='verified'&&n.sourceUrl&&year>=n.fromYear&&year<=n.toYear)].filter((n,i,all)=>all.findIndex(e=>e.original===n.original)===i);
     const result={...p,zh:correction?.zh||period?.zh||p.zh,translationStatus:correction?.translationStatus||period?.translationStatus||p.translationStatus,nameStatus:(correction?.translationStatus==='untranslated'||period?.translationStatus==='untranslated'||p.translationStatus==='untranslated'||p.terminologyStatus==='restored-v10')?'pending':'accepted',native:endonyms[0]?.original||'',endonyms,aliases:period?.aliases||[],correction};
     (state.nameCache ||= new Map()).set(cacheKey,result);return result;
   }
@@ -69,18 +70,19 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   function polityHTML(key) {
     const n=nameFor(key);
     const field=(label,value)=>value?.trim()?`<p dir="auto">${label}：${esc(value)}</p>`:'';
-    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(nameDisplay(n.zh||key,n.nameStatus))}</h3><div data-intro-id="${esc(n.id||'')}"></div>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+`<p>自稱出處：${e.sourceStatus==='verified'?'已查核':'待查核'} <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">參考文獻</a></p></section>`).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：保留來源原文，尚未取得合格的譯名依據。</p>':''}${n.correction?`<p class="correction">${n.correction.nameStatus==='corrected'?'名稱已修正；疆界待考證':'名稱及疆界待考證'}：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
+    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(nameDisplay(n.zh||key,n.nameStatus))}</h3><div data-intro-id="${esc(n.id||'')}"></div>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',e.period||`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+'</section>').join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：保留來源原文，尚未取得合格的譯名依據。</p>':''}${n.correction?`<p class="correction">${n.correction.nameStatus==='corrected'?'名稱已修正；疆界待考證':'名稱及疆界待考證'}：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
   }
   function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(displayText(e.title))}</h3><p>${esc(displayText(e.description))}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='verified'?'已核實':e.sourceStatus==='article-unverified'?'具體條目，內容待核實':'搜尋入口，待查證'}）</a></p></div>`; }
   const {json} = createDataClient();
-  function snapshotData(s) {
-    if(state.cache.has(s.file)){const hit=state.cache.get(s.file);state.cache.delete(s.file);state.cache.set(s.file,hit);return hit.promise;}
+  function snapshotData(s, prefetch=false) {
+    const materialize=entry=>prefetch?entry.promise:entry.promise.then(data=>{if(data.bytes){entry.data ||= JSON.parse(new TextDecoder().decode(data.bytes));return entry.data;}return data;});
+    if(state.cache.has(s.file)){const hit=state.cache.get(s.file);state.cache.delete(s.file);state.cache.set(s.file,hit);return materialize(hit);}
     const controller=new AbortController();
     const entry={controller,promise:null,ready:false};
-    entry.promise=json(`data/${s.file}`,controller.signal).then(data=>{entry.ready=true;return data;}).catch(error=>{if(state.cache.get(s.file)===entry)state.cache.delete(s.file);throw error;});
+    entry.promise=json(`data/${s.file}`,controller.signal,true).then(data=>{entry.ready=true;return data;}).catch(error=>{if(state.cache.get(s.file)===entry)state.cache.delete(s.file);throw error;});
     state.cache.set(s.file,entry);
     while(state.cache.size>10){const key=state.cache.keys().next().value;state.cache.get(key).controller.abort();state.cache.delete(key);}
-    return entry.promise;
+    return materialize(entry);
   }
   function cancelObsolete(s) {
     if(prefetchHandle!=null){(window.cancelIdleCallback || clearTimeout)(prefetchHandle);prefetchHandle=null;}
@@ -92,7 +94,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if(navigator.connection?.saveData || /2g/.test(navigator.connection?.effectiveType||''))return;
     const idle=window.requestIdleCallback || (callback=>setTimeout(callback,250));
     (window.cancelIdleCallback || clearTimeout)(prefetchHandle);
-    prefetchHandle=idle(()=>{prefetchHandle=null;if(state.snapshot!==s)return;const i=state.snapshots.indexOf(s);for(const offset of [-1,1,-2,2]){const next=state.snapshots[i+offset];if(next)snapshotData(next).catch(()=>{});}});
+    prefetchHandle=idle(()=>{prefetchHandle=null;if(state.snapshot!==s)return;const i=state.snapshots.indexOf(s);for(const offset of [-1,1,-2,2]){const next=state.snapshots[i+offset];if(next)snapshotData(next,true).catch(()=>{});}});
   }
   function snapshotFor(year) { return state.snapshots.filter(s => s.year <= year).at(-1) || state.snapshots[0]; }
   function updateBoundaryIndicator(pending=false) {
@@ -114,7 +116,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     const s = snapshotFor(state.year);
     const token = ++state.request;
     cancelObsolete(s);
-    if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); state.boundariesPending=false;renderLabels(); prefetchAdjacent(s); return; }
+    if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); state.boundariesPending=false;restoreSelection();renderLabels(); prefetchAdjacent(s); return; }
     state.boundariesPending=true;
     updateSnapshotCaption(s, true);
     status('正在展開歷史疆界…');
@@ -123,9 +125,10 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       const antarctica=state.baseline?.features.find(isAntarctica);
       const data=snapshot.features.some(isAntarctica)||!antarctica?snapshot:{...snapshot,features:[...snapshot.features,antarctica]};
       if(token!==state.request)return;
-      state.selectedPolity=null;state.snapshot=s;state.nameCache=new Map();
+      state.snapshot=s;state.nameCache=new Map();
       renderGeometry(map,data,state,isAntarctica,stableColor);
       state.layer=data;state.boundariesPending=false;
+      restoreSelection();
       if($('polity-dialog').open)renderPolities();
       $('polity-count').textContent=`${new Set(data.features.filter(f=>!isAntarctica(f)).map(f=>f.properties?.NAME).filter(Boolean)).size} 個政體與區域`;
       updateSnapshotCaption(s);renderLabels();status();
@@ -162,7 +165,6 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     document.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active',Number(b.dataset.year)===y));
     state.suppressRestore=true;map.activePopup?.remove();state.suppressRestore=false;state.returnFocus=null;
     updateBoundaryIndicator(true);
-    const updateURL=()=>{const url=new URL(location.href);url.searchParams.set('year',y);history.replaceState(null,'',url);};
     clearTimeout(state.urlTimer);if(debounceBorders)state.urlTimer=setTimeout(updateURL,160);else updateURL();
     clearTimeout(borderTimer);
     clearTimeout(state.eventTimer);
@@ -171,7 +173,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       // Invalidate an in-flight swap immediately, while the slider keeps moving.
       ++state.request;
       cancelObsolete(snapshotFor(y));
-      snapshotData(snapshotFor(y)).catch(()=>{});
+      snapshotData(snapshotFor(y),true).catch(()=>{});
       if(!state.dragging)borderTimer = setTimeout(loadBorders, 150);
       return;
     }
@@ -204,6 +206,12 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       const b=document.createElement('button');b.textContent=`${nameDisplay(n.zh,n.nameStatus)}${region?' · '+region:''} · 疆界 ${yearText(state.snapshot.year)}`;
       b.onclick=()=>{
         state.returnFocus=$('polity-open');$('polity-dialog').close();
+        selectPolity(n,key,layers);
+      };list.append(b);
+    }
+    if(!list.childElementCount)list.textContent='找不到符合的政體。請試試別稱，或切換疆界年份。';
+  }
+  function selectPolity(n,key,layers){
         state.selectedPolity=n.id;
         for(const source of ['polities','disputed'])map.removeFeatureState({source});
         for(const feature of state.layer.features){if(nameFor(feature.properties?.NAME).id===n.id)map.setFeatureState({source:feature.renderSource,id:feature.id},{selected:true});}
@@ -214,9 +222,13 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
         showPopup(map,anchor,polityHTML(key));
         const view=map.getBounds();
         window.politySelection={id:n.id,count:layers.length,bounds:[[bounds[0][1],bounds[0][0]],[bounds[1][1],bounds[1][0]]],anchor:[anchor[1],anchor[0]],highlighted:true,view:[[view.getSouth(),view.getWest()],[view.getNorth(),view.getEast()]]};
-      };list.append(b);
-    }
-    if(!list.childElementCount)list.textContent='找不到符合的政體。請試試別稱，或切換疆界年份。';
+        updateURL();
+  }
+  function restoreSelection(){
+    if(!state.selectedPolity)return;
+    const layers=state.layer.features.filter(f=>nameFor(f.properties?.NAME).id===state.selectedPolity&&f.labelGeometry);
+    if(layers.length)selectPolity(nameFor(layers[0].properties.NAME),layers[0].properties.NAME,layers);
+    else {state.selectedPolity=null;updateURL();}
   }
   async function init() {
     $('boundary-warning').onclick=()=>{const el=$('boundary-warning-text');el.hidden=!el.hidden;$('boundary-warning').setAttribute('aria-expanded',String(!el.hidden));};
@@ -238,8 +250,8 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     }
     $('baseline-retry').onclick=loadBaseline;loadBaseline();
     for(const event of ['moveend','zoomend','resize'])map.on(event,()=>{if(state.events.length)state.eventsSignature=null;scheduleRefresh(!!state.events.length);});
-    map.on('click','polities-fill',e=>{const f=e.features[0];if(f.properties.NAME?.trim()||f.properties.antarctica)showPopup(map,e.lngLat,f.properties.antarctica?antarcticaHTML():polityHTML(f.properties.NAME));});
-    map.on('click','disputed-fill',e=>showPopup(map,e.lngLat,polityHTML(e.features[0].properties.NAME)));
+    map.on('click','polities-fill',e=>{const f=e.features[0];if(f.properties.antarctica)showPopup(map,e.lngLat,antarcticaHTML());else if(f.properties.NAME?.trim()){state.selectedPolity=nameFor(f.properties.NAME).id;updateURL();showPopup(map,e.lngLat,polityHTML(f.properties.NAME));}});
+    map.on('click','disputed-fill',e=>{state.selectedPolity=nameFor(e.features[0].properties.NAME).id;updateURL();showPopup(map,e.lngLat,polityHTML(e.features[0].properties.NAME));});
     let hover;
     for(const layer of ['polities-fill','disputed-fill']){
       map.on('mousemove',layer,e=>{if(hover)map.setFeatureState(hover,{hover:false});const f=e.features[0];hover={source:f.source,id:f.id};map.setFeatureState(hover,{hover:true});map.getCanvas().style.cursor='pointer';
@@ -247,8 +259,8 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       });
       map.on('mouseleave',layer,()=>{if(hover)map.setFeatureState(hover,{hover:false});hover=null;map.getCanvas().style.cursor='';$('map').title='';});
     }
-    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();loadIntro(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
-    map.on('detailclose',()=>{document.body.classList.remove('popup-open');const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
+    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();state.selectedPolity=el.querySelector('[data-intro-id]')?.dataset.introId||null;updateURL();loadIntro(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
+    map.on('detailclose',()=>{document.body.classList.remove('popup-open');if(!state.suppressRestore){state.selectedPolity=null;updateURL();}const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
     document.addEventListener('click',e=>{const b=e.target.closest('.goto-event');if(b){const event=state.events.find(x=>x.id===b.dataset.event);setYear(event.year);}});
     document.fonts?.ready.then(renderLabels);
     const sheet=$('events-panel'), sheetButton=$('sheet-toggle');
@@ -271,7 +283,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     status('正在整理歷史資料…');
     try {
       const recover=async(path,label,failed=false)=>{for(;;){try{if(failed){failed=false;throw new Error('重試載入');}return await json(path);}catch{await new Promise(resolve=>{const box=document.createElement('div');box.className='data-retry';box.textContent=label+'載入失敗。';const button=document.createElement('button');button.textContent='重試'+label;button.onclick=()=>{box.remove();resolve();};box.append(button);$('data-retries').append(box);});}}};
-      const [snapshots,events,catalog,errata,glossary] = await Promise.all([recover('data/snapshots.json','快照目錄'),json('data/events.json').catch(()=>{state.eventsUnavailable=true;recover('data/events.json','事件',true).then(events=>{state.eventsUnavailable=false;state.events=events;state.eventsSignature=null;renderEvents();});return [];}),recover('data/polities.json','政體目錄'),recover('data/errata.json','考證資料'),recover('data/glossary.json','詞彙狀態')]);state.catalog=catalog;state.errata=errata;displayText=createNameDisplay(glossary);
+      const [snapshots,events,catalog,errata,glossary,endonyms] = await Promise.all([recover('data/snapshots.json','快照目錄'),json('data/events.json').catch(()=>{state.eventsUnavailable=true;recover('data/events.json','事件',true).then(events=>{state.eventsUnavailable=false;state.events=events;state.eventsSignature=null;renderEvents();});return [];}),recover('data/polities.json','政體目錄'),recover('data/errata.json','考證資料'),recover('data/glossary.json','詞彙狀態'),recover('data/endonyms.json','自稱資料')]);state.endonyms=endonyms;state.catalog=catalog;state.errata=errata;displayText=createNameDisplay(glossary);
       await warmLabelGlyphs(map,catalog,errata);
       dependentControls.forEach(el=>el.disabled=false);
       state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.events=events;
@@ -287,6 +299,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       document.querySelectorAll('[data-year]').forEach(b=>b.onclick=()=>{setPlaying(false);setYear(b.dataset.year);});
       for(const delta of [-1,1])$('year-'+(delta<0?'prev':'next')).onclick=()=>{setPlaying(false);setYear(state.year+delta,delta);};
       for(const delta of [-1,1])$('snapshot-'+(delta<0?'prev':'next')).onclick=()=>{setPlaying(false);const next=delta<0?[...state.snapshots].reverse().find(s=>s.year>=MIN&&s.year<=MAX&&s.year<state.year):state.snapshots.find(s=>s.year>=MIN&&s.year<=MAX&&s.year>state.year);if(next)setYear(next.year);};
+      state.selectedPolity=new URLSearchParams(location.search).get('polity');
       const initial = new URLSearchParams(location.search).get('year');
       await setYear(initial !== null && initial.trim() && Number.isFinite(Number(initial)) ? initial : -300);
     } catch(error) { console.error('歷史資料載入失敗',error); status('無法載入歷史資料。請透過 HTTP 伺服器開啟，並確認 data 資料夾完整。'); }

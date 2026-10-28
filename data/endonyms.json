@@ -1,0 +1,904 @@
+{
+  "p-570cde77956fc13e": [
+    {
+      "original": "Βασιλεία τῶν Ῥωμαίων",
+      "transliteration": "Basileía tôn Rhōmaíōn",
+      "meaning": "羅馬人的帝國",
+      "language": "希臘語",
+      "period": "中世紀",
+      "fromYear": 700,
+      "toYear": 1453
+    }
+  ],
+  "p-3c8cc1689e22fee9": [
+    {
+      "original": "Βασιλεία τῶν Ῥωμαίων",
+      "transliteration": "Basileía tôn Rhōmaíōn",
+      "meaning": "羅馬人的帝國",
+      "language": "希臘語",
+      "period": "中世紀",
+      "fromYear": 700,
+      "toYear": 1453
+    }
+  ],
+  "p-3acefcfa65fa8884": [
+    {
+      "original": "Imperium Romanum",
+      "transliteration": "",
+      "meaning": "羅馬帝國",
+      "language": "拉丁語",
+      "period": "羅馬帝國時期",
+      "fromYear": -27,
+      "toYear": 476
+    }
+  ],
+  "p-9852f61c3a676896": [
+    {
+      "original": "Sacrum Romanum Imperium",
+      "transliteration": "",
+      "meaning": "神聖羅馬帝國",
+      "language": "拉丁語",
+      "period": "中晚期",
+      "fromYear": 1254,
+      "toYear": 1806
+    }
+  ],
+  "p-d39d88e90d195079": [
+    {
+      "original": "ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
+      "transliteration": "Daicing gurun",
+      "meaning": "大清國",
+      "language": "滿語",
+      "period": "清代",
+      "fromYear": 1636,
+      "toYear": 1912
+    }
+  ],
+  "p-06b7a1607f603173": [
+    {
+      "original": "ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
+      "transliteration": "Daicing gurun",
+      "meaning": "大清國",
+      "language": "滿語",
+      "period": "清代",
+      "fromYear": 1636,
+      "toYear": 1912
+    }
+  ],
+  "p-6c4b2c322e844cb1": [
+    {
+      "original": "دولت عليه عثمانيه",
+      "transliteration": "Devlet-i ʿAliyye-i ʿOsmâniyye",
+      "meaning": "崇高的鄂圖曼國",
+      "language": "鄂圖曼土耳其語",
+      "period": "帝國時期",
+      "fromYear": 1453,
+      "toYear": 1922
+    }
+  ],
+  "p-d37fcae25c90f637": [
+    {
+      "original": "ᠶᠡᠬᠡ ᠮᠣᠩᠭᠣᠯ ᠤᠯᠤᠰ",
+      "transliteration": "Yeke Mongγol ulus",
+      "meaning": "大蒙古國",
+      "language": "中古蒙古語",
+      "period": "13世紀",
+      "fromYear": 1206,
+      "toYear": 1368
+    }
+  ],
+  "p-9b4a3303eb34c9b4": [
+    {
+      "original": "گورکانیان",
+      "transliteration": "Gūrkāniyān",
+      "meaning": "駙馬的後裔（古爾卡尼王朝）",
+      "language": "波斯語",
+      "period": "莫臥兒時期",
+      "fromYear": 1526,
+      "toYear": 1857
+    }
+  ],
+  "p-8683806e84733d59": [
+    {
+      "original": "ممالک محروسه ایران",
+      "transliteration": "Mamālek-e Maḥrūse-ye Īrān",
+      "meaning": "伊朗受保護的諸國土",
+      "language": "波斯語",
+      "period": "薩法維時期",
+      "fromYear": 1501,
+      "toYear": 1736
+    }
+  ],
+  "p-bfa774a14d4b3239": [
+    {
+      "original": "大明",
+      "transliteration": "Dà Míng",
+      "meaning": "大明",
+      "language": "漢語",
+      "period": "明代",
+      "fromYear": 1368,
+      "toYear": 1644
+    }
+  ],
+  "p-861af54f72de981d": [
+    {
+      "original": "漢",
+      "transliteration": "Hàn",
+      "meaning": "漢",
+      "language": "漢語",
+      "period": "漢代",
+      "fromYear": -202,
+      "toYear": 220
+    }
+  ],
+  "p-b3b1896a008a2c75": [
+    {
+      "original": "漢",
+      "transliteration": "Hàn",
+      "meaning": "漢",
+      "language": "漢語",
+      "period": "漢代",
+      "fromYear": -202,
+      "toYear": 220
+    }
+  ],
+  "p-a913bf064aa840f3": [
+    {
+      "original": "唐",
+      "transliteration": "Táng",
+      "meaning": "唐",
+      "language": "漢語",
+      "period": "唐代",
+      "fromYear": 618,
+      "toYear": 907
+    }
+  ],
+  "p-cd116cc42fd55ace": [
+    {
+      "original": "宋",
+      "transliteration": "Sòng",
+      "meaning": "宋",
+      "language": "漢語",
+      "period": "宋代",
+      "fromYear": 960,
+      "toYear": 1279
+    }
+  ],
+  "p-647294383b2cbc24": [
+    {
+      "original": "日本",
+      "transliteration": "Nihon",
+      "meaning": "日本（日出之處）",
+      "language": "日語",
+      "period": "歷代用稱",
+      "fromYear": 700,
+      "toYear": 2026
+    }
+  ],
+  "p-0f1245681500f1c6": [
+    {
+      "original": "大日本帝國",
+      "transliteration": "Dai Nippon Teikoku",
+      "meaning": "大日本帝國",
+      "language": "日語",
+      "period": "1868–1947",
+      "fromYear": 1868,
+      "toYear": 1947
+    }
+  ],
+  "p-17a2bfe78e03b1c1": [
+    {
+      "original": "朝鮮",
+      "transliteration": "Joseon",
+      "meaning": "朝鮮",
+      "language": "韓語",
+      "period": "朝鮮王朝時期",
+      "fromYear": 1392,
+      "toYear": 1897
+    }
+  ],
+  "p-57df0fa284276a9d": [
+    {
+      "original": "高麗",
+      "transliteration": "Goryeo",
+      "meaning": "高麗",
+      "language": "韓語",
+      "period": "918–1392",
+      "fromYear": 918,
+      "toYear": 1392
+    }
+  ],
+  "p-07bab4c27f69e9e6": [
+    {
+      "original": "新羅",
+      "transliteration": "Silla",
+      "meaning": "新羅",
+      "language": "韓語",
+      "period": "503–935（新羅國號）",
+      "fromYear": 503,
+      "toYear": 935
+    }
+  ],
+  "p-28963423986bd9dc": [
+    {
+      "original": "Tawantinsuyu",
+      "transliteration": "",
+      "meaning": "四方之地",
+      "language": "克丘亞語",
+      "period": "印加帝國時期",
+      "fromYear": 1438,
+      "toYear": 1533
+    }
+  ],
+  "p-ff38eda437045c71": [
+    {
+      "original": "Deutsches Reich",
+      "transliteration": "",
+      "meaning": "德意志帝國",
+      "language": "德語",
+      "period": "1871–1918",
+      "fromYear": 1871,
+      "toYear": 1918
+    }
+  ],
+  "p-9a594d3a631485e9": [
+    {
+      "original": "Kaiserthum Oesterreich",
+      "transliteration": "",
+      "meaning": "奧地利帝國",
+      "language": "德語",
+      "period": "1804–1867",
+      "fromYear": 1804,
+      "toYear": 1867
+    }
+  ],
+  "p-136ea1b55b280279": [
+    {
+      "original": "Österreichisch-Ungarische Monarchie",
+      "transliteration": "",
+      "meaning": "奧匈君主國",
+      "language": "德語",
+      "period": "1867–1918",
+      "fromYear": 1867,
+      "toYear": 1918
+    }
+  ],
+  "p-5297ef5e3e52edf7": [
+    {
+      "original": "Royaume de France",
+      "transliteration": "",
+      "meaning": "法蘭西王國",
+      "language": "法語",
+      "period": "王國時期",
+      "fromYear": 987,
+      "toYear": 1848
+    }
+  ],
+  "p-519d1b1ee109ec67": [
+    {
+      "original": "Regno d’Italia",
+      "transliteration": "",
+      "meaning": "義大利王國",
+      "language": "義大利語",
+      "period": "1861–1946",
+      "fromYear": 1861,
+      "toYear": 1946
+    }
+  ],
+  "p-3f9240c552e4446e": [
+    {
+      "original": "Magyar Királyság",
+      "transliteration": "",
+      "meaning": "匈牙利王國",
+      "language": "匈牙利語",
+      "period": "王國時期",
+      "fromYear": 1000,
+      "toYear": 1946
+    }
+  ],
+  "p-a69ad7c5abca82fe": [
+    {
+      "original": "Kongeriket Norge",
+      "transliteration": "",
+      "meaning": "挪威王國",
+      "language": "挪威語",
+      "period": "近現代",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-7a7aa7379b5da219": [
+    {
+      "original": "Regno di Sardegna",
+      "transliteration": "",
+      "meaning": "薩丁尼亞王國",
+      "language": "義大利語",
+      "period": "王國時期",
+      "fromYear": 1720,
+      "toYear": 1861
+    }
+  ],
+  "p-c5565bc74cde89ae": [
+    {
+      "original": "Regno delle Due Sicilie",
+      "transliteration": "",
+      "meaning": "兩西西里王國",
+      "language": "義大利語",
+      "period": "1816–1861",
+      "fromYear": 1816,
+      "toYear": 1861
+    }
+  ],
+  "p-7a1ca4ef7515f727": [
+    {
+      "original": "France",
+      "transliteration": "",
+      "meaning": "法國",
+      "language": "法語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-80db4ccdca106d37": [
+    {
+      "original": "Deutschland",
+      "transliteration": "",
+      "meaning": "德國",
+      "language": "德語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-5a9cf672c8be6b5a": [
+    {
+      "original": "Italia",
+      "transliteration": "",
+      "meaning": "義大利",
+      "language": "義大利語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-8ef41e6f4b07432a": [
+    {
+      "original": "España",
+      "transliteration": "",
+      "meaning": "西班牙",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-4c7de2c3da6dc0ae": [
+    {
+      "original": "Portugal",
+      "transliteration": "",
+      "meaning": "葡萄牙",
+      "language": "葡萄牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-3a386c13d283dc2e": [
+    {
+      "original": "Nederland",
+      "transliteration": "",
+      "meaning": "荷蘭（低地）",
+      "language": "荷蘭語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-348841ef53dbd5a6": [
+    {
+      "original": "België",
+      "transliteration": "",
+      "meaning": "比利時",
+      "language": "荷蘭語",
+      "period": "近現代通稱之一",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-2275583196d79140": [
+    {
+      "original": "Schweiz",
+      "transliteration": "",
+      "meaning": "瑞士",
+      "language": "德語",
+      "period": "近現代通稱之一",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-c9cab0238debc6e5": [
+    {
+      "original": "Österreich",
+      "transliteration": "",
+      "meaning": "奧地利",
+      "language": "德語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-c527097577600a67": [
+    {
+      "original": "Danmark",
+      "transliteration": "",
+      "meaning": "丹麥",
+      "language": "丹麥語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-853637136575897a": [
+    {
+      "original": "Sverige",
+      "transliteration": "",
+      "meaning": "瑞典",
+      "language": "瑞典語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-bea54a349795017d": [
+    {
+      "original": "Norge",
+      "transliteration": "",
+      "meaning": "挪威",
+      "language": "挪威語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-aed8f531aa7e785b": [
+    {
+      "original": "Suomi",
+      "transliteration": "",
+      "meaning": "芬蘭",
+      "language": "芬蘭語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-595d6d914950b8a2": [
+    {
+      "original": "Ísland",
+      "transliteration": "",
+      "meaning": "冰島",
+      "language": "冰島語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-02bf1dfa9a0365a8": [
+    {
+      "original": "Éire",
+      "transliteration": "",
+      "meaning": "愛爾蘭",
+      "language": "愛爾蘭語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-7f69649ad70496d4": [
+    {
+      "original": "Polska",
+      "transliteration": "",
+      "meaning": "波蘭",
+      "language": "波蘭語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-504be3084f44d3e7": [
+    {
+      "original": "Magyarország",
+      "transliteration": "",
+      "meaning": "匈牙利（馬札爾人的國土）",
+      "language": "匈牙利語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-ea23726dd0fd4e4d": [
+    {
+      "original": "România",
+      "transliteration": "",
+      "meaning": "羅馬尼亞",
+      "language": "羅馬尼亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-1af00b874ff31830": [
+    {
+      "original": "Shqipëria",
+      "transliteration": "",
+      "meaning": "阿爾巴尼亞",
+      "language": "阿爾巴尼亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-9c93ad439373b4ee": [
+    {
+      "original": "Ελλάδα",
+      "transliteration": "Elláda",
+      "meaning": "希臘",
+      "language": "希臘語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-33a3d8ed92b0709b": [
+    {
+      "original": "Россия",
+      "transliteration": "Rossiya",
+      "meaning": "俄羅斯",
+      "language": "俄語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-580eedc669f3b989": [
+    {
+      "original": "Україна",
+      "transliteration": "Ukraina",
+      "meaning": "烏克蘭",
+      "language": "烏克蘭語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-66b86bf0f0459474": [
+    {
+      "original": "България",
+      "transliteration": "Bǎlgariya",
+      "meaning": "保加利亞",
+      "language": "保加利亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-e8739c839576f7ac": [
+    {
+      "original": "Србија",
+      "transliteration": "Srbija",
+      "meaning": "塞爾維亞",
+      "language": "塞爾維亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-7328d3f829b7b340": [
+    {
+      "original": "Hrvatska",
+      "transliteration": "",
+      "meaning": "克羅埃西亞",
+      "language": "克羅埃西亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-5c83a631bce2bffe": [
+    {
+      "original": "Lietuva",
+      "transliteration": "",
+      "meaning": "立陶宛",
+      "language": "立陶宛語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-988c8160b754c01d": [
+    {
+      "original": "Latvija",
+      "transliteration": "",
+      "meaning": "拉脫維亞",
+      "language": "拉脫維亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-10aeba697f6ba830": [
+    {
+      "original": "Eesti",
+      "transliteration": "",
+      "meaning": "愛沙尼亞",
+      "language": "愛沙尼亞語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-07c67d76ef92ac98": [
+    {
+      "original": "Türkiye",
+      "transliteration": "",
+      "meaning": "土耳其",
+      "language": "土耳其語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-18d4e170765cc488": [
+    {
+      "original": "ایران",
+      "transliteration": "Īrān",
+      "meaning": "伊朗",
+      "language": "波斯語",
+      "period": "歷代用稱",
+      "fromYear": 1501,
+      "toYear": 2026
+    }
+  ],
+  "p-557c1599d9a04895": [
+    {
+      "original": "مصر",
+      "transliteration": "Miṣr",
+      "meaning": "埃及",
+      "language": "阿拉伯語",
+      "period": "阿拉伯語時期",
+      "fromYear": 641,
+      "toYear": 2026
+    }
+  ],
+  "p-de5008d194a73211": [
+    {
+      "original": "العراق",
+      "transliteration": "al-ʿIrāq",
+      "meaning": "伊拉克",
+      "language": "阿拉伯語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-ed9ad13611d71648": [
+    {
+      "original": "المملكة العربية السعودية",
+      "transliteration": "al-Mamlaka al-ʿArabiyya al-Suʿūdiyya",
+      "meaning": "沙烏地阿拉伯王國",
+      "language": "阿拉伯語",
+      "period": "1932年至今",
+      "fromYear": 1932,
+      "toYear": 2026
+    }
+  ],
+  "p-3552ac0c032467fb": [
+    {
+      "original": "ישראל",
+      "transliteration": "Yisra'el",
+      "meaning": "以色列",
+      "language": "希伯來語",
+      "period": "1948年至今",
+      "fromYear": 1948,
+      "toYear": 2026
+    }
+  ],
+  "p-10436829032f361a": [
+    {
+      "original": "中國",
+      "transliteration": "Zhōngguó",
+      "meaning": "中國",
+      "language": "漢語",
+      "period": "歷代用稱，意涵隨時代變化",
+      "fromYear": -300,
+      "toYear": 2026
+    }
+  ],
+  "p-abd149214539d9f2": [
+    {
+      "original": "भारत",
+      "transliteration": "Bhārat",
+      "meaning": "印度（婆羅多）",
+      "language": "印地語",
+      "period": "現代用稱之一",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-e2567312ec53232b": [
+    {
+      "original": "پاکستان",
+      "transliteration": "Pākistān",
+      "meaning": "巴基斯坦",
+      "language": "烏爾都語",
+      "period": "1947年至今",
+      "fromYear": 1947,
+      "toYear": 2026
+    }
+  ],
+  "p-2f1d47eb679bb05e": [
+    {
+      "original": "বাংলাদেশ",
+      "transliteration": "Bāṃlādeś",
+      "meaning": "孟加拉國",
+      "language": "孟加拉語",
+      "period": "1971年至今",
+      "fromYear": 1971,
+      "toYear": 2026
+    }
+  ],
+  "p-07f8d1144a39d456": [
+    {
+      "original": "ශ්‍රී ලංකා",
+      "transliteration": "Śrī Laṅkā",
+      "meaning": "光輝之島",
+      "language": "僧伽羅語",
+      "period": "1972年至今",
+      "fromYear": 1972,
+      "toYear": 2026
+    }
+  ],
+  "p-6e49e65081b2bcb5": [
+    {
+      "original": "ประเทศไทย",
+      "transliteration": "Prathet Thai",
+      "meaning": "泰國",
+      "language": "泰語",
+      "period": "1939年起（曾短暫恢復暹羅國名）",
+      "fromYear": 1949,
+      "toYear": 2026
+    }
+  ],
+  "p-2e5e81066a29cd66": [
+    {
+      "original": "Việt Nam",
+      "transliteration": "",
+      "meaning": "越南",
+      "language": "越南語",
+      "period": "近現代用稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-dbc74a36d8e7439c": [
+    {
+      "original": "Indonesia",
+      "transliteration": "",
+      "meaning": "印度尼西亞",
+      "language": "印尼語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-084504165b077587": [
+    {
+      "original": "Malaysia",
+      "transliteration": "",
+      "meaning": "馬來西亞",
+      "language": "馬來語",
+      "period": "1963年至今",
+      "fromYear": 1963,
+      "toYear": 2026
+    }
+  ],
+  "p-07f62b021771d3cf": [
+    {
+      "original": "Brasil",
+      "transliteration": "",
+      "meaning": "巴西",
+      "language": "葡萄牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-a7d355b26bda6bf1": [
+    {
+      "original": "México",
+      "transliteration": "",
+      "meaning": "墨西哥",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-ea0b937ea317101e": [
+    {
+      "original": "Argentina",
+      "transliteration": "",
+      "meaning": "阿根廷",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-f5273e236d498c35": [
+    {
+      "original": "Chile",
+      "transliteration": "",
+      "meaning": "智利",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-508731a3c5d375cb": [
+    {
+      "original": "Perú",
+      "transliteration": "",
+      "meaning": "秘魯",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-6b615adb1300c116": [
+    {
+      "original": "Colombia",
+      "transliteration": "",
+      "meaning": "哥倫比亞",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-020e438bafc3a786": [
+    {
+      "original": "Venezuela",
+      "transliteration": "",
+      "meaning": "委內瑞拉",
+      "language": "西班牙語",
+      "period": "近現代通稱",
+      "fromYear": 1900,
+      "toYear": 2026
+    }
+  ],
+  "p-49dca65f362fee40": [
+    {
+      "original": "United States of America",
+      "transliteration": "",
+      "meaning": "美利堅合眾國",
+      "language": "英語",
+      "period": "1776年至今",
+      "fromYear": 1776,
+      "toYear": 2026
+    }
+  ],
+  "p-8d23a6e37e0a6431": [
+    {
+      "original": "United Kingdom",
+      "transliteration": "",
+      "meaning": "聯合王國",
+      "language": "英語",
+      "period": "近現代用稱",
+      "fromYear": 1801,
+      "toYear": 2026
+    }
+  ]
+}

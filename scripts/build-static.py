@@ -13,7 +13,7 @@ def emit(name,data):
  raw=json.dumps(data,ensure_ascii=False,separators=(',',':')).encode();target=f'{Path(name).stem}.{hashlib.sha256(raw).hexdigest()[:16]}.json';(out/'data'/target).write_bytes(raw);mapping[name]=target
 # Precompute runtime geometry metadata in dist only, using the same worker algorithm.
 prepared=json.loads(subprocess.check_output(['node','scripts/prepare-geometry.cjs'],cwd=R))
-for name in sorted({s['file'] for s in rows}|{'polities.json','errata.json','events.json','glossary.json','intros.json'}):emit(name,prepared.get(name) or json.loads((R/'data'/name).read_text()))
+for name in sorted({s['file'] for s in rows}|{'polities.json','errata.json','events.json','glossary.json','intros.json','endonyms.json'}):emit(name,prepared.get(name) or json.loads((R/'data'/name).read_text()))
 for row in rows:row['file']=mapping[row['file']]
 emit('snapshots.json',rows)
 shutil.copy(R/'data/LICENSE-historical-basemaps.txt',out/'data/LICENSE-historical-basemaps.txt')

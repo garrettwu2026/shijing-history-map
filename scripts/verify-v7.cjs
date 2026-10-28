@@ -25,7 +25,7 @@ for(const [width,height] of [[1440,900],[390,844],[320,568]]){
 
  await page.locator('#time-options-toggle').click();await page.locator('#year-next').click();assert((await page.locator('#year-display').innerText()).includes('1,201'));await page.locator('#snapshot-next').click();await page.locator('#time-options-toggle').click();
  await page.locator('#polity-open').click();await page.locator('#polity-search').fill('不存在的名稱abcdef');assert((await page.locator('#polity-list').innerText()).includes('找不到'));await page.locator('#polity-close').click();
- const select=async year=>{await page.locator('#year-input').evaluate((el,y)=>{el.value=y;el.form.requestSubmit()},String(year));await page.waitForFunction(()=>document.querySelector('#map-status').hidden&&document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));};
+ const select=async year=>{await page.locator('#year-input').evaluate((el,y)=>{el.value=y;el.form.requestSubmit()},String(year));await page.waitForFunction(y=>document.querySelector('#map-status').hidden&&document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：')&&window.historyState.eventsSignature?.startsWith(y+'|'),year);};
  await select(-5000);await page.locator('#time-options-toggle').click();assert(await page.locator('#snapshot-prev').isDisabled(),'no snapshot before supported range');await page.locator('#snapshot-next').click();assert(Number(await page.locator('#year-input').inputValue())>-5000);await page.locator('#time-options-toggle').click();
  await select(1200);await page.locator('#boundary-warning').click();assert(await page.locator('#boundary-warning-text').isVisible());await page.locator('#boundary-warning').click();
  const caption=await page.locator('#boundary-indicator').evaluate(el=>({fits:el.scrollWidth<=el.clientWidth,text:el.textContent}));assert(caption.fits&&caption.text.includes('1200'),'boundary year readable');
@@ -58,11 +58,11 @@ const context=await browser.newContext();const page=await context.newPage();let 
 await context.route('**/data/world_2010*',route=>{if(!failed){failed=true;return route.abort();}return route.continue()});
 await page.goto(base+'/?year=1200');await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));await page.waitForFunction(()=>!document.querySelector('#baseline-status').hidden);await page.locator('#baseline-retry').click();await page.waitForFunction(()=>document.querySelector('#baseline-status').hidden&&window.historyMap?.isSourceLoaded('land'));report.checks.push({baselineIndependent:true,retry:true});await context.close();
 // Independent metadata/event recovery and Worker recreation.
-for(const filename of ['polities','snapshots','events']){
+for(const filename of ['polities','snapshots','events','endonyms']){
  const context=await browser.newContext();const page=await context.newPage();let blocked=false;
  await context.route(`**/data/${filename}.*.json*`,route=>{if(!blocked){blocked=true;return route.abort();}return route.continue();});
  await page.goto(base+'/?year=1200');
- const label={polities:'政體目錄',snapshots:'快照目錄',events:'事件'}[filename];
+ const label={polities:'政體目錄',snapshots:'快照目錄',events:'事件',endonyms:'自稱資料'}[filename];
  const retry=page.getByRole('button',{name:'重試'+label,exact:true});
  await retry.waitFor({state:'visible',timeout:recoveryTimeout});assert(blocked,'request was actually blocked');
  // Events load independently. Let initialization consume its empty fallback first,
@@ -75,7 +75,7 @@ for(const filename of ['polities','snapshots','events']){
  assert.equal(await page.locator('#data-retries button').count(),0);report.checks.push({retry:filename});await context.close();
 }
 {
- const context=await browser.newContext();await context.addInitScript(()=>{const Native=window.Worker;window.workerStarts=0;window.Worker=class extends Native{constructor(...args){super(...args);this.isData=String(args[0]).includes('data-worker');if(this.isData)window.workerStarts++;}postMessage(...args){if(this.isData&&window.workerStarts===1){if(!this.failed){this.failed=true;setTimeout(()=>this.dispatchEvent(new Event('error')),0);}return;}return super.postMessage(...args);}};});const page=await context.newPage();await page.goto(base+'/?year=1200');await page.locator('#data-retries button').first().waitFor();await page.waitForFunction(()=>window.workerStarts>=2);for(let i=0;i<5&&await page.locator('#data-retries button').count();i++)await page.locator('#data-retries button').first().click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));report.checks.push({workerRestart:true});await context.close();
+ const context=await browser.newContext();await context.addInitScript(()=>{const Native=window.Worker;window.workerStarts=0;window.Worker=class extends Native{constructor(...args){super(...args);this.isData=String(args[0]).includes('data-worker');if(this.isData)window.workerStarts++;}postMessage(...args){if(this.isData&&window.workerStarts===1){if(!this.failed){this.failed=true;setTimeout(()=>this.dispatchEvent(new Event('error')),0);}return;}return super.postMessage(...args);}};});const page=await context.newPage();await page.goto(base+'/?year=1200');await page.locator('#data-retries button').first().waitFor();await page.waitForFunction(()=>window.workerStarts>=2);for(let i=0;i<6&&await page.locator('#data-retries button').count();i++)await page.locator('#data-retries button').first().click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));report.checks.push({workerRestart:true});await context.close();
 }
 assert.deepEqual(report.errors,[]);fs.writeFileSync('artifacts/v9-browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 }finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});
