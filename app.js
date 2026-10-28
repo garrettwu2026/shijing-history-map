@@ -14,7 +14,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
   const yearText = y => y < 0 ? `西元前 ${Math.abs(y).toLocaleString('zh-TW')} 年` : `西元 ${y.toLocaleString('zh-TW')} 年`;
   const singleDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const eventDate = e => e.startYear!==e.endYear ? `${yearText(e.startYear)} — ${yearText(e.endYear)}${e.precision==='approximate'?'（約）':''}` : singleDate(e);
-  const era = y => y < -1200 ? '早期文明' : y < 500 ? '古典時代' : y < 1450 ? '中古世界' : y < 1800 ? '航海與帝國' : y < 1945 ? '近代浪潮' : '當代世界';
+  const era = y => y < -1200 ? '古代' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
   const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message; };
   let map, eventLayer, labelLayer, borderTimer, prefetchHandle;
 
@@ -27,7 +27,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
     const period=p.periods.find(n=>year>=n.fromYear&&year<=n.toYear);
     const correction=state.errata?.overrides.find(n=>year>=(n.fromYear??n.year)&&year<=(n.toYear??n.year)&&n.match===key);
     const endonyms=p.endonyms.filter(n=>n.sourceStatus==='verified'&&n.sourceUrl&&year>=n.fromYear&&year<=n.toYear);
-    const result={...p,zh:correction?.zh||period?.zh||p.zh,native:endonyms[0]?.original||'',endonyms,aliases:period?.aliases||[],correction};
+    const result={...p,zh:correction?.zh||period?.zh||p.zh,translationStatus:correction?.translationStatus||period?.translationStatus||p.translationStatus,native:endonyms[0]?.original||'',endonyms,aliases:period?.aliases||[],correction};
     (state.nameCache ||= new Map()).set(cacheKey,result);return result;
   }
   // Identify the continent by geometry, including snapshots with a name.
@@ -41,7 +41,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
   function polityHTML(key) {
     const n=nameFor(key);
     const field=(label,value)=>value?.trim()?`<p dir="auto">${label}：${esc(value)}</p>`:'';
-    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh||key)}</h3>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+`<p>自稱出處：${e.sourceStatus==='verified'?'已查核':'待查核'} <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">參考文獻</a></p></section>`).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：暫保留原文。</p>':''}${n.correction?`<p class="correction">名稱已修正；疆界待考：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
+    return `<div class="popup-kicker">疆界年：${esc(yearText(state.snapshot.year))}</div><h3 class="popup-title">${esc(n.zh||key)}${n.translationStatus==='untranslated'&&!n.zh.includes('（待考）')?'（待考）':''}</h3>${field('實體類型',({'polity-or-community':'政體或社群','cultural-area':'文化分布區','people':'民族／族群'})[n.entityType]||'區域')}${!n.endonyms?.length&&n.importance>=8?'<p class="self-designation-pending">自稱待考證</p>':''}${(n.endonyms||[]).map(e=>'<section class="self-designation"><h4>當時自稱</h4>'+field('原文',e.original)+field('轉寫',e.transliteration)+field('中文意譯',e.meaning)+field('語言',e.language)+field('用稱性質',e.kind)+field('使用時期',`${yearText(e.fromYear)}至${yearText(e.toYear)}`)+`<p>自稱出處：${e.sourceStatus==='verified'?'已查核':'待查核'} <a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">參考文獻</a></p></section>`).join('')}${field('他稱／後世稱呼',(n.exonyms||[]).filter(Boolean).join('、'))}${field('地理別稱',(n.geographicAliases||[]).filter(Boolean).join('、'))}${field('資料集名稱',key)}${n.translationStatus==='untranslated'?'<p>譯名待考：保留來源原文，尚未取得合格的譯名依據。</p>':''}${n.correction?`<p class="correction">${n.correction.nameStatus==='corrected'?'名稱已修正；疆界待考證':'名稱及疆界待考證'}：${esc(n.correction.note)} <a href="${esc(n.correction.source)}" target="_blank" rel="noopener">來源</a></p>`:''}<small>疆界為概略重建。</small>`;
   }
   function eventHTML(e) { return `<div class="popup-event"><div class="popup-kicker">${esc(eventDate(e))} · ${esc(e.category)}</div><h3 class="popup-title">${esc(e.title)}</h3><p>${esc(e.description)}</p><p>選取年：${esc(yearText(state.year))}<br>疆界年：${esc(yearText(state.snapshot?.year||state.year))}<br>事件年：${esc(eventDate(e))}</p><button class="goto-event" data-event="${esc(e.id)}">切換到事件年代</button><p><a href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">查考入口（${e.sourceStatus==='verified'?'已核實':e.sourceStatus==='article-unverified'?'具體條目，內容待核實':'搜尋入口，待查證'}）</a></p></div>`; }
   const {json} = createDataClient();
@@ -210,7 +210,7 @@ import {eventDistance,intersects,regionFor,stableColor} from './modules/content.
     state.layer.eachLayer(layer=>{const key=layer.feature.properties?.NAME;if(!key?.trim()||isAntarctica(layer.feature))return;const n=nameFor(key);if(!n.zh)return;if(!groups.has(n.id))groups.set(n.id,{n,key,layers:[]});groups.get(n.id).layers.push(layer);});
     for(const {n,key,layers} of groups.values()){
       if(!JSON.stringify([n.zh,n.native,n.aliases,n.datasetNames,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))continue;
-      const b=document.createElement('button');b.textContent=`${n.zh}${n.translationStatus==='untranslated'?'（譯名待考）':''} · ${regionFor(layers[0].feature.labelGeometry.bounds)} · 疆界 ${yearText(state.snapshot.year)}`;
+      const b=document.createElement('button');b.textContent=`${n.zh}${n.translationStatus==='untranslated'&&!n.zh.includes('（待考）')?'（待考）':''} · ${regionFor(layers[0].feature.labelGeometry.bounds)} · 疆界 ${yearText(state.snapshot.year)}`;
       b.onclick=()=>{
         state.returnFocus=$('polity-open');$('polity-dialog').close();
         state.selectedPolity=n.id;state.layer.eachLayer(l=>state.layer.resetStyle(l));

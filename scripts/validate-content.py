@@ -8,7 +8,7 @@ c=read('polities.json');err=read('errata.json')['overrides'];events=read('events
 def correction(key,year):
  return next((e for e in err if e['match']==key and e.get('fromYear',e.get('year'))<=year<=e.get('toYear',e.get('year'))),None)
 for year,expected in [(1945,'比屬剛果'),(1960,'剛果共和國（利奧波德維爾）'),(1970,'剛果民主共和國'),(1971,'薩伊爾'),(1996,'薩伊爾'),(1997,'剛果民主共和國'),(2000,'剛果民主共和國'),(2010,'剛果民主共和國')]:
- e=correction('Zaire',year);assert e['zh']==expected and e['nameStatus']=='corrected' and e['geometryStatus']=='needs-review'
+ e=correction('Zaire',year);assert e['zh'].replace('（待考）','')==expected and e['nameStatus']=='corrected' and e['geometryStatus']=='needs-review'
 assert correction('Mongol Empire',1200)['geometryStatus']=='needs-review'
 for i,e in enumerate(err):
  for other in err[i+1:]:

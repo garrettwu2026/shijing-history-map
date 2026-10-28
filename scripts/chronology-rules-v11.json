@@ -1,0 +1,1430 @@
+[
+  {
+    "name": "Han Empire",
+    "fromYear": -202,
+    "toYear": 220,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Han Zhao",
+    "fromYear": 304,
+    "toYear": 329,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Northern Liang",
+    "fromYear": 397,
+    "toYear": 460,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Toba Wei",
+    "fromYear": 386,
+    "toYear": 535,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Jin Empire",
+    "fromYear": 1115,
+    "toYear": 1234,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Sui Empire",
+    "fromYear": 581,
+    "toYear": 618,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Tang Empire",
+    "fromYear": 618,
+    "toYear": 907,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀",
+    "excludedIntervals": [
+      [
+        690,
+        704
+      ]
+    ]
+  },
+  {
+    "name": "Song Empire",
+    "fromYear": 960,
+    "toYear": 1279,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Ming Empire",
+    "fromYear": 1368,
+    "toYear": 1644,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Ming Chinese Empire",
+    "fromYear": 1368,
+    "toYear": 1644,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Qing Empire",
+    "fromYear": 1636,
+    "toYear": 1912,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Manchu Empire",
+    "fromYear": 1636,
+    "toYear": 1912,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Sixteen Kingdoms",
+    "fromYear": 304,
+    "toYear": 439,
+    "source": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=21&la=0&powerMode=0",
+    "sourceStatus": "verified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Abbasid Caliphate",
+    "fromYear": 750,
+    "toYear": 1517,
+    "source": "https://en.wikipedia.org/wiki/Abbasid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Achaemenid Empire",
+    "fromYear": -550,
+    "toYear": -330,
+    "source": "https://en.wikipedia.org/wiki/Achaemenid_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Almohad Caliphate",
+    "fromYear": 1121,
+    "toYear": 1269,
+    "source": "https://en.wikipedia.org/wiki/Almohad_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Almoravid dynasty",
+    "fromYear": 1040,
+    "toYear": 1147,
+    "source": "https://en.wikipedia.org/wiki/Almoravid_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Angevin Empire",
+    "fromYear": 1154,
+    "toYear": 1214,
+    "source": "https://en.wikipedia.org/wiki/Angevin_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Austrian Empire",
+    "fromYear": 1804,
+    "toYear": 1867,
+    "source": "https://en.wikipedia.org/wiki/Austrian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Austro-Hungarian Empire",
+    "fromYear": 1867,
+    "toYear": 1918,
+    "source": "https://en.wikipedia.org/wiki/Austro-Hungarian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Aztec Empire",
+    "fromYear": 1428,
+    "toYear": 1521,
+    "source": "https://en.wikipedia.org/wiki/Aztec_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Buyid dynasty",
+    "fromYear": 934,
+    "toYear": 1062,
+    "source": "https://en.wikipedia.org/wiki/Buyid_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Byzantine Empire",
+    "fromYear": 330,
+    "toYear": 1453,
+    "source": "https://en.wikipedia.org/wiki/Byzantine_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Caliphate of Córdoba",
+    "fromYear": 929,
+    "toYear": 1031,
+    "source": "https://en.wikipedia.org/wiki/Caliphate_of_Córdoba",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Carolingian Empire",
+    "fromYear": 800,
+    "toYear": 888,
+    "source": "https://en.wikipedia.org/wiki/Carolingian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Chimú Empire",
+    "fromYear": 900,
+    "toYear": 1470,
+    "source": "https://en.wikipedia.org/wiki/Chimú_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Eastern Roman Empire",
+    "fromYear": 330,
+    "toYear": 1453,
+    "source": "https://en.wikipedia.org/wiki/Eastern_Roman_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Empire of Alexander",
+    "fromYear": -336,
+    "toYear": -323,
+    "source": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Empire of Ghana",
+    "fromYear": 300,
+    "toYear": 1240,
+    "source": "https://en.wikipedia.org/wiki/Ghana_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Empire of Japan",
+    "fromYear": 1868,
+    "toYear": 1947,
+    "source": "https://en.wikipedia.org/wiki/Empire_of_Japan",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Fatimid Caliphate",
+    "fromYear": 909,
+    "toYear": 1171,
+    "source": "https://en.wikipedia.org/wiki/Fatimid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "German Empire",
+    "fromYear": 1871,
+    "toYear": 1918,
+    "source": "https://en.wikipedia.org/wiki/German_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Gupta Empire",
+    "fromYear": 320,
+    "toYear": 550,
+    "source": "https://en.wikipedia.org/wiki/Gupta_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Hafsid Caliphate",
+    "fromYear": 1229,
+    "toYear": 1574,
+    "source": "https://en.wikipedia.org/wiki/Hafsid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Holy Roman Empire",
+    "fromYear": 962,
+    "toYear": 1806,
+    "source": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Hunnic Empire",
+    "fromYear": 370,
+    "toYear": 469,
+    "source": "https://en.wikipedia.org/wiki/Hunnic_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Idrisid Caliphate",
+    "fromYear": 789,
+    "toYear": 974,
+    "source": "https://en.wikipedia.org/wiki/Idrisid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Inca Empire",
+    "fromYear": 1438,
+    "toYear": 1572,
+    "source": "https://en.wikipedia.org/wiki/Inca_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Khmer Empire",
+    "fromYear": 802,
+    "toYear": 1431,
+    "source": "https://en.wikipedia.org/wiki/Khmer_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Khwarazmian dynasty",
+    "fromYear": 1077,
+    "toYear": 1231,
+    "source": "https://en.wikipedia.org/wiki/Khwarazmian_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kushan Empire",
+    "fromYear": 30,
+    "toYear": 375,
+    "source": "https://en.wikipedia.org/wiki/Kushan_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Mauryan Empire",
+    "fromYear": -322,
+    "toYear": -185,
+    "source": "https://en.wikipedia.org/wiki/Mauryan_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Mongol Empire",
+    "fromYear": 1206,
+    "toYear": 1368,
+    "source": "https://en.wikipedia.org/wiki/Mongol_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Mughal Empire",
+    "fromYear": 1526,
+    "toYear": 1857,
+    "source": "https://en.wikipedia.org/wiki/Mughal_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Ottoman Empire",
+    "fromYear": 1299,
+    "toYear": 1922,
+    "source": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Parthian Empire",
+    "fromYear": -247,
+    "toYear": 224,
+    "source": "https://en.wikipedia.org/wiki/Parthian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Roman Empire",
+    "fromYear": -27,
+    "toYear": 476,
+    "source": "https://en.wikipedia.org/wiki/Roman_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Russian Empire",
+    "fromYear": 1721,
+    "toYear": 1917,
+    "source": "https://en.wikipedia.org/wiki/Russian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Safavid Empire",
+    "fromYear": 1501,
+    "toYear": 1736,
+    "source": "https://en.wikipedia.org/wiki/Safavid_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Samanid Empire",
+    "fromYear": 819,
+    "toYear": 999,
+    "source": "https://en.wikipedia.org/wiki/Samanid_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Sasanian Empire",
+    "fromYear": 224,
+    "toYear": 651,
+    "source": "https://en.wikipedia.org/wiki/Sasanian_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Seljuk Empire",
+    "fromYear": 1037,
+    "toYear": 1194,
+    "source": "https://en.wikipedia.org/wiki/Seljuk_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Sokoto Caliphate",
+    "fromYear": 1804,
+    "toYear": 1903,
+    "source": "https://en.wikipedia.org/wiki/Sokoto_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Srivijaya Empire",
+    "fromYear": 650,
+    "toYear": 1377,
+    "source": "https://en.wikipedia.org/wiki/Srivijaya",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Tibetan Empire",
+    "fromYear": 618,
+    "toYear": 842,
+    "source": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Tufan Empire",
+    "fromYear": 618,
+    "toYear": 842,
+    "source": "https://en.wikipedia.org/wiki/Tibetan_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Timurid Empire",
+    "fromYear": 1370,
+    "toYear": 1507,
+    "source": "https://en.wikipedia.org/wiki/Timurid_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Umayyad Caliphate",
+    "fromYear": 661,
+    "toYear": 750,
+    "source": "https://en.wikipedia.org/wiki/Umayyad_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Western Roman Empire",
+    "fromYear": 395,
+    "toYear": 476,
+    "source": "https://en.wikipedia.org/wiki/Western_Roman_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Wassoulou Empire",
+    "fromYear": 1878,
+    "toYear": 1898,
+    "source": "https://en.wikipedia.org/wiki/Wassoulou_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Wattasid Caliphate",
+    "fromYear": 1472,
+    "toYear": 1554,
+    "source": "https://en.wikipedia.org/wiki/Wattasid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Zayyanid Caliphate",
+    "fromYear": 1235,
+    "toYear": 1556,
+    "source": "https://en.wikipedia.org/wiki/Zayyanid_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Bahmani Kingdom",
+    "fromYear": 1347,
+    "toYear": 1527,
+    "source": "https://en.wikipedia.org/wiki/Bahmani_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Batavian Republic",
+    "fromYear": 1795,
+    "toYear": 1806,
+    "source": "https://en.wikipedia.org/wiki/Batavian_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Bosporan Kingdom",
+    "fromYear": -480,
+    "toYear": 370,
+    "source": "https://en.wikipedia.org/wiki/Bosporan_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Bosporian Kingdom",
+    "fromYear": -480,
+    "toYear": 370,
+    "source": "https://en.wikipedia.org/wiki/Bosporan_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Dutch Republic",
+    "fromYear": 1581,
+    "toYear": 1795,
+    "source": "https://en.wikipedia.org/wiki/Dutch_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Frankish Kingdom",
+    "fromYear": 481,
+    "toYear": 843,
+    "source": "https://en.wikipedia.org/wiki/Frankish_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Georgian Kingdom",
+    "fromYear": 1008,
+    "toYear": 1490,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Georgia",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Georgia",
+    "fromYear": 1008,
+    "toYear": 1490,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Georgia",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Helvetic Republic",
+    "fromYear": 1798,
+    "toYear": 1803,
+    "source": "https://en.wikipedia.org/wiki/Helvetic_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Himyarite Kingdom",
+    "fromYear": -110,
+    "toYear": 525,
+    "source": "https://en.wikipedia.org/wiki/Himyarite_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Antigonus",
+    "fromYear": -306,
+    "toYear": -301,
+    "source": "https://en.wikipedia.org/wiki/Antigonus_I_Monophthalmus",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Brazil",
+    "fromYear": 1815,
+    "toYear": 1822,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Brazil",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Hawaii",
+    "fromYear": 1795,
+    "toYear": 1893,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Hawaii",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kō Hawaiʻi Paeʻāina (Hawaiian Kingdom)",
+    "fromYear": 1795,
+    "toYear": 1893,
+    "source": "https://en.wikipedia.org/wiki/Hawaiian_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Hungary",
+    "fromYear": 1000,
+    "toYear": 1946,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Ireland",
+    "fromYear": 1542,
+    "toYear": 1801,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Ireland",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Kassander",
+    "fromYear": -305,
+    "toYear": -297,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Kassander",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Lysimachus",
+    "fromYear": -306,
+    "toYear": -281,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Lysimachus",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Pagan",
+    "fromYear": 849,
+    "toYear": 1297,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Pagan",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Sardinia",
+    "fromYear": 1324,
+    "toYear": 1861,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Sardinia",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of Sukhotai",
+    "fromYear": 1238,
+    "toYear": 1438,
+    "source": "https://en.wikipedia.org/wiki/Sukhothai_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Kingdom of the Two Sicilies",
+    "fromYear": 1816,
+    "toYear": 1861,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_the_Two_Sicilies",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Maitraka Kingdom",
+    "fromYear": 475,
+    "toYear": 776,
+    "source": "https://en.wikipedia.org/wiki/Maitraka_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Merina Kingdom",
+    "fromYear": 1540,
+    "toYear": 1897,
+    "source": "https://en.wikipedia.org/wiki/Merina_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Nabatean Kingdom",
+    "fromYear": -168,
+    "toYear": 106,
+    "source": "https://en.wikipedia.org/wiki/Nabataean_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Ptolemaic Kingdom",
+    "fromYear": -305,
+    "toYear": -30,
+    "source": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Republic of Kraków",
+    "fromYear": 1815,
+    "toYear": 1846,
+    "source": "https://en.wikipedia.org/wiki/Republic_of_Kraków",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Roman Republic",
+    "fromYear": -509,
+    "toYear": -27,
+    "source": "https://en.wikipedia.org/wiki/Roman_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Seleucid Kingdom",
+    "fromYear": -312,
+    "toYear": -63,
+    "source": "https://en.wikipedia.org/wiki/Seleucid_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Visigothic Kingdom",
+    "fromYear": 418,
+    "toYear": 721,
+    "source": "https://en.wikipedia.org/wiki/Visigothic_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Yugoslavia",
+    "fromYear": 1918,
+    "toYear": 2003,
+    "source": "https://en.wikipedia.org/wiki/Yugoslavia",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Soviet Union",
+    "fromYear": 1922,
+    "toYear": 1991,
+    "source": "https://en.wikipedia.org/wiki/Soviet_Union",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Zaire",
+    "fromYear": 1971,
+    "toYear": 1997,
+    "source": "https://en.wikipedia.org/wiki/Zaire",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Republic of Turkey",
+    "fromYear": 1923,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Turkey",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Czech Republic",
+    "fromYear": 1993,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Czech_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Korea, Democratic People's Republic of",
+    "fromYear": 1948,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/North_Korea",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Korea, Republic of",
+    "fromYear": 1948,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/South_Korea",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Tanzania, United Republic of",
+    "fromYear": 1964,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Tanzania",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Central African Republic",
+    "fromYear": 1960,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Central_African_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "United Kingdom of Great Britain and Ireland",
+    "fromYear": 1801,
+    "toYear": 1922,
+    "source": "https://en.wikipedia.org/wiki/United_Kingdom_of_Great_Britain_and_Ireland",
+    "sourceStatus": "reference-unverified",
+    "note": "年尺度含起訖年；約年與繼承／殘存政權需人工判讀"
+  },
+  {
+    "name": "Han",
+    "fromYear": -202,
+    "toYear": 220,
+    "source": "https://zh.wikipedia.org/wiki/汉朝",
+    "sourceStatus": "reference-unverified"
+  },
+  {
+    "name": "Qin",
+    "fromYear": -770,
+    "toYear": -207,
+    "source": "https://zh.wikipedia.org/wiki/秦国",
+    "sourceStatus": "reference-unverified",
+    "note": "秦國與秦朝連續稱名，不能僅用前221年作下限"
+  },
+  {
+    "name": "Kingdom of Italy",
+    "fromYear": 1861,
+    "toYear": 1946,
+    "source": "https://zh.wikipedia.org/wiki/意大利王國",
+    "sourceStatus": "reference-unverified",
+    "note": "資料僅出現於1914；勿套用到中世紀同名政體"
+  },
+  {
+    "name": "Tuʻi Tonga Empire",
+    "fromYear": 950,
+    "toYear": 1865,
+    "source": "https://en.wikipedia.org/wiki/Tuʻi_Tonga_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Poverty point culture",
+    "fromYear": -1700,
+    "toYear": -1100,
+    "source": "https://en.wikipedia.org/wiki/Poverty_Point_culture",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Nan Chao",
+    "fromYear": 738,
+    "toYear": 902,
+    "source": "https://en.wikipedia.org/wiki/Nanzhao",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Xixia",
+    "fromYear": 1038,
+    "toYear": 1227,
+    "source": "https://en.wikipedia.org/wiki/Western_Xia",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Liao",
+    "fromYear": 916,
+    "toYear": 1125,
+    "source": "https://en.wikipedia.org/wiki/Liao_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Mali",
+    "fromYear": 1235,
+    "toYear": 1670,
+    "source": "https://en.wikipedia.org/wiki/Mali_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "Mali 同時為中世紀帝國與現代共和國名稱，1960年以後不可誤判為已滅亡的帝國。",
+    "validIntervals": [
+      [
+        1235,
+        1670
+      ],
+      [
+        1960,
+        2026
+      ]
+    ],
+    "additionalSource": "https://zh.wikipedia.org/wiki/马里"
+  },
+  {
+    "name": "Great Zimbabwe",
+    "fromYear": 1100,
+    "toYear": 1450,
+    "source": "https://en.wikipedia.org/wiki/Great_Zimbabwe",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Denmark-Norway",
+    "fromYear": 1380,
+    "toYear": 1814,
+    "source": "https://en.wikipedia.org/wiki/Denmark–Norway",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Kalmar Union",
+    "fromYear": 1397,
+    "toYear": 1523,
+    "source": "https://en.wikipedia.org/wiki/Kalmar_Union",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Silla",
+    "fromYear": -57,
+    "toYear": 935,
+    "source": "https://en.wikipedia.org/wiki/Silla",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Koguryo",
+    "fromYear": -37,
+    "toYear": 668,
+    "source": "https://en.wikipedia.org/wiki/Goguryeo",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Paekche",
+    "fromYear": -18,
+    "toYear": 660,
+    "source": "https://en.wikipedia.org/wiki/Baekje",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Funan",
+    "fromYear": 50,
+    "toYear": 550,
+    "source": "https://en.wikipedia.org/wiki/Funan",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Champa",
+    "fromYear": 192,
+    "toYear": 1832,
+    "source": "https://en.wikipedia.org/wiki/Champa",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Ruanruan",
+    "fromYear": 330,
+    "toYear": 555,
+    "source": "https://en.wikipedia.org/wiki/Rouran_Khaganate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Vakataka",
+    "fromYear": 250,
+    "toYear": 500,
+    "source": "https://en.wikipedia.org/wiki/Vakataka_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Western Gangas",
+    "fromYear": 350,
+    "toYear": 1000,
+    "source": "https://en.wikipedia.org/wiki/Western_Ganga_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Xiongnu",
+    "fromYear": -209,
+    "toYear": 93,
+    "source": "https://en.wikipedia.org/wiki/Xiongnu",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Chavin",
+    "fromYear": -900,
+    "toYear": -200,
+    "source": "https://en.wikipedia.org/wiki/Chavín_culture",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Olmec",
+    "fromYear": -1600,
+    "toYear": -400,
+    "source": "https://en.wikipedia.org/wiki/Olmecs",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Zhou states",
+    "fromYear": -1046,
+    "toYear": -256,
+    "source": "https://en.wikipedia.org/wiki/Zhou_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Duchy of Benevento",
+    "fromYear": 571,
+    "toYear": 1077,
+    "source": "https://en.wikipedia.org/wiki/Duchy_of_Benevento",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Duchy of Swabia",
+    "fromYear": 915,
+    "toYear": 1313,
+    "source": "https://en.wikipedia.org/wiki/Duchy_of_Swabia",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Emirate of Sicily",
+    "fromYear": 831,
+    "toYear": 1091,
+    "source": "https://en.wikipedia.org/wiki/Emirate_of_Sicily",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Icelandic Commonwealth",
+    "fromYear": 930,
+    "toYear": 1262,
+    "source": "https://en.wikipedia.org/wiki/Icelandic_Commonwealth",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Ghaznavid Emirate",
+    "fromYear": 977,
+    "toYear": 1186,
+    "source": "https://en.wikipedia.org/wiki/Ghaznavids",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Chagatai Khanate",
+    "fromYear": 1225,
+    "toYear": 1705,
+    "source": "https://en.wikipedia.org/wiki/Chagatai_Khanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Crimean Khanate",
+    "fromYear": 1441,
+    "toYear": 1783,
+    "source": "https://en.wikipedia.org/wiki/Crimean_Khanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Golden Horde",
+    "fromYear": 1242,
+    "toYear": 1502,
+    "source": "https://en.wikipedia.org/wiki/Golden_Horde",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Sultanate of Delhi",
+    "fromYear": 1206,
+    "toYear": 1526,
+    "source": "https://en.wikipedia.org/wiki/Delhi_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Mamluke Sultanate",
+    "fromYear": 1250,
+    "toYear": 1517,
+    "source": "https://en.wikipedia.org/wiki/Mamluk_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Malacca",
+    "fromYear": 1400,
+    "toYear": 1511,
+    "source": "https://en.wikipedia.org/wiki/Malacca_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Vijayanagara",
+    "fromYear": 1336,
+    "toYear": 1646,
+    "source": "https://en.wikipedia.org/wiki/Vijayanagara_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Ayutthaya",
+    "fromYear": 1351,
+    "toYear": 1767,
+    "source": "https://en.wikipedia.org/wiki/Ayutthaya_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Funj",
+    "fromYear": 1504,
+    "toYear": 1821,
+    "source": "https://en.wikipedia.org/wiki/Funj_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Ahmadnagar",
+    "fromYear": 1490,
+    "toYear": 1636,
+    "source": "https://en.wikipedia.org/wiki/Ahmadnagar_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Bidar",
+    "fromYear": 1492,
+    "toYear": 1619,
+    "source": "https://en.wikipedia.org/wiki/Bidar_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Bijapur",
+    "fromYear": 1490,
+    "toYear": 1686,
+    "source": "https://en.wikipedia.org/wiki/Bijapur_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Golkonda",
+    "fromYear": 1518,
+    "toYear": 1687,
+    "source": "https://en.wikipedia.org/wiki/Qutb_Shahi_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Aceh",
+    "fromYear": 1496,
+    "toYear": 1903,
+    "source": "https://en.wikipedia.org/wiki/Aceh_Sultanate",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Dvaravati",
+    "fromYear": 500,
+    "toYear": 1100,
+    "source": "https://en.wikipedia.org/wiki/Dvaravati",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Alwa",
+    "fromYear": 580,
+    "toYear": 1504,
+    "source": "https://en.wikipedia.org/wiki/Alodia",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Meroe",
+    "fromYear": -590,
+    "toYear": 350,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Kush",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Axum",
+    "fromYear": 100,
+    "toYear": 960,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Habsburg Netherlands",
+    "fromYear": 1482,
+    "toYear": 1795,
+    "source": "https://en.wikipedia.org/wiki/Habsburg_Netherlands",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Odrysian Kingdom",
+    "fromYear": -480,
+    "toYear": 46,
+    "source": "https://en.wikipedia.org/wiki/Odrysian_kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Carthaginian Empire",
+    "fromYear": -814,
+    "toYear": -146,
+    "source": "https://en.wikipedia.org/wiki/Ancient_Carthage",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "El Paraiso",
+    "fromYear": -2100,
+    "toYear": -1400,
+    "source": "https://en.wikipedia.org/wiki/El_Paraíso,_Peru",
+    "sourceStatus": "reference-unverified",
+    "note": "約年／前身或繼承政權可能不同；超界只作待考警示，不據此猜造政權或重畫疆界"
+  },
+  {
+    "name": "Chalukya Empire",
+    "fromYear": 543,
+    "toYear": 1189,
+    "source": "https://en.wikipedia.org/wiki/Chalukya_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀",
+    "validIntervals": [
+      [
+        543,
+        753
+      ],
+      [
+        973,
+        1189
+      ]
+    ]
+  },
+  {
+    "name": "Chola Empire",
+    "fromYear": 848,
+    "toYear": 1279,
+    "source": "https://en.wikipedia.org/wiki/Chola_dynasty",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Dendi Kingdom",
+    "fromYear": 1591,
+    "toYear": 1901,
+    "source": "https://en.wikipedia.org/wiki/Dendi_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Dominican Republic",
+    "fromYear": 1844,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Dominican_Republic",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "First Samori Empire",
+    "fromYear": 1878,
+    "toYear": 1893,
+    "source": "https://en.wikipedia.org/wiki/Samori_Ture",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Second Samori Empire",
+    "fromYear": 1893,
+    "toYear": 1898,
+    "source": "https://en.wikipedia.org/wiki/Samori_Ture",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Fulani Empire",
+    "fromYear": 1804,
+    "toYear": 1903,
+    "source": "https://en.wikipedia.org/wiki/Sokoto_Caliphate",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Huari Empire",
+    "fromYear": 600,
+    "toYear": 1000,
+    "source": "https://en.wikipedia.org/wiki/Wari_culture",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Kingdom of France",
+    "fromYear": 987,
+    "toYear": 1848,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_France",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀",
+    "validIntervals": [
+      [
+        987,
+        1792
+      ],
+      [
+        1814,
+        1848
+      ]
+    ]
+  },
+  {
+    "name": "Kingdom of Norway",
+    "fromYear": 872,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Norway_(872–1397)",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Kingdom of Syphax",
+    "fromYear": -215,
+    "toYear": -203,
+    "source": "https://en.wikipedia.org/wiki/Syphax",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Kingdom of Zunbil",
+    "fromYear": 680,
+    "toYear": 870,
+    "source": "https://en.wikipedia.org/wiki/Zunbils",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Kong Empire",
+    "fromYear": 1710,
+    "toYear": 1898,
+    "source": "https://en.wikipedia.org/wiki/Kong_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Middag Kingdom",
+    "fromYear": 1540,
+    "toYear": 1732,
+    "source": "https://en.wikipedia.org/wiki/Kingdom_of_Middag",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Rattanakosin Kingdom",
+    "fromYear": 1782,
+    "toYear": 1932,
+    "source": "https://en.wikipedia.org/wiki/Rattanakosin_Kingdom_(1782–1932)",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Republic of the Seven Zenden",
+    "fromYear": 1446,
+    "toYear": 1798,
+    "source": "https://en.wikipedia.org/wiki/Republic_of_the_Seven_Tithings",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Tiahuanaco Empire",
+    "fromYear": 500,
+    "toYear": 1000,
+    "source": "https://en.wikipedia.org/wiki/Tiwanaku",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Toltec Empire",
+    "fromYear": 900,
+    "toYear": 1150,
+    "source": "https://en.wikipedia.org/wiki/Toltec_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Tukular Caliphate",
+    "fromYear": 1848,
+    "toYear": 1893,
+    "source": "https://en.wikipedia.org/wiki/Toucouleur_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "United Kingdom",
+    "fromYear": 1707,
+    "toYear": 2026,
+    "source": "https://en.wikipedia.org/wiki/United_Kingdom",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  },
+  {
+    "name": "Wadai Empire",
+    "fromYear": 1635,
+    "toYear": 1909,
+    "source": "https://en.wikipedia.org/wiki/Wadai_Empire",
+    "sourceStatus": "reference-unverified",
+    "note": "篩查參考年代；約年與前身／後繼政體仍須個案判讀"
+  }
+]

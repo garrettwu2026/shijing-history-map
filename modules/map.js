@@ -24,7 +24,8 @@ export function renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc}
     const measurements=document.createElement('div');
     measurements.style.cssText='position:absolute;visibility:hidden;pointer-events:none';
     for(const c of candidates){
-      c.html=`<span class="label-zh">${esc(c.n.translationStatus==='untranslated'?`${c.n.zh}（待考）`:c.n.zh)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
+      const cleanName=c.n.zh.replace(/（[^（）]*待考[^（）]*）/g,'');
+      c.html=`<span class="label-zh">${esc(cleanName)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
       c.className=`polity-label${c.importance>=8?' label-major':''}`;
       c.measure=document.createElement('div');c.measure.className=`leaflet-tooltip ${c.className}`;c.measure.innerHTML=c.html;measurements.append(c.measure);
     }

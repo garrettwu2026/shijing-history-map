@@ -1,6 +1,6 @@
 {
   "Achaemenid Empire": {
-    "zh": "阿契美尼德帝國",
+    "zh": "阿契美尼德王朝",
     "native": "𐎧𐏁𐏂 Xšaça",
     "aliases": [
       "波斯第一帝國",
@@ -46,7 +46,7 @@
     "importance": 0
   },
   "Hittites": {
-    "zh": "赫梯",
+    "zh": "西臺",
     "native": "Ḫatti / 𒄩𒀜𒋾",
     "aliases": [
       "西臺",
@@ -202,7 +202,7 @@
     "importance": 0
   },
   "Sasanian Empire": {
-    "zh": "薩珊帝國",
+    "zh": "薩珊王朝",
     "native": "Ērānšahr",
     "aliases": [
       "Sassanid Empire",
@@ -283,7 +283,7 @@
     "importance": 0
   },
   "Carolingian Empire": {
-    "zh": "加洛林帝國",
+    "zh": "查理曼帝國",
     "native": "Imperium Francorum",
     "aliases": [
       "查理曼帝國",
@@ -453,7 +453,7 @@
     "importance": 0
   },
   "Umayyad Caliphate": {
-    "zh": "倭馬亞哈里發國",
+    "zh": "倭馬亞王朝",
     "native": "الخلافة الأموية",
     "aliases": [
       "伍麥葉王朝",
@@ -463,7 +463,7 @@
     "importance": 8
   },
   "Abbasid Caliphate": {
-    "zh": "阿拔斯哈里發國",
+    "zh": "阿拔斯王朝",
     "native": "الخلافة العباسية",
     "aliases": [
       "阿拔斯王朝",
@@ -655,7 +655,7 @@
     "importance": 0
   },
   "Jin Empire": {
-    "zh": "金帝國",
+    "zh": "南齊",
     "native": "大金",
     "aliases": [
       "金朝",
@@ -664,7 +664,7 @@
     "importance": 0
   },
   "Tang Empire": {
-    "zh": "唐帝國",
+    "zh": "唐朝",
     "native": "大唐",
     "aliases": [
       "唐朝",
@@ -673,7 +673,7 @@
     "importance": 8
   },
   "Song Empire": {
-    "zh": "宋帝國",
+    "zh": "宋朝",
     "native": "大宋",
     "aliases": [
       "宋朝",
@@ -702,7 +702,7 @@
     "importance": 0
   },
   "Manchu Empire": {
-    "zh": "滿清帝國",
+    "zh": "清朝",
     "native": "大清 / ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
     "aliases": [
       "清朝",
@@ -729,7 +729,7 @@
     "importance": 0
   },
   "Golden Horde": {
-    "zh": "金帳汗國",
+    "zh": "欽察汗國",
     "native": "Jochi Ulus",
     "aliases": [
       "欽察汗國",
@@ -748,7 +748,7 @@
     "importance": 0
   },
   "Chagatai Khanate": {
-    "zh": "察合台汗國",
+    "zh": "察合臺汗國",
     "native": "Čaγatai Ulus",
     "aliases": [
       "Chaghatay Khanate"
@@ -1142,7 +1142,7 @@
     "importance": 0
   },
   "Indonesia": {
-    "zh": "印度尼西亞",
+    "zh": "印尼",
     "native": "Indonesia",
     "aliases": [
       "印尼",
@@ -1169,7 +1169,7 @@
     "importance": 0
   },
   "Mauryan Empire": {
-    "zh": "孔雀帝國",
+    "zh": "孔雀王朝",
     "native": "मौर्य Maurya",
     "aliases": [
       "孔雀王朝",
@@ -1178,7 +1178,7 @@
     "importance": 8
   },
   "Gupta Empire": {
-    "zh": "笈多帝國",
+    "zh": "笈多王朝",
     "native": "गुप्त Gupta",
     "aliases": [
       "笈多王朝",
@@ -1187,7 +1187,7 @@
     "importance": 0
   },
   "Kushan Empire": {
-    "zh": "貴霜帝國",
+    "zh": "貴霜王朝",
     "native": "कुषाण Kuṣāṇa",
     "aliases": [
       "Kuṣāṇa",
@@ -1748,7 +1748,7 @@
     "importance": 0
   },
   "Czech Republic": {
-    "zh": "捷克",
+    "zh": "捷克共和國",
     "native": "Česko",
     "aliases": [
       "Czechia",
@@ -2234,7 +2234,7 @@
     "importance": 0
   },
   "Australia": {
-    "zh": "澳洲",
+    "zh": "澳大利亞",
     "native": "Australia",
     "aliases": [
       "澳大利亞",
@@ -2314,7 +2314,7 @@
     "importance": 0
   },
   "Ming Chinese Empire": {
-    "zh": "大明帝國",
+    "zh": "明朝",
     "native": "大明",
     "aliases": [
       "明朝",
@@ -2323,7 +2323,7 @@
     "importance": 0
   },
   "Ming Empire": {
-    "zh": "明帝國",
+    "zh": "明朝",
     "native": "大明",
     "aliases": [
       "明朝",
@@ -2332,7 +2332,7 @@
     "importance": 8
   },
   "Qing Empire": {
-    "zh": "清帝國",
+    "zh": "清朝",
     "native": "大清 / ᡩᠠᡳᠴᡳᠩ ᡤᡠᡵᡠᠨ",
     "aliases": [
       "清朝",
@@ -2341,7 +2341,7 @@
     "importance": 8
   },
   "Sui Empire": {
-    "zh": "隋帝國",
+    "zh": "隋朝",
     "native": "大隋",
     "aliases": [
       "隋朝",
@@ -5867,31 +5867,31 @@
     "importance": 0
   },
   "Eyaq": {
-    "zh": "埃雅克族",
+    "zh": "Eyaq",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Wiradjuri": {
-    "zh": "威拉德朱里族",
+    "zh": "Wiradjuri",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Mardu": {
-    "zh": "馬爾杜族",
+    "zh": "Mardu",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Pintupi": {
-    "zh": "賓土比族",
+    "zh": "Pintupi",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Arrernte": {
-    "zh": "阿勒倫特族",
+    "zh": "Arrernte",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -5903,31 +5903,31 @@
     "importance": 0
   },
   "Mbailundu": {
-    "zh": "拜倫多王國",
+    "zh": "Mbailundu",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Luritja": {
-    "zh": "路里加族",
+    "zh": "Luritja",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Boihaenum": {
-    "zh": "波希米亞",
+    "zh": "Boihaenum",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Pitjantjatjara": {
-    "zh": "皮詹賈賈拉族",
+    "zh": "Pitjantjatjara",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Anmatyerre": {
-    "zh": "安馬蒂耶爾族",
+    "zh": "Anmatyerre",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -5939,49 +5939,49 @@
     "importance": 0
   },
   "Guanahatabeyes": {
-    "zh": "瓜納哈塔貝伊族",
+    "zh": "Guanahatabeyes",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Gundungurra": {
-    "zh": "貢敦古拉族",
+    "zh": "Gundungurra",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Dharug": {
-    "zh": "達魯格族",
+    "zh": "Dharug",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Darkinung": {
-    "zh": "達金容族",
+    "zh": "Darkinung",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Tharawal": {
-    "zh": "薩拉瓦爾族",
+    "zh": "Tharawal",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Larrakia": {
-    "zh": "拉若基亞族",
+    "zh": "Larrakia",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Dënéndeh": {
-    "zh": "德內族領地",
+    "zh": "Dënéndeh",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Očhéthi Šakówiŋ": {
-    "zh": "蘇族聯盟",
+    "zh": "Očhéthi Šakówiŋ",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6005,7 +6005,7 @@
     "importance": 0
   },
   "Kiikaapoi (Kickapoo)": {
-    "zh": "基卡普族",
+    "zh": "Kiikaapoi (Kickapoo)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6023,13 +6023,13 @@
     "importance": 0
   },
   "Núu-agha-tʉvʉ-pʉ̱ (Ute)": {
-    "zh": "猶他族",
+    "zh": "Núu-agha-tʉvʉ-pʉ̱ (Ute)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Wabanaki (Dawnland Confederacy)": {
-    "zh": "瓦巴納基聯盟",
+    "zh": "Wabanaki (Dawnland Confederacy)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6041,7 +6041,7 @@
     "importance": 0
   },
   "Shawandasse Tula (Shawanwaki/Shawnee)": {
-    "zh": "肖尼族領地",
+    "zh": "Shawandasse Tula (Shawanwaki/Shawnee)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6059,7 +6059,7 @@
     "importance": 0
   },
   "Kingdom of Syphax": {
-    "zh": "西法克斯王國",
+    "zh": "Kingdom of Syphax",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6071,7 +6071,7 @@
     "importance": 0
   },
   "Mvskoke (Muscogee / Creek)": {
-    "zh": "馬斯科吉族（克里克族）",
+    "zh": "Mvskoke (Muscogee / Creek)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6089,7 +6089,7 @@
     "importance": 0
   },
   "Kryvichs": {
-    "zh": "克里維奇族",
+    "zh": "Kryvichs",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6101,7 +6101,7 @@
     "importance": 0
   },
   "Newe (Western Shoshone)": {
-    "zh": "西肖肖尼族",
+    "zh": "Newe (Western Shoshone)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6125,7 +6125,7 @@
     "importance": 0
   },
   "Gondwana": {
-    "zh": "貢德瓦納",
+    "zh": "Gondwana",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6137,13 +6137,13 @@
     "importance": 0
   },
   "Maya Yucateco": {
-    "zh": "猶加敦馬雅族",
+    "zh": "Maya Yucateco",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Omàmìwininìwag (Algonquin)": {
-    "zh": "阿爾岡昆族",
+    "zh": "Omàmìwininìwag (Algonquin)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6155,7 +6155,7 @@
     "importance": 0
   },
   "Teton": {
-    "zh": "提頓蘇族",
+    "zh": "Teton",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6167,7 +6167,7 @@
     "importance": 0
   },
   "Diné Bikéyah": {
-    "zh": "納瓦霍族領地",
+    "zh": "Diné Bikéyah",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6209,25 +6209,25 @@
     "importance": 0
   },
   "Yukagir": {
-    "zh": "尤卡吉爾族",
+    "zh": "Yukagir",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Coast Salish": {
-    "zh": "海岸薩利希族",
+    "zh": "Coast Salish",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Beylik of Aydin": {
-    "zh": "艾登侯國",
+    "zh": "Beylik of Aydin",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Nunatsiavut": {
-    "zh": "努納齊亞福特",
+    "zh": "Nunatsiavut",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6251,7 +6251,7 @@
     "importance": 0
   },
   "Sabirs": {
-    "zh": "薩比爾族",
+    "zh": "Sabirs",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6263,13 +6263,13 @@
     "importance": 0
   },
   "Mandan, Hidatsa, and Arikara": {
-    "zh": "曼丹族、希達察族與阿里卡拉族",
+    "zh": "Mandan, Hidatsa, and Arikara",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Nimiipuu (Nez Perce)": {
-    "zh": "內茲珀斯族",
+    "zh": "Nimiipuu (Nez Perce)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6293,7 +6293,7 @@
     "importance": 0
   },
   "Ndee/Nnēē: (Western Apache)": {
-    "zh": "西部阿帕契族",
+    "zh": "Ndee/Nnēē: (Western Apache)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6305,7 +6305,7 @@
     "importance": 0
   },
   "Ben 'Zaa/Binnizá/Mén Diiste/Bene Xhon (Zapoteco)": {
-    "zh": "薩波特克族",
+    "zh": "Ben 'Zaa/Binnizá/Mén Diiste/Bene Xhon (Zapoteco)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6329,7 +6329,7 @@
     "importance": 0
   },
   "Pima": {
-    "zh": "皮馬族",
+    "zh": "Pima",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6341,13 +6341,13 @@
     "importance": 0
   },
   "Kansa": {
-    "zh": "堪薩族",
+    "zh": "Kansa",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Skaruhreh/Tuscarora (North Carolina)": {
-    "zh": "塔斯卡洛拉族（北卡羅來納）",
+    "zh": "Skaruhreh/Tuscarora (North Carolina)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6365,7 +6365,7 @@
     "importance": 0
   },
   "Ponca": {
-    "zh": "龐卡族",
+    "zh": "Ponca",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6383,7 +6383,7 @@
     "importance": 0
   },
   "Chumash": {
-    "zh": "丘馬什族",
+    "zh": "Chumash",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6419,7 +6419,7 @@
     "importance": 0
   },
   "Klamath": {
-    "zh": "克拉馬斯族",
+    "zh": "Klamath",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6431,13 +6431,13 @@
     "importance": 0
   },
   "Cheyenne-Arapaho (Oklahoma)": {
-    "zh": "夏安族與阿拉帕霍族（奧克拉荷馬）",
+    "zh": "Cheyenne-Arapaho (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Miwok": {
-    "zh": "米沃克族",
+    "zh": "Miwok",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6449,25 +6449,25 @@
     "importance": 0
   },
   "Onʌyote'a•ka (Oneida)": {
-    "zh": "奧奈達族",
+    "zh": "Onʌyote'a•ka (Oneida)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Onöndowa'ga:' (Seneca)": {
-    "zh": "塞內卡族",
+    "zh": "Onöndowa'ga:' (Seneca)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Eyak": {
-    "zh": "埃雅克族",
+    "zh": "Eyak",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Arikara": {
-    "zh": "阿里卡拉族",
+    "zh": "Arikara",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6479,13 +6479,13 @@
     "importance": 0
   },
   "Oglala": {
-    "zh": "奧格拉拉族",
+    "zh": "Oglala",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Onundagaonoga (Onondaga)": {
-    "zh": "奧農達加族",
+    "zh": "Onundagaonoga (Onondaga)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6521,7 +6521,7 @@
     "importance": 0
   },
   "Guanahatabey": {
-    "zh": "瓜納哈塔貝伊族",
+    "zh": "Guanahatabey",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6539,13 +6539,13 @@
     "importance": 0
   },
   "Chinook": {
-    "zh": "奇努克族",
+    "zh": "Chinook",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Wôpanâak (Wampanoag)": {
-    "zh": "萬帕諾亞格族",
+    "zh": "Wôpanâak (Wampanoag)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6557,7 +6557,7 @@
     "importance": 0
   },
   "Mandan": {
-    "zh": "曼丹族",
+    "zh": "Mandan",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6569,37 +6569,37 @@
     "importance": 0
   },
   "Odǫhwęja:deˀ (Cayuga)": {
-    "zh": "卡尤加族",
+    "zh": "Odǫhwęja:deˀ (Cayuga)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Potawatomi-Shawnee (Oklahoma)": {
-    "zh": "波塔瓦托米族與肖尼族（奧克拉荷馬）",
+    "zh": "Potawatomi-Shawnee (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Mohegan": {
-    "zh": "莫希根族",
+    "zh": "Mohegan",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Tuscarora": {
-    "zh": "塔斯卡洛拉族",
+    "zh": "Tuscarora",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Tupinambá": {
-    "zh": "圖皮南巴族",
+    "zh": "Tupinambá",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Unangam Tanangin (Unangax̂ /Aleut)": {
-    "zh": "阿留申族領地",
+    "zh": "Unangam Tanangin (Unangax̂ /Aleut)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6623,37 +6623,37 @@
     "importance": 0
   },
   "Kickapoo (Oklahoma)": {
-    "zh": "基卡普族（奧克拉荷馬）",
+    "zh": "Kickapoo (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Yurok": {
-    "zh": "尤羅克族",
+    "zh": "Yurok",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Ponca (Oklahoma)": {
-    "zh": "龐卡族（奧克拉荷馬）",
+    "zh": "Ponca (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Pequot": {
-    "zh": "佩科特族",
+    "zh": "Pequot",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Seneca-Cayuga (Oklahoma)": {
-    "zh": "塞內卡族與卡尤加族（奧克拉荷馬）",
+    "zh": "Seneca-Cayuga (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Powhatan": {
-    "zh": "波瓦坦族",
+    "zh": "Powhatan",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6665,7 +6665,7 @@
     "importance": 0
   },
   "Eastern Shawnee (Oklahoma)": {
-    "zh": "東部肖尼族（奧克拉荷馬）",
+    "zh": "Eastern Shawnee (Oklahoma)",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6677,25 +6677,25 @@
     "importance": 0
   },
   "Lumbee": {
-    "zh": "拉姆畢族",
+    "zh": "Lumbee",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Gros Ventre": {
-    "zh": "格羅範特族",
+    "zh": "Gros Ventre",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Yokuts": {
-    "zh": "約庫特族",
+    "zh": "Yokuts",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Miami": {
-    "zh": "邁阿密族",
+    "zh": "Miami",
     "native": "",
     "aliases": [],
     "importance": 0
@@ -6707,43 +6707,61 @@
     "importance": 0
   },
   "Fox": {
-    "zh": "美斯夸基族",
+    "zh": "Fox",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Meškwahki·aša·hina (Fox)": {
-    "zh": "美斯夸基族",
+    "zh": "Meškwahki·aša·hina (Fox)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Piscataway": {
-    "zh": "皮斯卡塔威族",
+    "zh": "Piscataway",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Nentego (Nanticoke)": {
-    "zh": "南蒂科克族",
+    "zh": "Nentego (Nanticoke)",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Narragansett": {
-    "zh": "納拉甘西特族",
+    "zh": "Narragansett",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Wiyot": {
-    "zh": "維約特族",
+    "zh": "Wiyot",
     "native": "",
     "aliases": [],
     "importance": 0
   },
   "Miami (Oklahoma)": {
-    "zh": "邁阿密族（奧克拉荷馬）",
+    "zh": "Miami (Oklahoma)",
+    "native": "",
+    "aliases": [],
+    "importance": 0
+  },
+  "Peshemegs": {
+    "zh": "佩切涅格人",
+    "native": "",
+    "aliases": [],
+    "importance": 0
+  },
+  "Tlinoit": {
+    "zh": "特林吉特人",
+    "native": "",
+    "aliases": [],
+    "importance": 0
+  },
+  "Dumonii": {
+    "zh": "頓諾尼亞人",
     "native": "",
     "aliases": [],
     "importance": 0

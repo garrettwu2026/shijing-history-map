@@ -52,6 +52,10 @@ for snapshot in snapshots:
         max_area[pid] = max(max_area[pid], size)
 priority_ids = set().union(*(by_year[y] for y in nearest.values()))
 order = sorted(polities, key=lambda pid: (pid not in priority_ids, -max_area[pid], -len(seen[pid]), pid))
+# TASK11 decisions supersede the historical pass 2 table, including derivations.
+import csv
+with (ROOT / 'scripts/name-audit-v11.tsv').open() as audit_file:
+    rejected_names = {r['name'] for r in csv.DictReader(audit_file, delimiter='\t') if r['decision'] == 'revert'}
 translations = {}
 translation_sources = {}
 pass2_names = set()
@@ -66,6 +70,8 @@ for line in lines:
         continue
     fields = line.split('\t')
     name, zh = fields[:2]
+    if name in rejected_names:
+        continue
     assert name not in translations, name
     confidence = fields[2] if len(fields) >= 3 else 'medium'
     if len(fields) == 4:
@@ -85,6 +91,8 @@ bases = {name: (p['zh'], 'medium') for name, pid in catalog['index'].items()
          and re.search('[\u3400-\u9fff]', p['zh'])}
 bases.update(translations)
 def resolve(name):
+    if name in rejected_names:
+        return None
     if name in translations:
         return translations[name]
     match = re.fullmatch(r'(.+) \(([^()]+)\)', name)
@@ -138,7 +146,7 @@ pass2_changes = []
 for pid in order:
     p = polities[pid]
     if p['translationStatus'] == 'curated' and any(
-            n in pass2_names and translations[n][0] == p['zh'] for n in p['datasetNames']):
+            n in pass2_names and n in translations and translations[n][0] == p['zh'] for n in p['datasetNames']):
         pass2_changes.append({'id':pid, 'name':p['datasetNames'][0], 'zh':p['zh'],
                               'confidence':p['confidence'], 'priority':pid in priority_ids})
 remaining = sum(p['translationStatus'] == 'untranslated' for p in polities.values())

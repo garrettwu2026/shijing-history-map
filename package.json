@@ -1,1 +1,15 @@
-{"name":"shijing-history-map","private":true,"type":"module","scripts":{"build":"python3 scripts/build-static.py","validate":"python3 scripts/validate-content.py && python3 scripts/validate-events.py && python3 scripts/validate-v3.py && python3 scripts/verify-static.py","test:browser":"node scripts/verify-v7.cjs","test:performance":"node scripts/profile-v7.cjs"},"devDependencies":{"playwright":"1.64.1"}}
+{
+  "name": "shijing-history-map",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "python3 scripts/build-static.py",
+    "validate": "python3 scripts/validate-content.py && python3 scripts/validate-events.py && python3 scripts/validate-v3.py && python3 scripts/verify-static.py && python3 scripts/verify-terminology.py",
+    "test:browser": "node scripts/verify-v7.cjs",
+    "test:performance": "node scripts/profile-v7.cjs",
+    "test:terminology": "node scripts/verify-v11b.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}
