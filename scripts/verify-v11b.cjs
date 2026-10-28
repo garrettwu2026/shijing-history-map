@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');
 (async()=>{
- const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
  try {
   const page=await browser.newPage({viewport:{width:1440,height:900}});
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -21,11 +21,11 @@ const assert=require('node:assert/strict');
    await page.locator('#polity-open').click();await page.locator('#polity-search').fill(key);
    const row=page.locator('#polity-list button').first();
    assert((await row.innerText()).includes(expected));await row.click();
-   const title=await page.locator('.leaflet-popup-content .popup-title').innerText();
+   const title=await page.locator('.maplibregl-popup-content .popup-title').innerText();
    assert(title.includes(expected),`${key}: ${title}`);
    assert.equal(title.includes('（待考）'),pending);
    assert(!title.includes('（待考）（待考）'));
-   if(key==='Darkinung')assert((await page.locator('.leaflet-popup-content').innerText()).includes('譯名待考'));
+   if(key==='Darkinung')assert((await page.locator('.maplibregl-popup-content').innerText()).includes('譯名待考'));
   }
   await page.goto('http://localhost:8000/dist/?year=-1259');
   await page.waitForFunction(()=>document.querySelectorAll('.event-item').length>0);

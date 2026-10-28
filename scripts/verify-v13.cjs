@@ -18,7 +18,7 @@ const fs=require('node:fs');
   [[-180,-22,180,-12],'Fiji','大洋洲'],[[-180,-20,180,50],'',''],
   [[170,-20,-170,20],'',''],[[-10,-20,80,60],'',''],
  ])assert.equal(regionFor(bounds,key),expected);
- const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
  const report={viewports:[],errors:[]};
  try{
   for(const [width,height] of [[320,568],[390,844],[844,390]]){
@@ -41,14 +41,14 @@ const fs=require('node:fs');
   page.on('pageerror',e=>report.errors.push(e.message));
   await page.goto('http://localhost:8000/dist/?year=1200');
   await page.waitForFunction(()=>window.historyProfiles?.at(-1)?.labelPasses===1);
-  await page.evaluate(()=>window.oldLabels=[...document.querySelectorAll('.polity-label')]);
-  assert(await page.evaluate(()=>window.oldLabels.length>0));
+  await page.evaluate(()=>window.oldLabels=historyMap.getSource('labels')._data);
+  assert(await page.evaluate(()=>window.oldLabels.features.length>0));
   await page.route('**/data/world_1900*',async route=>{await new Promise(r=>setTimeout(r,450));await route.continue()});
   await page.locator('#year-input').evaluate(el=>{el.value='1900';el.form.requestSubmit()});
   await page.waitForTimeout(150);
-  assert(await page.evaluate(()=>window.oldLabels.every(el=>el.isConnected)),'old labels retained while loading');
+  assert(await page.evaluate(()=>window.oldLabels===historyMap.getSource('labels')._data),'old labels retained while loading');
   await page.waitForFunction(()=>document.querySelector('#map-status').hidden&&window.historyProfiles?.at(-1)?.year===1900&&window.historyProfiles.at(-1).labelPasses===1);
-  assert(await page.evaluate(()=>window.oldLabels.every(el=>!el.isConnected)),'labels replaced after swap');
+  assert(await page.evaluate(()=>window.oldLabels!==historyMap.getSource('labels')._data),'labels replaced after swap');
   await page.goto('http://localhost:8000/dist/?year=794');await page.waitForFunction(()=>document.querySelector('#map-status').hidden);
   assert((await page.locator('#event-list').innerText()).includes('平安時代（待考）'));
   await page.locator('#polity-open').click();await page.locator('#polity-search').fill('武周');

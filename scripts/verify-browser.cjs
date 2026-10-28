@@ -4,7 +4,7 @@ const path=require('path');
 const fs=require('fs');
 const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{recursive:true});
 (async()=>{
- const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+ const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
  const errors=[];const results=[];
  for(const [width,height] of [[1440,900],[390,844]]){
  const page=await b.newPage({viewport:{width,height},isMobile:width===390,hasTouch:width===390});
@@ -14,15 +14,14 @@ const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{r
  await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));
  await page.evaluate(()=>document.fonts.ready);
  await page.waitForTimeout(300);
- const metrics=await page.evaluate(()=>({year:document.querySelector('#year-display').textContent,labels:[...document.querySelectorAll('.polity-label')].map(x=>x.textContent),events:document.querySelectorAll('.event-item').length,note:document.querySelector('#snapshot-note').textContent,overflow:document.documentElement.scrollWidth>innerWidth,map:document.querySelector('#map').getBoundingClientRect().toJSON(),sheet:document.querySelector('.events-panel').getBoundingClientRect().toJSON(),dock:document.querySelector('.time-dock').getBoundingClientRect().toJSON()}));
+ const metrics=await page.evaluate(()=>({year:document.querySelector('#year-display').textContent,labels:historyMap.queryRenderedFeatures({layers:['polity-labels']}).map(f=>f.properties.name),events:document.querySelectorAll('.event-item').length,note:document.querySelector('#snapshot-note').textContent,overflow:document.documentElement.scrollWidth>innerWidth,map:document.querySelector('#map').getBoundingClientRect().toJSON(),sheet:document.querySelector('.events-panel').getBoundingClientRect().toJSON(),dock:document.querySelector('.time-dock').getBoundingClientRect().toJSON()}));
  if(metrics.overflow)throw Error(`Horizontal overflow: ${width}/${year}`);
  if(year>2010&&!metrics.note.includes('止於 2010'))throw Error('Post-2010 border note missing');
  if(width===1440&&year===200&&!metrics.labels.some(l=>l.includes('羅馬帝國')))throw Error('Rome label missing');
  if(width===1440&&year===200&&!metrics.labels.some(l=>l.includes('漢朝')))throw Error('Han label missing');
  if(width===1440&&year===1200&&!metrics.labels.some(l=>l.includes('蒙古各部')))throw Error('Mongol correction label missing');
  const collisions=await page.evaluate(()=> {
-   const rects=[...document.querySelectorAll('.polity-label')].map(el=>el.getBoundingClientRect());
-   return rects.some((r,i)=>rects.slice(i+1).some(q=>r.left<q.right&&r.right>q.left&&r.top<q.bottom&&r.bottom>q.top));
+   return historyMap.getLayoutProperty('polity-labels','text-allow-overlap')!==false;
  });
  if(collisions)throw Error(`Label collision: ${width}/${year}`);
  if(width===390&&metrics.sheet.height>50)throw Error('Mobile sheet should start collapsed');
@@ -32,15 +31,16 @@ const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{r
  if(width===390)await page.locator('#sheet-toggle').click();
  if(await page.locator('.category-chip').count()!==6)throw Error('Six category filters required');
  for(const chip of await page.locator('.category-chip').all())await chip.click();
+ await page.waitForFunction(()=>document.querySelectorAll('.event-marker').length===0);
  if(await page.locator('.event-marker').count()!==0)throw Error('Disabled categories still show markers');
  if(await page.locator('.event-item').count()!==0)throw Error('All categories disabled should show no events');
- await page.locator('.category-chip').filter({hasText:'王朝與政治'}).click();
+ await page.locator('.category-chip').filter({hasText:'王朝與政治'}).click();await page.waitForFunction(()=>document.querySelectorAll('.event-item').length>0);
  if(await page.locator('.event-item').count()===0)throw Error('Political category empty unexpectedly');
  await page.locator('.event-item').first().click();await page.waitForTimeout(1500);
  if(width===390&&await page.locator('#sheet-toggle').getAttribute('aria-expanded')!=='false')throw Error('Sheet should close after selecting event');
- if(!(await page.locator('.leaflet-popup-content').textContent()))throw Error('Event popup missing');
- await page.locator('#events-toggle').click();if(await page.locator('.event-marker').count())throw Error('Markers not hidden');
- await page.locator('#labels-toggle').click();await page.waitForTimeout(300);if(await page.locator('.polity-label').count())throw Error('Labels not hidden');
+ if(!(await page.locator('.maplibregl-popup-content').textContent()))throw Error('Event popup missing');
+ await page.keyboard.press('Escape');await page.locator('#events-toggle').click();await page.waitForFunction(()=>document.querySelectorAll('.event-marker').length===0);if(await page.locator('.event-marker').count())throw Error('Markers not hidden');
+ await page.locator('#labels-toggle').click();await page.waitForTimeout(300);if(await page.evaluate(()=>historyMap.getLayoutProperty('polity-labels','visibility')!=='none'))throw Error('Labels not hidden');
  await page.locator('#about-button').click();await page.locator('#close-about').click();
  if(width===390){await page.locator('#sheet-toggle').click();await page.screenshot({path:path.join(artifacts,'mobile-expanded.png')});if(await page.locator('#sheet-toggle').getAttribute('aria-expanded')==='true')await page.locator('#sheet-toggle').click();}
  await page.locator('#time-options-toggle').click();await page.locator('#year-input').fill('1200');await page.locator('#time-options-toggle').click();await page.locator('#year-form').evaluate(f=>f.requestSubmit());await page.waitForTimeout(300);

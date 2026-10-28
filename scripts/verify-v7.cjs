@@ -2,7 +2,7 @@
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict');const fs=require('node:fs');
 const base=process.env.BASE_URL||'http://localhost:8000/dist';
-(async()=>{const browser=await chromium.launch({args:['--no-sandbox'],headless:true});const report={base,checks:[],errors:[]};
+(async()=>{const browser=await chromium.launch({args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader'],headless:true});const report={base,checks:[],errors:[]};
 try{
 fs.mkdirSync('artifacts',{recursive:true});
 for(const [width,height] of [[1440,900],[390,844],[320,568]]){
@@ -13,7 +13,7 @@ for(const [width,height] of [[1440,900],[390,844],[320,568]]){
  await page.screenshot({path:`artifacts/v9-${width}x${height}.png`});
  await page.screenshot({path:`artifacts/v9-${width}x${height}-overview.png`});
  const dockBox=await page.locator('.time-dock').boundingBox();assert(dockBox.height<=72,'timeline <=72px');
- const toolbar=await page.locator('.map-toolbar').boundingBox(),zoom=await page.locator('.leaflet-control-zoom').boundingBox(),events=await page.locator('.events-panel').boundingBox();
+ const toolbar=await page.locator('.map-toolbar').boundingBox(),zoom=await page.locator('.maplibregl-ctrl-group').boundingBox(),events=await page.locator('.events-panel').boundingBox();
  const overlaps=(a,b)=>a.x<b.x+b.width&&a.x+a.width>b.x&&a.y<b.y+b.height&&a.y+a.height>b.y;
  assert(!overlaps(toolbar,zoom),'toolbar clear of zoom');assert(!overlaps(events,toolbar)&&!overlaps(events,zoom),'events clear of controls');
  if(width===1440){assert.equal(Math.round((await page.locator('.time-dock').boundingBox()).height),62);}
@@ -29,11 +29,11 @@ for(const [width,height] of [[1440,900],[390,844],[320,568]]){
  await page.keyboard.press('Escape');
  await select(1400);assert((await page.locator('#event-list').textContent()).includes('英法百年戰爭'),'range intersects despite distant start');
  for(const [year,name] of [[1945,'比屬剛果'],[1960,'剛果共和國（利奧波德維爾）'],[2000,'剛果民主共和國']]){
-  await select(year);await page.locator('#polity-open').click();await page.locator('#polity-search').fill(name);await page.locator('#polity-list button').filter({hasText:name}).first().click();const text=await page.locator('.leaflet-popup-content').last().innerText();assert(text.includes(name));assert(!text.includes('穩定 ID'));assert(!text.includes('譯名可信度'));await page.keyboard.press('Escape');
+  await select(year);await page.locator('#polity-open').click();await page.locator('#polity-search').fill(name);await page.locator('#polity-list button').filter({hasText:name}).first().click();const text=await page.locator('.maplibregl-popup-content').last().innerText();assert(text.includes(name));assert(!text.includes('穩定 ID'));assert(!text.includes('譯名可信度'));await page.keyboard.press('Escape');
  }
  await select(2026);assert((await page.locator('#boundary-indicator').innerText()).includes('疆界年 2010'));
  if(width<760)await page.locator('#sheet-toggle').click();await page.locator('.event-item').first().click();
- await page.waitForTimeout(300);const popup=await page.locator('.leaflet-popup-content').last().boundingBox(),dock=await page.locator('.time-dock').boundingBox();assert(popup.y>=0&&popup.y+popup.height<dock.y+2,'popup clear of timeline');assert(await page.locator('.map-toolbar').evaluate(el=>getComputedStyle(el).visibility==='hidden'));
+ await page.waitForTimeout(300);const popup=await page.locator('.maplibregl-popup-content').last().boundingBox(),dock=await page.locator('.time-dock').boundingBox();assert(popup.y>=0&&popup.y+popup.height<dock.y+2,'popup clear of timeline');assert(await page.locator('.map-toolbar').evaluate(el=>getComputedStyle(el).visibility==='hidden'));
  await page.locator('#year-slider').focus();await page.keyboard.press('ArrowLeft');assert((await page.locator('#year-display').innerText()).includes('2,025'),'keyboard steps exactly one year');assert.equal(await page.evaluate(()=>document.activeElement.id),'year-slider');await page.waitForTimeout(600);assert.equal(await page.evaluate(()=>document.activeElement.id),'year-slider');
  await page.screenshot({path:`artifacts/v9-${width}x${height}-detail.png`});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  const small=await page.evaluate(()=>[...document.querySelectorAll('button,input,select,a')].filter(el=>el.getClientRects().length&&getComputedStyle(el).visibility==='visible').map(el=>({id:el.id||el.className,r:el.getBoundingClientRect()})).filter(x=>x.r.width<43.9||x.r.height<43.9).map(x=>({id:x.id,w:x.r.width,h:x.r.height})));
@@ -51,7 +51,7 @@ for(const [width,height] of [[1440,900],[390,844],[320,568]]){
 // Block only neutral baseline once; historical snapshots still render, retry works.
 const context=await browser.newContext();const page=await context.newPage();let failed=false;
 await context.route('**/data/world_2010*',route=>{if(!failed){failed=true;return route.abort();}return route.continue()});
-await page.goto(base+'/?year=1200');await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));await page.waitForFunction(()=>!document.querySelector('#baseline-status').hidden);await page.locator('#baseline-retry').click();await page.waitForFunction(()=>document.querySelector('#baseline-status').hidden&&document.querySelector('.leaflet-land-pane canvas'));report.checks.push({baselineIndependent:true,retry:true});await context.close();
+await page.goto(base+'/?year=1200');await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));await page.waitForFunction(()=>!document.querySelector('#baseline-status').hidden);await page.locator('#baseline-retry').click();await page.waitForFunction(()=>document.querySelector('#baseline-status').hidden&&window.historyMap?.isSourceLoaded('land'));report.checks.push({baselineIndependent:true,retry:true});await context.close();
 // Independent metadata/event recovery and Worker recreation.
 for(const filename of ['polities','snapshots','events']){
  const context=await browser.newContext();const page=await context.newPage();let blocked=false;
@@ -59,7 +59,7 @@ for(const filename of ['polities','snapshots','events']){
  await page.goto(base+'/?year=1200');await page.locator('#data-retries button').waitFor();await page.locator('#data-retries button').click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：')&&document.querySelectorAll('.event-item').length>0);assert.equal(await page.locator('#data-retries button').count(),0);report.checks.push({retry:filename});await context.close();
 }
 {
- const context=await browser.newContext();await context.addInitScript(()=>{const Native=window.Worker;window.workerStarts=0;window.Worker=class extends Native{constructor(...args){super(...args);window.workerStarts++;}postMessage(...args){if(window.workerStarts===1){if(!this.failed){this.failed=true;setTimeout(()=>this.dispatchEvent(new Event('error')),0);}return;}return super.postMessage(...args);}};});const page=await context.newPage();await page.goto(base+'/?year=1200');await page.locator('#data-retries button').first().waitFor();await page.waitForFunction(()=>window.workerStarts>=2);for(let i=0;i<5&&await page.locator('#data-retries button').count();i++)await page.locator('#data-retries button').first().click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));report.checks.push({workerRestart:true});await context.close();
+ const context=await browser.newContext();await context.addInitScript(()=>{const Native=window.Worker;window.workerStarts=0;window.Worker=class extends Native{constructor(...args){super(...args);this.isData=String(args[0]).includes('data-worker');if(this.isData)window.workerStarts++;}postMessage(...args){if(this.isData&&window.workerStarts===1){if(!this.failed){this.failed=true;setTimeout(()=>this.dispatchEvent(new Event('error')),0);}return;}return super.postMessage(...args);}};});const page=await context.newPage();await page.goto(base+'/?year=1200');await page.locator('#data-retries button').first().waitFor();await page.waitForFunction(()=>window.workerStarts>=2);for(let i=0;i<5&&await page.locator('#data-retries button').count();i++)await page.locator('#data-retries button').first().click();await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));report.checks.push({workerRestart:true});await context.close();
 }
 assert.deepEqual(report.errors,[]);fs.writeFileSync('artifacts/v9-browser-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
 }finally{await browser.close()}})().catch(e=>{console.error(e);process.exitCode=1});

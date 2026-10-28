@@ -1,55 +1,82 @@
 import {nameDisplay} from './content.js';
-export function renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc}) {
-    if(state.dragging||state.boundariesPending)return;
-    state.labelsPending=false;
-    labelLayer.clearLayers();
-    if (!state.labels || !state.layer) return;
-    const candidates=[], zoom=map.getZoom(), size=map.getSize();
-    state.layer.eachLayer(layer => {
-      if (!layer.getBounds || isAntarctica(layer.feature)) return;
-      const key=layer.feature.properties?.NAME, bounds=layer.getBounds();
-      if (!key?.trim() || key.trim()==='?' || !bounds.isValid() || !map.getBounds().intersects(bounds)) return;
-      const area=layer.feature.labelGeometry.area;
-      const n=nameFor(key), importance=n.importance || 0;
-      const projected=area*Math.pow(2,2*zoom)*1200;
-      if(projected < 3000/Math.max(1,zoom-1) && importance<8) return;
-      const parts=layer.feature.labelGeometry.parts;
-      const anchor=layer.feature.labelGeometry.anchors?.[0];
-      const center=anchor?L.latLng(anchor[1],anchor[0]):bounds.getCenter();
-      candidates.push({key,n,center,parts,anchors:layer.feature.labelGeometry.anchors,area,importance,score:Math.log1p(area*10000)+importance*1.6});
-    });
-    const occupied=[...document.querySelectorAll('.event-marker')].map(el=>el.getBoundingClientRect());
-    occupied.push(...[...document.querySelectorAll('.intro-card,.events-panel,.time-dock,.map-toolbar,.map-key,.leaflet-control-zoom')].filter(el=>el.getClientRects().length).map(el=>el.getBoundingClientRect()));
-    // Write every candidate first, then measure in one read phase. Anchor
-    // collision trials use these dimensions and never read layout again.
-    const mapRect=map.getContainer().getBoundingClientRect();
-    const measurements=document.createElement('div');
-    measurements.style.cssText='position:absolute;visibility:hidden;pointer-events:none';
-    for(const c of candidates){
-      const cleanName=nameDisplay(c.n.zh,c.n.nameStatus,false);
-      c.html=`<span class="label-zh">${esc(cleanName)}</span>${c.n.native && c.n.native.length<28 && c.n.native!==c.n.zh?`<span class="label-native" dir="auto">${esc(c.n.native)}</span>`:''}`;
-      c.className=`polity-label${c.importance>=8?' label-major':''}`;
-      c.measure=document.createElement('div');c.measure.className=`leaflet-tooltip ${c.className}`;c.measure.innerHTML=c.html;measurements.append(c.measure);
-    }
-    map.getPane('tooltipPane').append(measurements);
-    for(const c of candidates){const r=c.measure.getBoundingClientRect();c.width=r.width;c.height=r.height;delete c.measure;}
-    measurements.remove();
-    const seen=new Set();let count=0;
-    const limit=Math.round(8+zoom*5);
-    for(const c of candidates.sort((a,b)=>b.score-a.score)) {
-      if(seen.has(c.n.id)) continue;
-      const anchors=[c.center];
-      for(const point of c.anchors||[])anchors.push(L.latLng(point[1],point[0]));
-      const major=c.importance>=8;
-      let placed=false;
-      for(const anchor of anchors) {
-        const p=map.latLngToContainerPoint(anchor);
-        if(p.x<15||p.y<15||p.x>size.x-15||p.y>size.y-15)continue;
-        const box={left:mapRect.left+p.x-c.width/2-7,right:mapRect.left+p.x+c.width/2+7,top:mapRect.top+p.y-c.height/2-5,bottom:mapRect.top+p.y+c.height/2+5};
-        if(box.left<mapRect.left||box.right>mapRect.right||box.top<mapRect.top||box.bottom>mapRect.bottom||occupied.some(q=>box.left<q.right&&box.right>q.left&&box.top<q.bottom&&box.bottom>q.top))continue;
-        L.marker(anchor,{pane:'tooltipPane',interactive:false,keyboard:false,icon:L.divIcon({className:c.className,html:c.html,iconSize:[c.width,c.height],iconAnchor:[c.width/2,c.height/2]})}).addTo(labelLayer);
-        occupied.push(box);seen.add(c.n.id);count++;placed=true;break;
-      }
-      if(placed&&count>=limit)break;
-    }
+const empty=()=>({type:'FeatureCollection',features:[]});
+export async function createMap(){
+  const map=new maplibregl.Map({container:'map',center:[45,26],zoom:1.25,minZoom:1,maxZoom:8,renderWorldCopies:true,fadeDuration:0,canvasContextAttributes:{antialias:false},pixelRatio:Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1:2),localIdeographFontFamily:"'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif",style:{version:8,glyphs:new URL('vendor/maplibre/glyphs/',location.href).href+'{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#18282d'}}]},attributionControl:false});
+  await new Promise((resolve,reject)=>{map.once('load',resolve);map.once('error',reject);});
+  map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-left');
+  const attribution=document.createElement('div');attribution.className='map-attribution';attribution.innerHTML='MapLibre GL JS · 疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0';document.querySelector('#time-options').append(attribution);
+  for(const id of ['land','polities','disputed','labels'])map.addSource(id,{type:'geojson',data:empty(),tolerance:1,buffer:16,maxzoom:7,lineMetrics:false});
+  map.addLayer({id:'land-fill',source:'land',type:'fill',paint:{'fill-antialias':false,'fill-color':'#354247'}});
+  const grid=[];for(let lat=-60;lat<=60;lat+=30)grid.push({type:'Feature',geometry:{type:'LineString',coordinates:[[-180,lat],[180,lat]]}});for(let lon=-180;lon<=180;lon+=30)grid.push({type:'Feature',geometry:{type:'LineString',coordinates:[[lon,-85],[lon,85]]}});
+  map.addSource('grid',{type:'geojson',data:{type:'FeatureCollection',features:grid}});map.addLayer({id:'grid-line',source:'grid',type:'line',paint:{'line-color':'#b0b9a3','line-opacity':.12,'line-width':.5,'line-dasharray':[2,7]}});
+  const active=['any',['boolean',['feature-state','selected'],false],['boolean',['feature-state','hover'],false]];
+  for(const source of ['polities','disputed']){
+    map.addLayer({id:source+'-fill',source,type:'fill',paint:{'fill-antialias':false,'fill-color':['get','tint'],'fill-opacity':['case',active,.65,['get','alpha']]}});
+    map.addLayer({id:source+'-line',source,type:'line',paint:{'line-color':['case',active,'#fff0b5',['get','border']],'line-width':['case',['boolean',['feature-state','selected'],false],3,['boolean',['feature-state','hover'],false],1.8,['get','weight']],'line-opacity':.85,...(source==='disputed'?{'line-dasharray':[9,4,2,4]}:{})}});
   }
+  map.addLayer({id:'polity-labels',source:'labels',type:'symbol',layout:{'text-field':['get','name'],'text-font':['Noto Sans TC Regular'],'text-size':['interpolate',['linear'],['zoom'],1,13,4,16],'text-max-width':10,'text-padding':8,'symbol-sort-key':['get','priority'],'text-allow-overlap':false},paint:{'text-color':'#f0e8d2','text-halo-color':'#101b21','text-halo-width':2}});
+  return map;
+}
+export function showPopup(map,point,content){
+  map.activePopup?.remove();
+  // Keep the geographic anchor, shifting only the popup to clear viewport edges and timeline.
+  const rect=map.getContainer().getBoundingClientRect(),dockTop=document.querySelector('.time-dock').getBoundingClientRect().top;
+  const available=Math.max(80,dockTop-rect.top-16);
+  const anchor=map.project(point);
+  const popup=new maplibregl.Popup({maxWidth:Math.min(360,innerWidth-32)+'px',anchor:'center',closeOnClick:false}).setLngLat(point);
+  typeof content==='string'?popup.setHTML(content):popup.setDOMContent(content);
+  map.activePopup=popup;popup.on('close',()=>map.fire('detailclose'));popup.addTo(map);
+  // Escape the map's z-index:0 stacking context so HTML panels cannot cover details.
+  map.getContainer().parentElement.append(popup.getElement());popup.getElement().querySelector('.maplibregl-popup-content').style.maxHeight=Math.max(60,available-16)+'px';
+  const box=popup.getElement().getBoundingClientRect();
+  const x=Math.max(box.width/2+16,Math.min(rect.width-box.width/2-16,anchor.x));
+  const y=Math.max(box.height/2+8,Math.min(available-box.height/2-8,anchor.y));
+  popup.setOffset([x-anchor.x,y-anchor.y]);map.fire('detailopen');
+  return popup;
+}
+export function renderGeometry(map,data,state,isAntarctica,stableColor){
+  const groups={polities:empty(),disputed:empty()};map.activePopup?.remove();
+  for(const source of Object.keys(groups))map.removeFeatureState({source});
+  data.features.forEach((feature,i)=>{
+    const key=feature.properties?.NAME||'',p=state.catalog.polities[state.catalog.index[key]],neutral=isAntarctica(feature)||!key.trim();
+    const review=state.errata?.featureReviews?.some(r=>r.match===key&&state.snapshot.year>=r.fromYear&&state.snapshot.year<=r.toYear),disputed=review||p?.entityType==='cultural-area';
+    const tint=neutral?'#91a6ab':stableColor(p?.id||key),source=disputed?'disputed':'polities';
+    feature.id=i;feature.renderSource=source;
+    groups[source].features.push({type:'Feature',id:i,geometry:feature.geometry,properties:{NAME:key,renderId:i,antarctica:isAntarctica(feature),tint,border:review?'#ffe3a3':tint,weight:review?2.5:.8,alpha:neutral?.22:p?.entityType==='cultural-area'?.18:.42}});
+  });
+  for(const [source,data] of Object.entries(groups))map.getSource(source).setData(data);
+}
+export function renderLabelsView({state,map,isAntarctica,nameFor}){
+  if(state.dragging||state.boundariesPending)return;
+  const features=[],seen=new Set();
+  for(const f of [...(state.layer?.features||[])].sort((a,b)=>(b.labelGeometry?.area||0)-(a.labelGeometry?.area||0))){
+    if(isAntarctica(f))continue;const n=nameFor(f.properties?.NAME),point=f.labelGeometry?.anchors?.[0];
+    // CJK only: every glyph is generated locally; never request a Latin PBF or invent a name.
+    const name=nameDisplay(n.zh,n.nameStatus,false).replace(/[^\u3400-\u9fff\uf900-\ufaff]/gu,'');
+    if(!point||!name||seen.has(n.id))continue;seen.add(n.id);
+    features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{name,priority:-(n.importance||0)}});
+  }
+  const visibility=state.labels?'visible':'none';
+  if(map.getLayoutProperty('polity-labels','visibility')!==visibility)map.setLayoutProperty('polity-labels','visibility',visibility);
+  const signature=`${state.snapshot?.year}|${features.length}`;
+  if(state.labelSignature!==signature){map.getSource('labels').setData({type:'FeatureCollection',features});state.labelSignature=signature;}
+}
+export function polityBounds(features){
+  const boxes=features.map(f=>f.labelGeometry.bounds),south=Math.min(...boxes.map(b=>b[1])),north=Math.max(...boxes.map(b=>b[3]));
+  let west=Math.min(...boxes.map(b=>b[0])),east=Math.max(...boxes.map(b=>b[2]));
+  if(east-west>180){const shifted=boxes.map(b=>b[0]<0?[b[0]+360,b[2]+360]:[b[0],b[2]]),w=Math.min(...shifted.map(b=>b[0])),e=Math.max(...shifted.map(b=>b[1]));if(e-w<east-west){west=w;east=e;}}
+  return [[west,south],[east,north]];
+}
+
+// Populate MapLibre's local glyph cache once, before the first interactive snapshot.
+// The transparent temporary layer uses only the catalog's existing CJK characters.
+export async function warmLabelGlyphs(map,catalog,errata){
+  const names=[];
+  for(const p of Object.values(catalog.polities)){names.push(p.zh);for(const period of p.periods||[])names.push(period.zh);}
+  for(const override of errata?.overrides||[])names.push(override.zh);
+  const chars=[...new Set(names.filter(Boolean).join('').replace(/[^\u3400-\u9fff\uf900-\ufaff]/gu,''))].join('');
+  map.addSource('glyph-warmup',{type:'geojson',data:{type:'FeatureCollection',features:[{type:'Feature',geometry:{type:'Point',coordinates:map.getCenter().toArray()},properties:{name:chars}}]}});
+  map.addLayer({id:'glyph-warmup',type:'symbol',source:'glyph-warmup',layout:{'text-field':['get','name'],'text-font':['Noto Sans TC Regular'],'text-allow-overlap':true},paint:{'text-opacity':0}});
+  await new Promise(resolve=>map.once('idle',resolve));
+  map.removeLayer('glyph-warmup');map.removeSource('glyph-warmup');
+}

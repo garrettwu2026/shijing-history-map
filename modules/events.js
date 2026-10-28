@@ -1,6 +1,7 @@
 import {eventDistance,intersects} from './content.js';
+import {showPopup} from './map.js';
 export function renderEventsView({state,map,eventLayer,enabledCategories,categories,$,eventDate,esc,selectEvent,displayText,yearText,setPlaying,setYear}) {
-    const signature=[state.year,state.window,[...enabledCategories].join(','),state.markers,map.getZoom(),state.events.length].join('|');
+    const signature=[state.year,state.window,[...enabledCategories].join(','),state.markers,map.getZoom(),state.events.length,map.getCenter().lng,map.getCenter().lat].join('|');
     if(state.eventsSignature===signature)return;state.eventsSignature=signature;
     eventLayer.clearLayers();
     const groups=new Map();
@@ -21,17 +22,18 @@ export function renderEventsView({state,map,eventLayer,enabledCategories,categor
       if(button.innerHTML!==html)button.innerHTML=html;
       button.onclick=()=>selectEvent(e);if(list.children[rowIndex]!==button)list.insertBefore(button,list.children[rowIndex]||null);rowIndex++;
       if (state.markers) {
-        const point=map.project([e.lat,e.lon],map.getZoom());
+        const point=map.project([e.lon,e.lat]);
         const cell=`${Math.floor(point.x/64)},${Math.floor(point.y/64)}`;
         if(!groups.has(cell))groups.set(cell,[]);groups.get(cell).push(e);
       }
     }
     const clusters=[];
-    for(const group of groups.values()) {const point=map.latLngToContainerPoint([group[0].lat,group[0].lon]);const near=clusters.find(c=>c.point.distanceTo(point)<58);if(near)near.events.push(...group);else clusters.push({point,events:[...group]});}
+    for(const group of groups.values()) {const point=map.project([group[0].lon,group[0].lat]);const near=clusters.find(c=>c.point.dist(point)<58);if(near)near.events.push(...group);else clusters.push({point,events:[...group]});}
     for(const {events:group} of clusters) {
       const e=group[0], [tint,symbol]=categories[e.category], many=group.length>1;
-      const marker=L.marker([e.lat,e.lon],{icon:L.divIcon({className:'event-marker',html:`<span style="--event-color:${tint}">${many?group.length:symbol}</span>`,iconSize:[44,44],iconAnchor:[22,22]}),title:many?`${group.length} 件事件，放大展開`:displayText(e.title)});
-      marker.on('click',()=>{if(many){const list=document.createElement('div');list.className='cluster-list';for(const item of group){const button=document.createElement('button');button.textContent=`${displayText(item.title)} · ${eventDate(item)}`;button.onclick=()=>selectEvent(item);list.append(button);}L.popup({maxWidth:Math.min(310,innerWidth-60)}).setLatLng([e.lat,e.lon]).setContent(list).openOn(map);}else selectEvent(e);});eventLayer.addLayer(marker);
+      const element=document.createElement('button');element.className='event-marker';element.innerHTML=`<span style="--event-color:${tint}">${many?group.length:symbol}</span>`;element.title=many?`${group.length} 件事件，放大展開`:displayText(e.title);
+      const marker=new maplibregl.Marker({element}).setLngLat([e.lon,e.lat]);
+      element.onclick=()=>{if(many){const list=document.createElement('div');list.className='cluster-list';for(const item of group){const button=document.createElement('button');button.textContent=`${displayText(item.title)} · ${eventDate(item)}`;button.onclick=()=>selectEvent(item);list.append(button);}showPopup(map,[e.lon,e.lat],list);}else selectEvent(e);};eventLayer.addLayer(marker);
     }
     $('announcer').textContent=`${yearText(state.year)}，${visible.length} 件事件`;
     if (!visible.length) {

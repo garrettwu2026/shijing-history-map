@@ -6,12 +6,12 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {execFileSync}=require('node:child_process');
 const root=path.resolve(__dirname,'..');
-const base=process.env.BASE_URL || 'http://localhost:8080';
+const base=process.env.BASE_URL || 'http://localhost:8000';
 const files=fs.readdirSync(path.join(root,'data')).filter(f=>/^world_.*\.geojson$/.test(f));
 const sizes=files.map(file=>({file,before:execFileSync('git',['show',`HEAD:data/${file}`],{cwd:root,maxBuffer:20e6}).length,after:fs.statSync(path.join(root,'data',file)).size}));
 const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce((n,f)=>n+f.after,0)},sizes,runs:[],checks:[]};
 (async()=>{
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
  try {
  for(const mobile of [false,true]) {
   const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:900},isMobile:mobile,hasTouch:mobile});
@@ -32,10 +32,10 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
   await page.waitForTimeout(800);
 
   assert(requests.includes('/data/world_bc200.geojson'),'next snapshot prefetched');
-  assert(await page.locator('.leaflet-land-pane canvas').count(),'land canvas');
-  assert(await page.locator('.leaflet-overlay-pane canvas').count(),'border canvas');
-  assert.equal(await page.locator('.leaflet-overlay-pane svg path').count(),0,'no SVG polygons');
-  await page.evaluate(()=>{window.borderBuilds=0;const original=L.geoJSON;L.geoJSON=function(data,options){if(options?.onEachFeature){window.borderBuilds++;queueMicrotask(()=>{window.testMap=options.renderer._map;});}return original.call(this,data,options)}});
+  assert(await page.evaluate(()=>historyMap.getSource('land')._data.features.length),'land source');
+  assert(await page.evaluate(()=>historyMap.getSource('polities')._data.features.length),'border source');
+  assert.equal(await page.locator('#map svg path').count(),0,'no SVG polygons');
+  await page.evaluate(()=>{window.borderBuilds=0;window.testMap=historyMap;const source=historyMap.getSource('polities'),original=source.setData;source.setData=function(...args){window.borderBuilds++;return original.apply(this,args)};});
   // Inputs stay responsive, while geometry waits for a pause.
   await page.evaluate(()=>{const slider=document.querySelector('#year-slider');for(const year of [200,400,600,700]){slider.value=year;slider.dispatchEvent(new Event('input'))}});
   assert.equal(await page.evaluate(()=>window.borderBuilds),0,'slider did not render immediately');
@@ -61,12 +61,12 @@ const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce
   }
   await select(1492);
   for(const zoom of [2,4,6]) {
-   await page.evaluate(z=>{window.testMap.setZoom(z,{animate:false});},zoom);
+   await page.evaluate(z=>{window.testMap.setZoom(z);},zoom);
    await page.waitForTimeout(300);
    await page.screenshot({path:path.join(root,'artifacts',`performance-${mobile?'mobile':'desktop'}-zoom${zoom}.png`)});
   }
   assert.deepEqual(errors,[],'no JavaScript or console errors');
-  report.checks.push({mobile,errors,canvas:true,idlePrefetch:true,debounce:true,memoryCache:true,unchangedPlayback:true,allSelectableSnapshots:true});
+  report.checks.push({mobile,errors,webglSources:true,idlePrefetch:true,debounce:true,memoryCache:true,unchangedPlayback:true,allSelectableSnapshots:true});
   await context.close();
  }
  }finally{await browser.close()}

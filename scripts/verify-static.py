@@ -24,8 +24,11 @@ worker=next(dist.glob('data-worker.*.js'))
 assert worker.name in next((dist/'modules').glob('data.*.js')).read_text()
 assert not list((dist/'data').glob('events-original*'))
 for p in files:assert p.read_text()==json.dumps(json.loads(p.read_text()),ensure_ascii=False,separators=(',',':'))
-for p in [*dist.glob('*.js'),*dist.glob('*.css'),*(dist/'modules').glob('*.js')]:
+for p in [*dist.glob('*.js'),*dist.glob('*.css'),*(dist/'modules').glob('*.js'),*(dist/'vendor/maplibre').glob('*.js'),*(dist/'vendor/maplibre').glob('*.css')]:
  assert hashlib.sha256(p.read_bytes()).hexdigest()[:16] in p.name
 
 print(f'{len(files)} hashed JSON assets; {len(rows)} snapshot URLs; Render MIME/cache rules passed')
 print('Snapshot bytes:',sum((dist/'data'/s['file']).stat().st_size for s in rows),'gzip:',sum(len(gzip.compress((dist/'data'/s['file']).read_bytes())) for s in rows))
+
+assert not (dist/'vendor/leaflet').exists()
+assert 'maplibre-gl.' in (dist/'index.html').read_text()

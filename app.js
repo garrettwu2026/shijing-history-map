@@ -1,5 +1,5 @@
 import {renderEventsView} from './modules/events.js';
-import {renderLabelsView} from './modules/map.js';
+import {renderLabelsView,createMap,showPopup,renderGeometry,polityBounds,warmLabelGlyphs} from './modules/map.js';
 import {createDataClient} from './modules/data.js';
 import {positionFor,yearFor} from './modules/timeline.js';
 import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDisplay} from './modules/content.js';
@@ -16,41 +16,9 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   const eventDate = e => e.startYear!==e.endYear ? `${yearText(e.startYear)} — ${yearText(e.endYear)}${e.precision==='approximate'?'（約）':''}` : singleDate(e);
   const era = y => y < -1200 ? '古代' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
   const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message; };
-  let map, eventLayer, labelLayer, borderTimer, prefetchHandle;
+  let map, eventLayer, borderTimer, prefetchHandle;
 
   let displayText=value=>String(value??'');
-  const geometryCache=new WeakMap();
-  function lowZoomFeature(feature){
-    if(!['Polygon','MultiPolygon'].includes(feature.geometry?.type))return feature;
-    if(geometryCache.has(feature))return geometryCache.get(feature);
-    // Cheap radial-distance LOD. Preserve ring closure, holes and small rings;
-    // original coordinates remain available for zoomed-in rendering.
-    const ring=points=>{
-      if(points.length<8)return points;
-      const result=[points[0]];let last=points[0];
-      for(let i=1;i<points.length-1;i++){const p=points[i];if(Math.abs(p[0]-last[0])>=.06||Math.abs(p[1]-last[1])>=.06){result.push(p);last=p;}}
-      result.push(points.at(-1));return result.length>=4?result:points;
-    };
-    const polygon=rings=>rings.map(ring);
-    const geometry={...feature.geometry,coordinates:feature.geometry.type==='Polygon'?polygon(feature.geometry.coordinates):feature.geometry.coordinates.map(polygon)};
-    const result={...feature,geometry,sourceGeometry:feature.geometry};geometryCache.set(feature,result);return result;
-  }
-  const yieldMount=()=>new Promise(resolve=>window.requestIdleCallback?requestIdleCallback(resolve,{timeout:32}):requestAnimationFrame(resolve));
-  async function updateGeometry(){
-    const token=state.geometryRequest=(state.geometryRequest||0)+1;
-    const layer=state.layer;if(!layer)return;
-    const low=map.getZoom()<4;state.geometryPending=true;
-    let start=performance.now();
-    for(const polygon of layer.getLayers()){
-      if(token!==state.geometryRequest||layer!==state.layer)return;
-      if(polygon.fullGeometry&&polygon.geometryLow!==low){
-        const geometry=low?(polygon.lowGeometry ||= lowZoomFeature({...polygon.feature,geometry:polygon.fullGeometry}).geometry):polygon.fullGeometry;
-        polygon.setLatLngs(L.GeoJSON.coordsToLatLngs(geometry.coordinates,geometry.type==='Polygon'?1:2));polygon.geometryLow=low;
-      }
-      if(performance.now()-start>=8){await yieldMount();start=performance.now();}
-    }
-    state.geometryPending=false;scheduleRefresh();
-  }
   let refreshFrame=null, eventsDirty=false, labelsDirty=false;
   function scheduleRefresh(events=false){
     eventsDirty ||= events; labelsDirty=true;
@@ -59,7 +27,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       refreshFrame=null;
       if(eventsDirty){eventsDirty=false;renderEventsView({state,map,eventLayer,enabledCategories,categories,$,eventDate,esc,selectEvent,displayText,yearText,setPlaying,setYear});}
       if(labelsDirty&&!state.dragging&&!state.boundariesPending&&!state.geometryPending){
-        labelsDirty=false;const start=performance.now();renderLabelsView({state,map,labelLayer,isAntarctica,nameFor,esc});
+        labelsDirty=false;const start=performance.now();renderLabelsView({state,map,isAntarctica,nameFor,esc});
         const profile=window.historyProfiles?.at(-1);if(profile&&profile.labelPasses===0){profile.labelsMs=performance.now()-start;profile.totalMs+=profile.labelsMs;profile.labelPasses=1;}
       }
     });
@@ -135,89 +103,36 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if (state.snapshot?.file === s.file) { updateSnapshotCaption(s); status(); state.boundariesPending=false;renderLabels(); prefetchAdjacent(s); return; }
     state.boundariesPending=true;
     updateSnapshotCaption(s, true);
-    // Keep the previous snapshot until its replacement is ready.
-    const previousLayer=state.layer;
     status('正在展開歷史疆界…');
-    let stagedLayer,stagedRenderer;
     try {
-      const start=performance.now();
-      const snapshot = await snapshotData(s),base=state.baseline;
-      const fetched=performance.now();
-      // The 5000 BCE snapshot omits Antarctica; use the same neutral land outline.
-      const antarctica=base?.features.find(isAntarctica);
+      const start=performance.now(),snapshot=await snapshotData(s),fetched=performance.now();
+      const antarctica=state.baseline?.features.find(isAntarctica);
       const data=snapshot.features.some(isAntarctica)||!antarctica?snapshot:{...snapshot,features:[...snapshot.features,antarctica]};
-      if (token !== state.request) return;
-      state.selectedPolity=null;
-      // A hover/update callback may already be queued when an old canvas is detached.
-      const BorderCanvas=L.Canvas.extend({_redraw(){if(!this._map||!this._ctx){this._redrawRequest=null;return;}L.Canvas.prototype._redraw.call(this);}});
-      const nextRenderer=stagedRenderer=new BorderCanvas();
-      nextRenderer.addTo(map);nextRenderer._container.style.opacity=0;nextRenderer._container.style.pointerEvents='none';
-      const styles=new Map();
-      for(const f of data.features){const key=f.properties?.NAME||'';if(styles.has(key))continue;const p=state.catalog.polities[state.catalog.index[key]];const tint=stableColor(p?.id||key);const review=state.errata?.featureReviews?.find(r=>r.match===key&&s.year>=r.fromYear&&s.year<=r.toYear);styles.set(key,{color:review?'#ffe3a3':tint,weight:review?2.5:.8,opacity:.85,fillColor:tint,fillOpacity:p?.entityType==='cultural-area' ? .18 : .42,dashArray:review?'9 4 2 4':p?.entityType==='cultural-area'?'5 5':null});}
-      const prepared=performance.now();
-      const layer = stagedLayer = L.geoJSON(null, {
-        renderer: nextRenderer,
-        smoothFactor: map.getZoom()<4?4:1,
-        style: f => isAntarctica(f) || !f.properties?.NAME?.trim() ? {color:'#91a6ab',weight:.5,opacity:.35,fillColor:'#91a6ab',fillOpacity:isAntarctica(f)?.22:.12,interactive:isAntarctica(f)} : styles.get(f.properties.NAME),
-        onEachFeature: (f, polygon) => {
-          polygon.fullGeometry=f.sourceGeometry||f.geometry;polygon.geometryLow=map.getZoom()<4;if(f.sourceGeometry)polygon.lowGeometry=f.geometry;
-          const key = f.properties?.NAME?.trim();
-          if(!key && !isAntarctica(f)){polygon.options.interactive=false;return;}
-          polygon.bindTooltip(()=>isAntarctica(f)?'南極洲 Antarctica · 地理區域':esc(nameDisplay(nameFor(key).zh||key,nameFor(key).nameStatus)));
-          polygon.bindPopup(() => isAntarctica(f) ? antarcticaHTML() : polityHTML(key), {maxWidth: Math.min(330,innerWidth-100), autoPanPaddingTopLeft:[15,70], autoPanPaddingBottomRight:[15,document.querySelector('.time-dock').offsetHeight+65]});
-          polygon.on('mouseover', () => polygon.setStyle({weight: 1.8, fillOpacity: .65, color: '#ead6a6'}));
-          polygon.on('mouseout', () => {layer.resetStyle(polygon);if(state.selectedPolity===nameFor(key).id)polygon.setStyle({weight:3,color:'#fff0b5',fillOpacity:.65});});
-        }
-      });
-      // Mount into the hidden renderer as we build, so projection and path
-      // initialization are part of each budget, not one final addTo(map).
-      layer.addTo(map);
-      const vertexCount=coordinates=>!coordinates?0:typeof coordinates[0]==='number'?1:coordinates.reduce((n,c)=>n+vertexCount(c),0);
-      let batchStart=performance.now(),vertices=0;
-      for(const feature of data.features){
-        if(token!==state.request)return;
-        const displayFeature=map.getZoom()<4?lowZoomFeature(feature):feature;
-        layer.addData(displayFeature);
-        vertices+=vertexCount(displayFeature.geometry?.coordinates);
-        if(performance.now()-batchStart>=8||vertices>=6000){await yieldMount();batchStart=performance.now();vertices=0;}
-      }
-      const built=performance.now();
-      // Leaflet schedules Canvas drawing in rAF. Keep the old canvas through a
-      // complete paint opportunity, and discard a superseded staged snapshot.
-      await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
-      if(token!==state.request){map.removeLayer(layer);removeRenderer(nextRenderer);return;}
-      nextRenderer._container.style.opacity=1;nextRenderer._container.style.pointerEvents='';
-      state.boundariesPending=false;state.snapshot=s;state.nameCache=new Map();
-      if(previousLayer){const oldRenderer=state.borderRenderer;map.removeLayer(previousLayer);removeRenderer(oldRenderer);}
-      state.borderRenderer=nextRenderer;
-      state.layer = layer; stagedLayer=null;stagedRenderer=null;state.geometryPending=false;if($('polity-dialog').open)renderPolities();
-      updateGeometry();
-      $('polity-count').textContent = `${new Set(data.features.filter(f=>!isAntarctica(f)).map(f => f.properties?.NAME).filter(n => n && n.trim())).size} 個政體與區域`;
-      updateSnapshotCaption(s);
-      renderLabels(); status();
-      const profile={year:s.year,fetchMs:fetched-start,prepareMs:prepared-fetched,buildMs:built-prepared,labelsMs:0,labelPasses:0,totalMs:performance.now()-start};
-      (window.historyProfiles ||= []).push(profile);
+      if(token!==state.request)return;
+      state.selectedPolity=null;state.snapshot=s;state.nameCache=new Map();
+      renderGeometry(map,data,state,isAntarctica,stableColor);
+      state.layer=data;state.boundariesPending=false;
+      if($('polity-dialog').open)renderPolities();
+      $('polity-count').textContent=`${new Set(data.features.filter(f=>!isAntarctica(f)).map(f=>f.properties?.NAME).filter(Boolean)).size} 個政體與區域`;
+      updateSnapshotCaption(s);renderLabels();status();
+      (window.historyProfiles ||= []).push({year:s.year,fetchMs:fetched-start,buildMs:performance.now()-fetched,labelsMs:0,labelPasses:0,totalMs:performance.now()-start});
       prefetchAdjacent(s);
-    } catch (error) {
-      if (token !== state.request || error.name==='AbortError') return;
-      console.error('疆界更新失敗',error);
-      state.boundariesPending=false;renderLabels();updateBoundaryIndicator();
-      $('snapshot-label').textContent = '疆界載入失敗';
-      $('snapshot-note').textContent = '連線失敗，請重新選取年份重試；舊疆界仍保留';
-      status('無法更新疆界，請檢查連線並重試。'); const retry=document.createElement('button');retry.textContent='重試疆界';retry.onclick=loadBorders;$('map-status').append(retry);
-      setPlaying(false);
-    } finally {if(stagedLayer)map.removeLayer(stagedLayer);if(stagedRenderer)removeRenderer(stagedRenderer);}
+    } catch(error) {
+      if(token!==state.request||error.name==='AbortError')return;
+      state.geometryPending=false;state.boundariesPending=false;updateBoundaryIndicator();
+      $('snapshot-label').textContent='疆界載入失敗';
+      status('無法更新疆界，請檢查連線並重試。');
+      const retry=document.createElement('button');retry.textContent='重試疆界';retry.onclick=loadBorders;$('map-status').append(retry);setPlaying(false);
+    }
   }
-  function removeRenderer(renderer){if(!renderer)return;L.Util.cancelAnimFrame(renderer._redrawRequest);renderer._redrawRequest=null;map.removeLayer(renderer);}
   function renderLabels(){scheduleRefresh();}
   function selectEvent(e) {
     state.returnFocus=matchMedia('(max-width:760px)').matches ? $('sheet-toggle') : document.activeElement; state.activeEvent = e.id;
     if(matchMedia('(max-width:760px)').matches && $('events-panel').classList.contains('expanded')) $('sheet-toggle').click();
     document.querySelectorAll('.event-item').forEach(el => el.classList.toggle('active', el.dataset.id === e.id));
-    const target = [e.lat,e.lon];
     const zoom = Math.max(map.getZoom(), 4);
-    map.stop(); map.setView(target,zoom,{animate:false});
-    L.popup({maxWidth:Math.min(310,innerWidth-60), autoPan:true,autoPanPaddingTopLeft:[15,70],autoPanPaddingBottomRight:[15,document.querySelector('.time-dock').offsetHeight+65]}).setLatLng(target).setContent(eventHTML(e)).openOn(map);
+    map.stop(); map.jumpTo({center:[e.lon,e.lat],zoom});
+    showPopup(map,[e.lon,e.lat],eventHTML(e));
   }
   function renderEvents(){scheduleRefresh(true);}
   function setYear(raw, direction = 1, debounceBorders = false) {
@@ -231,7 +146,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     $('year-slider').setAttribute('aria-valuetext',yearText(y));
     $('year-slider').style.setProperty('--progress',`${positionFor(y)/10}%`);
     document.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active',Number(b.dataset.year)===y));
-    state.suppressRestore=true;map.closePopup();state.suppressRestore=false;state.returnFocus=null;
+    state.suppressRestore=true;map.activePopup?.remove();state.suppressRestore=false;state.returnFocus=null;
     updateBoundaryIndicator(true);
     const updateURL=()=>{const url=new URL(location.href);url.searchParams.set('year',y);history.replaceState(null,'',url);};
     clearTimeout(state.urlTimer);if(debounceBorders)state.urlTimer=setTimeout(updateURL,160);else updateURL();
@@ -242,6 +157,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       // Invalidate an in-flight swap immediately, while the slider keeps moving.
       ++state.request;
       cancelObsolete(snapshotFor(y));
+      snapshotData(snapshotFor(y)).catch(()=>{});
       if(!state.dragging)borderTimer = setTimeout(loadBorders, 150);
       return;
     }
@@ -265,24 +181,25 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   function renderPolities(){
     const list=$('polity-list');if(!state.layer)return;list.replaceChildren();
     const q=$('polity-search').value.toLowerCase(),groups=new Map();
-    state.layer.eachLayer(layer=>{const key=layer.feature.properties?.NAME;if(!key?.trim()||isAntarctica(layer.feature))return;const n=nameFor(key);if(!n.zh)return;if(!groups.has(n.id))groups.set(n.id,{n,key,layers:[]});groups.get(n.id).layers.push(layer);});
+    for(const feature of state.layer.features){const key=feature.properties?.NAME;if(!key?.trim()||!feature.labelGeometry||isAntarctica(feature))continue;const n=nameFor(key);if(!n.zh)continue;if(!groups.has(n.id))groups.set(n.id,{n,key,layers:[]});groups.get(n.id).layers.push(feature);}
     for(const {n,key,layers} of groups.values()){
       if(!JSON.stringify([n.zh,n.native,n.aliases,n.datasetNames,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))continue;
-      const boxes=layers.map(l=>l.feature.labelGeometry.bounds);
+      const boxes=layers.map(l=>l.labelGeometry.bounds);
       const bounds=[Math.min(...boxes.map(b=>b[0])),Math.min(...boxes.map(b=>b[1])),Math.max(...boxes.map(b=>b[2])),Math.max(...boxes.map(b=>b[3]))];
       const region=regionFor(bounds,key,n.regions);
       const b=document.createElement('button');b.textContent=`${nameDisplay(n.zh,n.nameStatus)}${region?' · '+region:''} · 疆界 ${yearText(state.snapshot.year)}`;
       b.onclick=()=>{
         state.returnFocus=$('polity-open');$('polity-dialog').close();
-        state.selectedPolity=n.id;state.layer.eachLayer(l=>state.layer.resetStyle(l));
-        const bounds=L.latLngBounds([]);for(const l of layers){bounds.extend(l.getBounds());l.setStyle({weight:3,color:'#fff0b5',fillOpacity:.65});}
-        const mobile=innerWidth<=760;
-        map.fitBounds(bounds,{animate:false,paddingTopLeft:[mobile?20:320,90],paddingBottomRight:[mobile?65:370,document.querySelector('.time-dock').offsetHeight+(mobile?100:30)],maxZoom:6});
-        const main=[...layers].sort((a,b)=>b.feature.labelGeometry.area-a.feature.labelGeometry.area)[0];
-        const anchor=main.feature.labelGeometry.anchors[0];
-        const point=anchor?L.latLng(anchor[1],anchor[0]):main.getLatLngs().flat(3).find(p=>p instanceof L.LatLng);
-        main.openPopup(point);
-        window.politySelection={id:n.id,count:layers.length,bounds:[[bounds.getSouth(),bounds.getWest()],[bounds.getNorth(),bounds.getEast()]],anchor:[point.lat,point.lng],highlighted:layers.every(l=>l.options.weight===3),view:[[map.getBounds().getSouth(),map.getBounds().getWest()],[map.getBounds().getNorth(),map.getBounds().getEast()]]};
+        state.selectedPolity=n.id;
+        for(const source of ['polities','disputed'])map.removeFeatureState({source});
+        for(const feature of state.layer.features){if(nameFor(feature.properties?.NAME).id===n.id)map.setFeatureState({source:feature.renderSource,id:feature.id},{selected:true});}
+        const bounds=polityBounds(layers),mobile=innerWidth<=760;
+        map.fitBounds(bounds,{duration:0,padding:{left:mobile?20:320,top:90,right:mobile?65:370,bottom:document.querySelector('.time-dock').offsetHeight+(mobile?100:30)},maxZoom:6});
+        const main=[...layers].sort((a,b)=>b.labelGeometry.area-a.labelGeometry.area)[0];
+        const anchor=main.labelGeometry.anchors[0]||bounds[0];
+        showPopup(map,anchor,polityHTML(key));
+        const view=map.getBounds();
+        window.politySelection={id:n.id,count:layers.length,bounds:[[bounds[0][1],bounds[0][0]],[bounds[1][1],bounds[1][0]]],anchor:[anchor[1],anchor[0]],highlighted:true,view:[[view.getSouth(),view.getWest()],[view.getNorth(),view.getEast()]]};
       };list.append(b);
     }
     if(!list.childElementCount)list.textContent='找不到符合的政體。請試試別稱，或切換疆界年份。';
@@ -295,28 +212,29 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     $('polity-close').onclick=()=>$('polity-dialog').close();
     $('intro-toggle').onclick=()=>{const card=document.querySelector('.intro-card');card.classList.toggle('compact');$('intro-toggle').setAttribute('aria-expanded',String(!card.classList.contains('compact')));renderLabels();};
     new ResizeObserver(()=>{document.documentElement.style.setProperty('--dock-height',`${document.querySelector('.time-dock').offsetHeight}px`);}).observe(document.querySelector('.time-dock'));
-    if (!window.L) { status('地圖元件未載入，請確認網路連線後重新整理。'); return; }
-    map = L.map('map',{center:[26,45],zoom:2.25,minZoom:2,maxZoom:8,zoomSnap:.25,worldCopyJump:true,preferCanvas:true,zoomControl:true});
-    map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
-    map.createPane('land'); map.getPane('land').style.zIndex = 200;
-    map.createPane('grid'); map.getPane('grid').style.zIndex = 210;
-    map.attributionControl.addAttribution('疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0');
-    $('time-options').append(document.querySelector('.leaflet-control-attribution'));
+    const fallback=()=>{status('無法啟用互動地圖：此瀏覽器不支援 WebGL，或圖形初始化失敗。請啟用硬體加速，或改用支援 WebGL 的瀏覽器後重新整理。');$('map-status').classList.add('webgl-fallback');};
+    if(window.maplibregl&&!maplibregl.supported)maplibregl.supported=()=>{try{return !!document.createElement('canvas').getContext('webgl2');}catch{return false;}};
+    if(!window.maplibregl||!maplibregl.supported()){fallback();return;}
+    try{map=await createMap();}catch{fallback();return;}
+    window.historyMap=map;window.historyState=state;
+    eventLayer={markers:[],clearLayers(){this.markers.forEach(m=>m.remove());this.markers=[];},addLayer(m){this.markers.push(m);m.addTo(map);}};
     async function loadBaseline(){
       $('baseline-status').hidden=true;
-      try{const data=await json('data/world_2010.geojson');state.baseline=data;
-        L.geoJSON(data,{renderer:L.canvas({pane:'land'}),pane:'land',interactive:false,style:{stroke:false,fillColor:'#354247',fillOpacity:1}}).addTo(map);
-      }catch{ $('baseline-status').hidden=false; }
+      try{const data=await json('data/world_2010.geojson');state.baseline=data;map.getSource('land').setData(data);}catch{$('baseline-status').hidden=false;}
     }
-    $('baseline-retry').onclick=loadBaseline;
-    loadBaseline();
-    for (let lat = -60; lat <= 60; lat += 30) L.polyline([[lat,-180],[lat,180]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
-    for (let lon = -180; lon <= 180; lon += 30) L.polyline([[-85,lon],[85,lon]],{pane:'grid',interactive:false,color:'#b0b9a3',weight:.5,opacity:.12,dashArray:'2 7'}).addTo(map);
-    eventLayer=L.layerGroup().addTo(map); labelLayer=L.layerGroup().addTo(map);
-    map.on('moveend zoomend resize',()=>{if(state.events.length)state.eventsSignature=null;scheduleRefresh(!!state.events.length);});
-    map.on('zoomend',()=>{updateGeometry();});
-    map.on('popupopen',e=>{document.body.classList.add('popup-open');const el=e.popup.getElement();el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
-    map.on('popupclose',()=>{document.body.classList.remove('popup-open');const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
+    $('baseline-retry').onclick=loadBaseline;loadBaseline();
+    for(const event of ['moveend','zoomend','resize'])map.on(event,()=>{if(state.events.length)state.eventsSignature=null;scheduleRefresh(!!state.events.length);});
+    map.on('click','polities-fill',e=>{const f=e.features[0];if(f.properties.NAME?.trim()||f.properties.antarctica)showPopup(map,e.lngLat,f.properties.antarctica?antarcticaHTML():polityHTML(f.properties.NAME));});
+    map.on('click','disputed-fill',e=>showPopup(map,e.lngLat,polityHTML(e.features[0].properties.NAME)));
+    let hover;
+    for(const layer of ['polities-fill','disputed-fill']){
+      map.on('mousemove',layer,e=>{if(hover)map.setFeatureState(hover,{hover:false});const f=e.features[0];hover={source:f.source,id:f.id};map.setFeatureState(hover,{hover:true});map.getCanvas().style.cursor='pointer';
+        if(f.properties.NAME?.trim()){$('map').title=nameDisplay(nameFor(f.properties.NAME).zh||f.properties.NAME,nameFor(f.properties.NAME).nameStatus);}
+      });
+      map.on('mouseleave',layer,()=>{if(hover)map.setFeatureState(hover,{hover:false});hover=null;map.getCanvas().style.cursor='';$('map').title='';});
+    }
+    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
+    map.on('detailclose',()=>{document.body.classList.remove('popup-open');const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
     document.addEventListener('click',e=>{const b=e.target.closest('.goto-event');if(b){const event=state.events.find(x=>x.id===b.dataset.event);setYear(event.year);}});
     document.fonts?.ready.then(renderLabels);
     const sheet=$('events-panel'), sheetButton=$('sheet-toggle');
@@ -327,7 +245,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       button.onclick=()=>{enabledCategories.has(name)?enabledCategories.delete(name):enabledCategories.add(name);button.setAttribute('aria-pressed',String(enabledCategories.has(name)));renderEvents();};
       $('category-filters').append(button);
     }
-    $('home-view').onclick=()=>map.flyTo([26,45],2.25,{duration:1});
+    $('home-view').onclick=()=>map.flyTo({center:[45,26],zoom:1.25,duration:1000});
     $('labels-toggle').onclick=()=>{state.labels=!state.labels;$('labels-toggle').setAttribute('aria-pressed',String(state.labels));renderLabels();};
     $('events-toggle').onclick=()=>{state.markers=!state.markers;$('events-toggle').setAttribute('aria-pressed',String(state.markers));renderEvents();};
     $('window-select').onchange=e=>{state.window=Number(e.target.value);renderEvents();};
@@ -340,6 +258,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     try {
       const recover=async(path,label,failed=false)=>{for(;;){try{if(failed){failed=false;throw new Error('重試載入');}return await json(path);}catch{await new Promise(resolve=>{const box=document.createElement('div');box.className='data-retry';box.textContent=label+'載入失敗。';const button=document.createElement('button');button.textContent='重試'+label;button.onclick=()=>{box.remove();resolve();};box.append(button);$('data-retries').append(box);});}}};
       const [snapshots,events,catalog,errata,glossary] = await Promise.all([recover('data/snapshots.json','快照目錄'),json('data/events.json').catch(()=>{state.eventsUnavailable=true;recover('data/events.json','事件',true).then(events=>{state.eventsUnavailable=false;state.events=events;state.eventsSignature=null;renderEvents();});return [];}),recover('data/polities.json','政體目錄'),recover('data/errata.json','考證資料'),recover('data/glossary.json','詞彙狀態')]);state.catalog=catalog;state.errata=errata;displayText=createNameDisplay(glossary);
+      await warmLabelGlyphs(map,catalog,errata);
       dependentControls.forEach(el=>el.disabled=false);
       state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.events=events;
       const finishDrag=()=>{if(!state.dragging)return;state.dragging=false;clearTimeout(borderTimer);clearTimeout(state.eventTimer);state.boundariesPending=state.snapshot?.file!==snapshotFor(state.year).file;renderEvents();loadBorders();};
@@ -358,5 +277,6 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       await setYear(initial !== null && initial.trim() && Number.isFinite(Number(initial)) ? initial : -300);
     } catch(error) { console.error('歷史資料載入失敗',error); status('無法載入歷史資料。請透過 HTTP 伺服器開啟，並確認 data 資料夾完整。'); }
   }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')map?.activePopup?.remove();});
   init();
 })();

@@ -1,5 +1,5 @@
 const {chromium}=require('playwright');const fs=require('node:fs');
-(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});const results=[];
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});const results=[];
 try{for(const rate of [1,4])for(const mobile of [false,true]){
 const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:900},isMobile:mobile,hasTouch:mobile});const page=await context.newPage();const cdp=await context.newCDPSession(page);await cdp.send('Network.enable');await cdp.send('Network.setCacheDisabled',{cacheDisabled:true});await cdp.send('Network.clearBrowserCache');await cdp.send('Emulation.setCPUThrottlingRate',{rate});
 await page.addInitScript(()=>{window.frameSamples=[];window.tasks=[];window.stage='cold';new PerformanceObserver(list=>window.tasks.push(...list.getEntries().map(e=>({ms:e.duration,stage:window.stage})))).observe({type:'longtask'});let last=performance.now();function frame(t){window.frameSamples.push({ms:t-last,stage:window.stage});last=t;requestAnimationFrame(frame)}requestAnimationFrame(frame)});
