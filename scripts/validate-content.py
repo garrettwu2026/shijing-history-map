@@ -22,7 +22,7 @@ for n in c['polities'].values():
    if field=='endonyms':assert p['language'] and urlparse(p['sourceUrl']).scheme=='https' and p['sourceStatus'] in ['reference-unverified','verified']
 for e in events:
  assert e['startYear']<=e['year']<=e['endYear']
- assert e['sourceStatus'] in ['verified','article-unverified','research-link-unverified']
+ assert e['sourceStatus'] in ['verified','article-unverified','research-link-unverified','editorial']
  if e['sourceStatus']=='verified':assert 'search?' not in e['sourceUrl']
 assert any(e['startYear']==1337 and e['endYear']==1453 for e in events)
 # Exercise the actual shared intersection/distance/color functions.

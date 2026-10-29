@@ -544,6 +544,18 @@ a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 .polity-intro p{margin:8px 0}
 .polity-intro h4{margin:8px 0 0}
 .polity-intro ul{padding-inline-start:20px;margin:6px 0}
+.event-details{margin-block:10px;border-block:1px solid #8a795538;font-size:13px}
+.event-details summary{cursor:pointer;min-height:44px;padding-block:10px;box-sizing:border-box;font-weight:600}
+.event-details h4{margin:8px 0 0}
+.detail-chronology{padding-inline-start:22px;margin-block:6px}
+.detail-chronology li{margin-block:5px}
+.detail-chronology time{font-variant-numeric:tabular-nums;font-weight:600}
+.detail-values{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:4px 10px;margin-block:6px}
+.detail-values dt{font-weight:600}
+.detail-values dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.polity-chips{display:flex;flex-wrap:wrap;gap:6px;margin-block:6px}
+.polity-chip{max-width:100%;min-height:44px;padding:6px 10px;border:1px solid #8a795560;border-radius:16px;background:#fff7df;color:#283e40;font:inherit;white-space:normal;overflow-wrap:anywhere;cursor:pointer}
+.participant-note{font-size:11px;color:#506362}
 .maplibregl-popup-content{overflow-wrap:anywhere;box-sizing:border-box}
 
 .polity-links{display:flex;gap:6px;margin:8px 0;flex-wrap:wrap}

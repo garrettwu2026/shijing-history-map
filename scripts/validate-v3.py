@@ -16,7 +16,9 @@ for k in ['Holy Roman Empire','Mughal','Japan','Byzantine Empire','Aztec Empire'
  if k in c['index']:assert c['polities'][c['index'][k]]['importance']>0
 registry=read('event-id-registry.json');events=read('events.json')
 for e in events:
- assert registry[e['title']]==e['id'];assert e['startYear']<=e['year']<=e['endYear'];assert e['precision'] in ['exact','approximate','traditional'];assert e['sourceUrl'].startswith('https://')
+ assert registry[e['title']]==e['id'];assert e['startYear']<=e['year']<=e['endYear'];assert e['precision'] in ['exact','approximate','traditional']
+ if e['sourceStatus']!='editorial':assert e['sourceUrl'].startswith('https://')
+ else:assert 'sourceUrl' not in e, 'Own-knowledge editorial additions must not invent sources'
 assert (D/'world_1492.geojson').stat().st_size<450000
 assert len(read('errata.json')['overrides'])>=2
 print(f'{len(names)} names; {len(c["polities"])} polity IDs; {len(events)} stable event IDs; 1492 <450000 bytes; semantic checks passed')

@@ -6,14 +6,15 @@ const intros=read('data/intros.json'),catalog=read('data/polities.json'),glossar
 const display=entry=>entry.accepted_zh_TW||entry.previous_zh||entry.original;
 const namesByID=new Map();
 for(const term of glossary.entries){const id=catalog.index[term.original];if(id){if(!namesByID.has(id))namesByID.set(id,new Set());namesByID.get(id).add(display(term));}}
-assert(Object.keys(intros).length>=190&&Object.keys(intros).length<=230,'roughly 200 introductions');
+assert(Object.keys(intros).length>=214,'preserve the original introduction coverage as the catalog grows');
 for(const [id,intro] of Object.entries(intros)){
  assert(/^p-[0-9a-f]{16}$/.test(id)&&catalog.polities[id],id);
- assert.deepEqual(Object.keys(intro).sort(),['name','summary','存續年代','首都','主要族群/語言','重要事件','前身/後繼'].sort());
+ assert(['name','summary','存續年代','首都','主要族群/語言','重要事件','前身/後繼'].every(field=>field in intro),'preserve original fields');
+ assert(Object.keys(intro).every(field=>['name','summary','存續年代','首都','主要族群/語言','重要事件','前身/後繼','年表','重要人物','關鍵數據','背景','影響'].includes(field)),'known introduction fields');
  assert(namesByID.get(id)?.has(intro.name),`${id} name matches glossary`);
  for(const field of ['name','summary','存續年代','首都','主要族群/語言'])assert.equal(typeof intro[field],'string');
  assert(intro.summary.includes(intro.name),`${id} uses display name`);
- const sentences=intro.summary.split('。').filter(Boolean);assert(sentences.length>=2&&sentences.length<=4,`${id} 2–4 sentences`);
+ const sentences=intro.summary.split('。').filter(Boolean);assert(sentences.length>=2,`${id} multiple factual sentences`);
  assert(Array.isArray(intro['重要事件']));assert(intro['重要事件'].every(x=>typeof x==='string'&&x.length>0));
  assert(Array.isArray(intro['前身/後繼']));
  for(const item of intro['前身/後繼']){

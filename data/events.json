@@ -1683,6 +1683,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0881",
+    "year": -701,
+    "lat": 31.78,
+    "lon": 35.23,
+    "title": "亞述圍攻耶路撒冷",
+    "description": "西拿基立進攻猶大並圍困耶路撒冷，城未在此次戰役中陷落。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": -701,
+    "endYear": -701,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": -700,
     "lat": 34.69,
     "lon": 135.5,
@@ -1785,6 +1799,21 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0882",
+    "year": -621,
+    "lat": 37.98,
+    "lon": 23.73,
+    "title": "德拉古法典的傳統制定年代",
+    "description": "雅典將部分法律成文化，傳統上以嚴厲刑罰著稱，具體條文的傳承並不完整。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": -621,
+    "endYear": -621,
+    "precision": "traditional",
+    "sourceStatus": "editorial",
+    "dateNote": "傳統紀年"
+  },
+  {
     "id": "e0106",
     "year": -612,
     "lat": 36.36,
@@ -1868,6 +1897,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%96%B0%E5%B7%B4%E6%AF%94%E5%80%AB%E6%94%BB%E9%99%B7%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0883",
+    "year": -585,
+    "lat": 39.0,
+    "lon": 35.0,
+    "title": "米底與呂底亞戰爭終止",
+    "description": "米底與呂底亞在長期交戰後議和；古代記載把停戰與日食相聯繫。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": -585,
+    "endYear": -585,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -563,
@@ -1970,6 +2013,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%B3%A2%E6%96%AF%E5%BE%81%E6%9C%8D%E5%9F%83%E5%8F%8A",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0884",
+    "year": -522,
+    "lat": 34.39,
+    "lon": 47.44,
+    "title": "大流士一世取得波斯王位",
+    "description": "大流士在宮廷政變後掌權，隨後鎮壓多地反抗並重整帝國統治。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": -522,
+    "endYear": -522,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -520,
@@ -2193,6 +2250,20 @@
     "chronologyStatus": "range-editorial-review"
   },
   {
+    "id": "e0885",
+    "year": -404,
+    "lat": 37.98,
+    "lon": 23.73,
+    "title": "雅典在伯羅奔尼撒戰爭中投降",
+    "description": "雅典遭海陸封鎖後向斯巴達投降，長期戰爭使希臘城邦格局重新洗牌。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -404,
+    "endYear": -404,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": -400,
     "lat": 19.3,
     "lon": -99.18,
@@ -2242,6 +2313,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%9F%8F%E6%8B%89%E5%9C%96%E5%AD%B8%E5%9C%92%E6%88%90%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0886",
+    "year": -371,
+    "lat": 38.25,
+    "lon": 23.18,
+    "title": "留克特拉戰役",
+    "description": "底比斯軍擊敗斯巴達，削弱斯巴達在希臘本土的軍事霸權。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -371,
+    "endYear": -371,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -359,
@@ -2310,6 +2395,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E4%BA%9E%E6%AD%B7%E5%B1%B1%E5%A4%A7%E6%9D%B1%E5%BE%81",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0887",
+    "year": -333,
+    "lat": 36.84,
+    "lon": 36.17,
+    "title": "伊蘇斯戰役",
+    "description": "亞歷山大擊敗大流士三世的軍隊，波斯王室成員被俘，馬其頓得以繼續向南推進。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": -333,
+    "endYear": -333,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -332,
@@ -2395,6 +2494,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%AD%94%E9%9B%80%E7%8E%8B%E6%9C%9D%E5%BB%BA%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0888",
+    "year": -301,
+    "lat": 38.8,
+    "lon": 30.5,
+    "title": "伊普蘇斯戰役",
+    "description": "繼業者聯軍擊敗安提柯，亞歷山大帝國的分裂格局進一步確立。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": -301,
+    "endYear": -301,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -300,
@@ -2567,6 +2680,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0889",
+    "year": -216,
+    "lat": 41.3,
+    "lon": 16.13,
+    "title": "坎尼戰役",
+    "description": "漢尼拔以包圍戰術重創羅馬軍隊，但未能迫使羅馬立即退出戰爭。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -216,
+    "endYear": -216,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": -214,
     "lat": 23.13,
     "lon": 113.26,
@@ -2703,6 +2830,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0890",
+    "year": -197,
+    "lat": 39.37,
+    "lon": 22.6,
+    "title": "庫諾斯克法萊戰役",
+    "description": "羅馬軍擊敗馬其頓國王腓力五世，羅馬在希臘的政治影響擴大。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -197,
+    "endYear": -197,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": -196,
     "lat": 30.04,
     "lon": 31.24,
@@ -2718,6 +2859,34 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E7%BE%85%E5%A1%9E%E5%A1%94%E7%9F%B3%E7%A2%91%E5%88%BB%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0891",
+    "year": -190,
+    "lat": 38.61,
+    "lon": 27.43,
+    "title": "馬格尼西亞戰役",
+    "description": "羅馬及盟軍擊敗安條克三世，塞琉古王國被迫接受後續割地與賠款。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": -190,
+    "endYear": -190,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0892",
+    "year": -168,
+    "lat": 40.37,
+    "lon": 22.62,
+    "title": "彼得那戰役",
+    "description": "羅馬軍擊敗馬其頓國王珀爾修斯，安提柯王朝的王權隨後終結。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -168,
+    "endYear": -168,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -154,
@@ -2786,6 +2955,34 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%BC%B5%E9%A8%AB%E5%87%BA%E4%BD%BF%E8%A5%BF%E5%9F%9F",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0893",
+    "year": -133,
+    "lat": 41.81,
+    "lon": -2.44,
+    "title": "努曼提亞圍城終結",
+    "description": "羅馬軍長期圍困努曼提亞並迫其陷落，伊比利半島的抵抗仍未全部結束。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -133,
+    "endYear": -133,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0894",
+    "year": -133,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "提比略・格拉古推動土地改革",
+    "description": "羅馬保民官提出土地分配改革，引起激烈政治衝突並在同年遭殺害。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": -133,
+    "endYear": -133,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -119,
@@ -2941,6 +3138,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0895",
+    "year": -60,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "羅馬前三頭政治形成",
+    "description": "凱撒、龐培與克拉蘇組成非正式政治聯盟，以各自資源協調共和國權力。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": -60,
+    "endYear": -60,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": -58,
     "lat": 48.86,
     "lon": 2.35,
@@ -2992,6 +3203,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0896",
+    "year": -48,
+    "lat": 39.28,
+    "lon": 22.38,
+    "title": "法薩盧斯戰役",
+    "description": "凱撒擊敗龐培主力，共和國內戰的權力平衡大幅改變。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -48,
+    "endYear": -48,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0177",
     "year": -44,
     "lat": 41.9,
@@ -3007,6 +3232,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%87%B1%E6%92%92%E9%81%87%E5%88%BA",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0897",
+    "year": -42,
+    "lat": 41.01,
+    "lon": 24.28,
+    "title": "腓立比戰役",
+    "description": "安東尼與屋大維擊敗刺殺凱撒的共和派軍隊，布魯圖及卡西烏斯敗亡。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": -42,
+    "endYear": -42,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": -31,
@@ -3179,6 +3418,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0898",
+    "year": 98,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "圖拉真即位",
+    "description": "涅爾瓦死後圖拉真繼承帝位，任內進行達契亞與東方征服。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 98,
+    "endYear": 98,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0188",
     "year": 105,
     "lat": 34.62,
@@ -3228,6 +3481,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E7%BE%85%E9%A6%AC%E5%B8%9D%E5%9C%8B%E9%A0%98%E5%9C%9F%E6%93%B4%E5%BC%B5%E9%AB%98%E5%B3%B0",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0899",
+    "year": 122,
+    "lat": 55.0,
+    "lon": -2.33,
+    "title": "哈德良長城開始修建",
+    "description": "羅馬在不列顛北部修建長城及據點，作為邊境軍事與人口通行管理設施。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 122,
+    "endYear": 122,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 132,
@@ -3315,6 +3582,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0900",
+    "year": 212,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "卡拉卡拉敕令擴大羅馬公民權",
+    "description": "帝國大多數自由居民取得羅馬公民身分，法律與稅收安排受到影響。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 212,
+    "endYear": 212,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0196",
     "year": 220,
     "lat": 34.75,
@@ -3347,6 +3628,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E8%9C%80%E6%BC%A2%E5%BB%BA%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0901",
+    "year": 224,
+    "lat": 28.85,
+    "lon": 52.57,
+    "title": "阿爾達希爾擊敗安息王權",
+    "description": "阿爾達希爾擊敗阿爾達班，薩珊王朝逐步取代安息的帝國核心統治。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 224,
+    "endYear": 224,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 229,
@@ -3468,6 +3763,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0902",
+    "year": 293,
+    "lat": 40.77,
+    "lon": 29.94,
+    "title": "戴克里先建立四帝共治",
+    "description": "羅馬皇帝採取兩位奧古斯都及兩位凱撒分工的安排，以處理邊防與繼承問題。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 293,
+    "endYear": 293,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 301,
     "lat": 40.16,
     "lon": 44.29,
@@ -3500,6 +3809,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%B0%B8%E5%98%89%E4%B9%8B%E4%BA%82",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0903",
+    "year": 312,
+    "lat": 41.94,
+    "lon": 12.47,
+    "title": "米爾維安橋戰役",
+    "description": "君士坦丁擊敗馬克森提烏斯，取得羅馬及帝國西部的重要主導權。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 312,
+    "endYear": 312,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0207",
@@ -3621,6 +3944,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0904",
+    "year": 376,
+    "lat": 44.1,
+    "lon": 27.0,
+    "title": "哥德人獲准渡過多瑙河",
+    "description": "受到匈人壓力的哥德人進入羅馬境內，安置失當與剝削隨後引發戰爭。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 376,
+    "endYear": 376,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 378,
     "lat": 17.22,
     "lon": -89.62,
@@ -3636,6 +3973,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E8%92%82%E5%8D%A1%E7%88%BE%E7%8E%8B%E6%AC%8A%E8%BD%89%E8%AE%8A",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0905",
+    "year": 378,
+    "lat": 41.68,
+    "lon": 26.56,
+    "title": "亞德里安堡戰役",
+    "description": "哥德軍擊敗羅馬軍，皇帝瓦倫斯陣亡，帝國處理移民及邊防的問題加深。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 378,
+    "endYear": 378,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0215",
@@ -3859,6 +4210,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0906",
+    "year": 455,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "汪達爾軍劫掠羅馬",
+    "description": "蓋薩里克率汪達爾軍進入羅馬並劫掠財物，西部皇權的衰弱更加明顯。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 455,
+    "endYear": 455,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 460,
     "lat": 40.09,
     "lon": 113.3,
@@ -3908,6 +4273,21 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%8C%97%E9%AD%8F%E9%81%B7%E9%83%BD%E6%B4%9B%E9%99%BD",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0907",
+    "year": 496,
+    "lat": 49.26,
+    "lon": 4.03,
+    "title": "克洛維受洗的傳統年代",
+    "description": "法蘭克國王克洛維接受天主教信仰；確切年代仍有討論，通常以此年標示。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 496,
+    "endYear": 496,
+    "precision": "traditional",
+    "sourceStatus": "editorial",
+    "dateNote": "傳統紀年"
   },
   {
     "year": 500,
@@ -3995,6 +4375,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0908",
+    "year": 507,
+    "lat": 46.43,
+    "lon": 0.17,
+    "title": "武耶戰役",
+    "description": "克洛維擊敗西哥德國王阿拉里克二世，法蘭克勢力向高盧南部擴張。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 507,
+    "endYear": 507,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0236",
     "year": 527,
     "lat": 41.01,
@@ -4046,6 +4440,34 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0919",
+    "year": 533,
+    "lat": 36.85,
+    "lon": 10.33,
+    "title": "貝利薩留擊敗汪達爾王國",
+    "description": "東羅馬軍在北非擊敗汪達爾軍，翌年完成對其王國核心領地的征服。",
+    "category": "戰爭",
+    "region": "非洲",
+    "startYear": 533,
+    "endYear": 533,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0909",
+    "year": 534,
+    "lat": 41.01,
+    "lon": 28.98,
+    "title": "查士丁尼法典修訂本頒行",
+    "description": "東羅馬整理皇帝敕令及法學傳統，成為後來羅馬法傳承的重要基礎。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 534,
+    "endYear": 534,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 537,
     "lat": 41.01,
     "lon": 28.98,
@@ -4061,6 +4483,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E8%81%96%E7%B4%A2%E8%8F%B2%E4%BA%9E%E5%A4%A7%E6%95%99%E5%A0%82%E8%90%BD%E6%88%90",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0910",
+    "year": 541,
+    "lat": 31.2,
+    "lon": 29.9,
+    "title": "查士丁尼瘟疫在東地中海爆發",
+    "description": "疫情由埃及等地擴散，隨後波及君士坦丁堡，造成人口與財政的重大衝擊。",
+    "category": "王朝與政治",
+    "region": "非洲",
+    "startYear": 541,
+    "endYear": 541,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 552,
@@ -4095,6 +4531,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E7%AA%81%E5%8E%A5%E6%B1%97%E5%9C%8B%E8%88%88%E8%B5%B7",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0911",
+    "year": 568,
+    "lat": 46.06,
+    "lon": 13.24,
+    "title": "倫巴底人進入義大利",
+    "description": "阿爾博因率軍進入義大利，東羅馬與倫巴底勢力此後長期分割半島。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 568,
+    "endYear": 568,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 570,
@@ -4146,6 +4596,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E9%9A%8B%E6%BB%85%E9%99%B3%E7%B5%B1%E4%B8%80%E4%B8%AD%E5%9C%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0912",
+    "year": 597,
+    "lat": 51.28,
+    "lon": 1.08,
+    "title": "奧古斯丁抵達坎特伯里傳教",
+    "description": "教宗派遣的傳教團進入肯特，促成英格蘭部分王國與羅馬教會的聯繫。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 597,
+    "endYear": 597,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 605,
@@ -4265,6 +4729,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E8%B2%9E%E8%A7%80%E6%99%82%E6%9C%9F%E9%96%8B%E5%A7%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0913",
+    "year": 628,
+    "lat": 33.1,
+    "lon": 44.58,
+    "title": "霍斯勞二世被推翻",
+    "description": "對東羅馬長期戰爭失利後，薩珊宮廷政變推翻霍斯勞二世，王位繼承陷入動盪。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 628,
+    "endYear": 628,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 629,
@@ -4522,6 +5000,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0914",
+    "year": 680,
+    "lat": 32.61,
+    "lon": 44.03,
+    "title": "卡爾巴拉事件",
+    "description": "侯賽因及其追隨者遭倭馬亞軍隊殺害，成為什葉派宗教記憶的核心事件。",
+    "category": "宗教與思想",
+    "region": "亞洲",
+    "startYear": 680,
+    "endYear": 680,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 690,
     "lat": 34.62,
     "lon": 112.45,
@@ -4624,6 +5116,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0915",
+    "year": 717,
+    "lat": 41.01,
+    "lon": 28.98,
+    "title": "阿拉伯軍隊再度圍攻君士坦丁堡",
+    "description": "倭馬亞軍隊對首都展開大規模圍攻，東羅馬抵抗至翌年迫使其撤退。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 717,
+    "endYear": 717,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 726,
     "lat": 41.01,
     "lon": 28.98,
@@ -4724,6 +5230,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%BE%8C%E5%80%AD%E9%A6%AC%E4%BA%9E%E6%94%BF%E6%AC%8A%E5%BB%BA%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0916",
+    "year": 756,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "丕平獻土奠定教宗領地基礎",
+    "description": "法蘭克君主將義大利部分領地交予教宗，促成教宗世俗統治的發展。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 756,
+    "endYear": 756,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 760,
@@ -4896,6 +5416,21 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0917",
+    "year": 800,
+    "lat": 47.424,
+    "lon": 9.377,
+    "title": "聖加侖修道院學術活動發展",
+    "description": "加洛林時代修道院抄寫、保存及教授典籍，聖加侖成為重要的書籍與學術中心。",
+    "category": "文化與藝術",
+    "region": "歐洲",
+    "startYear": 800,
+    "endYear": 800,
+    "precision": "approximate",
+    "sourceStatus": "editorial",
+    "dateNote": "約"
+  },
+  {
     "id": "e0289",
     "year": 802,
     "lat": 13.44,
@@ -4962,6 +5497,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%87%A1%E7%88%BE%E7%99%BB%E6%A2%9D%E7%B4%84",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0918",
+    "year": 843,
+    "lat": 41.01,
+    "lon": 28.98,
+    "title": "東羅馬恢復聖像敬禮",
+    "description": "皇太后狄奧多拉主導恢復聖像敬禮，結束帝國第二次大規模聖像破壞政策。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 843,
+    "endYear": 843,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 863,
@@ -5185,6 +5734,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0920",
+    "year": 955,
+    "lat": 48.3,
+    "lon": 10.9,
+    "title": "萊希費爾德戰役",
+    "description": "鄂圖一世擊敗馬扎爾軍隊，鞏固東法蘭克王權並削弱西向劫掠。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 955,
+    "endYear": 955,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0306",
     "year": 960,
     "lat": 34.8,
@@ -5389,6 +5952,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0921",
+    "year": 1008,
+    "lat": 42.27,
+    "lon": 42.7,
+    "title": "喬治亞王權的重要統一",
+    "description": "巴格拉特三世整合多個王位及領地，為中世紀喬治亞統一王國奠定基礎。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 1008,
+    "endYear": 1008,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1010,
     "lat": 10.79,
     "lon": 79.14,
@@ -5491,6 +6068,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0922",
+    "year": 1040,
+    "lat": 37.4,
+    "lon": 61.8,
+    "title": "丹丹坎戰役",
+    "description": "塞爾柱軍擊敗加茲尼王朝，取得呼羅珊優勢，加茲尼勢力重心逐步東移。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1040,
+    "endYear": 1040,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1050,
     "lat": 38.66,
     "lon": -90.06,
@@ -5542,6 +6133,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0924",
+    "year": 1055,
+    "lat": 33.32,
+    "lon": 44.37,
+    "title": "塞爾柱控制巴格達",
+    "description": "圖格里爾進入巴格達，白益勢力失去主導地位，哈里發與塞爾柱建立新的權力關係。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 1055,
+    "endYear": 1055,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0327",
     "year": 1066,
     "lat": 50.91,
@@ -5576,6 +6181,34 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0925",
+    "year": 1071,
+    "lat": 39.14,
+    "lon": 42.54,
+    "title": "曼齊刻爾特戰役",
+    "description": "塞爾柱軍擊敗東羅馬，皇帝羅曼努斯四世被俘，安那托利亞局勢隨後劇烈改變。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1071,
+    "endYear": 1071,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0926",
+    "year": 1077,
+    "lat": 44.57,
+    "lon": 10.46,
+    "title": "亨利四世赴卡諾莎",
+    "description": "皇帝向教宗格里高利七世求取解除絕罰，敘任權衝突並未就此終結。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1077,
+    "endYear": 1077,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1086,
     "lat": 51.51,
     "lon": -0.13,
@@ -5591,6 +6224,21 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E3%80%8A%E6%9C%AB%E6%97%A5%E5%AF%A9%E5%88%A4%E6%9B%B8%E3%80%8B%E8%AA%BF%E6%9F%A5%E5%AE%8C%E6%88%90",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0923",
+    "year": 1088,
+    "lat": 44.49,
+    "lon": 11.34,
+    "title": "波隆那大學的傳統創校年代",
+    "description": "波隆那的法學教學逐漸形成學者共同體，後世以此年作為大學成立的紀年。",
+    "category": "文化與藝術",
+    "region": "歐洲",
+    "startYear": 1088,
+    "endYear": 1088,
+    "precision": "traditional",
+    "sourceStatus": "editorial",
+    "dateNote": "傳統紀年"
   },
   {
     "year": 1095,
@@ -5693,6 +6341,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E9%87%91%E6%9C%9D%E5%BB%BA%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0927",
+    "year": 1121,
+    "lat": 41.76,
+    "lon": 44.51,
+    "title": "迪德戈里戰役",
+    "description": "大衛四世擊敗進攻喬治亞的聯軍，翌年取得第比利斯，王國勢力上升。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1121,
+    "endYear": 1121,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1125,
@@ -5863,6 +6525,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E8%96%A9%E6%8B%89%E4%B8%81%E6%94%B6%E5%BE%A9%E8%80%B6%E8%B7%AF%E6%92%92%E5%86%B7",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0928",
+    "year": 1189,
+    "lat": 51.51,
+    "lon": -0.13,
+    "title": "理查一世繼承英格蘭王位",
+    "description": "理查一世即位後參與第三次十字軍，王室財政與跨海領地問題仍持續牽動政治。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1189,
+    "endYear": 1189,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1192,
@@ -6052,6 +6728,20 @@
     "chronologyStatus": "reviewed-single-year"
   },
   {
+    "id": "e0929",
+    "year": 1209,
+    "lat": 43.21,
+    "lon": 2.35,
+    "title": "阿爾比十字軍開始",
+    "description": "以打擊異端為名的戰爭席捲法國南部，宗教迫害與領土兼併相互交織。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1209,
+    "endYear": 1209,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1212,
     "lat": 38.28,
     "lon": -3.58,
@@ -6067,6 +6757,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%89%98%E6%B4%9B%E8%96%A9%E6%9C%83%E6%88%B0",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0930",
+    "year": 1214,
+    "lat": 50.58,
+    "lon": 3.23,
+    "title": "布汶戰役",
+    "description": "腓力二世擊敗敵對聯軍，法蘭西王權獲得鞏固，英格蘭約翰王的地位受挫。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1214,
+    "endYear": 1214,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0358",
@@ -6205,6 +6909,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0931",
+    "year": 1241,
+    "lat": 47.99,
+    "lon": 20.93,
+    "title": "莫希戰役",
+    "description": "蒙古軍擊敗匈牙利軍隊，隨後大規模劫掠王國，造成嚴重人口及經濟損失。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1241,
+    "endYear": 1241,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1250,
     "lat": 37.23,
     "lon": -108.46,
@@ -6305,6 +7023,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%8B%9C%E5%8D%A0%E5%BA%AD%E6%94%B6%E5%BE%A9%E5%90%9B%E5%A3%AB%E5%9D%A6%E4%B8%81%E5%A0%A1",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0932",
+    "year": 1265,
+    "lat": 51.51,
+    "lon": -0.13,
+    "title": "孟福爾召集英格蘭議會",
+    "description": "西蒙・德・孟福爾召集包含郡與城市代表的議會，成為代表制度發展的重要事件。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1265,
+    "endYear": 1265,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1270,
@@ -6426,6 +7158,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0933",
+    "year": 1297,
+    "lat": 56.13,
+    "lon": -3.94,
+    "title": "斯特靈橋戰役",
+    "description": "蘇格蘭軍在威廉・華勒斯等人領導下擊敗英軍，獨立戰爭仍持續多年。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1297,
+    "endYear": 1297,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1298,
     "lat": 45.44,
     "lon": 12.32,
@@ -6475,6 +7221,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%95%99%E5%AE%97%E9%A7%90%E4%BA%9E%E7%B6%AD%E5%84%82%E6%99%82%E6%9C%9F%E9%96%8B%E5%A7%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0934",
+    "year": 1314,
+    "lat": 56.09,
+    "lon": -3.93,
+    "title": "班諾克本戰役",
+    "description": "羅伯特一世擊敗英格蘭軍隊，鞏固蘇格蘭王權與獨立抵抗。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1314,
+    "endYear": 1314,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1315,
@@ -6698,6 +7458,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0935",
+    "year": 1369,
+    "lat": 39.51,
+    "lon": -2.0,
+    "title": "卡斯提爾特拉斯塔馬拉王朝開始",
+    "description": "亨利擊敗並殺死佩德羅，內戰結束後建立新的王朝統治。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1369,
+    "endYear": 1369,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1377,
     "lat": 37.57,
     "lon": 126.98,
@@ -6713,6 +7487,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E3%80%8A%E7%9B%B4%E6%8C%87%E3%80%8B%E9%87%91%E5%B1%AC%E6%B4%BB%E5%AD%97%E6%9C%AC",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0936",
+    "year": 1377,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "教廷由亞維儂返回羅馬",
+    "description": "格里高利十一世將教廷遷回羅馬，但教會政治衝突其後發展為西方大分裂。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 1377,
+    "endYear": 1377,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1378,
@@ -6747,6 +7535,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%BA%AB%E5%88%A9%E7%A7%91%E6%B2%83%E6%88%B0%E5%BD%B9",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0937",
+    "year": 1381,
+    "lat": 51.51,
+    "lon": -0.13,
+    "title": "英格蘭農民起事",
+    "description": "人頭稅、勞動控制與地方不滿引發起事，群眾進入倫敦後遭王室鎮壓。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1381,
+    "endYear": 1381,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1389,
@@ -6849,6 +7651,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%AE%89%E5%8D%A1%E6%8B%89%E6%88%B0%E5%BD%B9",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0938",
+    "year": 1402,
+    "lat": 40.19,
+    "lon": 29.06,
+    "title": "鄂圖曼王位內戰展開",
+    "description": "安卡拉戰役後蘇丹諸子爭奪權力，帝國領土與附庸關係一度重新分裂。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 1402,
+    "endYear": 1402,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0404",
@@ -6987,6 +7803,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0939",
+    "year": 1429,
+    "lat": 47.9,
+    "lon": 1.9,
+    "title": "貞德協助解除奧爾良之圍",
+    "description": "法軍在貞德參與下解除英軍圍城，百年戰爭的士氣及政治局面出現轉折。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1429,
+    "endYear": 1429,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1431,
     "lat": 13.41,
     "lon": 103.87,
@@ -7106,6 +7936,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0940",
+    "year": 1453,
+    "lat": 44.85,
+    "lon": -0.04,
+    "title": "卡斯蒂永戰役",
+    "description": "法軍擊敗英軍，百年戰爭主要戰事告終，英格蘭在法國的領地大幅縮減。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1453,
+    "endYear": 1453,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1455,
     "lat": 50.0,
     "lon": 8.27,
@@ -7121,6 +7965,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%8F%A4%E9%A8%B0%E5%A0%A1%E8%81%96%E7%B6%93%E5%8D%B0%E8%A3%BD%E5%AE%8C%E6%88%90",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0941",
+    "year": 1461,
+    "lat": 53.83,
+    "lon": -1.27,
+    "title": "陶頓戰役",
+    "description": "約克派在玫瑰戰爭中取得重大勝利，愛德華四世鞏固英格蘭王位。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1461,
+    "endYear": 1461,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1464,
@@ -7191,6 +8049,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0942",
+    "year": 1471,
+    "lat": 13.86,
+    "lon": 109.1,
+    "title": "大越攻陷占婆毗闍耶",
+    "description": "黎聖宗軍隊攻陷占婆的重要政治中心，造成重大殺戮與占婆領土縮減。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1471,
+    "endYear": 1471,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1480,
     "lat": 55.76,
     "lon": 37.62,
@@ -7206,6 +8078,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E7%83%8F%E6%A0%BC%E6%8B%89%E6%B2%B3%E5%B0%8D%E5%B3%99",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0943",
+    "year": 1485,
+    "lat": 52.6,
+    "lon": -1.41,
+    "title": "博斯沃思戰役",
+    "description": "亨利・都鐸擊敗理查三世並取得王位，都鐸王朝由此建立。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1485,
+    "endYear": 1485,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1488,
@@ -7259,6 +8145,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0944",
+    "year": 1492,
+    "lat": 37.18,
+    "lon": -3.6,
+    "title": "西班牙頒布驅逐猶太人的法令",
+    "description": "君主要求猶太人改宗或離境，造成大規模流亡並改變伊比利宗教社會結構。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 1492,
+    "endYear": 1492,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1494,
     "lat": 40.42,
     "lon": -3.7,
@@ -7274,6 +8174,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%89%98%E5%BE%B7%E8%A5%BF%E5%88%A9%E4%BA%9E%E6%96%AF%E6%A2%9D%E7%B4%84",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0945",
+    "year": 1494,
+    "lat": 43.77,
+    "lon": 11.25,
+    "title": "法軍入侵義大利",
+    "description": "查理八世率軍南下爭奪那不勒斯，揭開長期義大利戰爭的序幕。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1494,
+    "endYear": 1494,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1497,
@@ -7376,6 +8290,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E3%80%8A%E8%92%99%E5%A8%9C%E9%BA%97%E8%8E%8E%E3%80%8B%E5%89%B5%E4%BD%9C%E6%99%82%E6%9C%9F%E9%96%8B%E5%A7%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0946",
+    "year": 1509,
+    "lat": 20.71,
+    "lon": 70.99,
+    "title": "第烏海戰",
+    "description": "葡萄牙艦隊擊敗印度洋敵對聯軍，強化其武裝控制海上航道的能力。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1509,
+    "endYear": 1509,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1510,
@@ -7580,6 +8508,34 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E9%A6%96%E6%AC%A1%E7%92%B0%E7%90%83%E8%88%AA%E8%A1%8C%E5%AE%8C%E6%88%90",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0947",
+    "year": 1525,
+    "lat": 45.18,
+    "lon": 9.16,
+    "title": "帕維亞戰役",
+    "description": "哈布斯堡軍隊擊敗法軍，法王法蘭索瓦一世被俘，義大利戰局大幅改變。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1525,
+    "endYear": 1525,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0948",
+    "year": 1525,
+    "lat": 54.71,
+    "lon": 20.51,
+    "title": "普魯士騎士團領地世俗化",
+    "description": "阿爾布雷希特改宗並將騎士團普魯士領地改為公國，接受波蘭宗主權。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1525,
+    "endYear": 1525,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0447",
@@ -7939,6 +8895,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0949",
+    "year": 1559,
+    "lat": 50.1,
+    "lon": 3.54,
+    "title": "卡托康布雷西和約",
+    "description": "法國與哈布斯堡勢力議和，長期義大利戰爭告一段落，西班牙勢力獲得鞏固。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1559,
+    "endYear": 1559,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1565,
     "lat": 16.49,
     "lon": 76.46,
@@ -7988,6 +8958,20 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Eighty_Years%27_War",
     "sourceStatus": "article-unverified",
     "chronologyStatus": "range-editorial-review"
+  },
+  {
+    "id": "e0950",
+    "year": 1569,
+    "lat": 51.25,
+    "lon": 22.57,
+    "title": "盧布林聯合成立波蘭立陶宛聯邦",
+    "description": "波蘭與立陶宛建立共同選舉君主及議會，仍保留部分各自的軍政制度。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1569,
+    "endYear": 1569,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1571,
@@ -8041,6 +9025,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0951",
+    "year": 1572,
+    "lat": 48.86,
+    "lon": 2.35,
+    "title": "聖巴托羅繆大屠殺",
+    "description": "巴黎針對胡格諾派的殺戮蔓延至多個城市，加深法國宗教戰爭的仇恨與不信任。",
+    "category": "宗教與思想",
+    "region": "歐洲",
+    "startYear": 1572,
+    "endYear": 1572,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1578,
     "lat": 31.63,
     "lon": -7.98,
@@ -8056,6 +9054,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E4%B8%89%E7%8E%8B%E6%88%B0%E5%BD%B9",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0952",
+    "year": 1581,
+    "lat": 52.07,
+    "lon": 4.3,
+    "title": "尼德蘭各省宣布廢黜西班牙君主",
+    "description": "反抗各省以棄絕法案拒絕腓力二世統治，獨立政治體制仍在戰爭中逐步形成。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1581,
+    "endYear": 1581,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1582,
@@ -8262,6 +9274,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0953",
+    "year": 1603,
+    "lat": 51.51,
+    "lon": -0.13,
+    "title": "英格蘭與蘇格蘭王室聯合",
+    "description": "蘇格蘭詹姆士六世繼承英格蘭王位，兩國共享君主但議會與法律仍然分立。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1603,
+    "endYear": 1603,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1605,
     "lat": 40.42,
     "lon": -3.7,
@@ -8328,6 +9354,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E4%BC%BD%E5%88%A9%E7%95%A5%E4%BD%BF%E7%94%A8%E6%9C%9B%E9%81%A0%E9%8F%A1%E8%A7%80%E6%B8%AC",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0954",
+    "year": 1610,
+    "lat": 55.75,
+    "lon": 37.62,
+    "title": "波蘭軍隊進駐莫斯科",
+    "description": "俄羅斯混亂時代的王位競爭引來外國介入，波蘭駐軍其後遭地方抵抗驅逐。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1610,
+    "endYear": 1610,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1613,
@@ -8413,6 +9453,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E4%BA%94%E6%9C%88%E8%8A%B1%E8%99%9F%E6%8A%B5%E9%81%94%E5%8C%97%E7%BE%8E",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0955",
+    "year": 1620,
+    "lat": 50.08,
+    "lon": 14.32,
+    "title": "白山戰役",
+    "description": "哈布斯堡軍擊敗波希米亞反抗軍，重整當地貴族、土地及宗教秩序。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1620,
+    "endYear": 1620,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0496",
@@ -8636,6 +9690,34 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0956",
+    "year": 1649,
+    "lat": 51.5,
+    "lon": -0.12,
+    "title": "英格蘭處決查理一世",
+    "description": "內戰後國王遭審判並處決，君主制暫被廢除，共和與軍事統治相繼出現。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1649,
+    "endYear": 1649,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0957",
+    "year": 1650,
+    "lat": 23.61,
+    "lon": 58.59,
+    "title": "阿曼逐出馬斯喀特的葡萄牙勢力",
+    "description": "阿曼軍隊攻取馬斯喀特，葡萄牙在當地的核心據點失守，阿曼海上擴張加速。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1650,
+    "endYear": 1650,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1652,
     "lat": -33.92,
     "lon": 18.42,
@@ -8738,6 +9820,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0958",
+    "year": 1667,
+    "lat": 51.59,
+    "lon": 4.78,
+    "title": "布雷達和約",
+    "description": "英荷結束第二次戰爭，殖民據點與航運利益的調整反映海上競爭的全球性。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1667,
+    "endYear": 1667,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1674,
     "lat": 19.08,
     "lon": 72.88,
@@ -8770,6 +9866,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%99%AE%E9%9F%8B%E5%B8%83%E6%B4%9B%E8%B5%B7%E7%BE%A9",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0959",
+    "year": 1682,
+    "lat": 48.8,
+    "lon": 2.12,
+    "title": "路易十四宮廷正式進駐凡爾賽",
+    "description": "法國王室以凡爾賽為主要宮廷及行政中心，宮廷儀式成為整合貴族的重要工具。",
+    "category": "文化與藝術",
+    "region": "歐洲",
+    "startYear": 1682,
+    "endYear": 1682,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1683,
@@ -8821,6 +9931,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%8D%97%E7%89%B9%E6%95%95%E4%BB%A4%E9%81%AD%E6%92%A4%E9%8A%B7",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0960",
+    "year": 1686,
+    "lat": 47.5,
+    "lon": 19.04,
+    "title": "哈布斯堡聯軍收復布達",
+    "description": "聯軍攻取鄂圖曼控制的布達，匈牙利地區的權力平衡逐步改變。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1686,
+    "endYear": 1686,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "id": "e0520",
@@ -8925,6 +10049,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0961",
+    "year": 1701,
+    "lat": 6.69,
+    "lon": -1.62,
+    "title": "阿散蒂擊敗登基拉",
+    "description": "阿散蒂聯盟取得關鍵勝利，庫馬西在西非森林地帶的政治與貿易地位上升。",
+    "category": "戰爭",
+    "region": "非洲",
+    "startYear": 1701,
+    "endYear": 1701,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1707,
     "lat": 51.51,
     "lon": -0.13,
@@ -8942,6 +10080,34 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0962",
+    "year": 1709,
+    "lat": 49.59,
+    "lon": 34.55,
+    "title": "波爾塔瓦戰役",
+    "description": "俄軍擊敗瑞典軍，北方戰爭的優勢轉向俄羅斯，波羅的海權力平衡隨之改變。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1709,
+    "endYear": 1709,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
+    "id": "e0963",
+    "year": 1713,
+    "lat": 52.09,
+    "lon": 5.12,
+    "title": "烏特勒支和約",
+    "description": "多國以一系列條約結束西班牙王位繼承戰爭的主要衝突，調整歐洲與海外領地。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1713,
+    "endYear": 1713,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1716,
     "lat": 39.9,
     "lon": 116.4,
@@ -8957,6 +10123,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E3%80%8A%E5%BA%B7%E7%86%99%E5%AD%97%E5%85%B8%E3%80%8B%E5%88%8A%E6%88%90",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0964",
+    "year": 1721,
+    "lat": 59.93,
+    "lon": 30.34,
+    "title": "彼得一世採用皇帝稱號",
+    "description": "北方戰爭勝利後彼得接受皇帝稱號，俄羅斯以新帝國身分參與歐洲政治。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1721,
+    "endYear": 1721,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1722,
@@ -9095,6 +10275,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0965",
+    "year": 1752,
+    "lat": 22.57,
+    "lon": 95.7,
+    "title": "雍籍牙建立貢榜王朝",
+    "description": "雍籍牙在緬甸北部建立抵抗及征服基礎，後續統一戰爭形成新的王朝。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 1752,
+    "endYear": 1752,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1755,
     "lat": 38.72,
     "lon": -9.14,
@@ -9212,6 +10406,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%BA%AB%E5%85%8B%E9%A6%96%E6%AC%A1%E5%A4%AA%E5%B9%B3%E6%B4%8B%E8%88%AA%E8%A1%8C%E5%95%9F%E7%A8%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0966",
+    "year": 1768,
+    "lat": 27.7,
+    "lon": 85.32,
+    "title": "廓爾喀軍攻取加德滿都",
+    "description": "普里特維・納拉揚・沙阿控制谷地核心城市，尼泊爾統一進程取得關鍵成果。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1768,
+    "endYear": 1768,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1769,
@@ -9350,6 +10558,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0967",
+    "year": 1781,
+    "lat": 37.24,
+    "lon": -76.51,
+    "title": "約克鎮圍城戰",
+    "description": "美法聯軍迫使英軍投降，法國海軍封鎖亦發揮關鍵作用，美國獨立戰爭走向和談。",
+    "category": "戰爭",
+    "region": "美洲",
+    "startYear": 1781,
+    "endYear": 1781,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1782,
     "lat": 13.76,
     "lon": 100.5,
@@ -9435,6 +10657,20 @@
     "chronologyStatus": "range-editorial-review"
   },
   {
+    "id": "e0968",
+    "year": 1791,
+    "lat": 52.23,
+    "lon": 21.01,
+    "title": "波蘭立陶宛聯邦通過五三憲法",
+    "description": "改革者試圖限制自由否決權並強化政府，但內部反對及外國干預使改革難以維持。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1791,
+    "endYear": 1791,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1792,
     "lat": 48.86,
     "lon": 2.35,
@@ -9450,6 +10686,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%B3%95%E8%98%AD%E8%A5%BF%E7%AC%AC%E4%B8%80%E5%85%B1%E5%92%8C%E5%9C%8B%E6%88%90%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0969",
+    "year": 1795,
+    "lat": 52.23,
+    "lon": 21.01,
+    "title": "波蘭第三次瓜分",
+    "description": "俄羅斯、普魯士及奧地利瓜分剩餘領土，波蘭立陶宛聯邦作為主權國家終結。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1795,
+    "endYear": 1795,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1796,
@@ -9571,6 +10821,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0970",
+    "year": 1804,
+    "lat": 48.21,
+    "lon": 16.37,
+    "title": "奧地利帝國建立",
+    "description": "法蘭茲在拿破崙戰爭背景下採用奧地利皇帝稱號，保護哈布斯堡的王朝地位。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1804,
+    "endYear": 1804,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1805,
     "lat": 51.51,
     "lon": -0.13,
@@ -9586,6 +10850,20 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Battle_of_Trafalgar",
     "sourceStatus": "article-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0971",
+    "year": 1806,
+    "lat": 48.21,
+    "lon": 16.37,
+    "title": "神聖羅馬帝國解體",
+    "description": "拿破崙重組德意志諸邦後，法蘭茲放棄神聖羅馬皇帝稱號，帝國制度正式終結。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1806,
+    "endYear": 1806,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1807,
@@ -9671,6 +10949,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E5%A7%94%E5%85%A7%E7%91%9E%E6%8B%89%E5%AE%A3%E5%B8%83%E7%8D%A8%E7%AB%8B",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0972",
+    "year": 1812,
+    "lat": 55.75,
+    "lon": 37.62,
+    "title": "拿破崙軍進入莫斯科",
+    "description": "法軍占領莫斯科卻未能迫使俄羅斯議和，補給困難與後續撤退造成重大損失。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1812,
+    "endYear": 1812,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1814,
@@ -10030,6 +11322,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0973",
+    "year": 1830,
+    "lat": 48.86,
+    "lon": 2.35,
+    "title": "法國七月革命",
+    "description": "查理十世的限制措施引發巴黎起事，波旁復辟政權被推翻，七月王朝成立。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1830,
+    "endYear": 1830,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1831,
     "lat": 51.51,
     "lon": -0.13,
@@ -10249,6 +11555,20 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Mexican%E2%80%93American_War",
     "sourceStatus": "article-unverified",
     "chronologyStatus": "range-editorial-review"
+  },
+  {
+    "id": "e0974",
+    "year": 1846,
+    "lat": 27.7,
+    "lon": 85.32,
+    "title": "尼泊爾拉納家族取得政權",
+    "description": "宮廷大屠殺後榮格・巴哈杜爾掌權，世襲首相體制使國王權力受到長期限制。",
+    "category": "王朝與政治",
+    "region": "亞洲",
+    "startYear": 1846,
+    "endYear": 1846,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1847,
@@ -10744,6 +12064,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0975",
+    "year": 1867,
+    "lat": 47.5,
+    "lon": 19.04,
+    "title": "奧匈妥協建立二元君主國",
+    "description": "哈布斯堡與匈牙利菁英達成妥協，兩部分共享君主與部分共同事務而各有政府。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1867,
+    "endYear": 1867,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "id": "e0633",
     "year": 1868,
     "lat": 35.68,
@@ -10812,6 +12146,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0976",
+    "year": 1870,
+    "lat": 41.9,
+    "lon": 12.48,
+    "title": "義大利軍隊進入羅馬",
+    "description": "法軍撤離後義大利攻破羅馬城防，教宗國領土統治終結，羅馬隨後成為首都。",
+    "category": "戰爭",
+    "region": "歐洲",
+    "startYear": 1870,
+    "endYear": 1870,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1871,
     "lat": 48.86,
     "lon": 2.35,
@@ -10861,6 +12209,20 @@
     "sourceUrl": "https://www.britannica.com/search?query=%E6%97%A5%E6%9C%AC%E7%AC%AC%E4%B8%80%E6%A2%9D%E9%90%B5%E8%B7%AF%E9%80%9A%E8%BB%8A",
     "sourceStatus": "research-link-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0977",
+    "year": 1873,
+    "lat": 5.55,
+    "lon": 95.32,
+    "title": "亞齊戰爭爆發",
+    "description": "荷蘭進攻蘇門答臘北端的亞齊，遭遇長期抵抗，殖民征服遠未在短期內完成。",
+    "category": "戰爭",
+    "region": "亞洲",
+    "startYear": 1873,
+    "endYear": 1873,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1874,
@@ -11577,6 +12939,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0978",
+    "year": 1900,
+    "lat": 6.69,
+    "lon": -1.62,
+    "title": "阿散蒂金凳戰爭",
+    "description": "英國殖民官對金凳的要求激起抵抗，雅阿・阿桑特瓦等人組織反抗殖民統治。",
+    "category": "戰爭",
+    "region": "非洲",
+    "startYear": 1900,
+    "endYear": 1900,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1901,
     "lat": -37.81,
     "lon": 144.96,
@@ -11985,6 +13361,20 @@
     "chronologyStatus": "single-year-unreviewed"
   },
   {
+    "id": "e0979",
+    "year": 1918,
+    "lat": 52.23,
+    "lon": 21.01,
+    "title": "波蘭恢復獨立",
+    "description": "戰爭及周邊帝國瓦解帶來復國契機，波蘭新政府仍須透過戰爭與外交確定疆界。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1918,
+    "endYear": 1918,
+    "precision": "exact",
+    "sourceStatus": "editorial"
+  },
+  {
     "year": 1919,
     "lat": 37.57,
     "lon": 126.98,
@@ -12187,6 +13577,20 @@
     "sourceUrl": "https://en.wikipedia.org/wiki/Wall_Street_Crash_of_1929",
     "sourceStatus": "article-unverified",
     "chronologyStatus": "single-year-unreviewed"
+  },
+  {
+    "id": "e0980",
+    "year": 1929,
+    "lat": 41.9,
+    "lon": 12.45,
+    "title": "拉特朗條約簽署",
+    "description": "義大利與教廷達成協議，承認梵蒂岡城國，解決羅馬被併入義大利後的長期爭端。",
+    "category": "王朝與政治",
+    "region": "歐洲",
+    "startYear": 1929,
+    "endYear": 1929,
+    "precision": "exact",
+    "sourceStatus": "editorial"
   },
   {
     "year": 1930,

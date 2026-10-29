@@ -52,7 +52,12 @@ baseline = glossary['baselineInvariants']
 assert digest(identity) == baseline['polityIdentity'], 'IDs, source names, endonyms or observation dates changed'
 assert digest({k: [{f: v for f, v in row.items() if f not in ['zh', 'translationStatus']}
     for row in p['periods']] for k, p in catalog['polities'].items()}) == baseline['periodIdentity']
-assert digest([{k: v for k, v in e.items() if k not in ['title', 'description']} for e in read('events.json')]) == baseline['eventNontext']
+# Keep the original V11 identities immutable while permitting TASK20 additions.
+original_events = json.loads(subprocess.check_output(['git', 'show', '9b886f1:data/events.json'], cwd=ROOT))
+original_ids = {e['id'] for e in original_events}
+current_by_id = {e['id']: e for e in read('events.json')}
+assert original_ids <= current_by_id.keys(), 'Original event IDs must not disappear'
+assert digest([{k: v for k, v in current_by_id[e['id']].items() if k not in ['title', 'description']} for e in original_events]) == baseline['eventNontext'], 'Original event metadata changed'
 assert digest([{k: v for k, v in e.items() if k not in ['zh', 'translationStatus']} for e in read('errata.json')['overrides']]) == baseline['correctionNontext']
 for filename, expected in baseline['geometry'].items():
     assert hashlib.sha256((DATA / filename).read_bytes()).hexdigest() == expected
@@ -66,4 +71,4 @@ assert json.loads(published.read_text()) == glossary
 assert published.name in (ROOT / 'dist/index.html').read_text()
 subprocess.run(['python3', 'scripts/unify-terminology.py', '--check'], cwd=ROOT, check=True)
 print('Terminology passed:', len(entries), 'entries;', len(terms), 'dataset names;',
-      sum(p['translationStatus'] == 'untranslated' for p in catalog['polities'].values()), 'pending polity IDs; 54 geometries and all event identities unchanged')
+      sum(p['translationStatus'] == 'untranslated' for p in catalog['polities'].values()), 'pending polity IDs; 54 geometries and original event identities unchanged')
