@@ -6,7 +6,7 @@ const details = require('../data/event-details.json');
 const events = require('../data/events.json');
 const root = 'http://localhost:8000';
 (async () => {
-  const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
+  const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
   try {
     for (const width of [1440,320]) {
       const page = await browser.newPage({viewport:{width,height:width===320?568:900}});

@@ -11,7 +11,7 @@ const files=fs.readdirSync(path.join(root,'data')).filter(f=>/^world_.*\.geojson
 const sizes=files.map(file=>({file,before:execFileSync('git',['show',`HEAD:data/${file}`],{cwd:root,maxBuffer:20e6}).length,after:fs.statSync(path.join(root,'data',file)).size}));
 const report={bytes:{before:sizes.reduce((n,f)=>n+f.before,0),after:sizes.reduce((n,f)=>n+f.after,0)},sizes,runs:[],checks:[]};
 (async()=>{
- const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
+ const browser=await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
  try {
  for(const mobile of [false,true]) {
   const context=await browser.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:900},isMobile:mobile,hasTouch:mobile});

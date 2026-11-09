@@ -1,0 +1,35 @@
+{
+  "reviewRequired": true,
+  "notForAutomaticApplication": true,
+  "rejectedOrRestrictedLeads": [
+    {
+      "original": "Biri",
+      "reason": "目錄為澳洲社群，AAT別名屬非洲Balanda Viri，跨洲同名不能套用。"
+    },
+    {
+      "original": "Kusso",
+      "reason": "目錄為北美社群，AAT別名屬非洲Mbukushu，不能套用。"
+    },
+    {
+      "original": "Warray",
+      "reason": "目錄為澳洲社群，AAT別名屬南美Warao，不能套用。"
+    },
+    {
+      "original": "Lil’wat",
+      "reason": "AAT該紀錄覆蓋較廣的Lillooet／St’at’imc，不能直接將全族名稱等同較窄社群。"
+    },
+    {
+      "original": "Cuicuilco",
+      "reason": "AAT別名落在Ticoman紀錄，城市、風格與文化分期須另查，不直接套名。"
+    },
+    {
+      "original": "Tepehua",
+      "reason": "AAT別名位於Tepehuan紀錄，屬不同語系民族，不能按別名連結直接套用。"
+    },
+    {
+      "original": "Shipibo-Konibo",
+      "reason": "AAT別名提供複合族名線索，但中文首選僅希皮博；仍須核對繁中複合名稱用例及社群範圍。"
+    }
+  ],
+  "reviewedOn": "2026-11-07"
+}

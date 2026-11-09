@@ -1,0 +1,978 @@
+[
+  {
+    "id": "p-7580359098a14485",
+    "original": "Jukun",
+    "matchedPart": "Jukun",
+    "s": "http://vocab.getty.edu/aat/300016099",
+    "label": "Jukun (culture or style)",
+    "zh": "朱昆"
+  },
+  {
+    "id": "p-beb55d7aa202dc6c",
+    "original": "Warray",
+    "matchedPart": "Warray",
+    "s": "http://vocab.getty.edu/aat/300017960",
+    "label": "Warray",
+    "zh": "瓦勞"
+  },
+  {
+    "id": "p-98f5d61f3f89de4f",
+    "original": "Biri",
+    "matchedPart": "Biri",
+    "s": "http://vocab.getty.edu/aat/300265299",
+    "label": "Biri",
+    "zh": "巴蘭達維里"
+  },
+  {
+    "id": "p-c1664a85e6ad1e26",
+    "original": "Meru",
+    "matchedPart": "Meru",
+    "s": "http://vocab.getty.edu/aat/300016516",
+    "label": "Meru (culture or style)",
+    "zh": "梅魯"
+  },
+  {
+    "id": "p-80946197be809ffa",
+    "original": "Mescalero",
+    "matchedPart": "Mescalero",
+    "s": "http://vocab.getty.edu/aat/300017732",
+    "label": "Mescalero",
+    "zh": "梅斯卡萊羅"
+  },
+  {
+    "id": "p-a5f137ba5a3a14cb",
+    "original": "Ciboney",
+    "matchedPart": "Ciboney",
+    "s": "http://vocab.getty.edu/aat/300017876",
+    "label": "Ciboney",
+    "zh": "西沃內"
+  },
+  {
+    "id": "p-9fc79457e04e57e3",
+    "original": "Costanoan",
+    "matchedPart": "Costanoan",
+    "s": "http://vocab.getty.edu/aat/300017504",
+    "label": "Costanoan",
+    "zh": "科斯塔諾"
+  },
+  {
+    "id": "p-5c58954007b5e5ed",
+    "original": "Kamia",
+    "matchedPart": "Kamia",
+    "s": "http://vocab.getty.edu/aat/300017531",
+    "label": "Kamia",
+    "zh": "卡米亞"
+  },
+  {
+    "id": "p-bf17ca018ee17833",
+    "original": "Aché",
+    "matchedPart": "Aché",
+    "s": "http://vocab.getty.edu/aat/300263708",
+    "label": "Ache",
+    "zh": "科羅阿契"
+  },
+  {
+    "id": "p-ec66277055c9a4d1",
+    "original": "Achí",
+    "matchedPart": "Achí",
+    "s": "http://vocab.getty.edu/aat/300016067",
+    "label": "Achi (culture or style)",
+    "zh": "阿奇"
+  },
+  {
+    "id": "p-6861c47148f86b1c",
+    "original": "Ahé (Kawahib)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-1824335e8d4ac9c2",
+    "original": "Alutiiq (Sugpiaq)",
+    "matchedPart": "Alutiiq",
+    "s": "http://vocab.getty.edu/aat/300016760",
+    "label": "Alutiiq",
+    "zh": "阿留申"
+  },
+  {
+    "id": "p-407be821cae4fc3e",
+    "original": "Aparai",
+    "matchedPart": "Aparai",
+    "s": "http://vocab.getty.edu/aat/300017883",
+    "label": "Aparaí",
+    "zh": "阿帕萊"
+  },
+  {
+    "id": "p-7548e8117df415e0",
+    "original": "Aruá",
+    "matchedPart": "Aruá",
+    "s": "http://vocab.getty.edu/aat/300017884",
+    "label": "Arua",
+    "zh": "阿魯亞"
+  },
+  {
+    "id": "p-7fa1cf153feb150d",
+    "original": "Aures",
+    "matchedPart": "Aures",
+    "s": "http://vocab.getty.edu/aat/300263732",
+    "label": "Aurès",
+    "zh": "沙維亞"
+  },
+  {
+    "id": "p-45928bd8fc65b96b",
+    "original": "Ayuukjä'äy (Mixe)",
+    "matchedPart": "Mixe",
+    "s": "http://vocab.getty.edu/aat/300017810",
+    "label": "Mixe (culture or style)",
+    "zh": "米塞"
+  },
+  {
+    "id": "p-c1fab81ff8114817",
+    "original": "Baré",
+    "matchedPart": "Baré",
+    "s": "http://vocab.getty.edu/aat/300016445",
+    "label": "Bare",
+    "zh": "巴利 (蘇丹東部風格)"
+  },
+  {
+    "id": "p-88f103cbda12c29d",
+    "original": "Barí",
+    "matchedPart": "Barí",
+    "s": "http://vocab.getty.edu/aat/300016445",
+    "label": "Bari",
+    "zh": "巴利 (蘇丹東部風格)"
+  },
+  {
+    "id": "p-6a304fb7d1bf2aef",
+    "original": "Batsil Winik' Otik (Tzotzil)",
+    "matchedPart": "Tzotzil",
+    "s": "http://vocab.getty.edu/aat/300017850",
+    "label": "Tzotzil",
+    "zh": "佐齊爾"
+  },
+  {
+    "id": "p-e68b53fb5bd52a1b",
+    "original": "Comca’ac (Seri)",
+    "matchedPart": "Seri",
+    "s": "http://vocab.getty.edu/aat/300017765",
+    "label": "Seri (culture or style)",
+    "zh": "賽里"
+  },
+  {
+    "id": "p-cfe26665deea257d",
+    "original": "Coyutecos (Nahua)",
+    "matchedPart": "Nahua",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahua (style or culture)",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-552bd9f0986de889",
+    "original": "Cuicuilco",
+    "matchedPart": "Cuicuilco",
+    "s": "http://vocab.getty.edu/aat/300017012",
+    "label": "Cuicuilco",
+    "zh": "提科滿"
+  },
+  {
+    "id": "p-c842885750f476dc",
+    "original": "Deg Xit'an Ngan' (Deg Xit'an)",
+    "matchedPart": "Deg Xit'an",
+    "s": "http://vocab.getty.edu/aat/300017482",
+    "label": "Deg Xit'an",
+    "zh": "因加利克"
+  },
+  {
+    "id": "p-2a168bcd545579f7",
+    "original": "Eastern Mono/Monache",
+    "matchedPart": "Eastern Mono",
+    "s": "http://vocab.getty.edu/aat/300251739",
+    "label": "Eastern Mono",
+    "zh": "東莫諾"
+  },
+  {
+    "id": "p-2a168bcd545579f7",
+    "original": "Eastern Mono/Monache",
+    "matchedPart": "Monache",
+    "s": "http://vocab.getty.edu/aat/300017512",
+    "label": "Monache",
+    "zh": "西莫諾"
+  },
+  {
+    "id": "p-f4050eea301011a6",
+    "original": "Envuga (Kawahib)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-fbec8a8d57bb921a",
+    "original": "Guahibo/Hiwi",
+    "matchedPart": "Guahibo",
+    "s": "http://vocab.getty.edu/aat/300017896",
+    "label": "Guahibo",
+    "zh": "瓜希沃"
+  },
+  {
+    "id": "p-7b69f1f5685fd8fb",
+    "original": "Guaná",
+    "matchedPart": "Guaná",
+    "s": "http://vocab.getty.edu/aat/300017969",
+    "label": "Guaná",
+    "zh": "瓜納"
+  },
+  {
+    "id": "p-3382d290cd319064",
+    "original": "Günün a atük (Günün a küna)",
+    "matchedPart": "Günün a küna",
+    "s": "http://vocab.getty.edu/aat/300018027",
+    "label": "Gününa küna",
+    "zh": "普爾切"
+  },
+  {
+    "id": "p-11e7ad5544baf121",
+    "original": "Hach Winik (Lacandon)",
+    "matchedPart": "Lacandon",
+    "s": "http://vocab.getty.edu/aat/300017840",
+    "label": "Lacandón (culture or style)",
+    "zh": "拉坎敦"
+  },
+  {
+    "id": "p-044a15c851423350",
+    "original": "Hoopa (Reservation)",
+    "matchedPart": "Hoopa",
+    "s": "http://vocab.getty.edu/aat/300017508",
+    "label": "Hoopa",
+    "zh": "胡帕"
+  },
+  {
+    "id": "p-ca76392469887555",
+    "original": "Huasteco/Teenek",
+    "matchedPart": "Teenek",
+    "s": "http://vocab.getty.edu/aat/300017787",
+    "label": "Téenek",
+    "zh": "瓦斯特克"
+  },
+  {
+    "id": "p-742d12b849234eb6",
+    "original": "Ikoots/Kunajts/Ikoojts (Huave)",
+    "matchedPart": "Huave",
+    "s": "http://vocab.getty.edu/aat/300017805",
+    "label": "Huave (culture or style)",
+    "zh": "瓦維"
+  },
+  {
+    "id": "p-19423e2da318ecbd",
+    "original": "Iowa (Oklahoma)",
+    "matchedPart": "Iowa",
+    "s": "http://vocab.getty.edu/aat/300017659",
+    "label": "Iowa",
+    "zh": "愛阿華"
+  },
+  {
+    "id": "p-b671bcb9a03c145b",
+    "original": "Jiwere",
+    "matchedPart": "Jiwere",
+    "s": "http://vocab.getty.edu/aat/300017668",
+    "label": "Jiwere",
+    "zh": "奧托"
+  },
+  {
+    "id": "p-42c84cf733114458",
+    "original": "Juma (Kawahib)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-8732ccfa8548e5f4",
+    "original": "Jupaú (Kawahib)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-0200603f6cb0961c",
+    "original": "Kali",
+    "matchedPart": "Kali",
+    "s": "http://vocab.getty.edu/aat/300263806",
+    "label": "Kali (Lake Chad region style)",
+    "zh": "卡瑞 (查德湖區域風格)"
+  },
+  {
+    "id": "p-460f5b5273771da5",
+    "original": "Kambeba/Omagua",
+    "matchedPart": "Kambeba",
+    "s": "http://vocab.getty.edu/aat/300017886",
+    "label": "Kambeba",
+    "zh": "歐馬果人"
+  },
+  {
+    "id": "p-ede3f66fe8cbf9f0",
+    "original": "Kawahib (Jiahui)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-5ed9cb1f73389e33",
+    "original": "Kawahib (Parintintin)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-4fc5b0654fa7b390",
+    "original": "Kawahib (Tenharim)",
+    "matchedPart": "Kawahib",
+    "s": "http://vocab.getty.edu/aat/300460404",
+    "label": "Kawahib",
+    "zh": "帕林廷廷"
+  },
+  {
+    "id": "p-e04bea505e1d5ba4",
+    "original": "Kickapoo (Oklahoma)",
+    "matchedPart": "Kickapoo",
+    "s": "http://vocab.getty.edu/aat/300017585",
+    "label": "Kickapoo",
+    "zh": "基卡普"
+  },
+  {
+    "id": "p-bd7be543b6c76ff9",
+    "original": "Kiikaapoi (Kickapoo)",
+    "matchedPart": "Kickapoo",
+    "s": "http://vocab.getty.edu/aat/300017585",
+    "label": "Kickapoo",
+    "zh": "基卡普"
+  },
+  {
+    "id": "p-abb3f02b6165b4fe",
+    "original": "Kitsé Cha’tnio (Chatino)",
+    "matchedPart": "Chatino",
+    "s": "http://vocab.getty.edu/aat/300017800",
+    "label": "Chatino (culture or style)",
+    "zh": "查蒂諾"
+  },
+  {
+    "id": "p-5b74648ec8c39e89",
+    "original": "Koasati (Coushatta)",
+    "matchedPart": "Koasati",
+    "s": "http://vocab.getty.edu/aat/300265509",
+    "label": "Koasati (culture or style)",
+    "zh": "夸薩蒂"
+  },
+  {
+    "id": "p-0fac6bc1d8fd3c2e",
+    "original": "Kubéwa/Cubeo",
+    "matchedPart": "Cubeo",
+    "s": "http://vocab.getty.edu/aat/300017893",
+    "label": "Cubeo",
+    "zh": "古貝歐"
+  },
+  {
+    "id": "p-a7282dc953df5a33",
+    "original": "Kumeyaay",
+    "matchedPart": "Kumeyaay",
+    "s": "http://vocab.getty.edu/aat/300017531",
+    "label": "Kumeyaay",
+    "zh": "卡米亞"
+  },
+  {
+    "id": "p-a7282dc953df5a33",
+    "original": "Kumeyaay",
+    "matchedPart": "Kumeyaay",
+    "s": "http://vocab.getty.edu/aat/300017530",
+    "label": "Kumeyaay",
+    "zh": "迪埃格諾"
+  },
+  {
+    "id": "p-85c85d822a7ce8da",
+    "original": "Kusso",
+    "matchedPart": "Kusso",
+    "s": "http://vocab.getty.edu/aat/300262800",
+    "label": "Kusso",
+    "zh": "姆布庫舒"
+  },
+  {
+    "id": "p-b040e42bd787f499",
+    "original": "K’asho Got’ine",
+    "matchedPart": "K’asho Got’ine",
+    "s": "http://vocab.getty.edu/aat/300017481",
+    "label": "K'asho Got'ine",
+    "zh": "赫爾 (美洲原住民風格)"
+  },
+  {
+    "id": "p-9bdf8943323d1489",
+    "original": "Lil'wat",
+    "matchedPart": "Lil'wat",
+    "s": "http://vocab.getty.edu/aat/300017686",
+    "label": "Lil'wat",
+    "zh": "利洛威特"
+  },
+  {
+    "id": "p-c2a7d94820f70790",
+    "original": "Maká",
+    "matchedPart": "Maká",
+    "s": "http://vocab.getty.edu/aat/300263311",
+    "label": "Maka",
+    "zh": "瑪加"
+  },
+  {
+    "id": "p-9f3e279e54c4b488",
+    "original": "Matlatzinco/Tlahuica/Ocuiltec",
+    "matchedPart": "Tlahuica",
+    "s": "http://vocab.getty.edu/aat/300017794",
+    "label": "Tlahuica",
+    "zh": "特拉維卡"
+  },
+  {
+    "id": "p-a31743b8103e250a",
+    "original": "Mexicanero (Nahuas)",
+    "matchedPart": "Nahuas",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahuas",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-b37fda1217f50506",
+    "original": "Modoc (Oklahoma)",
+    "matchedPart": "Modoc",
+    "s": "http://vocab.getty.edu/aat/300017687",
+    "label": "Modoc",
+    "zh": "莫多克"
+  },
+  {
+    "id": "p-d3c4fcdf4dc48f26",
+    "original": "Mohawk (Kalapuya)",
+    "matchedPart": "Mohawk",
+    "s": "http://vocab.getty.edu/aat/300017550",
+    "label": "Mohawk (culture or style)",
+    "zh": "摩和克"
+  },
+  {
+    "id": "p-d3c4fcdf4dc48f26",
+    "original": "Mohawk (Kalapuya)",
+    "matchedPart": "Kalapuya",
+    "s": "http://vocab.getty.edu/aat/300017609",
+    "label": "Kalapuya",
+    "zh": "卡拉普耶"
+  },
+  {
+    "id": "p-de8f489570623731",
+    "original": "Mojeño",
+    "matchedPart": "Mojeño",
+    "s": "http://vocab.getty.edu/aat/300017906",
+    "label": "Mojeño",
+    "zh": "莫荷"
+  },
+  {
+    "id": "p-0867438be318a737",
+    "original": "Moses/Columbia",
+    "matchedPart": "Columbia",
+    "s": "http://vocab.getty.edu/aat/300103522",
+    "label": "Columbia",
+    "zh": "新基尤斯"
+  },
+  {
+    "id": "p-cd2fbefd6fe5dad2",
+    "original": "Nahua ( Morelos, Puebla, Tlaxcala, Veracruz, Hidalgo, San Luis Potosi)",
+    "matchedPart": "Nahua",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahua (style or culture)",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-3600d267784ec063",
+    "original": "Nahua (Guerrero)",
+    "matchedPart": "Nahua",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahua (style or culture)",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-3600d267784ec063",
+    "original": "Nahua (Guerrero)",
+    "matchedPart": "Guerrero",
+    "s": "http://vocab.getty.edu/aat/300017193",
+    "label": "Guerrero (Mesoamerican style)",
+    "zh": "梅斯卡拉"
+  },
+  {
+    "id": "p-43b0d2be5dd8f818",
+    "original": "Nahua (Mexico)",
+    "matchedPart": "Nahua",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahua (style or culture)",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-1e5ffe5a49ccf8bb",
+    "original": "Nahua (Michoacan)",
+    "matchedPart": "Nahua",
+    "s": "http://vocab.getty.edu/aat/300017793",
+    "label": "Nahua (style or culture)",
+    "zh": "納瓦"
+  },
+  {
+    "id": "p-c15010ce6031a073",
+    "original": "Ndee/Nnēē: (Western Apache)",
+    "matchedPart": "Western Apache",
+    "s": "http://vocab.getty.edu/aat/300017734",
+    "label": "Western Apache",
+    "zh": "西阿帕切"
+  },
+  {
+    "id": "p-343720a8d09f4af7",
+    "original": "Newe (Western Shoshone)",
+    "matchedPart": "Newe",
+    "s": "http://vocab.getty.edu/aat/300017574",
+    "label": "Newe",
+    "zh": "休休尼"
+  },
+  {
+    "id": "p-343720a8d09f4af7",
+    "original": "Newe (Western Shoshone)",
+    "matchedPart": "Western Shoshone",
+    "s": "http://vocab.getty.edu/aat/300017576",
+    "label": "Western Shoshone",
+    "zh": "西休休尼"
+  },
+  {
+    "id": "p-dc49a7c2419ac8b4",
+    "original": "Ngi-iva (Popoloca)",
+    "matchedPart": "Popoloca",
+    "s": "http://vocab.getty.edu/aat/300017813",
+    "label": "Popoloca",
+    "zh": "波波洛卡"
+  },
+  {
+    "id": "p-f80bc064aa9f0b1c",
+    "original": "Nicarao/Nahoa",
+    "matchedPart": "Nicarao",
+    "s": "http://vocab.getty.edu/aat/300017870",
+    "label": "Nicarao",
+    "zh": "尼加拉奧"
+  },
+  {
+    "id": "p-9834d90729ed6856",
+    "original": "Náayerite (Cora)",
+    "matchedPart": "Náayerite",
+    "s": "http://vocab.getty.edu/aat/300017773",
+    "label": "Náayerite",
+    "zh": "科拉"
+  },
+  {
+    "id": "p-6cab42c5e1990a79",
+    "original": "Nüwüwü (Chemehuevi)",
+    "matchedPart": "Chemehuevi",
+    "s": "http://vocab.getty.edu/aat/300017566",
+    "label": "Chemehuevi",
+    "zh": "切梅惠維"
+  },
+  {
+    "id": "p-2d616dbc9f5463ec",
+    "original": "Odǫhwęja:deˀ (Cayuga)",
+    "matchedPart": "Cayuga",
+    "s": "http://vocab.getty.edu/aat/300017549",
+    "label": "Cayuga (culture or style)",
+    "zh": "卡尤加"
+  },
+  {
+    "id": "p-70752ea84d980dd4",
+    "original": "Onundagaonoga (Onondaga)",
+    "matchedPart": "Onondaga",
+    "s": "http://vocab.getty.edu/aat/300017552",
+    "label": "Onondaga (culture or style)",
+    "zh": "奧農達加"
+  },
+  {
+    "id": "p-026984d7a62f16e6",
+    "original": "Onöndowa'ga:' (Seneca)",
+    "matchedPart": "Seneca",
+    "s": "http://vocab.getty.edu/aat/300017553",
+    "label": "Seneca (culture or style)",
+    "zh": "塞尼卡"
+  },
+  {
+    "id": "p-1e5c9b0a16a3b073",
+    "original": "Onʌyote'a•ka (Oneida)",
+    "matchedPart": "Oneida",
+    "s": "http://vocab.getty.edu/aat/300017551",
+    "label": "Oneida (culture or style)",
+    "zh": "奧奈達"
+  },
+  {
+    "id": "p-5aea832c1b886abf",
+    "original": "O’ de püt/Angpøn (Zoque)",
+    "matchedPart": "Zoque",
+    "s": "http://vocab.getty.edu/aat/300017819",
+    "label": "Zoque (culture or style)",
+    "zh": "索克 (墨西哥原住民風格)"
+  },
+  {
+    "id": "p-52e10cbe4c4d4e60",
+    "original": "Pawtucket",
+    "matchedPart": "Pawtucket",
+    "s": "http://vocab.getty.edu/aat/300017560",
+    "label": "Pawtucket",
+    "zh": "彭納庫克"
+  },
+  {
+    "id": "p-41e56d803d091ceb",
+    "original": "Piipaash (Maricopa)",
+    "matchedPart": "Maricopa",
+    "s": "http://vocab.getty.edu/aat/300017738",
+    "label": "Maricopa (culture or style)",
+    "zh": "馬里科帕"
+  },
+  {
+    "id": "p-f178f738527c133d",
+    "original": "Pipa Aha Macav (Mojave)",
+    "matchedPart": "Mojave",
+    "s": "http://vocab.getty.edu/aat/300017739",
+    "label": "Mojave",
+    "zh": "莫哈維"
+  },
+  {
+    "id": "p-5ca180be67d4a4c9",
+    "original": "Ponca (Oklahoma)",
+    "matchedPart": "Ponca",
+    "s": "http://vocab.getty.edu/aat/300017670",
+    "label": "Ponca",
+    "zh": "蓬卡"
+  },
+  {
+    "id": "p-06e9107150092204",
+    "original": "Popoluca (mixe-zoque)",
+    "matchedPart": "Popoluca",
+    "s": "http://vocab.getty.edu/aat/300017812",
+    "label": "Popoluca",
+    "zh": "波波盧卡"
+  },
+  {
+    "id": "p-1f4ff1b4c80439fe",
+    "original": "Puri",
+    "matchedPart": "Puri",
+    "s": "http://vocab.getty.edu/aat/300018013",
+    "label": "Purí",
+    "zh": "普里－科羅多"
+  },
+  {
+    "id": "p-e73f642b200f882e",
+    "original": "Rarámuri (Tarahumara-Guarijio)",
+    "matchedPart": "Rarámuri",
+    "s": "http://vocab.getty.edu/aat/300017776",
+    "label": "Rarámuri",
+    "zh": "塔拉烏馬拉"
+  },
+  {
+    "id": "p-0b9c0a3b325d5e2d",
+    "original": "Resighini Rancheria (Yurok)",
+    "matchedPart": "Yurok",
+    "s": "http://vocab.getty.edu/aat/300017525",
+    "label": "Yurok (culture or style)",
+    "zh": "尤羅克"
+  },
+  {
+    "id": "p-faad065a29f187f3",
+    "original": "Runixa Ngiigua (Chocho)",
+    "matchedPart": "Chocho",
+    "s": "http://vocab.getty.edu/aat/300017802",
+    "label": "Chocho",
+    "zh": "喬喬人"
+  },
+  {
+    "id": "p-e19ba703ff2c4613",
+    "original": "Salish Kootenai (Flathead)",
+    "matchedPart": "Flathead",
+    "s": "http://vocab.getty.edu/aat/300017680",
+    "label": "Flathead",
+    "zh": "扁頭"
+  },
+  {
+    "id": "p-4a76819feca36fcc",
+    "original": "Schitsu’umsh (Coeur d’Alene)",
+    "matchedPart": "Coeur d’Alene",
+    "s": "http://vocab.getty.edu/aat/300017678",
+    "label": "Coeur d'Alène (Native American style)",
+    "zh": "科達倫"
+  },
+  {
+    "id": "p-4b9da7ca2a6ca84a",
+    "original": "Secwepemcúl'ecw (Secwépemc)",
+    "matchedPart": "Secwépemc",
+    "s": "http://vocab.getty.edu/aat/300017695",
+    "label": "Secwepemc (culture or style)",
+    "zh": "舒斯瓦普"
+  },
+  {
+    "id": "p-3b7c7f7f0705774f",
+    "original": "Shipibo-Konibo",
+    "matchedPart": "Shipibo-Konibo",
+    "s": "http://vocab.getty.edu/aat/300017911",
+    "label": "Shipibo-Konibo",
+    "zh": "希皮博"
+  },
+  {
+    "id": "p-21f3d856b6691b8d",
+    "original": "Slijuala Xanuc (Chontal)",
+    "matchedPart": "Chontal",
+    "s": "http://vocab.getty.edu/aat/300017803",
+    "label": "Chontal (culture or style)",
+    "zh": "瓊塔爾"
+  },
+  {
+    "id": "p-81f741f87e20a146",
+    "original": "St̓át̓imc Tmicw (St'at'imc)",
+    "matchedPart": "St'at'imc",
+    "s": "http://vocab.getty.edu/aat/300017686",
+    "label": "St'át'imc",
+    "zh": "利洛威特"
+  },
+  {
+    "id": "p-d0dc5c1b9e741117",
+    "original": "S’atsoyaha (Yuchi)",
+    "matchedPart": "Yuchi",
+    "s": "http://vocab.getty.edu/aat/300017722",
+    "label": "Yuchi",
+    "zh": "尤奇"
+  },
+  {
+    "id": "p-14c05158f5c96c83",
+    "original": "Tepehua",
+    "matchedPart": "Tepehua",
+    "s": "http://vocab.getty.edu/aat/300017779",
+    "label": "Tepehua",
+    "zh": "特佩瓦"
+  },
+  {
+    "id": "p-580a6044893cf07b",
+    "original": "Tojolwinik’otik (Tojolabal)",
+    "matchedPart": "Tojolabal",
+    "s": "http://vocab.getty.edu/aat/300017848",
+    "label": "Tojolabal (culture or style)",
+    "zh": "托霍拉瓦爾"
+  },
+  {
+    "id": "p-c651f971c5980f0a",
+    "original": "Tonkawa (Oklahoma)",
+    "matchedPart": "Tonkawa",
+    "s": "http://vocab.getty.edu/aat/300017718",
+    "label": "Tonkawa (culture or style)",
+    "zh": "通卡瓦"
+  },
+  {
+    "id": "p-20e18fcff65da019",
+    "original": "Ts'msyen La̱xyuup (Tsimshian)",
+    "matchedPart": "Tsimshian",
+    "s": "http://vocab.getty.edu/aat/300017631",
+    "label": "Tsimshian (culture or style)",
+    "zh": "欽西安"
+  },
+  {
+    "id": "p-763abaaeaa2f4b20",
+    "original": "Tzjon Non/ Tzo'tyio (Amuzgo)",
+    "matchedPart": "Amuzgo",
+    "s": "http://vocab.getty.edu/aat/300017799",
+    "label": "Amuzgo",
+    "zh": "阿穆斯戈"
+  },
+  {
+    "id": "p-844f0433189d98fc",
+    "original": "Upper Tanana",
+    "matchedPart": "Upper Tanana",
+    "s": "http://vocab.getty.edu/aat/300017495",
+    "label": "Upper Tanana",
+    "zh": "塔納納"
+  },
+  {
+    "id": "p-d416d9026a24c73a",
+    "original": "Wabanaki (Dawnland Confederacy)",
+    "matchedPart": "Wabanaki",
+    "s": "http://vocab.getty.edu/aat/300017543",
+    "label": "Wabanaki (Abnaki, tribe)",
+    "zh": "阿布納基"
+  },
+  {
+    "id": "p-00c0bec565766d29",
+    "original": "Wari’",
+    "matchedPart": "Wari’",
+    "s": "http://vocab.getty.edu/aat/300017283",
+    "label": "Wari",
+    "zh": "瓦里"
+  },
+  {
+    "id": "p-be9283fddff275db",
+    "original": "Warsenis",
+    "matchedPart": "Warsenis",
+    "s": "http://vocab.getty.edu/aat/300263740",
+    "label": "Warsenis",
+    "zh": "瓦爾塞尼斯"
+  },
+  {
+    "id": "p-cdebeb6b2710999a",
+    "original": "Washtáge Moⁿzháⁿ (Kaw / Kansa)",
+    "matchedPart": "Kansa)",
+    "s": "http://vocab.getty.edu/aat/300017660",
+    "label": "Kansa (culture or style)",
+    "zh": "坎薩"
+  },
+  {
+    "id": "p-6647841a7d4478e6",
+    "original": "Waípinõmakã (Bará)",
+    "matchedPart": "Bará",
+    "s": "http://vocab.getty.edu/aat/300016582",
+    "label": "Bara (Malagasy style)",
+    "zh": "巴拉"
+  },
+  {
+    "id": "p-f12e7094b46e2731",
+    "original": "Wašišiw Ɂítdeʔ (Washoe)",
+    "matchedPart": "Washoe",
+    "s": "http://vocab.getty.edu/aat/300017580",
+    "label": "Washoe",
+    "zh": "瓦休"
+  },
+  {
+    "id": "p-54cbd3b5b97baf82",
+    "original": "Western Mono/Monache",
+    "matchedPart": "Western Mono",
+    "s": "http://vocab.getty.edu/aat/300017512",
+    "label": "Western Mono",
+    "zh": "西莫諾"
+  },
+  {
+    "id": "p-2788326e10e3dd59",
+    "original": "Winaq Qo’ (Mam)",
+    "matchedPart": "Mam",
+    "s": "http://vocab.getty.edu/aat/300017841",
+    "label": "Mam (Maya culture or style)",
+    "zh": "曼 (馬雅風格)"
+  },
+  {
+    "id": "p-9a7aea6c49e03cb9",
+    "original": "Winik Atel (Tzeltal)",
+    "matchedPart": "Tzeltal",
+    "s": "http://vocab.getty.edu/aat/300017849",
+    "label": "Tzeltal",
+    "zh": "策爾塔爾"
+  },
+  {
+    "id": "p-32a971b33438f82b",
+    "original": "Wixárika (Huichol)",
+    "matchedPart": "Huichol",
+    "s": "http://vocab.getty.edu/aat/300017774",
+    "label": "Huichol (culture or style)",
+    "zh": "惠喬爾"
+  },
+  {
+    "id": "p-5d762f7555c6a011",
+    "original": "Wolastoqiyik Wahsipekuk (Maliseet)",
+    "matchedPart": "Maliseet",
+    "s": "http://vocab.getty.edu/aat/300017557",
+    "label": "Maliseet",
+    "zh": "馬萊西特"
+  },
+  {
+    "id": "p-a3ae434d2355cb70",
+    "original": "Wyandot (Anderdon)",
+    "matchedPart": "Wyandot",
+    "s": "http://vocab.getty.edu/aat/300017583",
+    "label": "Wyandot (culture or style)",
+    "zh": "休倫"
+  },
+  {
+    "id": "p-95c0ae5fb4b66315",
+    "original": "Wyandotte (Oklahoma)",
+    "matchedPart": "Wyandotte",
+    "s": "http://vocab.getty.edu/aat/300017583",
+    "label": "Wyandotte (culture or style)",
+    "zh": "休倫"
+  },
+  {
+    "id": "p-b29e507119ab8164",
+    "original": "Yoeme (Yaqui)",
+    "matchedPart": "Yaqui",
+    "s": "http://vocab.getty.edu/aat/300017781",
+    "label": "Yaqui (culture or style)",
+    "zh": "亞基"
+  },
+  {
+    "id": "p-be1cf42aa61aebe6",
+    "original": "Yoko T’aan (Chontal)",
+    "matchedPart": "Chontal",
+    "s": "http://vocab.getty.edu/aat/300017803",
+    "label": "Chontal (culture or style)",
+    "zh": "瓊塔爾"
+  },
+  {
+    "id": "p-5ec94a8ca6370c30",
+    "original": "Yoli (Concho)",
+    "matchedPart": "Concho",
+    "s": "http://vocab.getty.edu/aat/300017736",
+    "label": "Concho (style)",
+    "zh": "康秋"
+  },
+  {
+    "id": "p-e3c99616dd75b604",
+    "original": "Yoreme (Mayo)",
+    "matchedPart": "Mayo",
+    "s": "http://vocab.getty.edu/aat/300017775",
+    "label": "Mayo (Native American style)",
+    "zh": "馬約 (美洲原住民風格)"
+  },
+  {
+    "id": "p-e3c99616dd75b604",
+    "original": "Yoreme (Mayo)",
+    "matchedPart": "Mayo",
+    "s": "http://vocab.getty.edu/aat/300263086",
+    "label": "Mayo (African style)",
+    "zh": "茅"
+  },
+  {
+    "id": "p-b8ce8ff616b16a4f",
+    "original": "nuučaan̓uuɫɁatḥ nism̓a (Nuu-chah-nulth)",
+    "matchedPart": "Nuu-chah-nulth",
+    "s": "http://vocab.getty.edu/aat/300017616",
+    "label": "Nuu-chah-nulth",
+    "zh": "努特卡"
+  },
+  {
+    "id": "p-754c7deaaf9375af",
+    "original": "oθaakiiwaki‧hina‧ki (Sauk)",
+    "matchedPart": "Sauk",
+    "s": "http://vocab.getty.edu/aat/300017592",
+    "label": "Sauk",
+    "zh": "索克 (美國原住民風格)"
+  },
+  {
+    "id": "p-7a8ee760eccb12b4",
+    "original": "x̣àʼisla w̓áwís (Haisla)",
+    "matchedPart": "Haisla",
+    "s": "http://vocab.getty.edu/aat/300017607",
+    "label": "Haisla (culture or style)",
+    "zh": "海斯拉"
+  },
+  {
+    "id": "p-6833e7beb822d0c2",
+    "original": "ɬaʔamɩn gɩǰɛ (Tla'amin/Sliammon)",
+    "matchedPart": "Sliammon)",
+    "s": "http://vocab.getty.edu/aat/300017622",
+    "label": "Sliammon",
+    "zh": "科摩克斯"
+  },
+  {
+    "id": "p-11510b3b341835f9",
+    "original": "ᓀᐦᐃᔭᐤ ᐊᐢᑭᕀ Nêhiyaw-Askiy (Plains Cree)",
+    "matchedPart": "Plains Cree",
+    "s": "http://vocab.getty.edu/aat/300017671",
+    "label": "Plains Cree",
+    "zh": "平原克里"
+  }
+]

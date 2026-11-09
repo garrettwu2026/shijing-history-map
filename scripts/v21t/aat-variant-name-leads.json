@@ -1,0 +1,1034 @@
+[
+  {
+    "original": "Achí",
+    "id": "p-ec66277055c9a4d1",
+    "aat": "http://vocab.getty.edu/aat/300016067",
+    "term": "Achi (culture or style)",
+    "zh": "阿奇",
+    "score": 1.0
+  },
+  {
+    "original": "Aruá",
+    "id": "p-7548e8117df415e0",
+    "aat": "http://vocab.getty.edu/aat/300017884",
+    "term": "Arua",
+    "zh": "阿魯亞",
+    "score": 1.0
+  },
+  {
+    "original": "Barí",
+    "id": "p-88f103cbda12c29d",
+    "aat": "http://vocab.getty.edu/aat/300016445",
+    "term": "Bari",
+    "zh": "巴利 (蘇丹東部風格)",
+    "score": 1.0
+  },
+  {
+    "original": "Hän",
+    "id": "p-c0b203b442f03adf",
+    "aat": "http://vocab.getty.edu/aat/300017480",
+    "term": "Han (Native American)",
+    "zh": "韓 (美洲原住民)",
+    "score": 1.0
+  },
+  {
+    "original": "Iowa (Oklahoma)",
+    "id": "p-19423e2da318ecbd",
+    "aat": "http://vocab.getty.edu/aat/300017659",
+    "term": "Iowa",
+    "zh": "愛阿華",
+    "score": 1.0
+  },
+  {
+    "original": "Jukun",
+    "id": "p-7580359098a14485",
+    "aat": "http://vocab.getty.edu/aat/300016099",
+    "term": "Jukun (culture or style)",
+    "zh": "朱昆",
+    "score": 1.0
+  },
+  {
+    "original": "Kanas",
+    "id": "p-64f3319e7e6bc77e",
+    "aat": "http://vocab.getty.edu/aat/300263148",
+    "term": "Kana (African style)",
+    "zh": "卡納",
+    "score": 1.0
+  },
+  {
+    "original": "Kickapoo (Oklahoma)",
+    "id": "p-e04bea505e1d5ba4",
+    "aat": "http://vocab.getty.edu/aat/300017585",
+    "term": "Kickapoo",
+    "zh": "基卡普",
+    "score": 1.0
+  },
+  {
+    "original": "Maká",
+    "id": "p-c2a7d94820f70790",
+    "aat": "http://vocab.getty.edu/aat/300263311",
+    "term": "Maka",
+    "zh": "瑪加",
+    "score": 1.0
+  },
+  {
+    "original": "Meru",
+    "id": "p-c1664a85e6ad1e26",
+    "aat": "http://vocab.getty.edu/aat/300016516",
+    "term": "Meru (culture or style)",
+    "zh": "梅魯",
+    "score": 1.0
+  },
+  {
+    "original": "Modoc (Oklahoma)",
+    "id": "p-b37fda1217f50506",
+    "aat": "http://vocab.getty.edu/aat/300017687",
+    "term": "Modoc",
+    "zh": "莫多克",
+    "score": 1.0
+  },
+  {
+    "original": "Mohawk (Kalapuya)",
+    "id": "p-d3c4fcdf4dc48f26",
+    "aat": "http://vocab.getty.edu/aat/300017550",
+    "term": "Mohawk (culture or style)",
+    "zh": "摩和克",
+    "score": 1.0
+  },
+  {
+    "original": "Nahua ( Morelos, Puebla, Tlaxcala, Veracruz, Hidalgo, San Luis Potosi)",
+    "id": "p-cd2fbefd6fe5dad2",
+    "aat": "http://vocab.getty.edu/aat/300017793",
+    "term": "Nahua (style or culture)",
+    "zh": "納瓦",
+    "score": 1.0
+  },
+  {
+    "original": "Nahua (Guerrero)",
+    "id": "p-3600d267784ec063",
+    "aat": "http://vocab.getty.edu/aat/300017793",
+    "term": "Nahua (style or culture)",
+    "zh": "納瓦",
+    "score": 1.0
+  },
+  {
+    "original": "Nahua (Mexico)",
+    "id": "p-43b0d2be5dd8f818",
+    "aat": "http://vocab.getty.edu/aat/300017793",
+    "term": "Nahua (style or culture)",
+    "zh": "納瓦",
+    "score": 1.0
+  },
+  {
+    "original": "Nahua (Michoacan)",
+    "id": "p-1e5ffe5a49ccf8bb",
+    "aat": "http://vocab.getty.edu/aat/300017793",
+    "term": "Nahua (style or culture)",
+    "zh": "納瓦",
+    "score": 1.0
+  },
+  {
+    "original": "Paipai (Akwa'ala)",
+    "id": "p-27608a61f0b80e3d",
+    "aat": "http://vocab.getty.edu/aat/300017534",
+    "term": "Paipai (culture or style)",
+    "zh": "派派",
+    "score": 1.0
+  },
+  {
+    "original": "Ponca (Oklahoma)",
+    "id": "p-5ca180be67d4a4c9",
+    "aat": "http://vocab.getty.edu/aat/300017670",
+    "term": "Ponca",
+    "zh": "蓬卡",
+    "score": 1.0
+  },
+  {
+    "original": "Popoluca (mixe-zoque)",
+    "id": "p-06e9107150092204",
+    "aat": "http://vocab.getty.edu/aat/300017812",
+    "term": "Popoluca",
+    "zh": "波波盧卡",
+    "score": 1.0
+  },
+  {
+    "original": "Tenetehara (Tembé)",
+    "id": "p-76cea6e852620aa7",
+    "aat": "http://vocab.getty.edu/aat/300460422",
+    "term": "Tenetehara (culture or style)",
+    "zh": "滕貝 (亞馬遜原住民風格)",
+    "score": 1.0
+  },
+  {
+    "original": "Timotes",
+    "id": "p-714465dc2b5b7bcb",
+    "aat": "http://vocab.getty.edu/aat/300017959",
+    "term": "Timote",
+    "zh": "蒂莫特",
+    "score": 1.0
+  },
+  {
+    "original": "Tonkawa (Oklahoma)",
+    "id": "p-c651f971c5980f0a",
+    "aat": "http://vocab.getty.edu/aat/300017718",
+    "term": "Tonkawa (culture or style)",
+    "zh": "通卡瓦",
+    "score": 1.0
+  },
+  {
+    "original": "Wyandotte (Oklahoma)",
+    "id": "p-95c0ae5fb4b66315",
+    "aat": "http://vocab.getty.edu/aat/300017583",
+    "term": "Wyandotte (culture or style)",
+    "zh": "休倫",
+    "score": 1.0
+  },
+  {
+    "original": "Guanahatabeyes",
+    "id": "p-7bc87f8ef6b59786",
+    "aat": "http://vocab.getty.edu/aat/300017877",
+    "term": "Guanahatabey",
+    "zh": "瓜納哈塔貝",
+    "score": 0.96
+  },
+  {
+    "original": "Chorotega",
+    "id": "p-8b23eac8eb989a55",
+    "aat": "http://vocab.getty.edu/aat/300017216",
+    "term": "Chorotegan",
+    "zh": "喬羅特崗",
+    "score": 0.95
+  },
+  {
+    "original": "Chtimacha",
+    "id": "p-27308bcd1707e9eb",
+    "aat": "http://vocab.getty.edu/aat/300017708",
+    "term": "Chitimacha (culture or style)",
+    "zh": "奇蒂馬查",
+    "score": 0.95
+  },
+  {
+    "original": "Imbangala",
+    "id": "p-3abc3a17ca5e426f",
+    "aat": "http://vocab.getty.edu/aat/300265292",
+    "term": "Mbangala",
+    "zh": "因班加拉",
+    "score": 0.94
+  },
+  {
+    "original": "Mbailundu",
+    "id": "p-5256a170aab771eb",
+    "aat": "http://vocab.getty.edu/aat/300263499",
+    "term": "Bailundu",
+    "zh": "拜倫多",
+    "score": 0.94
+  },
+  {
+    "original": "Zacateco ",
+    "id": "p-65f2ea3aeaaaef6c",
+    "aat": "http://vocab.getty.edu/aat/300017008",
+    "term": "Zacatenco",
+    "zh": "薩卡提科",
+    "score": 0.94
+  },
+  {
+    "original": "Croatan",
+    "id": "p-a1216bfb8a11d951",
+    "aat": "http://vocab.getty.edu/aat/300263655",
+    "term": "Croatian (culture or style)",
+    "zh": "克羅埃西亞文化",
+    "score": 0.93
+  },
+  {
+    "original": "Mangala",
+    "id": "p-4e4384519ea743cf",
+    "aat": "http://vocab.getty.edu/aat/300265292",
+    "term": "Mbangala",
+    "zh": "因班加拉",
+    "score": 0.93
+  },
+  {
+    "original": "S'Klallam",
+    "id": "p-c2670cea40f26ed8",
+    "aat": "http://vocab.getty.edu/aat/300017611",
+    "term": "Klallam",
+    "zh": "喀拉蘭",
+    "score": 0.93
+  },
+  {
+    "original": "Tepehua",
+    "id": "p-14c05158f5c96c83",
+    "aat": "http://vocab.getty.edu/aat/300017779",
+    "term": "Tepehuan (culture or style)",
+    "zh": "特佩瓦",
+    "score": 0.93
+  },
+  {
+    "original": "Ch'orti'",
+    "id": "p-871ea04b9d145a3f",
+    "aat": "http://vocab.getty.edu/aat/300017968",
+    "term": "Chorotí",
+    "zh": "喬洛帝",
+    "score": 0.92
+  },
+  {
+    "original": "Chichas",
+    "id": "p-ae9d3a95bcdcec57",
+    "aat": "http://vocab.getty.edu/aat/300017319",
+    "term": "Chincha",
+    "zh": "欽察",
+    "score": 0.92
+  },
+  {
+    "original": "Nakara",
+    "id": "p-18b86376133f49b9",
+    "aat": "http://vocab.getty.edu/aat/300263105",
+    "term": "Nzakara",
+    "zh": "恩查卡拉",
+    "score": 0.92
+  },
+  {
+    "original": "Ngandi",
+    "id": "p-2e2391a9f0a03f41",
+    "aat": "http://vocab.getty.edu/aat/300016384",
+    "term": "Ngbandi",
+    "zh": "恩格班迪",
+    "score": 0.92
+  },
+  {
+    "original": "Serano",
+    "id": "p-20029bb9a523c16f",
+    "aat": "http://vocab.getty.edu/aat/300017515",
+    "term": "Serrano (culture or style)",
+    "zh": "塞拉諾",
+    "score": 0.92
+  },
+  {
+    "original": "Anambé",
+    "id": "p-382442dc5bea2557",
+    "aat": "http://vocab.getty.edu/aat/300265490",
+    "term": "Nambe",
+    "zh": "南貝",
+    "score": 0.91
+  },
+  {
+    "original": "Chankas",
+    "id": "p-ddc7ee5e9c57abc0",
+    "aat": "http://vocab.getty.edu/aat/300018020",
+    "term": "Chaná",
+    "zh": "查納",
+    "score": 0.91
+  },
+  {
+    "original": "Kaimbé",
+    "id": "p-14670a3db6c9fd6d",
+    "aat": "http://vocab.getty.edu/aat/300100877",
+    "term": "Kambe (Mijikenda)",
+    "zh": "坎貝 (麥夏肯特)",
+    "score": 0.91
+  },
+  {
+    "original": "Miyan",
+    "id": "p-bb3d6e6e0d7fb012",
+    "aat": "http://vocab.getty.edu/aat/300312338",
+    "term": "Minyan (culture or style)",
+    "zh": "明琰 (文化與風格)",
+    "score": 0.91
+  },
+  {
+    "original": "Ngalea",
+    "id": "p-8364cd4fa5617aab",
+    "aat": "http://vocab.getty.edu/aat/300263997",
+    "term": "Ngala (Ngiri)",
+    "zh": "恩加拉 (恩吉里)",
+    "score": 0.91
+  },
+  {
+    "original": "Ngarla",
+    "id": "p-83b12c9c76ba479a",
+    "aat": "http://vocab.getty.edu/aat/300263997",
+    "term": "Ngala (Ngiri)",
+    "zh": "恩加拉 (恩吉里)",
+    "score": 0.91
+  },
+  {
+    "original": "Shawi",
+    "id": "p-b098c4709d5d7c82",
+    "aat": "http://vocab.getty.edu/aat/300263732",
+    "term": "Shawia",
+    "zh": "沙維亞",
+    "score": 0.91
+  },
+  {
+    "original": "Tongva",
+    "id": "p-b490179e7e27d425",
+    "aat": "http://vocab.getty.edu/aat/300016548",
+    "term": "Tonga",
+    "zh": "通加",
+    "score": 0.91
+  },
+  {
+    "original": "Wangan",
+    "id": "p-1aa59c0bfa75d4ce",
+    "aat": "http://vocab.getty.edu/aat/300264058",
+    "term": "Wanga",
+    "zh": "萬加",
+    "score": 0.91
+  },
+  {
+    "original": "Yanga",
+    "id": "p-65fb335c194e5787",
+    "aat": "http://vocab.getty.edu/aat/300263038",
+    "term": "Nyanga (culture or style)",
+    "zh": "尼揚加",
+    "score": 0.91
+  },
+  {
+    "original": "Arma",
+    "id": "p-11949aaf609deee1",
+    "aat": "http://vocab.getty.edu/aat/300262906",
+    "term": "Zarma",
+    "zh": "札爾馬",
+    "score": 0.89
+  },
+  {
+    "original": "Asheninka",
+    "id": "p-a1c7010ecd946604",
+    "aat": "http://vocab.getty.edu/aat/300017921",
+    "term": "Asháninka",
+    "zh": "坎帕",
+    "score": 0.89
+  },
+  {
+    "original": "Aures",
+    "id": "p-7fa1cf153feb150d",
+    "aat": "http://vocab.getty.edu/aat/300375152",
+    "term": "Maure",
+    "zh": "茅利文化",
+    "score": 0.89
+  },
+  {
+    "original": "Banas",
+    "id": "p-e9b27e61b058b154",
+    "aat": "http://vocab.getty.edu/aat/300374934",
+    "term": "Banna",
+    "zh": "巴納",
+    "score": 0.89
+  },
+  {
+    "original": "Bardi",
+    "id": "p-5794428e93308718",
+    "aat": "http://vocab.getty.edu/aat/300016445",
+    "term": "Bari",
+    "zh": "巴利 (蘇丹東部風格)",
+    "score": 0.89
+  },
+  {
+    "original": "Barna",
+    "id": "p-6334700e7db83f83",
+    "aat": "http://vocab.getty.edu/aat/300016582",
+    "term": "Bara (Malagasy style)",
+    "zh": "巴拉",
+    "score": 0.89
+  },
+  {
+    "original": "Chinantla (Tsa ju jmí’)",
+    "id": "p-cbb79a8c3546b5fb",
+    "aat": "http://vocab.getty.edu/aat/300017134",
+    "term": "Chinautla",
+    "zh": "奇納烏特拉",
+    "score": 0.89
+  },
+  {
+    "original": "Coree",
+    "id": "p-7ade7cbae073c982",
+    "aat": "http://vocab.getty.edu/aat/300017465",
+    "term": "Cree (culture or style)",
+    "zh": "克里",
+    "score": 0.89
+  },
+  {
+    "original": "Deni",
+    "id": "p-07ccc7e845f13707",
+    "aat": "http://vocab.getty.edu/aat/300262763",
+    "term": "Dendi",
+    "zh": "丹迪",
+    "score": 0.89
+  },
+  {
+    "original": "Guató",
+    "id": "p-ba6c0c8f2b700f19",
+    "aat": "http://vocab.getty.edu/aat/300016453",
+    "term": "Gato (Konso)",
+    "zh": "加托",
+    "score": 0.89
+  },
+  {
+    "original": "Guta",
+    "id": "p-fa1b03239021be3c",
+    "aat": "http://vocab.getty.edu/aat/300018904",
+    "term": "Gupta (culture and style)",
+    "zh": "笈多王朝",
+    "score": 0.89
+  },
+  {
+    "original": "Inga",
+    "id": "p-16269daaef0fcf94",
+    "aat": "http://vocab.getty.edu/aat/300262886",
+    "term": "Kinga (East African style)",
+    "zh": "金加 (東非風格)",
+    "score": 0.89
+  },
+  {
+    "original": "Kooma",
+    "id": "p-89cb3e19b0583652",
+    "aat": "http://vocab.getty.edu/aat/300263139",
+    "term": "Koma",
+    "zh": "科馬",
+    "score": 0.89
+  },
+  {
+    "original": "Kunja",
+    "id": "p-920238b4ba64ef6f",
+    "aat": "http://vocab.getty.edu/aat/300017860",
+    "term": "Kuna (culture or style)",
+    "zh": "庫納人",
+    "score": 0.89
+  },
+  {
+    "original": "Kurâ",
+    "id": "p-c5f48ac780edff0a",
+    "aat": "http://vocab.getty.edu/aat/300262841",
+    "term": "Kuria",
+    "zh": "庫里亞 (非洲風格)",
+    "score": 0.89
+  },
+  {
+    "original": "K’ómoks",
+    "id": "p-be1b00371b119802",
+    "aat": "http://vocab.getty.edu/aat/300016403",
+    "term": "Komo (style)",
+    "zh": "庫姆 (風格)",
+    "score": 0.89
+  },
+  {
+    "original": "Maan",
+    "id": "p-3faf6233ce5efab6",
+    "aat": "http://vocab.getty.edu/aat/300263925",
+    "term": "Maban",
+    "zh": "馬巴",
+    "score": 0.89
+  },
+  {
+    "original": "Mara",
+    "id": "p-d48c6c588f9a2116",
+    "aat": "http://vocab.getty.edu/aat/300015852",
+    "term": "Marka",
+    "zh": "馬爾卡",
+    "score": 0.89
+  },
+  {
+    "original": "Mbara",
+    "id": "p-56e129783d465964",
+    "aat": "http://vocab.getty.edu/aat/300016582",
+    "term": "Bara (Malagasy style)",
+    "zh": "巴拉",
+    "score": 0.89
+  },
+  {
+    "original": "Mbya",
+    "id": "p-f836d8e5f324a1c4",
+    "aat": "http://vocab.getty.edu/aat/300017972",
+    "term": "Mbayá",
+    "zh": "姆巴亞",
+    "score": 0.89
+  },
+  {
+    "original": "Nana",
+    "id": "p-e88b2fc6d24e6920",
+    "aat": "http://vocab.getty.edu/aat/300018580",
+    "term": "Nanga",
+    "zh": "文人畫 (日本風格)",
+    "score": 0.89
+  },
+  {
+    "original": "Nasa",
+    "id": "p-0e577b80644e69fb",
+    "aat": "http://vocab.getty.edu/aat/300262503",
+    "term": "Nyasa",
+    "zh": "尼亞沙",
+    "score": 0.89
+  },
+  {
+    "original": "Onöndowa'ga:' (Seneca)",
+    "id": "p-026984d7a62f16e6",
+    "aat": "http://vocab.getty.edu/aat/300017552",
+    "term": "Onondaga (culture or style)",
+    "zh": "奧農達加",
+    "score": 0.89
+  },
+  {
+    "original": "Paltas",
+    "id": "p-e9007ad4394cb0dc",
+    "aat": "http://vocab.getty.edu/aat/300018917",
+    "term": "Pala (Indian style)",
+    "zh": "巴拉王朝 (印度風格)",
+    "score": 0.89
+  },
+  {
+    "original": "Sana",
+    "id": "p-1b1902423d5e54e9",
+    "aat": "http://vocab.getty.edu/aat/300262665",
+    "term": "Sanga (Equatorial Guinea, northern Gabon and southern Cameroon)",
+    "zh": "桑加 (赤道幾內亞、加彭北部與喀麥隆南部)",
+    "score": 0.89
+  },
+  {
+    "original": "Saura",
+    "id": "p-8fa715bfbefc6639",
+    "aat": "http://vocab.getty.edu/aat/300253476",
+    "term": "Sara",
+    "zh": "薩拉 (查德湖區域風格)",
+    "score": 0.89
+  },
+  {
+    "original": "So'to (Yekuana)",
+    "id": "p-06764309a6e78837",
+    "aat": "http://vocab.getty.edu/aat/300016563",
+    "term": "Sotho (culture or style)",
+    "zh": "巴索托",
+    "score": 0.89
+  },
+  {
+    "original": "Sumas",
+    "id": "p-14e9c32affd8afba",
+    "aat": "http://vocab.getty.edu/aat/300018751",
+    "term": "Sumba",
+    "zh": "松巴",
+    "score": 0.89
+  },
+  {
+    "original": "Tano",
+    "id": "p-94a5a86f1f5cd1cd",
+    "aat": "http://vocab.getty.edu/aat/300017878",
+    "term": "Taino",
+    "zh": "泰諾",
+    "score": 0.89
+  },
+  {
+    "original": "Wappynger",
+    "id": "p-1fa5b83f94cc8f6c",
+    "aat": "http://vocab.getty.edu/aat/300017563",
+    "term": "Wappinger",
+    "zh": "瓦平格爾",
+    "score": 0.89
+  },
+  {
+    "original": "Wari’",
+    "id": "p-00c0bec565766d29",
+    "aat": "http://vocab.getty.edu/aat/300016092",
+    "term": "Gwari",
+    "zh": "瓜里",
+    "score": 0.89
+  },
+  {
+    "original": "Warwa",
+    "id": "p-99de1a3f5d003c83",
+    "aat": "http://vocab.getty.edu/aat/300265345",
+    "term": "Wawa",
+    "zh": "瓦瓦",
+    "score": 0.89
+  },
+  {
+    "original": "Waujá",
+    "id": "p-674f53e88c4131bd",
+    "aat": "http://vocab.getty.edu/aat/300016116",
+    "term": "Waja",
+    "zh": "瓦賈",
+    "score": 0.89
+  },
+  {
+    "original": "Xinca",
+    "id": "p-2451f0fcf256e41c",
+    "aat": "http://vocab.getty.edu/aat/300017326",
+    "term": "Inca (culture, general)",
+    "zh": "印加 (文化，一般類型)",
+    "score": 0.89
+  },
+  {
+    "original": "Yanam (Ninam)",
+    "id": "p-e8530d5a74d094cb",
+    "aat": "http://vocab.getty.edu/aat/300017523",
+    "term": "Yana (culture or style)",
+    "zh": "亞娜",
+    "score": 0.89
+  },
+  {
+    "original": "Yanda",
+    "id": "p-e24c0315421f6fec",
+    "aat": "http://vocab.getty.edu/aat/300017523",
+    "term": "Yana (culture or style)",
+    "zh": "亞娜",
+    "score": 0.89
+  },
+  {
+    "original": "Yankontai",
+    "id": "p-73b88335afed73cb",
+    "aat": "http://vocab.getty.edu/aat/300265477",
+    "term": "Yanktonai",
+    "zh": "揚克托奈族",
+    "score": 0.89
+  },
+  {
+    "original": "Yuma",
+    "id": "p-aaf623d190c5d792",
+    "aat": "http://vocab.getty.edu/aat/300017768",
+    "term": "Yuman (culture or style)",
+    "zh": "尤馬",
+    "score": 0.89
+  },
+  {
+    "original": "Älsé (Alsea)",
+    "id": "p-e6b24e8a62b9109b",
+    "aat": "http://vocab.getty.edu/aat/300017595",
+    "term": "Alsea",
+    "zh": "阿爾西厄",
+    "score": 0.89
+  },
+  {
+    "original": "Ayahuacas",
+    "id": "p-9f87b3d7b2037082",
+    "aat": "http://vocab.getty.edu/aat/300017882",
+    "term": "Amahuaca (culture or style)",
+    "zh": "阿瑪瓦卡",
+    "score": 0.88
+  },
+  {
+    "original": "Banggarla",
+    "id": "p-1c3d5911ff89fded",
+    "aat": "http://vocab.getty.edu/aat/300016587",
+    "term": "Baggara",
+    "zh": "巴加拉",
+    "score": 0.88
+  },
+  {
+    "original": "Guaycura",
+    "id": "p-a063b00d62dd009b",
+    "aat": "http://vocab.getty.edu/aat/300017536",
+    "term": "Guaicura",
+    "zh": "瓜科拉",
+    "score": 0.88
+  },
+  {
+    "original": "Kaingang",
+    "id": "p-9838e849ade6fc2c",
+    "aat": "http://vocab.getty.edu/aat/300018005",
+    "term": "Caingang",
+    "zh": "卡因崗",
+    "score": 0.88
+  },
+  {
+    "original": "Kamaiurá",
+    "id": "p-755bda9e2e4102d6",
+    "aat": "http://vocab.getty.edu/aat/300018558",
+    "term": "Kamakura",
+    "zh": "鎌倉時代",
+    "score": 0.88
+  },
+  {
+    "original": "Karangura",
+    "id": "p-562b466848ac09db",
+    "aat": "http://vocab.getty.edu/aat/300015729",
+    "term": "Karanga (culture or style)",
+    "zh": "卡蘭加 (南非風格)",
+    "score": 0.88
+  },
+  {
+    "original": "Karanka",
+    "id": "p-a95809b8336810c2",
+    "aat": "http://vocab.getty.edu/aat/300017711",
+    "term": "Karankawa",
+    "zh": "卡蘭卡瓦",
+    "score": 0.88
+  },
+  {
+    "original": "Karijona",
+    "id": "p-8245997fbefeb3a6",
+    "aat": "http://vocab.getty.edu/aat/300017886",
+    "term": "Caríjona",
+    "zh": "歐馬果人",
+    "score": 0.88
+  },
+  {
+    "original": "Katukina",
+    "id": "p-f634a538b508d68e",
+    "aat": "http://vocab.getty.edu/aat/300017888",
+    "term": "Catukina",
+    "zh": "卡托基納",
+    "score": 0.88
+  },
+  {
+    "original": "Kijkitat",
+    "id": "p-410824d79913d67f",
+    "aat": "http://vocab.getty.edu/aat/300017683",
+    "term": "Klikitat",
+    "zh": "克利基塔特",
+    "score": 0.88
+  },
+  {
+    "original": "Sanapaná",
+    "id": "p-61fce285a8339cfc",
+    "aat": "http://vocab.getty.edu/aat/300017756",
+    "term": "Santa Ana",
+    "zh": "聖安納",
+    "score": 0.88
+  },
+  {
+    "original": "Tonokoté",
+    "id": "p-9535ee2e065f124d",
+    "aat": "http://vocab.getty.edu/aat/300017950",
+    "term": "Tonocoté",
+    "zh": "托諾科特",
+    "score": 0.88
+  },
+  {
+    "original": "Ukarãngmã",
+    "id": "p-98c1b6163d803432",
+    "aat": "http://vocab.getty.edu/aat/300015729",
+    "term": "Karanga (culture or style)",
+    "zh": "卡蘭加 (南非風格)",
+    "score": 0.88
+  },
+  {
+    "original": "Wyandot (Anderdon)",
+    "id": "p-a3ae434d2355cb70",
+    "aat": "http://vocab.getty.edu/aat/300017583",
+    "term": "Wyandotte (culture or style)",
+    "zh": "休倫",
+    "score": 0.88
+  },
+  {
+    "original": "Zacatecs",
+    "id": "p-1a4865479c718ffa",
+    "aat": "http://vocab.getty.edu/aat/300017008",
+    "term": "Zacatenco",
+    "zh": "薩卡提科",
+    "score": 0.88
+  },
+  {
+    "original": "Arabana",
+    "id": "p-ffa8d146d653ad63",
+    "aat": "http://vocab.getty.edu/aat/300019797",
+    "term": "Arabian (culture)",
+    "zh": "阿拉伯時代",
+    "score": 0.86
+  },
+  {
+    "original": "Awá",
+    "id": "p-8be2705d9fda32cf",
+    "aat": "http://vocab.getty.edu/aat/300265345",
+    "term": "Wawa",
+    "zh": "瓦瓦",
+    "score": 0.86
+  },
+  {
+    "original": "Bora",
+    "id": "p-82a4e19fd86cc4a4",
+    "aat": "http://vocab.getty.edu/aat/300016058",
+    "term": "Brass (Ijo)",
+    "zh": "布拉斯 (伊卓)",
+    "score": 0.86
+  },
+  {
+    "original": "Cochimí",
+    "id": "p-777fb533e1fe529f",
+    "aat": "http://vocab.getty.edu/aat/300017750",
+    "term": "Cochiti",
+    "zh": "科奇蒂",
+    "score": 0.86
+  },
+  {
+    "original": "Doeg",
+    "id": "p-be0d315254a81eba",
+    "aat": "http://vocab.getty.edu/aat/300016491",
+    "term": "Doe",
+    "zh": "多伊",
+    "score": 0.86
+  },
+  {
+    "original": "Eno",
+    "id": "p-7935685b3c104231",
+    "aat": "http://vocab.getty.edu/aat/300264817",
+    "term": "Endo (Kenyan and Great Rift Valley styles)",
+    "zh": "恩多 (肯亞與東非大裂谷風格)",
+    "score": 0.86
+  },
+  {
+    "original": "Goshute",
+    "id": "p-46c9e63f833d7f81",
+    "aat": "http://vocab.getty.edu/aat/300017568",
+    "term": "Gosiute",
+    "zh": "哥休特",
+    "score": 0.86
+  },
+  {
+    "original": "Gunu",
+    "id": "p-8f8ec1303407e9df",
+    "aat": "http://vocab.getty.edu/aat/300016023",
+    "term": "Gun (Ewe culture)",
+    "zh": "貢",
+    "score": 0.86
+  },
+  {
+    "original": "Guwa",
+    "id": "p-c7bdba92ff3331dc",
+    "aat": "http://vocab.getty.edu/aat/300263072",
+    "term": "Gwa (African style)",
+    "zh": "格瓦",
+    "score": 0.86
+  },
+  {
+    "original": "Jarawara",
+    "id": "p-41e5e1b5ee98c5be",
+    "aat": "http://vocab.getty.edu/aat/300016096",
+    "term": "Jarawa (culture or style)",
+    "zh": "加拉瓦",
+    "score": 0.86
+  },
+  {
+    "original": "Kaniyang",
+    "id": "p-90d97ebfcf7742ef",
+    "aat": "http://vocab.getty.edu/aat/300016074",
+    "term": "Anyang (Nigerian)",
+    "zh": "安楊 (奈及利亞)",
+    "score": 0.86
+  },
+  {
+    "original": "Kawahib (Jiahui)",
+    "id": "p-ede3f66fe8cbf9f0",
+    "aat": "http://vocab.getty.edu/aat/300460404",
+    "term": "Cawahib",
+    "zh": "帕林廷廷",
+    "score": 0.86
+  },
+  {
+    "original": "Kawahib (Parintintin)",
+    "id": "p-5ed9cb1f73389e33",
+    "aat": "http://vocab.getty.edu/aat/300460404",
+    "term": "Cawahib",
+    "zh": "帕林廷廷",
+    "score": 0.86
+  },
+  {
+    "original": "Kawahib (Tenharim)",
+    "id": "p-4fc5b0654fa7b390",
+    "aat": "http://vocab.getty.edu/aat/300460404",
+    "term": "Cawahib",
+    "zh": "帕林廷廷",
+    "score": 0.86
+  },
+  {
+    "original": "Kuuku-ya’u",
+    "id": "p-56c12bc5a391e02b",
+    "aat": "http://vocab.getty.edu/aat/300263902",
+    "term": "Kukuya",
+    "zh": "庫庫雅",
+    "score": 0.86
+  },
+  {
+    "original": "Newe (Western Shoshone)",
+    "id": "p-343720a8d09f4af7",
+    "aat": "http://vocab.getty.edu/aat/300016018",
+    "term": "Ewe (Guinea Coast style)",
+    "zh": "埃維 (幾內亞海岸風格)",
+    "score": 0.86
+  },
+  {
+    "original": "Ngandji",
+    "id": "p-a89d83d120c2577c",
+    "aat": "http://vocab.getty.edu/aat/300016384",
+    "term": "Ngbandi",
+    "zh": "恩格班迪",
+    "score": 0.86
+  },
+  {
+    "original": "Ngumbarl",
+    "id": "p-05b01ad7937e1896",
+    "aat": "http://vocab.getty.edu/aat/300016201",
+    "term": "Ngumba",
+    "zh": "恩貢巴",
+    "score": 0.86
+  },
+  {
+    "original": "Paramas",
+    "id": "p-d02e93b35674e1f8",
+    "aat": "http://vocab.getty.edu/aat/300106878",
+    "term": "Paramara",
+    "zh": "巴拉馬拉",
+    "score": 0.86
+  },
+  {
+    "original": "Poqomam",
+    "id": "p-6879b1720ecb6495",
+    "aat": "http://vocab.getty.edu/aat/300017842",
+    "term": "Pokomam",
+    "zh": "波科曼",
+    "score": 0.86
+  },
+  {
+    "original": "Quechan (Kwatsáan)",
+    "id": "p-c768dd7a3ba5f4d7",
+    "aat": "http://vocab.getty.edu/aat/300017928",
+    "term": "Quechua (culture or style)",
+    "zh": "蓋楚瓦",
+    "score": 0.86
+  },
+  {
+    "original": "Uru",
+    "id": "p-ef202a08686f4e88",
+    "aat": "http://vocab.getty.edu/aat/300107712",
+    "term": "Uruk",
+    "zh": "烏魯克",
+    "score": 0.86
+  },
+  {
+    "original": "Wadi Wadi",
+    "id": "p-f9bee0749a540b83",
+    "aat": "http://vocab.getty.edu/aat/300017915",
+    "term": "Waiwai",
+    "zh": "瓦依瓦依",
+    "score": 0.86
+  },
+  {
+    "original": "Yaros",
+    "id": "p-0b80f9f140c2ad0b",
+    "aat": "http://vocab.getty.edu/aat/300102222",
+    "term": "Yao (East African)",
+    "zh": "堯 (東非)",
+    "score": 0.86
+  },
+  {
+    "original": "Yoli (Concho)",
+    "id": "p-5ec94a8ca6370c30",
+    "aat": "http://vocab.getty.edu/aat/300263151",
+    "term": "Oli",
+    "zh": "奧利",
+    "score": 0.86
+  },
+  {
+    "original": "Ãwa",
+    "id": "p-1bd5250572b33b78",
+    "aat": "http://vocab.getty.edu/aat/300265345",
+    "term": "Wawa",
+    "zh": "瓦瓦",
+    "score": 0.86
+  },
+  {
+    "original": "Mnicoujou",
+    "id": "p-094c3d92b0018bd6",
+    "aat": "http://vocab.getty.edu/aat/300265469",
+    "term": "Miniconjou",
+    "zh": "米尼孔朱",
+    "score": 0.84
+  }
+]

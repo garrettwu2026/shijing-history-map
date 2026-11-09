@@ -1,0 +1,416 @@
+[
+  {
+    "original": "Republic of the Seven Zenden",
+    "reason": "已找到瑞士歷史辭典的歷史資料，但本次未確認通用的臺灣繁體中文政體譯名，維持未翻譯。",
+    "researchSources": [
+      "https://hls-dhs-dss.ch/de/articles/007396/2022-04-04/"
+    ]
+  },
+  {
+    "original": "Vishnu-Kundins",
+    "reason": "中文史述可見不同音譯，尚未確認應採何者為本站統一通用名稱；不能僅按神名自行拼造王朝名。",
+    "researchSources": [
+      "https://www.chibs.edu.tw/ch_html/projects/Leezhifu/html/book/b005.htm"
+    ],
+    "status": "resolved",
+    "resolvedIn": "scripts/v21t/batch-30.json",
+    "resolution": "已確認國立編譯館《印度通史》譯者及出版資訊，採該書反覆使用之韋西笯康丁；與銅版敕書研究交叉核對王朝身分。"
+  },
+  {
+    "original": "Vallabhi",
+    "reason": "伐臘毗國有可靠中文用例，但目錄觀測年800—900與通常所述彌勒迦王朝年代不符；須先釐清地理標籤、城市和王國的範圍，不直接複製彌勒迦王國介紹。",
+    "researchSources": [
+      "https://authority.dila.edu.tw/place/search.php?code=PL48289"
+    ]
+  },
+  {
+    "original": "Ponca",
+    "reason": "已找到部落政府與美國國家公園的史實資料，但本次未確認可採用的臺灣繁體中文族名；不把同名城市的中文譯名直接套為族名。",
+    "researchSources": [
+      "https://poncatribe-ne.gov/about-the-nation/",
+      "https://www.nps.gov/mnrr/learn/historyculture/standingbear.htm"
+    ],
+    "status": "resolved",
+    "resolvedIn": "scripts/v21t/batch-28.json",
+    "resolution": "臺灣圓神出版品以龐卡族記述站熊及族人強制遷徙，已與部落政府史實核對。",
+    "identitySource": "https://www.booklife.com.tw/baike-detail/2/492"
+  },
+  {
+    "original": "Klachuris",
+    "reason": "疑與Kalachuri相關，原始拼寫與所指王朝支系仍需確認；本次未確認可採用的臺灣通用中文譯名，不自行音譯。",
+    "researchSources": [
+      "https://dlbs.liberal.ntu.edu.tw/FULLTEXT/JR-ENG/fleet.htm"
+    ]
+  },
+  {
+    "original": "Cheras",
+    "reason": "已有中文名哲羅王朝，但此目錄觀測年為500—700；不可直接套用九至十二世紀後期哲羅王朝的年表。須釐清早期、過渡期與後期政權關係再撰稿。",
+    "researchSources": [
+      "https://www.heritageuniversityofkerala.com/JournalPDF/Volume6/55.pdf"
+    ]
+  },
+  {
+    "original": "Paramas",
+    "reason": "可能與Paramara王室相關，但原始縮寫身分及應採臺灣繁體中文名稱尚未交叉確認；未僅憑一般中文網頁的音譯建立對照。維持待考。",
+    "researchSources": [
+      "https://www.chibs.edu.tw/ch_html/projects/Leezhifu/html/book/b005.htm",
+      "https://zh.wikipedia.org/wiki/帕拉瑪拉王朝"
+    ]
+  },
+  {
+    "original": "Kingdom of Zunbil",
+    "reason": "已找到訶達羅支的漢文用例，但學術研究區分王室稱號、漕矩吒地名及扎布里斯坦政權，尚不能將國名與王號直接等同，維持待考。",
+    "researchSources": [
+      "https://nagoya.repo.nii.ac.jp/record/2005932/files/Fayaztepa_2.pdf",
+      "https://www.iranicaonline.org/articles/khorasan-iii-historical-geography-in-the-late-sasanid-early-islamic-periods/"
+    ]
+  },
+  {
+    "original": "Namazga",
+    "reason": "已見納馬茲加文化的中文用例，但尚未確認臺灣通用名稱及目錄範圍；不把考古遺址或分期直接寫成王國。",
+    "researchSources": [
+      "https://jscc.ruc.edu.cn/Uploads/file/20200520/20200520224741_97716.pdf"
+    ]
+  },
+  {
+    "original": "Sabirs",
+    "reason": "沙比爾人可見於一般中文資料，本輪仍未確認臺灣史學通行譯名；不套用同拼寫現代人名。",
+    "researchSources": []
+  },
+  {
+    "original": "Kryvichs",
+    "reason": "已見克里維奇人一般中文用例，但本輪未確認臺灣史學通用譯名；不單憑維基資料將待考改為正式接受。",
+    "researchSources": [
+      "https://zh.wikipedia.org/wiki/克里維奇人"
+    ],
+    "status": "resolved",
+    "resolvedIn": "scripts/v21t/batch-69.json",
+    "resolution": "已查核《俄羅斯研究》中文用例並核對編年史及研究資料；採繁體克里維奇人。"
+  },
+  {
+    "original": "Kalapuya",
+    "reason": "卡拉普亞人的中文用例目前主要為維基及語言名稱，未確認可採用的臺灣史學族名。",
+    "researchSources": []
+  },
+  {
+    "original": "Chiricahua",
+    "reason": "已查得美國國家公園署的部落與戰爭資料，但本輪奇里卡瓦中文用例主要來自維基，尚不足以確認臺灣通用族群譯名；不將同名山地或保留地直接當成古代政權。",
+    "researchSources": [
+      "https://www.nps.gov/fobo/learn/historyculture/the-chiricahua-apache.htm",
+      "https://www.nps.gov/chir/learn/historyculture/apache-wars-cochise.htm"
+    ]
+  },
+  {
+    "original": "Chiricahua Apache",
+    "reason": "與Chiricahua相關，仍須確認兩個目錄標籤的涵蓋範圍及可採臺灣中文名稱；未直接複製全體阿帕契族介紹。",
+    "researchSources": [
+      "https://www.nps.gov/fobo/learn/historyculture/the-chiricahua-apache.htm"
+    ]
+  },
+  {
+    "original": "Yukagir",
+    "reason": "國立自然科學博物館可見尤卡基爾字形，但該展覽使用的是長毛象名稱，不能直接當成族名認證。已找到語言及民族史資料，臺灣通用族名仍待確認。",
+    "researchSources": [
+      "https://www.nmns.edu.tw/ch/exhibitions/special-exhibitions/Exhibition-000170/",
+      "https://arhiiv.eki.ee/books/redbook/yukaghirs.shtml",
+      "https://minlang.iling-ran.ru/lang/severnoyukagirskiy-yazyk"
+    ]
+  },
+  {
+    "original": "Sultanate of Damagaram",
+    "reason": "本輪僅核得一般中文用例達馬加拉姆蘇丹國，尚缺臺灣史學通用譯名依據；保留未譯，不以維基分類頁直接認證。",
+    "researchSources": [
+      "https://commons.wikimedia.org/wiki/Category:Sultanate_of_Damagaram"
+    ]
+  },
+  {
+    "original": "Barghawata",
+    "reason": "本批未能確認可採用的臺灣繁體中文通用名稱，維持待考，不自行拼造音譯。",
+    "researchSources": []
+  },
+  {
+    "original": "Ciboney",
+    "reason": "本輪只取得一般中文百科的西波內人用例，未確認臺灣史學界通用族名；且須區分西部泰諾與早期古風期社群，不直接把泛稱當作單一王國。",
+    "researchSources": [
+      "https://zh.wikipedia.org/wiki/西波内人"
+    ]
+  },
+  {
+    "original": "Kwakwaka'wakw",
+    "reason": "南華大學論文可見夸夸加夸中英對照，但本輪未交叉確認臺灣史學或民族學通用用法；全文取得失敗，暫不僅憑美術論文的單一用例認證新族名。須與同名使用彎引號的目錄標籤一併審查。",
+    "researchSources": [
+      "https://nhuir.nhu.edu.tw/retrieve/22329/099NHU05616030-001.pdf"
+    ],
+    "status": "resolved",
+    "resolvedIn": "scripts/v21t/batch-34.json",
+    "resolution": "文資局博物館學譯文明列夸夸卡瓦克與原文對應，並與族方文化中心資料交叉確認；直與彎引號標籤統一名稱，別名介紹明示同族而非另一國家。",
+    "identitySource": "https://twh.boch.gov.tw/taiwan/learn_detail.aspx?id=113"
+  },
+  {
+    "original": "Arrernte",
+    "reason": "本輪未取得可交叉確認的臺灣史學或民族學中文名稱用例；一般百科字形不足以認證，不自行採用音譯。",
+    "researchSources": [
+      "https://epaper.ntu.edu.tw/view.php?id=24404&listid=134",
+      "https://www.nma.gov.au/about/media/media-releases-listing-by-year/2016/museum-acquires-namatjira-painting"
+    ],
+    "status": "resolved",
+    "resolvedIn": "scripts/v21t/batch-32.json",
+    "resolution": "臺灣原住民族圖書資訊中心第89期電子報明列阿倫塔語及Arrernte對照，採阿倫塔族；與澳洲國家博物館及文化資產資料交叉核對社群身分。"
+  },
+  {
+    "original": "Achuar",
+    "reason": "查得中文譯名有多種形式，未確認本站應統一採用何者；暫不套用任何一種。",
+    "researchSources": []
+  },
+  {
+    "original": "Ayoreo",
+    "reason": "查得臺灣影評使用原文族名，未取得足以認證通用繁體中文族名的材料。",
+    "researchSources": []
+  },
+  {
+    "original": "Salish & Kootenai Tribes",
+    "relatedOriginal": "Salish Kootenai (Flathead)",
+    "reason": "教育部駐外教育組已使用薩利希（Salish）與庫特奈（Kootenai）部落，但兩個目錄標籤可能指向同一弗拉特黑德保留地部落聯盟，須先審查標籤範圍，避免寫成兩個獨立國家或以重複稿灌入目標數。原始1492年也不能當作現代聯盟成立年。",
+    "researchSources": [
+      "https://depart.moe.edu.tw/SF/News_Content.aspx?n=5BA0564C438161A0&s=7E16AC35B6C787FB",
+      "https://cskt.org/",
+      "https://cskt.org/wp-content/uploads/2024/11/Final-Tribal-Civics-Book.pdf",
+      "https://cskt.org/wp-content/uploads/2025/01/ALCO-ord-regs-scan03and-corrected-2-1.pdf"
+    ]
+  },
+  {
+    "original": "Miwok",
+    "reason": "本次搜尋取得一般中文轉寫與地名、公司同名用例，仍未充分確認臺灣民族學通用族名；不從同名公司或地名反推族名。",
+    "status": "resolved",
+    "reviewedIn": "scripts/v21t/batch-34.json",
+    "resolvedBy": "scripts/v21t/batch-42.json"
+  },
+  {
+    "original": "Timucua",
+    "reason": "已找到美國國家公園及語言資料，但未確認通用臺灣繁體中文族名，保留待考。",
+    "status": "deferred",
+    "reviewedIn": "scripts/v21t/batch-34.json"
+  },
+  {
+    "original": "Gunditjmara",
+    "reason": "臺灣政府及學術活動多直接保留原文；中文媒體存在多種不同音譯，本次未確認應採的通用名稱。",
+    "status": "deferred",
+    "reviewedIn": "scripts/v21t/batch-34.json"
+  },
+  {
+    "original": "Yorta Yorta",
+    "reason": "找到中華郵政約塔族用例但尚未核對中英直接對應，暫不據此認證族名。",
+    "status": "deferred",
+    "reviewedIn": "scripts/v21t/batch-34.json"
+  },
+  {
+    "original": "Wurundjeri",
+    "reason": "找到澳洲地方政府簡體中文及社群轉寫，尚未確認臺灣通用譯名，保留待考。",
+    "status": "deferred",
+    "reviewedIn": "scripts/v21t/batch-34.json"
+  },
+  {
+    "original": "Iowa",
+    "reason": "本輪搜尋未確認臺灣史學或民族學機構採用之族名；州名及城市名不能直接充作族名。",
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Yokuts",
+    "reason": "本輪僅見美國大學網站繁體翻譯用約庫特族，未確認臺灣通行民族學用例，不直接採用。",
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Warao",
+    "reason": "原民會文獻使用原文Warao，未確認臺灣通用中文對照。",
+    "status": "deferred",
+    "reviewedOn": "2026-11-05",
+    "reviewStatus": "resolved-name-evidence-2026-11-06",
+    "resolutionNote": "本輪以AAT族群文化紀錄核名；舊搜尋未命中不再視為沒有名稱。介紹是否完成仍以進度及manifest為準。"
+  },
+  {
+    "original": "Lumbee",
+    "reason": "本輪未確認臺灣通用中文族名；中文譯名與族群史待查。",
+    "status": "resolved",
+    "reviewedOn": "2026-11-05",
+    "resolvedIn": "scripts/v21t/batch-45.json",
+    "identitySource": "https://d17u3w3ts5ihmp.cloudfront.net/storage/app/public/files/3084.pdf",
+    "resolution": "《原教界》2015年6月第63期〈美洲原住民族人物誌：政治篇〉以此中文族名並列原文；另以族方及專業機構核對身分和史實。"
+  },
+  {
+    "original": "Gurindji",
+    "reason": "臺灣原民機構與學術資料多使用原文；澳洲廣播公司簡體中文有語名轉寫，尚未確認臺灣通用族名，保留待考。",
+    "researchSources": [
+      "https://news.ipcf.org.tw/latest/1282",
+      "https://ws2-sun.ndhu.edu.tw/~cfshih/conference-papers/20181027.pdf"
+    ],
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Ixil",
+    "reason": "找到臺灣宗教新聞用伊西爾、遺產列表用伊克西爾等不同轉寫，尚未核定史學或民族學慣用字形，不自行選定。",
+    "researchSources": [],
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Kaqchikel",
+    "reason": "臺灣藝術雜誌有卡奇克爾人中英對照，語言競賽則採喀克其奎語；尚須核定族名慣用法與族群史，不由語名逕行創造族名。",
+    "researchSources": [
+      "https://www.artist-magazine.com/edcontent_d.php?id=20910&lang=tw&tb=8",
+      "https://ioling.org/booklets/iol-2025-indiv-prob.zt.pdf"
+    ],
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Mingin",
+    "reason": "候選重要度最高，但搜尋結果混雜緬甸地名、姓氏與澳洲Minkin語言標籤；本輪未核實目錄社群身分及臺灣慣用族名，不以無關詞典譯名套用。",
+    "researchSources": [],
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Charrúa",
+    "reason": "本次檢索未確認可採用的臺灣繁體中文通用名稱；不把中國大陸用名或同名地形譯名直接套用為族名。",
+    "researchSources": [
+      "https://www.fmprc.gov.cn/gjhdq_676201/gj_676203/nmz_680924/1206_681192/1206x0_681194/"
+    ],
+    "status": "deferred"
+  },
+  {
+    "original": "Spokane",
+    "reason": "本輪未取得可確認臺灣慣用族名的可靠用例，不從同名城市或中國大陸用名直接套用。",
+    "researchSources": [],
+    "status": "deferred",
+    "reviewedOn": "2026-11-05"
+  },
+  {
+    "original": "Yakima",
+    "reason": "臺灣人類學文章採原文Yakama；未核實通用中文族名，品牌及地名用例不能替代族名。",
+    "researchSources": [
+      "https://guavanthropology.tw/article/6541"
+    ],
+    "status": "resolved",
+    "reviewedOn": "2026-11-05",
+    "resolvedIn": "scripts/v21t/batch-44.json",
+    "identitySource": "https://global.udn.com/global_vision/story/8664/7930809",
+    "resolution": "臺灣聯合報轉角國際以雅卡馬並列Yakama，採族群用名；族方條約及歷史資料證明Yakima為同名舊拼寫。"
+  },
+  {
+    "original": "Cayuse",
+    "reason": "臺灣用例目前主要為直升機及個人文章，尚不足以確定史學通用譯名，不以媒體題材代替族名查核。",
+    "researchSources": [],
+    "status": "deferred"
+  },
+  {
+    "original": "Alabama",
+    "reason": "本次AAT命中語言與材料紀錄，未從族群紀錄確證繁中名稱。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Biloxi",
+    "reason": "AAT族群紀錄尚未提供可採用的繁中名稱；不能套用同名城市譯名。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Houma",
+    "reason": "AAT有族群紀錄，但未確證繁中用名；不從地名推定。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Cochimí",
+    "reason": "本次AAT族群紀錄未確認繁中名稱；查詢使用Cochimi。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Suquamish",
+    "reason": "本次AAT族群紀錄未確認繁中名稱。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Nauset",
+    "reason": "本次AAT未找到可核對之族群繁中紀錄。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Pamunkey",
+    "reason": "本次AAT族群紀錄未確認繁中名稱。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Nisenan",
+    "reason": "本次AAT族群紀錄未確認繁中名稱。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Nuxwsa'7aq (Nooksack)",
+    "reason": "Nooksack查詢僅取得語言命中，未從族群紀錄確證繁中名稱。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Achumawi",
+    "reason": "本次AAT查詢僅取得語言命中，尚未確證族群用名。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/",
+    "reviewStatus": "resolved-name-evidence-2026-11-06",
+    "resolutionNote": "本輪以AAT族群文化紀錄核名；舊搜尋未命中不再視為沒有名稱。介紹是否完成仍以進度及manifest為準。"
+  },
+  {
+    "original": "Wappo",
+    "reason": "本次AAT查詢僅取得語言命中，尚未確證族群用名。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Yuma",
+    "reason": "搜尋命中Yuman廣義語族文化紀錄，不能未核對即當作Quechan特定民族譯名。保留待查，不代表中文世界沒有譯名；未有新證據不重複搜尋。",
+    "reviewedOn": "2026-11-06",
+    "artifacts": "artifacts/v21t-name-review-50/ 或 artifacts/v21t-name-review-52/"
+  },
+  {
+    "original": "Santee",
+    "reason": "目錄年代1492–1700，可能指卡羅萊納地方民族；AAT桑蒂紀錄可能為達科他相關文化，未核對地圖位置前不可套名或撰稿。",
+    "reviewedOn": "2026-11-06",
+    "status": "resolved",
+    "resolvedOn": "2026-11-06",
+    "resolution": "已核對1600快照座標落於明尼蘇達及鄰近地區，非卡羅萊納；與AAT東部達科他紀錄及族方史料一致。已於第65批補名及獨立介紹。",
+    "evidence": "artifacts/v21t-name-research-65/catalog-geography.json"
+  },
+  {
+    "original": "Maká",
+    "reason": "AAT 300263311 Maka／瑪加的文化階層及中文說明明確指喀麥隆東南部，與巴拉圭Maká不同；不得採用瑪加作譯名。巴拉圭史實已有線索但繁中名稱仍待證。",
+    "researchSources": [
+      "https://www.getty.edu/vow/AATFullDisplay?find=&logic=AND&note=&subjectid=300263311"
+    ],
+    "evidence": "artifacts/v21t-name-research-68/300263311.html"
+  },
+  {
+    "original": "Chtimacha",
+    "reason": "AAT列Chitimacha拼寫變體；既有p-bd990083a6d5f373已有完整介紹。應僅補名稱並建立別名映射，不增加介紹數；目前套用工具只在新稿列上支援別名，另待補既有稿純補名流程。",
+    "researchSources": [
+      "https://www.getty.edu/vow/AATFullDisplay?find=&logic=AND&note=&subjectid=300017708"
+    ],
+    "canonicalId": "p-bd990083a6d5f373"
+  },
+  {
+    "original": "Imbangala",
+    "reason": "已確認因班加拉繁中名；1815目錄可能特指Kasanje國家而不只是早期軍事社群，應先核地理與歷史身分。不要將十七世紀各軍事集團與十九世紀王國視為單一政體。",
+    "researchSources": [
+      "https://www.getty.edu/vow/AATFullDisplay?find=&logic=AND&note=&subjectid=300265292",
+      "https://www.getty.edu/vow/TGNFullDisplay?english=Y&find=angola&nation=&place=&subjectid=6002739",
+      "https://www.bu.edu/afam/people/faculty/john-thornton/cavazzi-missione-evangelica-2/book-1-chapter-3/"
+    ]
+  }
+]

@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const catalog=require('../data/polities.json');
 const endonyms=require('../data/endonyms.json');const fs=require('node:fs');const built=fs.readdirSync('dist/data').filter(n=>/^endonyms\.[a-f0-9]{16}\.json$/.test(n));assert.equal(built.length,1);assert.deepEqual(JSON.parse(fs.readFileSync('dist/data/'+built[0])),endonyms);assert(Object.keys(endonyms).length>=60&&Object.keys(endonyms).length<=100);for(const [id,entries] of Object.entries(endonyms)){assert(catalog.polities[id]);for(const e of entries)for(const k of ['original','transliteration','meaning','language','period'])assert.equal(typeof e[k],'string');}
-(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});try{
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
 const page=await browser.newPage();page.setDefaultTimeout(20000);const errors=[];page.on('pageerror',e=>errors.push(e.message));const id=catalog.index['Roman Empire'];
 await page.goto(`http://localhost:8000/dist/?year=200&polity=${id}`);
 await page.locator('.popup-title').waitFor();assert.equal(await page.evaluate(()=>historyState.selectedPolity),id);

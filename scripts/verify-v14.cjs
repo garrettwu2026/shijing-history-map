@@ -1,5 +1,5 @@
 const {chromium}=require('playwright');const assert=require('node:assert/strict');const fs=require('node:fs');
-(async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});const report={years:[],fallback:[],errors:[]};try{
+(async()=>{const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const report={years:[],fallback:[],errors:[]};try{
  const page=await browser.newPage({viewport:{width:1440,height:900}});page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.errors.push(m.text())});
  // Labels and geometry must work with all outbound requests forbidden.
  await page.route('**/*',route=>new URL(route.request().url()).hostname==='localhost'?route.continue():route.abort());

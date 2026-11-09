@@ -1,0 +1,23 @@
+{
+  "reviewRequired": true,
+  "notForAutomaticApplication": true,
+  "excludedExactMatches": [
+    {
+      "original": "Meru",
+      "reason": "目錄為澳洲社群，AAT同名為非洲文化，不能套用梅魯譯名。"
+    },
+    {
+      "original": "Jukun",
+      "reason": "目錄為澳洲社群，AAT同名為非洲文化，不能套用朱昆譯名。"
+    },
+    {
+      "original": "Achí",
+      "reason": "變體比對的Achi紀錄位於非洲文化階層，非瓜地馬拉馬雅民族，不能套名。"
+    },
+    {
+      "original": "Tepehua",
+      "reason": "不可按相似拼寫採特佩瓦；托托納克語系民族須另查，與第67批Tepehuán不同。"
+    }
+  ],
+  "note": "AAT名稱證據僅核詞形；文化階層、地圖位置與歷史社群均須一致。同族領地及保留地標籤先查既有介紹，避免重複稿件計數。"
+}

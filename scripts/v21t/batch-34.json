@@ -1,0 +1,164 @@
+[
+  {
+    "id": "p-ecb0eddbf1f746c6",
+    "original": "Kamilaroi",
+    "zh": "金米拉萊族",
+    "identitySource": "https://www.kmfa.gov.tw/ArtAccrediting/ArtArticleDetail.aspx?Cond=b986fdb9-3198-4260-99d6-d69d5342dd67",
+    "nameBasis": "高雄市立美術館研究人員文章使用金米拉萊族（Kamilaroi），採此臺灣博物館用例；英語有多種地方與歷史拼法，不另造相繼政權。",
+    "researchSources": [
+      "https://www.kmfa.gov.tw/ArtAccrediting/ArtArticleDetail.aspx?Cond=b986fdb9-3198-4260-99d6-d69d5342dd67",
+      "https://www.samuseum.sa.gov.au/collection/archives/language_groups/kamilaroi",
+      "https://www.nma.gov.au/defining-moments/resources/myall-creek-massacre",
+      "https://www.dcceew.gov.au/parks-heritage/heritage/places/national/myall-creek",
+      "https://archival.sl.nsw.gov.au/Details/archive/110314591",
+      "https://www.winanga-li.org.au/rewakening-philosophy",
+      "https://www.uts.edu.au/sites/default/files/2022-11/uts-fass-tesol-aboriginal-languages.pdf"
+    ],
+    "note": "此為多個地方社群，麥奧溪受害者屬其中一個群體；不將單一事件等同全族歷史。無確認直接前後政體ID，關聯留空。",
+    "profile": {
+      "name": "金米拉萊族",
+      "summary": "金米拉萊族是澳洲新南威爾斯州北部及鄰接昆士蘭地區的原住民族，由多個地方社群組成，並無共同首都或統一王朝。十九世紀牧場擴張侵占土地，族人在抵抗、遷移及受僱勞動之間尋求生存；1838年麥奧溪屠殺的受害者即屬其一個地方群體。此案罕見地導致七名歐洲人被判刑處決，卻沒有使殖民邊區暴力就此終止。傳教者留下的語言記錄帶有當時的宗教目的，也保存部分詞彙與語法。後來社群與研究者以這些資料及族人知識推動語言復振，出版字典、發展教材，持續表達文化與土地之間的關係。",
+      "存續年代": "歐洲殖民以前即存在，社群延續至今；目錄1600—1815年屬地圖採樣，並非建國與滅亡年代",
+      "首都": "無全族共同首都；納莫伊河、格威迪爾河及鄰近內陸各有地方社群，殖民城鎮不是全族王都",
+      "主要族群/語言": "金米拉萊各地方群體；使用金米拉萊語，現亦使用英語。原文記錄有多種拼法，反映記音與地方使用差異；現代語言教材採取一致書寫方式。族語與鄰近語言相關，但不能把相鄰社群全部視為同一政治實體",
+      "重要事件": [
+        "十九世紀牧場擴張造成土地喪失與嚴重邊區暴力",
+        "1838年麥奧溪屠殺及其審判成為殖民司法的重要案例",
+        "傳教者記錄語言，相關資料後來成為復振資源之一",
+        "社群與研究者合作編纂字典及教材，發展當代語言學習"
+      ],
+      "前身/後繼": [],
+      "年表": [
+        {
+          "year": 1838,
+          "text": "6月麥奧溪屠殺造成地方群體至少28人死亡；12月七名涉案歐洲人被處決"
+        },
+        {
+          "year": 1866,
+          "text": "威廉・里德利出版包含金米拉萊語的語言著作"
+        },
+        {
+          "year": 1875,
+          "text": "里德利的語言著作再版，成為後世語言研究可用的歷史記錄"
+        },
+        {
+          "year": 2000,
+          "text": "麥奧溪屠殺紀念碑設立，族人與非原住民共同參與紀念及和解"
+        },
+        {
+          "year": 2003,
+          "text": "金米拉萊語與相關鄰近語言字典出版，支持社群重新學習"
+        },
+        {
+          "year": 2008,
+          "text": "麥奧溪屠殺與紀念地列入澳洲國家遺產名錄"
+        }
+      ],
+      "重要人物": [
+        {
+          "name": "威廉・里德利",
+          "role": "十九世紀傳教士與語言記錄者，其著作並非族人自撰的國家史"
+        },
+        {
+          "name": "萊爾・孟洛",
+          "role": "參與麥奧溪歷史記憶與紀念的族群長者"
+        },
+        {
+          "name": "約翰・賈康",
+          "role": "與社群合作編纂語言字典及推動語言復振的研究者"
+        }
+      ],
+      "背景": "河川及其周邊環境支撐多個地方社群，土地也連結親屬、儀式與知識傳承。殖民牧場擴張後，原有資源使用受到限制，報復攻擊與屠殺加劇；司法對個別案件的介入並未終結整體土地剝奪。",
+      "影響": "麥奧溪審判成為討論殖民暴力與司法責任的重要事件，紀念活動讓後代持續面對共同歷史。語言復振則將外來者留下的片段記錄與社群知識重新結合，使族人能在教育和日常生活中延續文化。"
+    }
+  },
+  {
+    "id": "p-8ae38c04dd518ad6",
+    "original": "Ohlone",
+    "zh": "歐隆尼族",
+    "identitySource": "https://greenmedia.today/article_detail.php?cid=8&mid=1091",
+    "nameBasis": "臺灣綠媒體刊登歐隆尼小餐館（Cafe Ohlone）與原住民飲食的用例；奧克蘭市政府繁體中文版城市森林計畫亦明列歐隆尼族（Ohlone），採一致譯名。",
+    "researchSources": [
+      "https://greenmedia.today/article_detail.php?cid=8&mid=1091",
+      "https://cao-94612.s3.us-west-2.amazonaws.com/documents/Oakland-Urban-Forest-Plan-2024-zh_hant.pdf",
+      "https://www.nps.gov/prsf/learn/historyculture/indigenous-period.htm",
+      "https://www.nps.gov/articles/early-history.htm",
+      "https://www.hsr.ca.gov/wp-content/uploads/2022/02/Final_EIRS_JM_V1-25_CH_3.17_Cultural_Resources.pdf",
+      "https://www.rumsenohlone.com/remembering-our-ancestors",
+      "https://wildoysters.org/blog//interview-with-vincent-medina-and-louis-trevino-of-cafe-ohlone",
+      "https://ybca.org/artist/vincent-medina-louis-trevino/"
+    ],
+    "note": "中文名稱與殖民文獻外稱分開；各地方自稱不另造音譯。無確認的直接前後政體ID，關聯留空。",
+    "profile": {
+      "name": "歐隆尼族",
+      "summary": "歐隆尼族是加州舊金山灣區及鄰近海岸多個原住民社群的合稱，各地具有自身語言、村落與領域，並無全族共同的中央政府。族人利用海灣、濕地和內陸資源，以漁撈、採集與狩獵維持生活，也透過用火等方式管理地景。十八世紀末西班牙傳教區與殖民聚落擴張，疾病、勞役及宗教同化破壞原有社會。墨西哥將傳教區世俗化後，土地多未回到族人手中；美國統治下，社群仍面對剝奪與歧視。後代持續保存語言記錄、保護祖先遺址並復振工藝與飲食，以地方社群自身的歷史反駁族群已經消失的說法。",
+      "存續年代": "西班牙殖民以前即存在，後代社群延續至今；目錄1492年是地圖採樣，不能解讀為僅存在一年",
+      "首都": "無共同首都；灣區及蒙特雷一帶有多個地方村落，西班牙傳教區不是族人原有的王都",
+      "主要族群/語言": "歐隆尼是多個地方社群及相關語言的合稱，包含東灣與蒙特雷等地的不同傳統；今多使用英語，亦推動祖語復振。舊殖民文獻常以海岸居民一類外稱概括，不能取代各社群自身名稱，也不能把合稱視為單一國號",
+      "重要事件": [
+        "族人以村落及地方領域組織社會，並透過季節活動及用火管理資源",
+        "十八世紀末西班牙殖民與傳教區制度破壞既有生活",
+        "1834年起傳教區世俗化，土地分配未恢復多數族人的領域",
+        "族人參與語言記錄，後代以工藝、飲食及教育復振文化"
+      ],
+      "前身/後繼": [],
+      "年表": [
+        {
+          "year": 1776,
+          "text": "西班牙在舊金山建立傳教區及駐軍據點，加深對當地社群的控制"
+        },
+        {
+          "year": 1777,
+          "text": "聖克拉拉傳教區成立，影響谷地原住民的土地及生活"
+        },
+        {
+          "year": 1834,
+          "text": "墨西哥政府推行傳教區世俗化，族人多未能收回原有土地"
+        },
+        {
+          "year": 1932,
+          "text": "伊莎貝爾・梅多斯開始與哈靈頓長期合作，留下蒙特雷地方社群語言及文化記錄"
+        },
+        {
+          "year": 2018,
+          "text": "文森・梅迪納與路易斯・特雷維諾開設歐隆尼餐飲空間，結合傳統食物與文化教育"
+        }
+      ],
+      "重要人物": [
+        {
+          "name": "伊莎貝爾・梅多斯",
+          "role": "保存蒙特雷地方祖語、家族史與文化知識的族人，與語言學者合作記錄"
+        },
+        {
+          "name": "文森・梅迪納",
+          "role": "東灣族人，透過語言教學及傳統飲食推動文化延續"
+        },
+        {
+          "name": "路易斯・特雷維諾",
+          "role": "蒙特雷地區族人，與梅迪納共同推動社群飲食及文化復振"
+        }
+      ],
+      "背景": "海灣、濕地與橡樹林等環境提供多樣食物，地方社群依季節移動並維繫各自的土地關係。傳教區把不同社群集中管理，強制勞動、疾病及改宗壓力相互作用，改變人口分布與社會生活。",
+      "影響": "語言與口述歷史記錄使後代得以重建祖先知識，但文化並不只存於檔案。當代社群持續維護遺址、恢復植物利用和編織，並以共同飲食與教學傳遞知識，顯示殖民衝擊下仍存在活躍而多元的文化延續。"
+    }
+  },
+  {
+    "id": "p-b8e1ccc148c2589c",
+    "original": "Kwakwaka’wakw",
+    "zh": "夸夸卡瓦克族",
+    "identitySource": "https://twh.boch.gov.tw/taiwan/learn_detail.aspx?id=113",
+    "researchSources": [
+      "https://twh.boch.gov.tw/taiwan/learn_detail.aspx?id=113",
+      "https://www.umista.ca/pages/collection-history",
+      "https://www.umistakwakwala.ca/umista",
+      "https://umistapotlatch.ca/nos_masques_come_home-our_masks_come_home-eng.php"
+    ],
+    "nameBasis": "文化部文化資產局所刊吉田憲司博物館學文章譯文明列夸夸卡瓦克與Kwakwaka’wakw對照，採此臺灣機構用例；其他中文文獻另見夸夸嘉夸。",
+    "note": "此標籤與使用直引號的同族標籤為同一族名；目錄1492年僅為地圖採樣，不構成另一政體。共用已查證民族史，明示不同標籤而不虛構另一國家。",
+    "profileFrom": "p-f0c89de5ad631bea",
+    "profileOverrides": {
+      "summary": "夸夸卡瓦克族是加拿大太平洋沿岸多個原住民社群的合稱，本條與同族的另一種原文拼寫標籤指向相同族群，並非另一個國家。族人以地方村落、親屬及儀式關係組織生活，贈禮宴透過歌舞、面具與贈禮見證社會關係。十九世紀殖民行政與教會活動深入家園，加拿大政府禁止贈禮宴，1921年大型宴會後又逮捕參與者並沒收儀式物件。族人持續製作相關物品、傳承知識，禁令取消後爭取文物歸還。1980年開館的烏米斯塔文化中心保存返還文物，並支持社群以自己的觀點延續語言、文化與歷史記憶。",
+      "存續年代": "歐洲殖民接觸前即存在，社群延續至今；本條目錄僅標1492年，與另一拼寫標籤的1530—1600年均屬採樣，不是不同政體的起訖"
+    }
+  }
+]

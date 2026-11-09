@@ -1,0 +1,116 @@
+[
+  {
+    "s": "http://vocab.getty.edu/aat/300017531",
+    "label": "Kamia",
+    "zh": "卡米亞",
+    "candidate": "p-5c58954007b5e5ed"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017876",
+    "label": "Ciboney",
+    "zh": "西沃內",
+    "candidate": "p-a5f137ba5a3a14cb"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017969",
+    "label": "Guaná",
+    "zh": "瓜納",
+    "candidate": "p-7b69f1f5685fd8fb"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017504",
+    "label": "Costanoan",
+    "zh": "科斯塔諾",
+    "candidate": "p-9fc79457e04e57e3"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017531",
+    "label": "Kumeyaay",
+    "zh": "卡米亞",
+    "candidate": "p-a7282dc953df5a33"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300262800",
+    "label": "Kusso",
+    "zh": "姆布庫舒",
+    "candidate": "p-85c85d822a7ce8da"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017530",
+    "label": "Kumeyaay",
+    "zh": "迪埃格諾",
+    "candidate": "p-a7282dc953df5a33"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017012",
+    "label": "Cuicuilco",
+    "zh": "提科滿",
+    "candidate": "p-552bd9f0986de889"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300265299",
+    "label": "Biri",
+    "zh": "巴蘭達維里",
+    "candidate": "p-98f5d61f3f89de4f"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017732",
+    "label": "Mescalero",
+    "zh": "梅斯卡萊羅",
+    "candidate": "p-80946197be809ffa"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017779",
+    "label": "Tepehua",
+    "zh": "特佩瓦",
+    "candidate": "p-14c05158f5c96c83"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017960",
+    "label": "Warray",
+    "zh": "瓦勞",
+    "candidate": "p-beb55d7aa202dc6c"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300263740",
+    "label": "Warsenis",
+    "zh": "瓦爾塞尼斯",
+    "candidate": "p-be9283fddff275db"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017686",
+    "label": "Lil'wat",
+    "zh": "利洛威特",
+    "candidate": "p-9bdf8943323d1489"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017668",
+    "label": "Jiwere",
+    "zh": "奧托",
+    "candidate": "p-b671bcb9a03c145b"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017495",
+    "label": "Upper Tanana",
+    "zh": "塔納納",
+    "candidate": "p-844f0433189d98fc"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017560",
+    "label": "Pawtucket",
+    "zh": "彭納庫克",
+    "candidate": "p-52e10cbe4c4d4e60"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017906",
+    "label": "Mojeño",
+    "zh": "莫荷",
+    "candidate": "p-de8f489570623731"
+  },
+  {
+    "s": "http://vocab.getty.edu/aat/300017911",
+    "label": "Shipibo-Konibo",
+    "zh": "希皮博",
+    "candidate": "p-3b7c7f7f0705774f"
+  }
+]

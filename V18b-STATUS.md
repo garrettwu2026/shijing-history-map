@@ -1,84 +1,41 @@
-# V18b / TASK21 狀態：1,187 篇，尚未達目標
+# V18b / TASK21T 狀態：1,500筆，達到本階段目標
 
-本輪從 **1,184 篇**完整介紹出發，新增 **3 篇**，目前共 **1,187 篇**；距離 1,500 篇仍差 **313 篇**。TASK21 尚未完成。原有 1,184 篇逐筆 JSON 比較完全一致。沒有 commit 或 push。
+截至2026-11-09，已有 **1,500筆中文名稱一致且具完整介紹的目錄條目**。本輪第80批新增9筆名稱、9篇獨立撰寫介紹，1491→1500；原1491篇雜湊全部一致。另完成第79批待驗證。全部2997筆的覆蓋工作尚未完成；目錄包含民族、文化與地理標籤，覆蓋數不等於獨立國家數。
 
-## 數量
+開始前已更新 `scripts/v21t/EFFICIENCY.md`，合併核名與歷史查證，以小型候選及摘要接續。來源只留編輯用manifest與artifacts，介紹和介面不顯示來源。未commit、push或部署。
+
+## 本批內容
+
+基卡普、西阿帕切、利洛威特、瓦維、查蒂諾、托霍拉瓦爾、阿穆斯戈、曼族、馬約。逐筆核對AAT繁中首選、中研院署名與文化身分；自稱、地方組織及前殖民中心另註，不把地圖採樣年當興亡年。曼族介紹另列馬姆族稱法。各篇包括摘要、年代、首都、族群與語言、重要事件、前身/後繼欄、5筆年表、3筆人物、背景及影響；人物區分領袖與研究者。無可靠量值者省略關鍵數據，無確定繼承關係者不硬接政體ID。
+
+## 實際數量
 
 | 項目 | 數量 |
 | --- | ---: |
-| 政體目錄 ID | 2997 |
-| 已標有中文名的 ID | 1330 |
-| untranslated ID | 1667 |
-| TASK20 原始介紹基準 | 214 |
-| TASK21 原始開始介紹數 | 300 |
-| 本輪開始介紹數 | 1184 |
-| 介紹總數／完整介紹 | 1187 |
-| 本輪新增 | 3 |
-| 相對 TASK20 原始基準新增 | 973 |
-| TASK21 累計新增 | 887 |
-| 已有譯名但尚無介紹 | 143 |
-| 距離 1500 篇 | 313 |
-| 事件總數 | 980 |
-| 相對 TASK20 基準新增事件 | 100 |
-| 事件詳情總數 | 87 |
-| 原有事件具詳情 | 70 |
-| 新增事件具詳情 | 17 |
+| 政體目錄ID | 2997 |
+| 已有中文名 | 1615 |
+| 尚未譯名 | 1382 |
+| 中文名及完整介紹 | 1500 |
+| 相對TASK20原始214篇新增 | 1286 |
+| 相對TASK21原始300篇新增 | 1200 |
+| 相對TASK21T開始1187篇新增 | 313 |
+| 摘要／年表／人物／背景／影響 | 各1500 |
+| 有可靠關鍵數據 | 46 |
+| 已譯名但無介紹 | 115 |
+| 尚無介紹的目錄ID | 1497 |
+| 事件總數／新增事件 | 980／100 |
+| 事件詳情／原有事件詳情／新增事件詳情 | 87／70／17 |
 
-| 欄位 | 具備此欄位的介紹 |
-| --- | ---: |
-| summary | 1187 |
-| 年表 | 1187 |
-| 重要人物 | 1187 |
-| 關鍵數據 | 33 |
-| 背景 | 1187 |
-| 影響 | 1187 |
+## 驗證與接續
 
-## 本輪內容與保存
+第79、80批均已執行build、npm總驗證、全部個別驗證、全部verify腳本、320px新增彈窗和冪等續跑。build及所有個別檢查通過，原有介紹保持不變。
 
-新增末羅、首羅犀那、般遮羅，以一批 3 筆保存並同步更新進度。摘要 150–300 字、年表 5–10 項、人物 3–8 位、背景與影響各 60–150 字。無可靠量值的關鍵數據依 TASK20 例外省略。
+`npm run validate` **仍失敗**：既有事件詳情87筆，未達300筆門檻。未改斷言、未降低門檻，也未宣告總驗證通過。完整結果分別在 `artifacts/v21t-batch-79/final-results.json` 與 `artifacts/v21t-batch-80/final-results.json`；第80批覆蓋審核在 `milestone-audit.json`。
 
-末羅明示佛滅紀年的爭議，年表以約前 400 年表示同一傳統中的最後旅程、入滅、葬禮及舍利分配，不宣稱精確西元年。首羅犀那區分早期王國與摩偷羅後續地方史，黑天標示為神祇。般遮羅區分吠陀時代、早期國家及後世地方王權，木柱王與黑公主明示為史詩人物，未列為可確定年代的歷史君主。外部見聞者、宗教人物與征服者均註明角色。
+進度已存 `scripts/v18b-progress.json`，1500目標狀態為 `target-reached`，整體2997筆未完成。下一批81；啟動先跑 `python3 scripts/v21t/prepare.py --summary-only`，必要時刷新候選。待考身分與來源仍保留於 `scripts/v21t/research-next.json`、deferred及catalog-issues，不能為全覆蓋硬翻或複製別名。原狀態全文已保存在 `artifacts/v21t-batch-80/status-before-milestone.md`。
 
-沒有修改政體目錄、詞彙表、既有完整介紹、事件資料、驗證門檻或 UI。編輯查核連結保存在 `artifacts/v21-task21i/editorial-review.json`，未放入 UI 資料。
+## 2026-11-09 接續稽核
 
-目前僅 1,330 個目錄 ID 標有中文名；即使全部補齊，仍比 1,500 篇少 170 個。剩餘 143 個已譯名候選依重要性與快照跨度排序存於 `artifacts/v21-task21i/remaining-translated.json`。其中包含考古文化、語族、地理標籤與史料不足的政體。不以快照年份冒充建國年，不為湊數編造君主或音譯。本輪沒有完成對全部未譯名 ID 的中文名稱考證，不能宣稱已覆蓋所有可寫政體。
+本次重新核實1500筆完整介紹與目錄、詞彙表及既有名稱索引一致，沒有來源文字；本次未新增介紹，四份內容資料檔雜湊不變。啟動前已將效率計畫寫入EFFICIENCY.md，候選快取已刷新，最高重要度待考Mingin仍沿用deferred記錄，不硬譯。
 
-## 驗證
-
-- `python3 scripts/build-static.py`：通過。
-- `npm run validate`：未通過；既有事件詳情只有 87 筆，未達 300 筆門檻，未降低驗證要求。
-- 單獨執行介紹、內容語意、事件結構、v3、靜態資產及術語驗證：全部通過。
-- 全部 15 支 `scripts/verify-*.cjs`：15/15 通過，未修改斷言。
-- localhost:8000 專案根目錄服務正常，沿用既有服務。
-- 續跑新增 0 筆，介紹與進度檔雜湊不變；原有 1,184 篇逐筆 JSON 比較一致。
-- `git diff --check`：通過。
-
-完整執行結果與日誌在 `artifacts/v21-task21i/checks.json` 及同目錄各 `.log`；續跑雜湊在 `resume-check.json`，編輯比較與查核在 `editorial-review.json`。
-
-| 命令 | 結果 |
-| --- | --- |
-| `python3 scripts/build-static.py` | 通過 |
-| `npm run validate` | 未通過 |
-| `python3 scripts/validate-intros.py` | 通過 |
-| `python3 scripts/validate-content.py` | 通過 |
-| `python3 scripts/validate-events.py` | 通過 |
-| `python3 scripts/validate-v3.py` | 通過 |
-| `python3 scripts/verify-static.py` | 通過 |
-| `python3 scripts/verify-terminology.py` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-browser.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-compact.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-performance.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-snapshots-v7.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-timeline.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v11.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v11b.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v13.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v14.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v15.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v16.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v17.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v18b.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v3.cjs` | 通過 |
-| `dbus-run-session -- xvfb-run -a node scripts/verify-v7.cjs` | 通過 |
-
-`scripts/v18b-progress.json` 維持 `in-progress`。可用 `python3 scripts/expand-v21.py` 續跑，完整條目會跳過；要繼續增加內容須先補入經審核的新稿。1,187 篇並非 TASK21 完成結果。
+重新執行build、介紹／內容／詞彙／靜態檢查均通過；npm總驗證仍因既有事件詳情87／300筆失敗。這次為資料稽核，未新增批次，未重跑第80批已通過的瀏覽器驗證。稽核與檢查日誌在`artifacts/v21t-audit-20261109/`，進度新增`lastCoverageAudit`；下一批81及尚未覆蓋1497筆的狀態維持，不commit、push或部署。

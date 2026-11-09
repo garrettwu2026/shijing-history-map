@@ -1,0 +1,92 @@
+[
+  {
+    "id": "p-024e3f1e41a3dc0b",
+    "original": "Diné Bikéyah",
+    "zh": "納瓦霍族領地",
+    "profileFrom": "p-ed30f4a4406ef7e3",
+    "identitySource": "https://www.navajo-nsn.gov/History",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "族人自稱 Diné；此地圖標籤指其家園，並非另一王朝。"
+  },
+  {
+    "id": "p-7428c598a9b85796",
+    "original": "Hopitutskwa",
+    "zh": "霍皮族領地",
+    "profileFrom": "p-305bf04823d79a2a",
+    "identitySource": "https://www.hopi-nsn.gov/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "Hopitutskwa 指霍皮人的土地；各村落有自身治理傳統。"
+  },
+  {
+    "id": "p-c9cdaf1686f87d66",
+    "original": "Lənape Haki-nk (Lenni-Lenape)",
+    "zh": "德拉瓦族領地",
+    "profileFrom": "p-bf329c0aec3a361c",
+    "identitySource": "https://delawaretribe.org/cultural-education/culture-and-language/lenape-history/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "族人自稱 Lenape，亦見 Lenni-Lenape；地圖所用名稱指其家園。"
+  },
+  {
+    "id": "p-8b723b4260e57ef9",
+    "original": "Nimiipuu (Nez Perce)",
+    "zh": "內茲珀斯族",
+    "profileFrom": "p-253a0bfa87a8a293",
+    "identitySource": "https://nezperce.org/about/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "族人自稱 Nimiipuu；內茲珀斯為沿用的外稱。"
+  },
+  {
+    "id": "p-8fef48e16c04e885",
+    "original": "Nitassinan (Innu)",
+    "zh": "因努族領地",
+    "profileFrom": "p-090f3e7d57146c86",
+    "identitySource": "https://cultureilnu.ca/langues-et-culture/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "Nitassinan 是因努語的土地自稱；指傳統領域，並非單一中央國家。"
+  },
+  {
+    "id": "p-8cd79a3fed6cf02c",
+    "original": "Omàmìwininìwag (Algonquin)",
+    "zh": "阿爾岡昆族",
+    "profileFrom": "p-c6fea7de68f60157",
+    "identitySource": "https://www.algonquinsofpikwakanagan.com/pikwakanagan/the-algonquin-way-cultural-centre-omamiwinini-pimadjwowin/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "自稱亦見 Omàmiwininì；此處指阿爾岡昆民族，不泛指整個同名語族。"
+  },
+  {
+    "id": "p-7cea0f7a1b8f2915",
+    "original": "Mvskoke (Muscogee / Creek)",
+    "zh": "馬斯科吉族",
+    "profileFrom": "p-83e496a508a0ae30",
+    "identitySource": "https://www.okhistory.org/publications/enc/entry?entry=CR006",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "自稱亦見 Mvskoke，英語外稱為克里克；不同城鎮的組織不可視為同一王朝。"
+  },
+  {
+    "id": "p-1bb3d48a1a3162cf",
+    "original": "Yup’ik/Cup’ik",
+    "zh": "尤皮克與丘皮克族",
+    "profileFrom": "p-1e75997034d8d4f9",
+    "identitySource": "https://catalog.uaf.edu/overview/campuses/",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "尤皮克、丘皮克是相關語言社群的自稱；此標籤僅為既有目錄名稱的標點變體。"
+  },
+  {
+    "id": "p-78c36d490ce78f22",
+    "original": "Ñuu Savi (Mixtecapan)",
+    "zh": "米斯特克人領地",
+    "profileFrom": "p-af22253ee3d1e9a2",
+    "identitySource": "https://www.gob.mx/inpi/es/articulos/etnografia-del-pueblo-mixteco-nuu-savi",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "自稱 Ñuu Savi，意為雨之民；不同地方語言另有變體，米斯特克為沿用的外稱。"
+  },
+  {
+    "id": "p-bf8b560c94eb5aeb",
+    "original": "Ben 'Zaa/Binnizá/Mén Diiste/Bene Xhon (Zapoteco)",
+    "zh": "薩波特克",
+    "profileFrom": "p-40fb3093e71ad065",
+    "identitySource": "https://atlas.inali.gob.mx/variantes/ficha/051362",
+    "nameBasis": "沿用既有詞彙表中同一民族的繁體中文名稱；領地標籤加註領地，並非新造音譯。",
+    "note": "自稱依地區有 Binnizá、Ben Zaa 等不同形式；不宜把各地自稱當成獨立統一帝國。"
+  }
+]

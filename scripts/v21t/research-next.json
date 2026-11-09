@@ -1,0 +1,188 @@
+{
+  "nextBatch": "scripts/v21t/batch-81.json",
+  "completedPreviousResearch": [
+    {
+      "original": "Ixil",
+      "id": "p-00ee2a4c450f0531",
+      "manifest": "scripts/v21t/batch-60.json",
+      "status": "complete"
+    },
+    {
+      "original": "Mescalero Apache",
+      "id": "p-036c67744205fb68",
+      "manifest": "scripts/v21t/batch-60.json",
+      "status": "complete"
+    },
+    {
+      "original": "San Carlos Apache",
+      "id": "p-4d3ad0a470ee1a35",
+      "manifest": "scripts/v21t/batch-60.json",
+      "status": "complete"
+    },
+    {
+      "original": "Siuslaw",
+      "id": "p-4689b1fe7a08d564",
+      "manifest": "scripts/v21t/batch-61.json",
+      "status": "complete"
+    },
+    {
+      "original": "Skagit",
+      "id": "p-167f07406d760bca",
+      "manifest": "scripts/v21t/batch-61.json",
+      "status": "complete"
+    },
+    {
+      "original": "Kiliwa",
+      "id": "p-db873b4a1359d0d6",
+      "manifest": "scripts/v21t/batch-61.json",
+      "status": "complete"
+    },
+    {
+      "original": "Pericú",
+      "id": "p-e76c33ce01445e5b",
+      "manifest": "scripts/v21t/batch-61.json",
+      "status": "complete"
+    },
+    {
+      "original": "Tawakoni",
+      "id": "p-ebd2f8be5cd550d7",
+      "manifest": "scripts/v21t/batch-62.json",
+      "status": "complete"
+    },
+    {
+      "original": "Waco",
+      "id": "p-10c6bb4ee7934827",
+      "manifest": "scripts/v21t/batch-62.json",
+      "status": "complete"
+    },
+    {
+      "original": "Yanktonai",
+      "id": "p-2c0f78e2cd168d26",
+      "manifest": "scripts/v21t/batch-62.json",
+      "status": "complete"
+    },
+    {
+      "original": "Wappinger",
+      "id": "p-24c2037a0253ebd4",
+      "manifest": "scripts/v21t/batch-62.json",
+      "status": "complete"
+    },
+    {
+      "original": "Tuscarora",
+      "id": "p-f84e6e3789c1ed93",
+      "manifest": "scripts/v21t/batch-62.json",
+      "status": "complete"
+    },
+    {
+      "original": "Huarpe",
+      "id": "p-0d437e78eb5e432c",
+      "manifest": "scripts/v21t/batch-63.json",
+      "status": "complete"
+    },
+    {
+      "original": "Chaná",
+      "id": "p-49630e33af3386ff",
+      "manifest": "scripts/v21t/batch-63.json",
+      "status": "complete"
+    },
+    {
+      "original": "Waiwai",
+      "id": "p-fe178d3e02cf4f1c",
+      "manifest": "scripts/v21t/batch-63.json",
+      "status": "complete"
+    },
+    {
+      "original": "Amahuaca",
+      "id": "p-1015f49e5235b1ca",
+      "manifest": "scripts/v21t/batch-63.json",
+      "status": "complete"
+    },
+    {
+      "original": "Mopan",
+      "id": "p-b1b646c8bec4e1de",
+      "manifest": "scripts/v21t/batch-63.json",
+      "status": "complete"
+    }
+  ],
+  "componentEvidencePendingIdentity": [
+    {
+      "id": "p-3b7c7f7f0705774f",
+      "original": "Shipibo-Konibo",
+      "verifiedComponent": "希皮博",
+      "identitySource": "https://www.getty.edu/vow/AATFullDisplay?find=Shipibo&logic=AND&note=&english=N&prev_page=1&subjectid=300017911",
+      "nextStep": "AAT只證實Shipibo；必須另查Konibo及複合族名的臺灣用例，不可將單一成分當成全名。"
+    }
+  ],
+  "candidateExtraction": "python3 scripts/v21t/prepare.py",
+  "cachedSelection": "python3 scripts/v21t/prepare.py --select 'Warao|Macuxi|Shipibo' --limit 3",
+  "deferredReview": "scripts/v21t/deferred.json",
+  "note": "第80批完成1500篇里程碑；以prepare.py --summary-only為真實進度。全部2997筆仍未全覆蓋，疑名及同族別名不充數。總驗證仍有既有事件87/300不足。",
+  "verifiedNamesPendingHistory": [],
+  "nameDiscoveryCommand": "python3 scripts/v21t/discover-names.py",
+  "sameCommunityReview": [
+    {
+      "id": "p-9fc79457e04e57e3",
+      "original": "Costanoan",
+      "sameCommunityAs": "p-8ae38c04dd518ad6",
+      "note": "既有歐隆尼介紹已存在，應先查核外稱對應及全站用名；確認後只補名，不複製介紹或新增完成數。"
+    }
+  ],
+  "worldNameDiscoveryCommand": "python3 scripts/v21t/discover-names.py --world",
+  "worldNameCache": "scripts/v21t/aat-world-zh-cache.json",
+  "variantResearchLeads": "scripts/v21t/aat-variant-name-leads.json",
+  "rejectedWorldMatches": [
+    {
+      "original": "Meru",
+      "reason": "目錄為澳洲社群，AAT同名為非洲文化，不能套用梅魯譯名。"
+    },
+    {
+      "original": "Jukun",
+      "reason": "目錄為澳洲社群，AAT同名為非洲文化，不能套用朱昆譯名。"
+    },
+    {
+      "original": "Achí",
+      "reason": "變體比對的Achi紀錄位於非洲文化階層，非瓜地馬拉馬雅民族，不能套名。"
+    },
+    {
+      "original": "Tepehua",
+      "reason": "不可按相似拼寫採特佩瓦；托托納克語系民族須另查，與第67批Tepehuán不同。"
+    }
+  ],
+  "completedLatestResearch": {
+    "manifest": "scripts/v21t/batch-80.json",
+    "profiles": 9,
+    "newNames": 9
+  },
+  "archaeologicalReview": {
+    "sameCultureNotAnotherProfile": [
+      "Kelteminar culture 對應第73批 Kelteminar；勿複製計數"
+    ],
+    "nextCandidates": [
+      "Milograd culture",
+      "Mill Creek Culture",
+      "Brushed Pottery culture",
+      "Narva"
+    ],
+    "requirements": "既譯名仍須查核身分；不拿現代城市名稱冒充史前文化，不創造未知古人。",
+    "deferred": [
+      {
+        "original": "Guaná",
+        "reason": "歷史族名可能涵蓋阿拉瓦克語族社群，須先核地圖身分及AAT概念範圍，不能直接套現代Maskoy族群史。"
+      },
+      {
+        "original": "Ciboney / Guanahatabey",
+        "reason": "有繁中名稱線索，但兩概念及無陶文化的歷史配對受研究質疑；須先讀Rouse、Keegan等研究並核地圖，不能把別稱當獨立政體衝數。",
+        "researchSources": [
+          "https://www.cambridge.org/core/journals/antiquity/article/creating-the-guanahatabey-ciboney-the-modern-genesis-of-an-extinct-culture/33C6799D77A0B74B7CCC10DBE6AC78D6",
+          "https://oulurepo.oulu.fi/bitstream/handle/10024/44487/nbnfi-fe20230922136176.pdf?isAllowed=y&sequence=1"
+        ]
+      }
+    ]
+  },
+  "milestone": {
+    "target": 1500,
+    "completed": 1500,
+    "remainingCatalogWithoutIntro": 1497,
+    "nextStep": "後續擴充先篩重要、長期候選；其餘含泛稱、同名異族、別名及文化標籤，須逐筆確認。已有中文名缺介紹115筆，不能自動視為獨立政體。"
+  }
+}

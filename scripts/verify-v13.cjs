@@ -18,7 +18,7 @@ const fs=require('node:fs');
   [[-180,-22,180,-12],'Fiji','大洋洲'],[[-180,-20,180,50],'',''],
   [[170,-20,-170,20],'',''],[[-10,-20,80,60],'',''],
  ])assert.equal(regionFor(bounds,key),expected);
- const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
  const report={viewports:[],errors:[]};
  try{
   for(const [width,height] of [[320,568],[390,844],[844,390]]){

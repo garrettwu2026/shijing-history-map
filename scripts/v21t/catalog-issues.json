@@ -1,0 +1,68 @@
+[
+  {
+    "id": "p-46c26f7369e37dfb",
+    "original": "Okhotsk culture",
+    "catalogYears": [
+      -10000,
+      -8000
+    ],
+    "reviewedPeriod": "約西元五至十二世紀，各區不同",
+    "issue": "目錄年代與文化年代不符，且早於介面最小年份-5000，320px深連結無法開啟此條目。介紹已明示差異；未擅改幾何或快照年代。",
+    "status": "needs-source-geometry-review",
+    "sources": [
+      "https://www.l.u-tokyo.ac.jp/moyoro/explanation1.html"
+    ]
+  },
+  {
+    "id": "p-10612ce49c1797d6",
+    "original": "Miami (Oklahoma)",
+    "catalogYears": [
+      1492,
+      1492
+    ],
+    "reviewedPeriod": "十九世紀強制西遷後逐步形成，1939年採行現代部落憲法，社群延續至今；目錄1492年不是本地政府成立年",
+    "issue": "現代奧克拉荷馬社群標籤與1492年採樣並不一致。介紹明示祖先族群、十九世紀遷徙與現代政府的區別；不擅改幾何與快照。",
+    "status": "needs-source-geometry-review",
+    "sources": [
+      "https://alcd-web.s3-ap-northeast-1.amazonaws.com/uploads/2017/12/03/b21feefd35700914757cc6511bbef2a4.pdf",
+      "https://www.miamination.com/about-us/",
+      "https://myaamia.lib.miamioh.edu/s/removal/page/about",
+      "https://spec.lib.miamioh.edu/home/myaamia/",
+      "https://www.bsu.edu/-/media/www/departmentalcontent/aal/aalpdfs/roi-51-75/roi-59-public.pdf"
+    ]
+  },
+  {
+    "id": "p-304fa87175dc7281",
+    "original": "Osage (Oklahoma)",
+    "catalogYears": [
+      1492,
+      1492
+    ],
+    "reviewedPeriod": "十九世紀遷入今奧克拉荷馬後重建，1872年保留地為重要制度節點，延續至今；目錄1492年不是當地政體成立年",
+    "issue": "現代奧克拉荷馬社群標籤與1492年採樣並不一致。介紹明示祖先族群、十九世紀遷徙與現代政府的區別；不擅改幾何與快照。",
+    "status": "needs-source-geometry-review",
+    "sources": [
+      "https://www.osagenation-nsn.gov/node/10645",
+      "https://www.osagenation-nsn.gov/who-we-are/minerals-council/frequently-asked-questions",
+      "https://www.osagenation-nsn.gov/index.php/government",
+      "https://indigenousgov.hks.harvard.edu/publications/osage-nation-governmental-reform-initiative-osage-nation",
+      "https://tpiercenter.tp.edu.tw/uploads/1772610523323MQNHKgpu.pdf"
+    ]
+  },
+  {
+    "id": "p-22b764fcf501e822",
+    "original": "Muscogee (Oklahoma)",
+    "catalogYears": [
+      1492,
+      1492
+    ],
+    "reviewedPeriod": "1830年代大批族人遷入印第安領地後重建，1867年憲法為重要制度節點；社群與部落政府延續至今",
+    "issue": "現代奧克拉荷馬社群標籤與1492年採樣並不一致。介紹明示祖先族群、十九世紀遷徙與現代政府的區別；不擅改幾何與快照。",
+    "status": "needs-source-geometry-review",
+    "sources": [
+      "https://www.okhistory.org/publications/enc/entry?entry=CR006",
+      "https://digitalprairie.ok.gov/digital/api/collection/stgovpub/id/437078/download",
+      "https://aiac.alabama.gov/MapLinks2025/SEMVSKOKEHISTORY.pdf"
+    ]
+  }
+]

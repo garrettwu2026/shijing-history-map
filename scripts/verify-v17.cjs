@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const catalog=require('../data/polities.json');
-(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});try{
+(async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});try{
 let page=await browser.newPage();
 for(const [key,year,name] of [['Qing Empire',1800,'清朝'],['Eastern Roman Empire',600,'東羅馬帝國'],['Roman Empire',200,'羅馬帝國']]){
 await page.goto(`http://localhost:8000/?year=${year}&polity=${catalog.index[key]}`);

@@ -4,7 +4,7 @@ const path=require('path');
 const fs=require('fs');
 const artifacts=path.resolve(__dirname,'../artifacts');fs.mkdirSync(artifacts,{recursive:true});
 (async()=>{
- const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
+ const b=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
  const errors=[];const results=[];
  for(const [width,height] of [[1440,900],[390,844]]){
  const page=await b.newPage({viewport:{width,height},isMobile:width===390,hasTouch:width===390});

@@ -7,7 +7,7 @@ const waitForReady=page=>page.waitForFunction(()=>
  document.querySelector('#map-status').hidden&&
  document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：')&&
  !document.querySelector('#polity-open').disabled,null,{timeout:recoveryTimeout});
-(async()=>{const browser=await chromium.launch({args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader'],headless:true});const report={base,checks:[],errors:[]};
+(async()=>{const browser=await chromium.launch({args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'],headless:true});const report={base,checks:[],errors:[]};
 try{
 fs.mkdirSync('artifacts',{recursive:true});
 for(const [width,height] of [[1440,900],[390,844],[320,568]]){

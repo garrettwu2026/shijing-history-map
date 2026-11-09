@@ -1,0 +1,138 @@
+[
+  {
+    "id": "p-407be821cae4fc3e",
+    "original": "Aparai",
+    "matchedPart": "Aparai",
+    "s": "http://vocab.getty.edu/aat/300017883",
+    "label": "Aparaí",
+    "zh": "阿帕萊"
+  },
+  {
+    "id": "p-45928bd8fc65b96b",
+    "original": "Ayuukjä'äy (Mixe)",
+    "matchedPart": "Mixe",
+    "s": "http://vocab.getty.edu/aat/300017810",
+    "label": "Mixe (culture or style)",
+    "zh": "米塞"
+  },
+  {
+    "id": "p-6a304fb7d1bf2aef",
+    "original": "Batsil Winik' Otik (Tzotzil)",
+    "matchedPart": "Tzotzil",
+    "s": "http://vocab.getty.edu/aat/300017850",
+    "label": "Tzotzil",
+    "zh": "佐齊爾"
+  },
+  {
+    "id": "p-e68b53fb5bd52a1b",
+    "original": "Comca’ac (Seri)",
+    "matchedPart": "Seri",
+    "s": "http://vocab.getty.edu/aat/300017765",
+    "label": "Seri (culture or style)",
+    "zh": "賽里"
+  },
+  {
+    "id": "p-c842885750f476dc",
+    "original": "Deg Xit'an Ngan' (Deg Xit'an)",
+    "matchedPart": "Deg Xit'an",
+    "s": "http://vocab.getty.edu/aat/300017482",
+    "label": "Deg Xit'an",
+    "zh": "因加利克"
+  },
+  {
+    "id": "p-fbec8a8d57bb921a",
+    "original": "Guahibo/Hiwi",
+    "matchedPart": "Guahibo",
+    "s": "http://vocab.getty.edu/aat/300017896",
+    "label": "Guahibo",
+    "zh": "瓜希沃"
+  },
+  {
+    "id": "p-742d12b849234eb6",
+    "original": "Ikoots/Kunajts/Ikoojts (Huave)",
+    "matchedPart": "Huave",
+    "s": "http://vocab.getty.edu/aat/300017805",
+    "label": "Huave (culture or style)",
+    "zh": "瓦維"
+  },
+  {
+    "id": "p-abb3f02b6165b4fe",
+    "original": "Kitsé Cha’tnio (Chatino)",
+    "matchedPart": "Chatino",
+    "s": "http://vocab.getty.edu/aat/300017800",
+    "label": "Chatino (culture or style)",
+    "zh": "查蒂諾"
+  },
+  {
+    "id": "p-5b74648ec8c39e89",
+    "original": "Koasati (Coushatta)",
+    "matchedPart": "Koasati",
+    "s": "http://vocab.getty.edu/aat/300265509",
+    "label": "Koasati (culture or style)",
+    "zh": "夸薩蒂"
+  },
+  {
+    "id": "p-0fac6bc1d8fd3c2e",
+    "original": "Kubéwa/Cubeo",
+    "matchedPart": "Cubeo",
+    "s": "http://vocab.getty.edu/aat/300017893",
+    "label": "Cubeo",
+    "zh": "古貝歐"
+  },
+  {
+    "id": "p-f80bc064aa9f0b1c",
+    "original": "Nicarao/Nahoa",
+    "matchedPart": "Nicarao",
+    "s": "http://vocab.getty.edu/aat/300017870",
+    "label": "Nicarao",
+    "zh": "尼加拉奧"
+  },
+  {
+    "id": "p-6cab42c5e1990a79",
+    "original": "Nüwüwü (Chemehuevi)",
+    "matchedPart": "Chemehuevi",
+    "s": "http://vocab.getty.edu/aat/300017566",
+    "label": "Chemehuevi",
+    "zh": "切梅惠維"
+  },
+  {
+    "id": "p-2d616dbc9f5463ec",
+    "original": "Odǫhwęja:deˀ (Cayuga)",
+    "matchedPart": "Cayuga",
+    "s": "http://vocab.getty.edu/aat/300017549",
+    "label": "Cayuga (culture or style)",
+    "zh": "卡尤加"
+  },
+  {
+    "id": "p-70752ea84d980dd4",
+    "original": "Onundagaonoga (Onondaga)",
+    "matchedPart": "Onondaga",
+    "s": "http://vocab.getty.edu/aat/300017552",
+    "label": "Onondaga (culture or style)",
+    "zh": "奧農達加"
+  },
+  {
+    "id": "p-026984d7a62f16e6",
+    "original": "Onöndowa'ga:' (Seneca)",
+    "matchedPart": "Seneca",
+    "s": "http://vocab.getty.edu/aat/300017553",
+    "label": "Seneca (culture or style)",
+    "zh": "塞尼卡"
+  },
+  {
+    "id": "p-1e5c9b0a16a3b073",
+    "original": "Onʌyote'a•ka (Oneida)",
+    "matchedPart": "Oneida",
+    "s": "http://vocab.getty.edu/aat/300017551",
+    "label": "Oneida (culture or style)",
+    "zh": "奧奈達"
+  },
+  {
+    "id": "p-41e56d803d091ceb",
+    "original": "Piipaash (Maricopa)",
+    "matchedPart": "Maricopa",
+    "s": "http://vocab.getty.edu/aat/300017738",
+    "label": "Maricopa (culture or style)",
+    "zh": "馬里科帕"
+  }
+]

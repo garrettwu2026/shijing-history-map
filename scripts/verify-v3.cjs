@@ -1,5 +1,5 @@
 const {chromium}=require('playwright');const fs=require('fs');const assert=require('node:assert/strict');
-(async()=>{const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader'],headless:true});let errors=[],results=[];
+(async()=>{const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'],headless:true});let errors=[],results=[];
 try{for(const [width,height] of [[1440,900],[390,844],[320,568],[844,390]]){
 const page=await browser.newPage({viewport:{width,height},isMobile:width<900,hasTouch:width<900});page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text())});await page.goto('http://localhost:8000/?year=1200',{waitUntil:'networkidle'});await page.waitForFunction(()=>document.querySelector('#snapshot-label').textContent.startsWith('疆界快照：'));
 await page.locator('#polity-open').click();await page.locator('#polity-search').fill('蒙古');await page.locator('#polity-list button').first().click();await page.waitForTimeout(200);assert((await page.locator('.maplibregl-popup-content').innerText()).includes('蒙古各部'));await page.keyboard.press('Escape');

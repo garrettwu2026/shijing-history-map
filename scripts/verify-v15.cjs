@@ -29,7 +29,7 @@ const built=fs.readdirSync('dist/data').filter(name=>/^intros\.[a-f0-9]{16}\.jso
 assert.deepEqual(read('dist/data/'+built[0]),intros);
 assert(!fs.existsSync('dist/scripts/v15-source-audit.json'),'internal audit is not shipped');
 (async()=>{
- const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=swiftshader','--enable-unsafe-swiftshader']});
+ const browser=await chromium.launch({headless:true,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
  const report={entries:Object.keys(intros).length,viewports:[],errors:[]};
  try{
   for(const [width,height] of [[1440,900],[390,844],[320,568]]){
