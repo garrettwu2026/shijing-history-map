@@ -7,7 +7,7 @@ events=json.loads((root/'data/events.json').read_text())
 categories={'戰爭','王朝與政治','科技與發明','宗教與思想','文化與藝術','探索與貿易'}
 ids=set();titles=set()
 for e in events:
-    assert type(e['year']) is int and -5000<=e['year']<=2026 and e['year']!=0,e
+    assert type(e['year']) is int and -1000000<=e['year']<=2026 and e['year']!=0,e
     assert type(e['lat']) in (int,float) and type(e['lon']) in (int,float) and -90<=e['lat']<=90 and -180<=e['lon']<=180,e
     assert type(e['startYear']) is int and type(e['endYear']) is int and e['startYear']<=e['year']<=e['endYear'],e
     assert re_id.fullmatch(e['id']),e
@@ -17,7 +17,7 @@ for e in events:
     assert e['id'] not in ids,e
     assert (e['year'],e['title']) not in titles,e
     ids.add(e['id']);titles.add((e['year'],e['title']))
-periods=[('5000–1000 BCE',-5000,-1000),('1000 BCE–500 CE',-1000,500),('500–1500',500,1500),('1500–1900',1500,1900),('1900–today',1900,2027)]
+periods=[('Before 5000 BCE',-1000000,-5000),('5000–1000 BCE',-5000,-1000),('1000 BCE–500 CE',-1000,500),('500–1500',500,1500),('1500–1900',1500,1900),('1900–today',1900,2027)]
 print(f'Valid JSON / schema / unique IDs: {len(events)} events')
 for label,lo,hi in periods:print(f'{label} [{lo}, {hi}): {sum(lo<=e["year"]<hi for e in events)}')
 print('Regions:',dict(collections.Counter(e['region'] for e in events)))
@@ -43,5 +43,14 @@ for eid,item in details.items():
 print(f'事件詳細資料結構驗證通過：{len(details)} 筆')
 if '--require-complete' in sys.argv:
     progress=json.loads((root/'scripts/v18b-progress.json').read_text())
-    assert 300<=len(details)<=600,f'事件詳細資料尚未達 300 筆：目前 {len(details)}'
+    assert len(details)>=300,f'事件詳細資料尚未達 300 筆：目前 {len(details)}'
     assert len(ids-set(progress['baselineEventIds']))>=90,'新增事件尚未接近 100 筆'
+    tech_progress=json.loads((root/'scripts/v18c-tech-progress.json').read_text())['task22']
+    additions=[e for e in events if e['id'] not in set(tech_progress['baselineEventIds'])]
+    assert len(additions)>=500, 'TASK22 needs at least 500 new events'
+    assert all(e['category']=='科技與發明' and e['id'] in details for e in additions)
+    assert all(e['description']==details[e['id']]['description'] for e in additions)
+    assert all(e['sourceStatus']=='editorial' and 'sourceUrl' not in e for e in additions)
+    assert tech_progress['completed']==len(additions)==tech_progress['addedTechEvents']
+    assert {'亞洲','歐洲','非洲','美洲','大洋洲'} <= {e['region'] for e in additions}
+    print(f'TASK22 technology additions and complete details: {len(additions)}')

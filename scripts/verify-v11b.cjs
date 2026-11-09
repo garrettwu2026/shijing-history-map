@@ -33,7 +33,7 @@ const assert=require('node:assert/strict');
   assert(!(await page.locator('#event-list').innerText()).includes('赫梯'));
   await page.locator('#time-options-toggle').click();
   const labels=await page.locator('.era-shortcuts button').allTextContents();
-  assert.deepEqual(labels,['古代','古代','中古','近世','近代','當代']);
+  assert.deepEqual(labels,['史前','古代','中古','近世','近代','當代']);
   const glossary=page.locator('#about-dialog a[href*="glossary."]');
   assert.equal(await glossary.count(),1);
   assert((await (await page.request.get(new URL(await glossary.getAttribute('href'),page.url()).href)).json()).entries.length>3000);

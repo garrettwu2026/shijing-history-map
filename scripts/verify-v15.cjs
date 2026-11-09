@@ -47,7 +47,12 @@ assert(!fs.existsSync('dist/scripts/v15-source-audit.json'),'internal audit is n
    assert((await details.innerText()).includes(intros[catalog.index['Roman Empire']].summary));
    assert.equal(await details.locator('a, .intro-sources').count(),0,'intro renders no source links');
    assert(!(await details.innerText()).includes('來源：'),'intro has no sources UI');
-   await page.waitForTimeout(100);
+   // Disclosure layout and the popup ResizeObserver settle on separate frames.
+   await page.waitForFunction(()=>{
+    const popup=document.querySelector('.maplibregl-popup').getBoundingClientRect();
+    const dock=document.querySelector('.time-dock').getBoundingClientRect();
+    return popup.left>=-1&&popup.right<=innerWidth+1&&popup.top>=-1&&popup.bottom<=dock.top;
+   });
    const layout=await page.evaluate(()=>{
     const popup=document.querySelector('.maplibregl-popup').getBoundingClientRect(),dock=document.querySelector('.time-dock').getBoundingClientRect();
     const content=document.querySelector('.maplibregl-popup-content');

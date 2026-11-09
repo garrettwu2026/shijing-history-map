@@ -6,7 +6,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
 'use strict';
 (() => {
   const $ = id => document.getElementById(id);
-  const MIN = -5000, MAX = 2026;
+  const MIN = -1000000, MAX = 2026;
   const categories = {'戰爭':['#ed9588','⚔'],'王朝與政治':['#dfbc7d','♛'],'科技與發明':['#7ed1db','⚙'],'宗教與思想':['#c7a4ec','✧'],'文化與藝術':['#eea9cc','◆'],'探索與貿易':['#a8d394','➶']};
   const enabledCategories = new Set(Object.keys(categories));
   const state = {year: -300, snapshots: [], names: {}, events: [], cache: new Map(), layer: null, snapshot: null, request: 0, timer: null, playing: false, playGeneration: 0, labels: true, markers: true, window: 50, activeEvent: null};
@@ -14,7 +14,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   const yearText = y => y < 0 ? `西元前 ${Math.abs(y).toLocaleString('zh-TW')} 年` : `西元 ${y.toLocaleString('zh-TW')} 年`;
   const singleDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const eventDate = e => e.startYear!==e.endYear ? `${yearText(e.startYear)} — ${yearText(e.endYear)}${e.precision==='approximate'?'（約）':''}` : singleDate(e);
-  const era = y => y < -1200 ? '古代' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
+  const era = y => y < -5000 ? '史前' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
   const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message; };
   let map, eventLayer, borderTimer, prefetchHandle;
 
