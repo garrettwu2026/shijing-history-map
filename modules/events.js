@@ -31,16 +31,20 @@ export function renderEventsView({state,map,eventLayer,enabledCategories,categor
     for(const group of groups.values()) {const point=map.project([group[0].lon,group[0].lat]);const near=clusters.find(c=>c.point.dist(point)<58);if(near)near.events.push(...group);else clusters.push({point,events:[...group]});}
     for(const {events:group} of clusters) {
       const e=group[0], [tint,symbol]=categories[e.category], many=group.length>1;
-      const element=document.createElement('button');element.className='event-marker';element.innerHTML=`<span style="--event-color:${tint}">${many?group.length:symbol}</span>`;element.title=many?`${group.length} 件事件，放大展開`:displayText(e.title);
+      const element=document.createElement('button');element.className='event-marker';element.innerHTML=`<span style="--event-color:${tint}">${many?group.length:symbol}</span>`;element.title=many?`查看這裡的 ${group.length} 件事件`:displayText(e.title);
+      element.setAttribute('aria-label',element.title);element.setAttribute('aria-haspopup','dialog');
       const marker=new maplibregl.Marker({element}).setLngLat([e.lon,e.lat]);
-      element.onclick=()=>{if(many){const list=document.createElement('div');list.className='cluster-list';for(const item of group){const button=document.createElement('button');button.textContent=`${displayText(item.title)} · ${eventDate(item)}`;button.onclick=()=>selectEvent(item);list.append(button);}showPopup(map,[e.lon,e.lat],list);}else selectEvent(e);};eventLayer.addLayer(marker);
+      element.onclick=()=>{if(many){const list=document.createElement('div');list.className='cluster-list';for(const item of group){const button=document.createElement('button');button.textContent=`${displayText(item.title)} · ${item.category} · ${eventDate(item)}`;button.onclick=()=>selectEvent(item);list.append(button);}showPopup(map,[e.lon,e.lat],list);}else selectEvent(e);};eventLayer.addLayer(marker);
     }
     $('announcer').textContent=`${yearText(state.year)}，${visible.length} 件事件`;
     if (!visible.length) {
       const empty = document.createElement('div'); empty.className = 'empty-events';
-      empty.textContent = '這段時間沒有符合分類的事件。試著擴大探索範圍，或移動至鄰近年代。';
+      empty.textContent = enabledCategories.size?'此年代沒有符合目前分類與範圍的事件。可擴大探索範圍，或前往最近事件。':'分類已全部關閉。恢復分類即可繼續探索。';
+      const action=document.createElement('button');action.type='button';action.textContent=enabledCategories.size?'擴大探索範圍至前後 500 年':'恢復全部分類';
+      action.onclick=()=>{if(!enabledCategories.size){document.getElementById('categories-all').click();}else{state.window=500;$('window-select').value='500';state.eventsSignature=null;renderEventsView({state,map,eventLayer,enabledCategories,categories,$,eventDate,esc,selectEvent,displayText,yearText,setPlaying,setYear});}};
+      empty.append(document.createElement('br'),action);
       const nearest = state.events.filter(e=>enabledCategories.has(e.category)).sort((a,b) => eventDistance(a,state.year)-eventDistance(b,state.year))[0];
-      if (nearest) { const button = document.createElement('button'); button.type='button'; button.textContent=`前往最近事件：${yearText(nearest.year)} ↗`; button.onclick=()=>{setPlaying(false);setYear(nearest.year);selectEvent(nearest);}; empty.append(document.createElement('br'),button); }
+      if (nearest) { const button = document.createElement('button'); button.type='button'; button.textContent=`前往最近事件：${yearText(nearest.year)} ↗`; button.onclick=()=>{setPlaying(false);Promise.resolve(setYear(nearest.year)).then(()=>selectEvent(nearest));}; empty.append(document.createElement('br'),button); }
       list.append(empty);
     }
   }

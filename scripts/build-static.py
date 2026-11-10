@@ -14,6 +14,12 @@ def emit(name,data):
 # Precompute runtime geometry metadata in dist only, using the same worker algorithm.
 prepared=json.loads(subprocess.check_output(['node','scripts/prepare-geometry.cjs'],cwd=R))
 for name in sorted({s['file'] for s in rows}|{'polities.json','errata.json','events.json','glossary.json','intros.json','endonyms.json','event-details.json'}):emit(name,prepared.get(name) or json.loads((R/'data'/name).read_text()))
+catalog=json.loads((R/'data/polities.json').read_text());coverage={}
+for row in rows:
+ for feature in prepared[row['file']]['features']:
+  identity=catalog['index'].get(feature.get('properties',{}).get('NAME'))
+  if identity:coverage.setdefault(identity,set()).add(row['year'])
+emit('polity-years.json',{identity:sorted(years) for identity,years in coverage.items()})
 for row in rows:row['file']=mapping[row['file']]
 emit('snapshots.json',rows)
 shutil.copy(R/'data/LICENSE-historical-basemaps.txt',out/'data/LICENSE-historical-basemaps.txt')

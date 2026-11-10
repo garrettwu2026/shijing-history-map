@@ -1,0 +1,38 @@
+{
+  "task23": {
+    "target": 8,
+    "completed": 8,
+    "status": "complete",
+    "items": {
+      "1-mobile-year-and-boundary-note": "done",
+      "2-timeline-ticks-and-drag-bubble": "done",
+      "3-keep-event-detail-after-year-jump": "done",
+      "4-tool-labels-and-cluster-hints": "done",
+      "5-all-era-polity-search": "done",
+      "6-full-reading-panel": "done",
+      "7-mobile-legend-sheet-and-filters": "done",
+      "8-loading-empty-styles-fonts-css": "done"
+    },
+    "notes": "八項完成；最後建置 build、完整 validate、npm run test:browser、全部 19 支 verify 均通過。1280×800、390×844 有截圖及互動 assert。未 commit／push／deploy，未改 Render 設定。",
+    "verifiedAt": "2026-11-10T09:53:11+08:00",
+    "verification": {
+      "build": "passed",
+      "validate": "passed",
+      "test:browser": "passed",
+      "verifyPassed": 19,
+      "verifyTotal": 19,
+      "viewports": [
+        [
+          1280,
+          800
+        ],
+        [
+          390,
+          844
+        ]
+      ],
+      "results": "artifacts/v19-verification-final/results.json",
+      "uiReport": "artifacts/v19-report.json"
+    }
+  }
+}

@@ -4,7 +4,6 @@ export async function createMap(){
   const map=new maplibregl.Map({container:'map',center:[45,26],zoom:1.25,minZoom:1,maxZoom:8,renderWorldCopies:true,fadeDuration:0,canvasContextAttributes:{antialias:false},pixelRatio:Math.min(devicePixelRatio,matchMedia('(max-width:760px)').matches?1:.75),localIdeographFontFamily:"'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif",style:{version:8,glyphs:new URL('vendor/maplibre/glyphs/',location.href).href+'{fontstack}/{range}.pbf',sources:{},layers:[{id:'ocean',type:'background',paint:{'background-color':'#18282d'}}]},attributionControl:false});
   await new Promise((resolve,reject)=>{map.once('load',resolve);map.once('error',reject);});
   map.addControl(new maplibregl.NavigationControl({showCompass:false}),'top-left');
-  const attribution=document.createElement('div');attribution.className='map-attribution';attribution.innerHTML='MapLibre GL JS · 疆界與陸地：<a href="https://github.com/aourednik/historical-basemaps">historical-basemaps</a> · GPL-3.0';document.querySelector('#time-options').append(attribution);
   for(const id of ['land','polities','disputed','labels'])map.addSource(id,{type:'geojson',data:empty(),tolerance:1,buffer:16,maxzoom:7,lineMetrics:false});
   map.addLayer({id:'land-fill',source:'land',type:'fill',paint:{'fill-antialias':false,'fill-color':'#354247'}});
   const grid=[];for(let lat=-60;lat<=60;lat+=30)grid.push({type:'Feature',geometry:{type:'LineString',coordinates:[[-180,lat],[180,lat]]}});for(let lon=-180;lon<=180;lon+=30)grid.push({type:'Feature',geometry:{type:'LineString',coordinates:[[lon,-85],[lon,85]]}});
@@ -14,6 +13,8 @@ export async function createMap(){
     map.addLayer({id:source+'-fill',source,type:'fill',paint:{'fill-antialias':false,'fill-color':['get','tint'],'fill-opacity':['case',active,.65,['get','alpha']]}});
     map.addLayer({id:source+'-line',source,type:'line',paint:{'line-color':['case',active,'#fff0b5',['get','border']],'line-width':['case',['boolean',['feature-state','selected'],false],3,['boolean',['feature-state','hover'],false],1.8,['get','weight']],'line-opacity':.85,...(source==='disputed'?{'line-dasharray':[9,4,2,4]}:{})}});
   }
+  map.setFilter('disputed-line',['==',['get','review'],true]);
+  map.addLayer({id:'culture-line',source:'disputed',type:'line',filter:['==',['get','review'],false],paint:{'line-color':['get','border'],'line-width':1.5,'line-opacity':.8,'line-dasharray':[2,4]}});
   map.addLayer({id:'polity-labels',source:'labels',type:'symbol',layout:{'text-field':['get','name'],'text-font':['Noto Sans TC Regular'],'text-size':['interpolate',['linear'],['zoom'],1,13,4,16],'text-max-width':10,'text-padding':8,'symbol-sort-key':['get','priority'],'text-allow-overlap':false},paint:{'text-color':'#f0e8d2','text-halo-color':'#101b21','text-halo-width':2}});
   return map;
 }
@@ -53,7 +54,7 @@ export function renderGeometry(map,data,state,isAntarctica,stableColor){
     const review=state.errata?.featureReviews?.some(r=>r.match===key&&state.snapshot.year>=r.fromYear&&state.snapshot.year<=r.toYear),disputed=review||p?.entityType==='cultural-area';
     const tint=neutral?'#91a6ab':stableColor(p?.id||key),source=disputed?'disputed':'polities';
     feature.id=i;feature.renderSource=source;
-    groups[source].features.push({type:'Feature',id:i,geometry:feature.geometry,properties:{NAME:key,renderId:i,antarctica:isAntarctica(feature),tint,border:review?'#ffe3a3':tint,weight:review?2.5:.8,alpha:neutral?.22:p?.entityType==='cultural-area'?.18:.42}});
+    groups[source].features.push({type:'Feature',id:i,geometry:feature.geometry,properties:{NAME:key,renderId:i,antarctica:isAntarctica(feature),tint:review?'#cda95f':tint,review:!!review,border:review?'#ffe3a3':tint,weight:review?2.5:.8,alpha:neutral?.22:p?.entityType==='cultural-area'?.18:.42}});
   });
   for(const [source,data] of Object.entries(groups))map.getSource(source).setData(data);
 }

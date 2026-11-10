@@ -15,7 +15,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   const singleDate = e => `${e.dateNote === '約' ? '約 ' : ''}${yearText(e.year)}${e.dateNote === '傳統' ? '（傳統紀年）' : ''}`;
   const eventDate = e => e.startYear!==e.endYear ? `${yearText(e.startYear)} — ${yearText(e.endYear)}${e.precision==='approximate'?'（約）':''}` : singleDate(e);
   const era = y => y < -5000 ? '史前' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
-  const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message; };
+  const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message;$('map-skeleton').hidden=!!state.snapshot||!message.startsWith('正在'); };
   let map, eventLayer, borderTimer, prefetchHandle;
 
   let displayText=value=>String(value??'');
@@ -61,7 +61,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   function loadEventDetails(el) {
     const slot=el.querySelector('[data-event-detail]');
     if(!slot)return;
-    slot.setAttribute('aria-busy','true');
+    slot.setAttribute('aria-busy','true');slot.textContent='正在載入事件詳情…';
     eventDetailsPromise ||= json('data/event-details.json').catch(error=>{eventDetailsPromise=null;throw error;});
     eventDetailsPromise.then(details=>{
       if(!slot.isConnected)return;
@@ -69,26 +69,31 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       const item=details[slot.dataset.eventDetail];
       if(!item){slot.remove();return;}
       el.querySelector('.event-description').textContent=item.description;
+      if(slot.querySelector('.event-details'))return;
       slot.innerHTML=`<details class="event-details"><summary>事件詳情</summary>${detailParagraphs(item,['背景','經過','影響'])}<h4>參與方</h4><div class="polity-chips">${item['參與方'].map(id=>polityChip(id,state.catalog.polities[id].zh)).join('')}</div><p class="participant-note">${esc(item['參與方說明']||'點選政體可前往有疆界資料的年代。')}</p></details>`;
     }).catch(()=>{if(slot.isConnected){slot.removeAttribute('aria-busy');slot.innerHTML='<button type="button" class="event-details-retry">重新載入事件詳情</button>';}});
   }
   function loadIntro(el) {
     const slot=el.querySelector('[data-intro-id]');
     if(!slot)return;
+    slot.setAttribute('aria-busy','true');slot.textContent='正在載入政體介紹…';
     introsPromise ||= json('data/intros.json').catch(error=>{introsPromise=null;throw error;});
     introsPromise.then(intros=>{
       if(!slot.isConnected)return;
+      slot.removeAttribute('aria-busy');
       const intro=intros[slot.dataset.introId];
       if(!intro){slot.remove();return;}
       const field=(label,value)=>value?`<p>${label}：${esc(value)}</p>`:'';
-      slot.innerHTML=`<details class="polity-intro"><summary>政體介紹</summary><small>跨年代概述，不代表選取年的狀態。</small><p>${esc(intro.summary)}</p>${['存續年代','首都','主要族群/語言'].map(label=>field(label,intro[label])).join('')}${detailParagraphs(intro,['背景'])}${intro['年表']?.length?'<h4>年表</h4><ol class="detail-chronology">'+intro['年表'].map(item=>`<li><time>${esc(yearText(item.year))}</time> ${esc(item.text)}</li>`).join('')+'</ol>':''}${compactValues('重要人物',(intro['重要人物']||[]).map(person=>[person.name,person.role]))}${compactValues('關鍵數據',Object.entries(intro['關鍵數據']||{}))}${detailParagraphs(intro,['影響'])}${intro['重要事件'].length?'<h4>重要事件</h4><ul>'+intro['重要事件'].map(event=>`<li>${esc(event)}</li>`).join('')+'</ul>':''}${intro['前身/後繼'].length?'<h4>前身／後繼</h4><div class="polity-chips">'+intro['前身/後繼'].map(item=>item.id?polityChip(item.id,item.name):esc(item.name)).join('')+'</div>':''}</details>`;
-    }).catch(()=>{if(slot.isConnected)slot.innerHTML='<button class="intro-retry" type="button">重新載入政體介紹</button>';});
+      slot.innerHTML=`<p class="intro-preview">${esc(intro.summary)}</p><button type="button" class="read-full">完整閱讀</button><details class="polity-intro"><summary>政體介紹</summary><small>跨年代概述，不代表選取年的狀態。</small><p>${esc(intro.summary)}</p>${['存續年代','首都','主要族群/語言'].map(label=>field(label,intro[label])).join('')}${detailParagraphs(intro,['背景'])}${intro['年表']?.length?'<h4>年表</h4><ol class="detail-chronology">'+intro['年表'].map(item=>`<li><time>${esc(yearText(item.year))}</time> ${esc(item.text)}</li>`).join('')+'</ol>':''}${compactValues('重要人物',(intro['重要人物']||[]).map(person=>[person.name,person.role]))}${compactValues('關鍵數據',Object.entries(intro['關鍵數據']||{}))}${detailParagraphs(intro,['影響'])}${intro['重要事件'].length?'<h4>重要事件</h4><ul>'+intro['重要事件'].map(event=>`<li>${esc(event)}</li>`).join('')+'</ul>':''}${intro['前身/後繼'].length?'<h4>相關政體 · 前身／後繼</h4><div class="polity-chips">'+intro['前身/後繼'].map(item=>item.id?polityChip(item.id,item.name):esc(item.name)).join('')+'</div>':''}</details>`;
+    }).catch(()=>{if(slot.isConnected){slot.removeAttribute('aria-busy');slot.innerHTML='<button class="intro-retry" type="button">重新載入政體介紹</button>';}});
   }
-  document.addEventListener('click',event=>{if(event.target.closest('.intro-retry'))loadIntro(event.target.closest('[role="dialog"]'));});
+  document.addEventListener('click',event=>{if(event.target.closest('.read-full'))openReader(event.target);if(event.target.closest('.intro-retry'))loadIntro(event.target.closest('[role="dialog"]'));});
   document.addEventListener('click',async event=>{
     if(event.target.closest('.event-details-retry'))loadEventDetails(event.target.closest('[role="dialog"]'));
     const chip=event.target.closest('[data-focus-polity]');
     if(!chip)return;
+    if($('reading-panel').contains(chip))closeReader();
+    setPlaying(false);
     const id=chip.dataset.focusPolity,polity=state.catalog.polities[id];
     if(!polity)return;
     const inSnapshot=()=>state.layer?.features.filter(f=>nameFor(f.properties?.NAME).id===id&&f.labelGeometry)||[];
@@ -105,6 +110,21 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if(layers.length)selectPolity(nameFor(layers[0].properties.NAME),layers[0].properties.NAME,layers);
     else status('此政體目前沒有可聚焦的疆界快照。');
   });
+  let readerReturn;
+  function closeReader(){
+    $('reading-panel').hidden=true;document.body.classList.remove('reading-open');
+    $('reading-content').replaceChildren();if(readerReturn?.isConnected)readerReturn.focus({preventScroll:true});
+  }
+  function openReader(button){
+    readerReturn=button;const content=$('reading-content');
+    content.innerHTML=button.closest('.maplibregl-popup-content').innerHTML;
+    content.querySelectorAll('.read-full,.maplibregl-popup-close-button,.intro-preview').forEach(el=>el.remove());
+    const intro=content.querySelector('.polity-intro');if(intro){intro.open=true;intro.querySelector('summary').textContent='歷史概述';}
+    const firstDesignation=content.querySelector('.self-designation');
+    if(firstDesignation){const heading=document.createElement('h3');heading.textContent='自稱與別稱';firstDesignation.before(heading);}
+    $('reading-title').textContent=content.querySelector('.popup-title')?.textContent+' · 完整閱讀';
+    $('reading-panel').hidden=false;document.body.classList.add('reading-open');$('reading-close').focus();
+  }
   function polityHTML(key) {
     const n=nameFor(key);
     const searchName=nameDisplay(n.zh||key,'',false).replace(/（[^）]*）|\([^)]*\)/g,'').trim()||key;
@@ -139,8 +159,8 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   function snapshotFor(year) { return state.snapshots.filter(s => s.year <= year).at(-1) || state.snapshots[0]; }
   function updateBoundaryIndicator(pending=false) {
     const shown=state.snapshot?.year;
-    $('boundary-indicator').textContent=`疆界年 ${shown==null?'載入中':shown<0?'前'+Math.abs(shown):shown}`;
-    const notes=[pending?'正在更新疆界；目前仍顯示原快照':'',state.year>2010?'最新疆界至 2010 年，並非當代精確國界':'',shown===1200?'蒙古疆界待查證（疆界待考證）':'',shown!=null&&shown!==state.year?`選取年與疆界年相差 ${Math.abs(state.year-shown)} 年`:''].filter(Boolean);
+    $('boundary-indicator').textContent=`疆界年 ${shown==null?'載入中':shown<0?'西元前 '+Math.abs(shown):shown}`;
+    const notes=[shown!=null?`選取 ${yearText(state.year)}；疆界資料${state.year>2010?'至':'為'} ${yearText(shown)}`:'疆界資料載入中',pending?'正在更新疆界；目前仍顯示原快照':'',state.year>2010?'最新疆界至 2010 年，並非當代精確國界':'',shown===1200?'蒙古疆界待查證（疆界待考證）':'',shown!=null&&shown!==state.year?`選取年與疆界年相差 ${Math.abs(state.year-shown)} 年`:''].filter(Boolean);
     $('boundary-warning').hidden=!notes.length;
     $('boundary-warning').title=notes.join('；');
     $('boundary-warning-text').textContent=notes.join('；');
@@ -184,6 +204,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   }
   function renderLabels(){scheduleRefresh();}
   function selectEvent(e) {
+    setPlaying(false);state.selectedPolity=null;
     state.returnFocus=matchMedia('(max-width:760px)').matches ? $('sheet-toggle') : document.activeElement; state.activeEvent = e.id;
     if(matchMedia('(max-width:760px)').matches && $('events-panel').classList.contains('expanded')) $('sheet-toggle').click();
     document.querySelectorAll('.event-item').forEach(el => el.classList.toggle('active', el.dataset.id === e.id));
@@ -199,9 +220,11 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     state.boundariesPending=state.snapshot?.file!==snapshotFor(y).file;
     state.year = y;
     $('year-slider').value = positionFor(y); $('year-input').value = y;
-    $('year-display').textContent = `選取年 ${y<0?'前':''}${Math.abs(y).toLocaleString('zh-TW')}`; $('era-label').textContent = era(y);
+    $('year-display').textContent = yearText(y); $('era-label').textContent = era(y);
     $('year-slider').setAttribute('aria-valuetext',yearText(y));
     $('year-slider').style.setProperty('--progress',`${positionFor(y)/10}%`);
+    $('year-bubble').textContent=$('year-display').textContent;
+    $('year-bubble').style.left=`clamp(78px, ${positionFor(y)/10}%, calc(100% - 78px))`;
     document.querySelectorAll('[data-year]').forEach(b => b.classList.toggle('active',Number(b.dataset.year)===y));
     state.suppressRestore=true;map.activePopup?.remove();state.suppressRestore=false;state.returnFocus=null;
     updateBoundaryIndicator(true);
@@ -234,11 +257,37 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if (!state.playing || generation !== state.playGeneration) return;
     if (next >= MAX) setPlaying(false); else state.timer = setTimeout(tick,1100);
   }
-  function renderPolities(){
+  let coveragePromise;
+  async function renderPolities(){
+    const generation=state.searchGeneration=(state.searchGeneration||0)+1;
+    const all=$('polity-scope').value==='all';
+    $('polity-search-note').textContent=all?'所有年代：結果會標示可用疆界年；點選後前往該年並開啟政體。':'目前疆界：選取結果後開啟政體詳情。';
+    if(all){
+      const list=$('polity-list');list.textContent='正在載入可用疆界年…';
+      try{coveragePromise ||= json('data/polity-years.json').catch(error=>{coveragePromise=null;throw error;});
+        const coverage=await coveragePromise;
+        if(generation!==state.searchGeneration)return;
+        const q=$('polity-search').value.trim().toLowerCase();
+        const names=p=>[p.zh,...p.periods.flatMap(x=>[x.zh,...(x.aliases||[])]),...p.exonyms,...p.geographicAliases,...p.datasetNames,...p.endonyms.map(x=>x.original)].filter(Boolean);
+        const score=p=>names(p).some(x=>x.toLowerCase()===q)?0:p.zh.toLowerCase().startsWith(q)?1:2;
+        const results=Object.values(state.catalog.polities).filter(p=>coverage[p.id]?.some(y=>y>=MIN&&y<=MAX)&&names(p).some(x=>x.toLowerCase().includes(q))).sort((a,b)=>score(a)-score(b)||b.importance-a.importance||a.zh.localeCompare(b.zh,'zh-TW'));
+        list.replaceChildren();
+        for(const p of results){
+          const years=coverage[p.id].filter(y=>y>=MIN&&y<=MAX),target=[...years].sort((a,b)=>Math.abs(a-state.year)-Math.abs(b-state.year))[0];
+          const button=document.createElement('button');button.dataset.polity=p.id;button.dataset.year=target;
+          button.textContent=`${nameDisplay(p.zh,p.translationStatus==='untranslated'?'pending':'accepted')} · 可用疆界年：${yearText(years[0])}${years.length>1?' 至 '+yearText(years.at(-1)):''}（${years.length} 個快照） · 前往 ${yearText(target)} →`;
+          button.onclick=async()=>{setPlaying(false);state.selectedPolity=null;$('polity-dialog').close();await setYear(target);if(state.year!==target)return;const layers=state.layer.features.filter(f=>state.catalog.index[f.properties?.NAME]===p.id&&f.labelGeometry);if(layers.length){state.returnFocus=$('polity-open');selectPolity(nameFor(layers[0].properties.NAME),layers[0].properties.NAME,layers);}};
+          list.append(button);
+        }
+        if(!results.length)list.textContent='找不到符合的政體。請試試通用名稱或別稱。';
+      }catch{if(generation===state.searchGeneration){list.textContent='可用疆界年載入失敗。';const retry=document.createElement('button');retry.textContent='重試搜尋';retry.onclick=renderPolities;list.append(retry);}}
+      return;
+    }
+
     const list=$('polity-list');if(!state.layer)return;list.replaceChildren();
     const q=$('polity-search').value.toLowerCase(),groups=new Map();
     for(const feature of state.layer.features){const key=feature.properties?.NAME;if(!key?.trim()||!feature.labelGeometry||isAntarctica(feature))continue;const n=nameFor(key);if(!n.zh)continue;if(!groups.has(n.id))groups.set(n.id,{n,key,layers:[]});groups.get(n.id).layers.push(feature);}
-    for(const {n,key,layers} of groups.values()){
+    for(const {n,key,layers} of [...groups.values()].sort((a,b)=>{const exact=n=>[n.zh,...n.aliases,...n.datasetNames].some(x=>x.toLowerCase()===q)?0:1;return exact(a.n)-exact(b.n)||b.n.importance-a.n.importance;})){
       if(!JSON.stringify([n.zh,n.native,n.aliases,n.datasetNames,n.endonyms,n.exonyms,n.geographicAliases,key]).toLowerCase().includes(q))continue;
       const boxes=layers.map(l=>l.labelGeometry.bounds);
       const bounds=[Math.min(...boxes.map(b=>b[0])),Math.min(...boxes.map(b=>b[1])),Math.max(...boxes.map(b=>b[2])),Math.max(...boxes.map(b=>b[3]))];
@@ -271,9 +320,16 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     else {state.selectedPolity=null;updateURL();}
   }
   async function init() {
+    $('reading-close').onclick=closeReader;
+    const resize=$('reader-resize');
+    resize.onpointerdown=e=>{resize.setPointerCapture(e.pointerId);};
+    resize.onpointermove=e=>{if(resize.hasPointerCapture(e.pointerId))$('reading-panel').style.width=`${Math.max(340,Math.min(innerWidth*.75,innerWidth-e.clientX))}px`;};
+    resize.onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();$('reading-panel').style.width=`${Math.max(340,Math.min(innerWidth*.75,$('reading-panel').offsetWidth+(e.key==='ArrowLeft'?30:-30)))}px`;}};
+
     $('boundary-warning').onclick=()=>{const el=$('boundary-warning-text');el.hidden=!el.hidden;$('boundary-warning').setAttribute('aria-expanded',String(!el.hidden));};
     $('time-options-toggle').onclick=()=>{const open=$('time-options').hidden;$('time-options').hidden=!open;$('time-options-toggle').setAttribute('aria-expanded',String(open));$('time-options-toggle').textContent=open?'收合 ▾':'設定 ▴';renderLabels();};
     $('polity-search').oninput=renderPolities;
+    $('polity-scope').onchange=renderPolities;
     $('polity-open').onclick=()=>{renderPolities();$('polity-dialog').showModal();$('polity-search').focus();};
     $('polity-close').onclick=()=>$('polity-dialog').close();
     $('intro-toggle').onclick=()=>{const card=document.querySelector('.intro-card');card.classList.toggle('compact');$('intro-toggle').setAttribute('aria-expanded',String(!card.classList.contains('compact')));renderLabels();};
@@ -301,19 +357,43 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     }
     map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();state.selectedPolity=el.querySelector('[data-intro-id]')?.dataset.introId||null;updateURL();loadIntro(el);loadEventDetails(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
     map.on('detailclose',()=>{document.body.classList.remove('popup-open');if(!state.suppressRestore){state.selectedPolity=null;updateURL();}const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
-    document.addEventListener('click',e=>{const b=e.target.closest('.goto-event');if(b){const event=state.events.find(x=>x.id===b.dataset.event);setYear(event.year);}});
+    document.addEventListener('click',async e=>{const b=e.target.closest('.goto-event');if(!b)return;
+      const event=state.events.find(x=>x.id===b.dataset.event);if(!event)return;
+      setPlaying(false);state.selectedPolity=null;
+      const detail=b.closest('.popup-event').querySelector('[data-event-detail]');
+      const saved=detail?.cloneNode(true);b.disabled=true;
+      await setYear(event.year);
+      if(state.year!==event.year)return;
+      selectEvent(event);
+      const target=map.activePopup.getElement().querySelector('[data-event-detail]');
+      if(saved?.querySelector('.event-details'))target.replaceChildren(...saved.childNodes);
+    });
     document.fonts?.ready.then(renderLabels);
     const sheet=$('events-panel'), sheetButton=$('sheet-toggle');
     sheet.addEventListener('transitionend',renderLabels);
-    sheetButton.onclick=()=>{const expanded=sheetButton.getAttribute('aria-expanded')!=='true';sheetButton.setAttribute('aria-expanded',String(expanded));sheet.classList.toggle('expanded',expanded);sheetButton.textContent=`${expanded?'收合事件 ▾':'探索事件 ▴'} · ${$('event-count').textContent}`;renderLabels();};
+    const syncCategories=()=>{
+      document.querySelectorAll('.category-chip').forEach(b=>b.setAttribute('aria-pressed',String(enabledCategories.has(b.dataset.category))));
+      $('category-summary').textContent=enabledCategories.size===6?'全部分類啟用':enabledCategories.size?[...enabledCategories].join('、'):'分類全關';
+      $('technology-only').setAttribute('aria-pressed',String(enabledCategories.size===1&&enabledCategories.has('科技與發明')));
+      renderEvents();
+    };
+    $('technology-only').onclick=()=>{enabledCategories.clear();enabledCategories.add('科技與發明');syncCategories();};
+    $('categories-all').onclick=()=>{Object.keys(categories).forEach(c=>enabledCategories.add(c));syncCategories();};
+    $('legend-toggle').onclick=()=>{const open=$('legend-toggle').getAttribute('aria-expanded')!=='true';$('legend-toggle').setAttribute('aria-expanded',String(open));$('map-legend').classList.toggle('legend-open',open);};
+    let drag;
+    sheetButton.addEventListener('pointerdown',e=>{if(innerWidth>760)return;drag={y:e.clientY,height:sheet.offsetHeight};sheetButton.setPointerCapture(e.pointerId);});
+    sheetButton.addEventListener('pointermove',e=>{if(!drag||!sheetButton.hasPointerCapture(e.pointerId))return;const delta=drag.y-e.clientY;if(Math.abs(delta)<6&&!state.sheetDragged)return;state.sheetDragged=true;const max=document.querySelector('main').clientHeight-document.querySelector('.time-dock').offsetHeight-120;const height=Math.max(150,Math.min(max,drag.height+delta));sheet.style.setProperty('--sheet-height',`${height}px`);sheet.classList.add('expanded');sheetButton.setAttribute('aria-expanded','true');});
+    sheetButton.addEventListener('pointerup',()=>{drag=null;});
+    sheetButton.addEventListener('pointercancel',()=>{drag=null;state.sheetDragged=false;});
+    sheetButton.onclick=()=>{if(state.sheetDragged){state.sheetDragged=false;return;}const expanded=sheetButton.getAttribute('aria-expanded')!=='true';sheetButton.setAttribute('aria-expanded',String(expanded));sheet.classList.toggle('expanded',expanded);sheetButton.textContent=`${expanded?'收合事件 ▾':'探索事件 ▴'} · ${$('event-count').textContent}`;renderLabels();};
     for(const [name,[tint,symbol]] of Object.entries(categories)) {
-      const button=document.createElement('button');button.type='button';button.className='category-chip';button.style.setProperty('--event-color',tint);button.setAttribute('aria-pressed','true');button.innerHTML=`<span aria-hidden="true">${symbol}</span> ${name}`;
-      button.onclick=()=>{enabledCategories.has(name)?enabledCategories.delete(name):enabledCategories.add(name);button.setAttribute('aria-pressed',String(enabledCategories.has(name)));renderEvents();};
+      const button=document.createElement('button');button.type='button';button.className='category-chip';button.dataset.category=name;button.style.setProperty('--event-color',tint);button.setAttribute('aria-pressed','true');button.innerHTML=`<span aria-hidden="true">${symbol}</span> ${name}`;
+      button.onclick=()=>{enabledCategories.has(name)?enabledCategories.delete(name):enabledCategories.add(name);button.setAttribute('aria-pressed',String(enabledCategories.has(name)));syncCategories();};
       $('category-filters').append(button);
     }
     $('home-view').onclick=()=>map.flyTo({center:[45,26],zoom:1.25,duration:1000});
-    $('labels-toggle').onclick=()=>{state.labels=!state.labels;$('labels-toggle').setAttribute('aria-pressed',String(state.labels));renderLabels();};
-    $('events-toggle').onclick=()=>{state.markers=!state.markers;$('events-toggle').setAttribute('aria-pressed',String(state.markers));renderEvents();};
+    $('labels-toggle').onclick=()=>{state.labels=!state.labels;$('labels-toggle').setAttribute('aria-pressed',String(state.labels));$('labels-toggle').textContent=`政體名稱${state.labels?' ✓':' 關'}`;renderLabels();};
+    $('events-toggle').onclick=()=>{state.markers=!state.markers;$('events-toggle').setAttribute('aria-pressed',String(state.markers));$('events-toggle').textContent=`事件標記${state.markers?' ✓':' 關'}`;renderEvents();};
     $('window-select').onchange=e=>{state.window=Number(e.target.value);renderEvents();};
     $('about-button').onclick=()=>$('about-dialog').showModal();
     $('close-about').onclick=()=>$('about-dialog').close();
@@ -327,13 +407,15 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       await warmLabelGlyphs(map,catalog,errata);
       dependentControls.forEach(el=>el.disabled=false);
       state.snapshots=snapshots.sort((a,b)=>a.year-b.year);state.events=events;
-      const finishDrag=()=>{if(!state.dragging)return;state.dragging=false;clearTimeout(borderTimer);clearTimeout(state.eventTimer);state.boundariesPending=state.snapshot?.file!==snapshotFor(state.year).file;renderEvents();loadBorders();};
-      $('year-slider').addEventListener('pointerdown',()=>{state.dragging=true;});
+      const finishDrag=()=>{state.bubbleTimer=setTimeout(()=>{$('year-bubble').hidden=true;},700);if(!state.dragging)return;state.dragging=false;clearTimeout(borderTimer);clearTimeout(state.eventTimer);state.boundariesPending=state.snapshot?.file!==snapshotFor(state.year).file;renderEvents();loadBorders();};
+      const showYearBubble=()=>{clearTimeout(state.bubbleTimer);$('year-bubble').hidden=false;};
+      $('year-slider').addEventListener('pointerdown',()=>{state.dragging=true;showYearBubble();});
+      $('year-slider').addEventListener('pointermove',()=>{if(state.dragging)showYearBubble();});
       window.addEventListener('pointerup',finishDrag);
       window.addEventListener('pointercancel',finishDrag);
       $('year-slider').addEventListener('change',finishDrag);
       $('year-slider').addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();const delta=['ArrowLeft','ArrowDown'].includes(e.key)?-1:1;setPlaying(false);setYear(state.year+delta,delta);});
-      $('year-slider').oninput=e=>{setPlaying(false);setYear(yearFor(Number(e.target.value)),yearFor(Number(e.target.value))<state.year?-1:1,true);};
+      $('year-slider').oninput=e=>{showYearBubble();state.bubbleTimer=setTimeout(()=>{$('year-bubble').hidden=true;},1200);setPlaying(false);setYear(yearFor(Number(e.target.value)),yearFor(Number(e.target.value))<state.year?-1:1,true);};
       $('year-form').onsubmit=e=>{e.preventDefault();if(!$('year-input').value.trim())return;setPlaying(false);setYear($('year-input').value);};
       $('play-button').onclick=async()=>{if(!state.playing&&state.year>=MAX)await setYear(MIN);setPlaying(!state.playing);};
       document.querySelectorAll('[data-year]').forEach(b=>b.onclick=()=>{setPlaying(false);setYear(b.dataset.year);});
@@ -344,6 +426,6 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       await setYear(initial !== null && initial.trim() && Number.isFinite(Number(initial)) ? initial : -300);
     } catch(error) { console.error('歷史資料載入失敗',error); status('無法載入歷史資料。請透過 HTTP 伺服器開啟，並確認 data 資料夾完整。'); }
   }
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')map?.activePopup?.remove();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('reading-panel').hidden)closeReader();else map?.activePopup?.remove();}});
   init();
 })();
