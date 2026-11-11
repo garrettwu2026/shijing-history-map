@@ -1,7 +1,8 @@
+import {polityColors} from './polity-colors.js';
 // Pure content rules shared by the map, lists and validation tests.
 export const eventDistance=(e,year)=>Math.max(e.startYear-year,year-e.endYear,0);
 export const intersects=(e,year,window)=>e.startYear<=year+window&&e.endYear>=year-window;
-export function stableColor(id){let hash=2166136261;for(const c of id)hash=Math.imul(hash^c.charCodeAt(0),16777619);return `hsl(${(hash>>>0)%360} 38% 65%)`;}
+export function stableColor(id){return polityColors[id]||'#94a5a0';}
 // A status is separate from the spelling. Legacy suffixes are normalized only
 // at the display boundary; restored names retain their Chinese spelling.
 export function nameDisplay(value, status='', showStatus=true){

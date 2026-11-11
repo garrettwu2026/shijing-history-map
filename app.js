@@ -1,5 +1,6 @@
+import {createDetailController} from './modules/detail.js';
 import {renderEventsView} from './modules/events.js';
-import {renderLabelsView,createMap,showPopup,renderGeometry,polityBounds,warmLabelGlyphs} from './modules/map.js';
+import {renderLabelsView,createMap,updateSelectionOutline,showPopup,renderGeometry,polityBounds,warmLabelGlyphs} from './modules/map.js';
 import {createDataClient} from './modules/data.js';
 import {positionFor,yearFor} from './modules/timeline.js';
 import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDisplay} from './modules/content.js';
@@ -16,7 +17,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   const eventDate = e => e.startYear!==e.endYear ? `${yearText(e.startYear)} — ${yearText(e.endYear)}${e.precision==='approximate'?'（約）':''}` : singleDate(e);
   const era = y => y < -5000 ? '史前' : y < 500 ? '古代' : y < 1450 ? '中古' : y < 1800 ? '近世' : y < 1945 ? '近代' : '當代';
   const status = (message = '') => { $('loading-status').textContent=message; $('map-status').textContent = message; $('map-status').hidden = !message;$('map-skeleton').hidden=!!state.snapshot||!message.startsWith('正在'); };
-  let map, eventLayer, borderTimer, prefetchHandle;
+  let map, eventLayer, borderTimer, prefetchHandle, detail;
 
   let displayText=value=>String(value??'');
   let refreshFrame=null, eventsDirty=false, labelsDirty=false;
@@ -187,7 +188,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       if(token!==state.request)return;
       state.snapshot=s;state.nameCache=new Map();
       renderGeometry(map,data,state,isAntarctica,stableColor);
-      state.layer=data;state.boundariesPending=false;
+      state.layer=data;state.visualReadyAt ||= performance.now();state.boundariesPending=false;detail?.snapshotChanged();
       restoreSelection();
       if($('polity-dialog').open)renderPolities();
       $('polity-count').textContent=`${new Set(data.features.filter(f=>!isAntarctica(f)).map(f=>f.properties?.NAME).filter(Boolean)).size} 個政體與區域`;
@@ -243,6 +244,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     return loadBorders();
   }
   function setPlaying(playing) {
+    if(playing){detail?.suspend();detail?.refresh();map?.setMotionQuality(false);}else detail?.refresh();
     clearTimeout(state.timer); state.timer=null; state.playing=playing; state.playGeneration++;
     $('play-icon').textContent = playing ? 'Ⅱ' : '▶';
     $('play-button').setAttribute('aria-label',playing ? '暫停歷史動畫' : '播放歷史動畫');
@@ -302,7 +304,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
   }
   function selectPolity(n,key,layers){
         state.selectedPolity=n.id;
-        for(const source of ['polities','disputed'])map.removeFeatureState({source});
+        for(const source of ['polities','disputed'])for(const id of map.renderFeatureIDs?.[source]||[])map.setFeatureState({source,id},{selected:false,hover:false});
         for(const feature of state.layer.features){if(nameFor(feature.properties?.NAME).id===n.id)map.setFeatureState({source:feature.renderSource,id:feature.id},{selected:true});}
         const bounds=polityBounds(layers),mobile=innerWidth<=760;
         map.fitBounds(bounds,{duration:0,padding:{left:mobile?20:320,top:90,right:mobile?65:370,bottom:document.querySelector('.time-dock').offsetHeight+(mobile?100:30)},maxZoom:6});
@@ -339,24 +341,31 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     if(!window.maplibregl||!maplibregl.supported()){fallback();return;}
     try{map=await createMap();}catch{fallback();return;}
     window.historyMap=map;window.historyState=state;
+    detail=createDetailController({map,state,json,render:data=>renderGeometry(map,data,state,isAntarctica,stableColor,true,true)});
     eventLayer={markers:[],clearLayers(){this.markers.forEach(m=>m.remove());this.markers=[];},addLayer(m){this.markers.push(m);m.addTo(map);}};
     async function loadBaseline(){
       $('baseline-status').hidden=true;
-      try{const data=await json('data/world_2010.geojson');state.baseline=data;map.getSource('land').setData(data);}catch{$('baseline-status').hidden=false;}
+      try{const data=await json('data/world_2010.geojson');if(!data.coastGeometry)data.coastGeometry=await json('data/coast-low.json');state.baseline=data;map.getSource('land').setData(data);detail?.refresh();}catch{$('baseline-status').hidden=false;}
     }
     $('baseline-retry').onclick=loadBaseline;loadBaseline();
     for(const event of ['moveend','zoomend','resize'])map.on(event,()=>{if(state.events.length)state.eventsSignature=null;scheduleRefresh(!!state.events.length);});
-    map.on('click','polities-fill',e=>{const f=e.features[0];if(f.properties.antarctica)showPopup(map,e.lngLat,antarcticaHTML());else if(f.properties.NAME?.trim()){state.selectedPolity=nameFor(f.properties.NAME).id;updateURL();showPopup(map,e.lngLat,polityHTML(f.properties.NAME));}});
-    map.on('click','disputed-fill',e=>{state.selectedPolity=nameFor(e.features[0].properties.NAME).id;updateURL();showPopup(map,e.lngLat,polityHTML(e.features[0].properties.NAME));});
+    const hitPolity=point=>map.queryRenderedFeatures(point,{layers:map.detailDisplayed?['fine-polities-fill','fine-disputed-fill','fine-culture-fill','fine-neutral-hit']:['polities-fill','disputed-fill','culture-fill','neutral-hit']})[0];
+    map.on('click',e=>{
+      if(e.originalEvent?.target?.closest('.event-marker,.maplibregl-popup,.maplibregl-ctrl'))return;
+      const f=hitPolity(e.point);if(!f)return;
+      if(f.properties.antarctica)showPopup(map,e.lngLat,antarcticaHTML());
+      else if(f.properties.NAME?.trim()){state.selectedPolity=nameFor(f.properties.NAME).id;updateURL();showPopup(map,e.lngLat,polityHTML(f.properties.NAME));}
+    });
     let hover;
-    for(const layer of ['polities-fill','disputed-fill']){
-      map.on('mousemove',layer,e=>{if(hover)map.setFeatureState(hover,{hover:false});const f=e.features[0];hover={source:f.source,id:f.id};map.setFeatureState(hover,{hover:true});map.getCanvas().style.cursor='pointer';
-        if(f.properties.NAME?.trim()){$('map').title=nameDisplay(nameFor(f.properties.NAME).zh||f.properties.NAME,nameFor(f.properties.NAME).nameStatus);}
-      });
-      map.on('mouseleave',layer,()=>{if(hover)map.setFeatureState(hover,{hover:false});hover=null;map.getCanvas().style.cursor='';$('map').title='';});
-    }
-    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();state.selectedPolity=el.querySelector('[data-intro-id]')?.dataset.introId||null;updateURL();loadIntro(el);loadEventDetails(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
-    map.on('detailclose',()=>{document.body.classList.remove('popup-open');if(!state.suppressRestore){state.selectedPolity=null;updateURL();}const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
+    const clearHover=()=>{hover=null;map.getCanvas().style.cursor='';$('map').title='';};
+    map.on('mousemove',e=>{
+      const f=hitPolity(e.point);clearHover();if(!f)return;
+      hover={source:f.source,id:f.id};map.getCanvas().style.cursor='pointer';
+      if(f.properties.NAME?.trim())$('map').title=nameDisplay(nameFor(f.properties.NAME).zh||f.properties.NAME,nameFor(f.properties.NAME).nameStatus);
+    });
+    map.on('mouseout',clearHover);
+    map.on('detailopen',()=>{document.body.classList.add('popup-open');const el=map.activePopup.getElement();state.selectedPolity=el.querySelector('[data-intro-id]')?.dataset.introId||null;updateURL();updateSelectionOutline(map,state);for(const f of state.layer?.features||[])map.setFeatureState({source:f.renderSource,id:f.id},{selected:state.catalog.index[f.properties.NAME]===state.selectedPolity});renderLabels();loadIntro(el);loadEventDetails(el);el.setAttribute('role','dialog');el.setAttribute('aria-label','歷史詳情');el.tabIndex=-1;el.focus({preventScroll:true});});
+    map.on('detailclose',()=>{document.body.classList.remove('popup-open');for(const source of ['polities','disputed'])for(const id of map.renderFeatureIDs?.[source]||[])map.setFeatureState({source,id},{selected:false,hover:false});renderLabels();if(!state.suppressRestore){state.selectedPolity=null;updateURL();}updateSelectionOutline(map,state);const target=state.returnFocus;state.returnFocus=null;if(!state.suppressRestore&&target?.isConnected)target.focus({preventScroll:true});});
     document.addEventListener('click',async e=>{const b=e.target.closest('.goto-event');if(!b)return;
       const event=state.events.find(x=>x.id===b.dataset.event);if(!event)return;
       setPlaying(false);state.selectedPolity=null;

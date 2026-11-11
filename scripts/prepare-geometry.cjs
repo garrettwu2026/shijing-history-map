@@ -7,4 +7,5 @@ for(const {file} of JSON.parse(fs.readFileSync('data/snapshots.json','utf8'))){
  if(prepared[file])continue;
  prepared[file]=context.prepareGeometry(JSON.parse(fs.readFileSync('data/'+file,'utf8')));
 }
+prepared['world_2010.geojson'].coastGeometry=JSON.parse(fs.readFileSync('data/coast-low.json','utf8'));
 process.stdout.write(JSON.stringify(prepared));

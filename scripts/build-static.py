@@ -11,6 +11,7 @@ for p in (R/'modules').glob('*.js'):shutil.copy(p,out/'modules'/p.name)
 rows=json.loads((R/'data/snapshots.json').read_text());mapping={}
 def emit(name,data):
  raw=json.dumps(data,ensure_ascii=False,separators=(',',':')).encode();target=f'{Path(name).stem}.{hashlib.sha256(raw).hexdigest()[:16]}.json';(out/'data'/target).write_bytes(raw);mapping[name]=target
+if (R/'data/detail').exists():shutil.copytree(R/'data/detail',out/'data/detail')
 # Precompute runtime geometry metadata in dist only, using the same worker algorithm.
 prepared=json.loads(subprocess.check_output(['node','scripts/prepare-geometry.cjs'],cwd=R))
 for name in sorted({s['file'] for s in rows}|{'polities.json','errata.json','events.json','glossary.json','intros.json','endonyms.json','event-details.json'}):emit(name,prepared.get(name) or json.loads((R/'data'/name).read_text()))
@@ -40,7 +41,7 @@ for source in (R/'assets/fonts').iterdir():
   shutil.copy(source,out/'assets/fonts'/name);assets[source.name]=name
  elif source.suffix=='.txt':shutil.copy(source,out/'assets/fonts'/source.name)
 fingerprint(out/'data-worker.js')
-for name in ['content.js','timeline.js','data.js','map.js','events.js']:fingerprint(out/'modules'/name)
+for name in ['polity-colors.js','content.js','timeline.js','data.js','map.js','events.js','detail.js']:fingerprint(out/'modules'/name)
 fingerprint(out/'vendor/maplibre/maplibre-gl.js');fingerprint(out/'vendor/maplibre/maplibre-gl.css')
 fingerprint(out/'app.js');fingerprint(out/'style.css')
 p=out/'index.html';s=p.read_text()

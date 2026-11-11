@@ -1,0 +1,175 @@
+{
+  "task24": {
+    "target": 9,
+    "completed": 9,
+    "status": "complete",
+    "items": {
+      "1-visual-baseline": "done",
+      "2-adjacency-color-table": "done",
+      "3-basemap-coast-grid-vignette": "done",
+      "4-border-width-by-zoom": "done",
+      "5-culture-vs-uncertain-styles": "done",
+      "6-label-hierarchy": "done",
+      "7-event-markers": "done",
+      "8-clarity-cost-and-perf": "done",
+      "9-high-zoom-detail-geometry": "done"
+    },
+    "notes": "All 9 items complete. Matched 48 before + 48 after screenshots plus three legend views; zoom 8 uses the same Strait of Messina framing on both versions. Build, complete validation and all 19 browser/performance flows passed without lowering thresholds. Isolated paired 5-run desktop cold 980.3→934.2 ms / interaction P95 16.8→16.8 ms; mobile 906.5→895.2 ms / 16.8→16.7 ms. Settled-detail zoom 5/8 pan tests also pass the 10% budget. Lazy threshold 4.5; first screen zero detail requests. No commit/push/deploy or Render changes.",
+    "performance": {
+      "1280": {
+        "measurements": {
+          "original": {
+            "runs": 5,
+            "coldMedianMs": 980.2999999970198,
+            "interactionP95MedianMs": 16.799999999999955,
+            "longFramesOver50ms": 6,
+            "longTasks": 7,
+            "stages": {
+              "zoom": 16.799999999999955,
+              "pan": 16.700000000000273,
+              "release": 16.799999999999727,
+              "play": 16.799999999999727
+            }
+          },
+          "final": {
+            "runs": 5,
+            "coldMedianMs": 934.1999999955297,
+            "interactionP95MedianMs": 16.799999999999727,
+            "longFramesOver50ms": 4,
+            "longTasks": 5,
+            "stages": {
+              "zoom": 16.799999999999955,
+              "pan": 16.799999999999727,
+              "release": 16.700000000000273,
+              "play": 16.700000000000728
+            }
+          }
+        },
+        "increasePercent": {
+          "coldMedianMs": -4.7,
+          "interactionP95MedianMs": -0.0
+        },
+        "passes": true
+      },
+      "390": {
+        "measurements": {
+          "original": {
+            "runs": 5,
+            "coldMedianMs": 906.5,
+            "interactionP95MedianMs": 16.799999999999727,
+            "longFramesOver50ms": 5,
+            "longTasks": 5,
+            "stages": {
+              "zoom": 16.799999999999955,
+              "pan": 16.799999999999727,
+              "release": 16.700000000000273,
+              "play": 16.700000000000728
+            }
+          },
+          "final": {
+            "runs": 5,
+            "coldMedianMs": 895.2000000029802,
+            "interactionP95MedianMs": 16.700000000000728,
+            "longFramesOver50ms": 0,
+            "longTasks": 5,
+            "stages": {
+              "zoom": 16.700000000000273,
+              "pan": 16.700000000000273,
+              "release": 16.700000000000273,
+              "play": 16.700000000000728
+            }
+          }
+        },
+        "increasePercent": {
+          "coldMedianMs": -1.25,
+          "interactionP95MedianMs": -0.6
+        },
+        "passes": true
+      }
+    },
+    "settledPerformance": {
+      "1280-z5": {
+        "measurements": {
+          "original": {
+            "p95MedianMs": 33.29999999999973,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 33.40000000000009,
+            "longTasks": 0
+          },
+          "final": {
+            "p95MedianMs": 16.700000000000728,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          }
+        },
+        "increasePercent": -49.85,
+        "passes": true
+      },
+      "1280-z8": {
+        "measurements": {
+          "original": {
+            "p95MedianMs": 16.700000000000273,
+            "longFramesOver50ms": 1,
+            "maxFrameMs": 100.09999999999991,
+            "longTasks": 0
+          },
+          "final": {
+            "p95MedianMs": 16.700000000000273,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          }
+        },
+        "increasePercent": 0.0,
+        "passes": true
+      },
+      "390-z5": {
+        "measurements": {
+          "original": {
+            "p95MedianMs": 16.700000000000273,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          },
+          "final": {
+            "p95MedianMs": 16.799999999999727,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          }
+        },
+        "increasePercent": 0.6,
+        "passes": true
+      },
+      "390-z8": {
+        "measurements": {
+          "original": {
+            "p95MedianMs": 16.799999999999955,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          },
+          "final": {
+            "p95MedianMs": 16.700000000000273,
+            "longFramesOver50ms": 0,
+            "maxFrameMs": 16.800000000000182,
+            "longTasks": 0
+          }
+        },
+        "increasePercent": -0.6,
+        "passes": true
+      }
+    },
+    "detail": {
+      "zoomThreshold": 4.5,
+      "firstScreenDetailRequests": 0,
+      "landGzipBytes": 110023,
+      "year1500GzipBytes": 124774,
+      "year1900GzipBytes": 149606,
+      "totalCorpusGzipBytes": 7511462,
+      "coarsePolityVertices1500": 6140,
+      "finePolityVertices1500": 14412
+    }
+  }
+}

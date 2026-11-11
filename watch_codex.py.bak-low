@@ -1,0 +1,154 @@
+#!/usr/bin/env python3
+"""Codex 進度巡檢 watcher (stdlib only, no model calls).
+Default: --dry-run (log decisions only). --live allows wake.json; --auto-restart (with --live) restarts Codex."""
+import argparse, glob, json, os, re, subprocess, sys, time
+from datetime import datetime
+
+PROJ = "/workspace/history-map"
+TASK = "TASK21.md"
+DIR = os.path.expanduser("~/.cache/codex_watch")
+STATE = os.path.join(DIR, "state.json")
+LOG = os.path.join(DIR, "watch.log")
+WAKE = os.path.join(DIR, "wake.json")
+HEART = os.path.join(DIR, "heartbeat")
+PROGRESS = os.path.join(PROJ, "scripts/v18b-progress.json")
+SESS = os.path.expanduser("~/.codex/sessions")
+STALL_MIN, QUOTA_MAX, DEDUPE_S, FAIL_MAX = 60, 80.0, 7200, 3
+# Known, unchanging failure: npm validate fails on event details < 300. Ignored on purpose.
+
+def now(): return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+def log(msg):
+    with open(LOG, "a") as f: f.write(f"[{now()}] {msg}\n")
+    print(msg)
+
+def codex_pids():
+    out = subprocess.run(["pgrep", "-f", f"codex exec .*-C {PROJ}"], capture_output=True, text=True)
+    if out.returncode not in (0, 1): raise RuntimeError("pgrep failed")
+    return [int(p) for p in out.stdout.split() if int(p) != os.getpid()]
+
+def logs(proj=None):
+    proj = proj or PROJ
+    fs = [f for f in glob.glob(os.path.join(proj, "codex*.log")) if re.fullmatch(r"codex\d+[a-z]*\.log", os.path.basename(f))]
+    if not fs: raise RuntimeError("no codex*.log")
+    return sorted(fs, key=os.path.getmtime)  # newest by mtime is last
+
+def next_log(fs):
+    """codex21te -> codex21tf; ...z -> ...za; skip names that already exist."""
+    newest = fs[-1]; d = os.path.dirname(newest)
+    m = re.fullmatch(r"(codex\d+)([a-z]*)\.log", os.path.basename(newest))
+    base, suf = m.group(1), m.group(2)
+    existing = {os.path.basename(f) for f in glob.glob(os.path.join(d, "codex*.log"))}
+    for _ in range(200):
+        if not suf: suf = "b"
+        elif suf[-1] == "z": suf = suf + "a"
+        else: suf = suf[:-1] + chr(ord(suf[-1]) + 1)
+        name = f"{base}{suf}.log"
+        if name not in existing: return os.path.join(d, name)
+    raise RuntimeError("could not find free log name")
+
+def task_from_args(args, proj=None):
+    """Find which TASK*.md the codex prompt came from: explicit filename, else content match."""
+    proj = proj or PROJ
+    joined = " ".join(args)
+    m = re.search(r"(TASK[\w-]*\.md)", joined)
+    if m and os.path.exists(os.path.join(proj, m.group(1))): return m.group(1)
+    prompt = args[-1].strip() if args else ""
+    best = None
+    for f in glob.glob(os.path.join(proj, "TASK*.md")):
+        try: c = open(f, errors="ignore").read().strip()
+        except OSError: continue
+        if c and (prompt == c or (len(prompt) >= 40 and c.startswith(prompt[:200]))):
+            if best is None or len(c) > best[0]: best = (len(c), os.path.basename(f))
+    return best[1] if best else None
+
+def running_task(pids):
+    for pid in pids:
+        try: args = open(f"/proc/{pid}/cmdline", "rb").read().decode(errors="ignore").split("\0")
+        except OSError: continue
+        args = [a for a in args if a]
+        t = task_from_args(args)
+        if t: return t
+    return None
+
+def quotas():
+    fs = sorted(glob.glob(os.path.join(SESS, "*/*/*/rollout-*.jsonl")), key=os.path.getmtime)
+    for f in reversed(fs[-5:]):
+        with open(f, errors="ignore") as h: txt = h.read()
+        m = list(re.finditer(r'"primary":\{"used_percent":([\d.]+).*?"secondary":\{"used_percent":([\d.]+)', txt))
+        if m: return float(m[-1].group(1)), float(m[-1].group(2))
+    raise RuntimeError("no rate_limits in recent rollout files")
+
+def collect():
+    with open(PROGRESS) as f: p = json.load(f)
+    t = p.get("task21", {})
+    fs = logs(); lf = fs[-1]
+    q5, qw = quotas(); pids = codex_pids()
+    return {"pids": pids, "task": running_task(pids), "log": os.path.basename(lf), "log_size": os.path.getsize(lf),
+            "log_age_min": round((time.time() - os.path.getmtime(lf)) / 60, 1),
+            "completed": t.get("completed"), "target": t.get("target", 1500),
+            "status": t.get("status", p.get("status")), "q5": q5, "qw": qw, "_logs": fs}
+
+def restart(s, dry, task):
+    if s["pids"]: return "skip: process exists"
+    if max(s["q5"], s["qw"]) >= QUOTA_MAX: return "skip: quota>=80"
+    nl = next_log(s["_logs"])
+    cmd = (f'cd {PROJ} && nohup codex exec -s workspace-write -c sandbox_workspace_write.network_access=true '
+           f'--skip-git-repo-check -C {PROJ} "$(cat {task})" > {os.path.basename(nl)} 2>&1 &')
+    if dry: log(f"DRY would restart: {cmd}"); return "dry"
+    subprocess.Popen(["bash", "-lc", cmd], start_new_session=True)
+    time.sleep(20)
+    ok = bool(codex_pids()) and os.path.exists(nl) and os.path.getsize(nl) > 0
+    log(f"restart {'OK' if ok else 'FAILED'} -> {nl}")
+    return "ok" if ok else "failed"
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", dest="dry", action="store_true", default=True)
+    ap.add_argument("--live", dest="dry", action="store_false")
+    ap.add_argument("--auto-restart", action="store_true")
+    a = ap.parse_args()
+    os.makedirs(DIR, exist_ok=True)
+    st = json.load(open(STATE)) if os.path.exists(STATE) else {"consecutive_failures": 0, "last_wake": {}}
+    mode = "DRY" if a.dry else "LIVE"
+    reasons = []
+    try:
+        s = collect(); st["consecutive_failures"] = 0
+    except Exception as e:
+        st["consecutive_failures"] = st.get("consecutive_failures", 0) + 1
+        log(f"{mode} check failed ({st['consecutive_failures']}/{FAIL_MAX}): {e}")
+        s = None
+        if st["consecutive_failures"] >= FAIL_MAX: reasons.append(f"e:{FAIL_MAX} consecutive failed checks: {e}")
+    if s:
+        prev = st.get("last", {})
+        if not s["pids"]: reasons.append("a:no codex process")
+        elif s["log_age_min"] > STALL_MIN: reasons.append(f"b:stalled, log idle {s['log_age_min']}min")
+        if max(s["q5"], s["qw"]) >= QUOTA_MAX: reasons.append(f"c:quota 5h={s['q5']}% wk={s['qw']}%")
+        if prev and s["status"] != prev.get("status"): reasons.append(f"d:status {prev.get('status')}->{s['status']}")
+        old_t, new_t = st.get("task"), s.get("task")
+        if old_t and new_t and old_t != new_t:
+            reasons.append(f"f:task changed {old_t} -> {new_t} (target in use {s['target']}, please confirm)")
+        if s["completed"] is not None and s["completed"] >= s["target"]: reasons.append(f"d:target reached {s['completed']}/{s['target']}")
+        log(f"{mode} pids={s['pids']} log={s['log']} age={s['log_age_min']}m completed={s['completed']}/{s['target']} "
+            f"task={s.get('task') or st.get('task')} target={s['target']} status={s['status']} quota5h={s['q5']} wk={s['qw']} reasons={reasons or 'none'}")
+        if a.auto_restart and reasons and reasons[0].startswith("a:"):
+            r = restart(s, a.dry, s.get("task") or st.get("task") or TASK)
+            if r == "ok": reasons = [x for x in reasons if not x.startswith("a:")]
+            elif r == "failed": reasons.append("restart failed")
+        if s.get("task"): st["task"] = s["task"]
+        st["last"] = {k: v for k, v in s.items() if not k.startswith("_")}
+    t = time.time(); fire = []
+    for r in reasons:
+        key = r.split(" (target")[0] if r.startswith("f:") else (r.split(":")[0] if ":" in r else r)
+        if t - st["last_wake"].get(key, 0) >= DEDUPE_S: fire.append(r); st["last_wake"][key] = t
+        else: log(f"{mode} dedupe suppressed: {r}")
+    if fire:
+        ev = {"time": now(), "reasons": fire, "state": st.get("last"),
+              "log_tail": open(os.path.join(PROJ, st["last"]["log"]), errors="ignore").read()[-1500:] if s else None}
+        if a.dry: log(f"DRY would wake Mia: {fire}")
+        else:
+            json.dump(ev, open(WAKE, "w"), ensure_ascii=False, indent=1); log(f"LIVE wrote wake.json: {fire}")
+    if a.dry: st["last_wake"] = st.get("last_wake", {})  # dry dedupe tracked too, for realistic comparison
+    json.dump(st, open(STATE, "w"), ensure_ascii=False, indent=1)
+    open(HEART, "w").write(now() + f" {mode}\n")
+
+if __name__ == "__main__": main()

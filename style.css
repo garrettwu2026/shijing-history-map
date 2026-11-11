@@ -596,3 +596,17 @@ a{display:inline-flex;align-items:center;min-width:44px;min-height:44px}
 #map-skeleton i:nth-child(2){width:80%}#map-skeleton i:nth-child(3){width:60%}
 [data-intro-id],[data-event-detail]{min-height:72px}
 #reader-resize{touch-action:none}
+
+/* TASK24: restrained ink/mineral map, focus gold reserved for interaction. */
+.map-vignette{display:none}
+#map{background:#101f27}
+.events-panel,.map-key{backdrop-filter:none}
+.map-key{background:#14232bf2}
+.event-marker span{width:20px;height:20px;font-size:11px;border-width:1px;box-shadow:0 1px 3px #0005}
+.event-marker.mixed span{background:#b8c3c1;color:#182b30;box-shadow:0 0 0 1px #182b30}
+.event-marker.selected span{outline:2px solid #efd397;outline-offset:2px}
+.event-marker:hover span,.event-marker:focus-visible span{transform:scale(1.15)}
+.polity-swatch{background:#80b7ad88;border:1px solid #182b30}
+.culture-swatch{background-color:#a9b69b30;background-image:radial-gradient(#baccb8 1px,transparent 1px);background-size:6px 6px;border:1px solid #839b94}
+.review-swatch{height:12px;background:#80b7ad88;border:0;position:relative}
+.review-swatch:after{content:'';position:absolute;inset:5px 0 auto;height:2px;background:repeating-linear-gradient(to right,#182b30 0 9px,transparent 9px 13px,#182b30 13px 15px,transparent 15px 19px)}

@@ -18,7 +18,20 @@ function scanlineAnchor(part){
     for(let j=1;j<xs.length;j+=2){const point=[(xs[j-1]+xs[j])/2,y];if(xs[j]>xs[j-1]&&inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))return point;}
   }
 }
-function anchorsFor(parts){const anchors=[];for(const part of parts.slice(0,4)){const xs=part[0].map(p=>p[0]),ys=part[0].map(p=>p[1]);const left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys);for(const fy of [.5,.35,.65,.2,.8])for(const fx of [.5,.35,.65,.2,.8]){const point=[left+(right-left)*fx,top+(bottom-top)*fy];if(inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))return [point];}if(!anchors.length){const point=scanlineAnchor(part);if(point)return [point];}}return anchors;}
+function anchorsFor(parts){
+ const anchors=[];
+ for(const part of parts.slice(0,4)){
+  const xs=part[0].map(p=>p[0]),ys=part[0].map(p=>p[1]),left=Math.min(...xs),right=Math.max(...xs),top=Math.min(...ys),bottom=Math.max(...ys);
+  for(const fy of [.5,.25,.75])for(const fx of [.5,.25,.75]){
+   const point=[left+(right-left)*fx,top+(bottom-top)*fy];
+   if(inside(point,part[0])&&!part.slice(1).some(r=>inside(point,r)))anchors.push(point);
+   if(anchors.length>=9)return anchors;
+  }
+  if(!anchors.length){const point=scanlineAnchor(part);if(point)anchors.push(point);}
+ }
+ return anchors;
+}
+
 function geometrySignature(data){
   let count=0,sum=0;
   const visit=c=>{if(typeof c==='number'){count++;sum+=c*count;}else if(Array.isArray(c))for(const v of c)visit(v);};
@@ -26,6 +39,7 @@ function geometrySignature(data){
   return `${count}:${sum}`;
 }
 function prepareGeometry(data){
+    data.features?.forEach((f,i)=>{if(f.properties.detailIndex==null)f.properties.detailIndex=i;});
     // Some snapshots merge all unnamed land into one MultiPolygon (1492).
     // Split its parts so the Antarctic continent can be classified separately.
     if(data.type==='FeatureCollection')data.features=data.features.flatMap(f=>
@@ -57,8 +71,15 @@ self.onmessage=async({data:{id,path,cancel}})=>{
   try{
     const response=await fetch(path,{signal:controller.signal});
     if(!response.ok)throw Error(`${path} (${response.status})`);
-    const data=await response.json();
-    if(data.type==='FeatureCollection'&&data.labelGeometryPrepared!==geometrySignature(data))prepareGeometry(data);
+    let data;
+    if(path.split('?')[0].endsWith('.gz')){
+      // A host/CDN may already decode Content-Encoding; inspect the actual bytes.
+      const bytes=await response.arrayBuffer(),header=new Uint8Array(bytes,0,Math.min(2,bytes.byteLength));
+      const text=header[0]===31&&header[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes);
+      data=JSON.parse(text);
+    }else data=await response.json();
+    if(data.displayDetail)for(const f of data.features){const parts=f.geometry?.type==='MultiPolygon'?f.geometry.coordinates:f.geometry?[f.geometry.coordinates]:[];for(const part of parts){if(!part[0]?.length||part[0].some(p=>p[1]<-85))continue;for(const ring of part)for(let i=1;i<ring.length;i++){while(ring[i][0]-ring[i-1][0]>180)ring[i][0]-=360;while(ring[i][0]-ring[i-1][0]<-180)ring[i][0]+=360;}const ref=part[0][0][0];for(const hole of part.slice(1)){const shift=Math.round((ref-hole[0][0])/360)*360;for(const p of hole)p[0]+=shift;}}}
+    if(data.type==='FeatureCollection'&&!data.displayDetail&&data.labelGeometryPrepared!==geometrySignature(data))prepareGeometry(data);
     if(!controller.signal.aborted){
       if(data.type==='FeatureCollection'){const bytes=new TextEncoder().encode(JSON.stringify(data));self.postMessage({id,bytes:bytes.buffer},[bytes.buffer]);}
       else self.postMessage({id,data});
