@@ -115,7 +115,7 @@ export function renderLabelsView({state,map,isAntarctica,nameFor}){
     // Keep the clean spelling intact; details retain the annotated display name.
     const name=cleanMapLabel(n.zh),point=f.labelGeometry?.anchors?.find(point=>clear(point,name))||f.labelGeometry?.anchors?.[0];
     if(!point||!name||seen.has(n.id))continue;seen.add(n.id);
-    features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{clear:clear(point,name),name,polityId:n.id,NAME:f.properties.NAME,importance:n.importance||0,minZoom:state.selectedPolity===n.id?0:Math.min(n.importance>=8?1:8,(f.labelGeometry?.area||0)>.03?1:(f.labelGeometry?.area||0)>.002?2.5:(f.labelGeometry?.area||0)>.0001?4:5.5),priority:state.selectedPolity===n.id?-100:-(n.importance||0)}});
+    features.push({type:'Feature',geometry:{type:'Point',coordinates:point},properties:{clear:clear(point,name),name,polityId:n.id,NAME:f.properties.NAME,importance:n.importance||0,minZoom:state.selectedPolity===n.id?0:Math.min(n.importance>=8?1:8,(f.labelGeometry?.area||0)>.03?1:(f.labelGeometry?.area||0)>.002?2.5:(f.labelGeometry?.area||0)>.0001?4:5.5),priority:state.selectedPolity===n.id?-100:-(n.importance||0)-Math.min(1,f.labelGeometry?.area||0)*.001}});
   }
   state.labelSnapshot=state.snapshot;
   const signature=`${state.snapshot?.year}|${JSON.stringify(features)}`;

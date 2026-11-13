@@ -123,7 +123,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     const intro=content.querySelector('.polity-intro');if(intro){intro.open=true;intro.querySelector('summary').textContent='歷史概述';}
     const firstDesignation=content.querySelector('.self-designation');
     if(firstDesignation){const heading=document.createElement('h3');heading.textContent='自稱與別稱';firstDesignation.before(heading);}
-    $('reading-title').textContent=content.querySelector('.popup-title')?.textContent+' · 完整閱讀';
+    $('reading-title').textContent='完整閱讀';
     $('reading-panel').hidden=false;document.body.classList.add('reading-open');$('reading-close').focus();
   }
   function polityHTML(key) {
@@ -277,7 +277,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
         for(const p of results){
           const years=coverage[p.id].filter(y=>y>=MIN&&y<=MAX),target=[...years].sort((a,b)=>Math.abs(a-state.year)-Math.abs(b-state.year))[0];
           const button=document.createElement('button');button.dataset.polity=p.id;button.dataset.year=target;
-          button.textContent=`${nameDisplay(p.zh,p.translationStatus==='untranslated'?'pending':'accepted')} · 可用疆界年：${yearText(years[0])}${years.length>1?' 至 '+yearText(years.at(-1)):''}（${years.length} 個快照） · 前往 ${yearText(target)} →`;
+          button.innerHTML=`<strong>${esc(nameDisplay(p.zh,p.translationStatus==='untranslated'?'pending':'accepted'))}</strong><span>可用疆界年：${esc(yearText(years[0]))}${years.length>1?' 至 '+esc(yearText(years.at(-1))):''}</span><small>（${years.length} 個快照） · 前往 ${esc(yearText(target))} →</small>`;
           button.onclick=async()=>{setPlaying(false);state.selectedPolity=null;$('polity-dialog').close();await setYear(target);if(state.year!==target)return;const layers=state.layer.features.filter(f=>state.catalog.index[f.properties?.NAME]===p.id&&f.labelGeometry);if(layers.length){state.returnFocus=$('polity-open');selectPolity(nameFor(layers[0].properties.NAME),layers[0].properties.NAME,layers);}};
           list.append(button);
         }
@@ -294,7 +294,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
       const boxes=layers.map(l=>l.labelGeometry.bounds);
       const bounds=[Math.min(...boxes.map(b=>b[0])),Math.min(...boxes.map(b=>b[1])),Math.max(...boxes.map(b=>b[2])),Math.max(...boxes.map(b=>b[3]))];
       const region=regionFor(bounds,key,n.regions);
-      const b=document.createElement('button');b.textContent=`${nameDisplay(n.zh,n.nameStatus)}${region?' · '+region:''} · 疆界 ${yearText(state.snapshot.year)}`;
+      const b=document.createElement('button');b.innerHTML=`<strong>${esc(nameDisplay(n.zh,n.nameStatus))}</strong><span>${region?esc(region)+' · ':''}疆界 ${esc(yearText(state.snapshot.year))}</span>`;
       b.onclick=()=>{
         state.returnFocus=$('polity-open');$('polity-dialog').close();
         selectPolity(n,key,layers);
@@ -329,7 +329,7 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     resize.onkeydown=e=>{if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();$('reading-panel').style.width=`${Math.max(340,Math.min(innerWidth*.75,$('reading-panel').offsetWidth+(e.key==='ArrowLeft'?30:-30)))}px`;}};
 
     $('boundary-warning').onclick=()=>{const el=$('boundary-warning-text');el.hidden=!el.hidden;$('boundary-warning').setAttribute('aria-expanded',String(!el.hidden));};
-    $('time-options-toggle').onclick=()=>{const open=$('time-options').hidden;$('time-options').hidden=!open;$('time-options-toggle').setAttribute('aria-expanded',String(open));$('time-options-toggle').textContent=open?'收合 ▾':'設定 ▴';renderLabels();};
+    $('time-options-toggle').onclick=()=>{const open=$('time-options').hidden;$('time-options').hidden=!open;$('time-options-toggle').setAttribute('aria-expanded',String(open));$('time-options-toggle').textContent=open?'收合 ▾':'設定 ▴';if(open&&innerWidth<=760){if($('events-panel').classList.contains('expanded'))$('sheet-toggle').click();$('map-legend').classList.remove('legend-open');$('legend-toggle').setAttribute('aria-expanded','false');}renderLabels();};
     $('polity-search').oninput=renderPolities;
     $('polity-scope').onchange=renderPolities;
     $('polity-open').onclick=()=>{renderPolities();$('polity-dialog').showModal();$('polity-search').focus();};
@@ -388,13 +388,13 @@ import {eventDistance,intersects,regionFor,stableColor,nameDisplay,createNameDis
     };
     $('technology-only').onclick=()=>{enabledCategories.clear();enabledCategories.add('科技與發明');syncCategories();};
     $('categories-all').onclick=()=>{Object.keys(categories).forEach(c=>enabledCategories.add(c));syncCategories();};
-    $('legend-toggle').onclick=()=>{const open=$('legend-toggle').getAttribute('aria-expanded')!=='true';$('legend-toggle').setAttribute('aria-expanded',String(open));$('map-legend').classList.toggle('legend-open',open);};
+    $('legend-toggle').onclick=()=>{const open=$('legend-toggle').getAttribute('aria-expanded')!=='true';$('legend-toggle').setAttribute('aria-expanded',String(open));$('map-legend').classList.toggle('legend-open',open);if(open&&innerWidth<=760){if(sheet.classList.contains('expanded'))sheetButton.click();$('time-options').hidden=true;$('time-options-toggle').setAttribute('aria-expanded','false');$('time-options-toggle').textContent='設定 ▴';}};
     let drag;
     sheetButton.addEventListener('pointerdown',e=>{if(innerWidth>760)return;drag={y:e.clientY,height:sheet.offsetHeight};sheetButton.setPointerCapture(e.pointerId);});
     sheetButton.addEventListener('pointermove',e=>{if(!drag||!sheetButton.hasPointerCapture(e.pointerId))return;const delta=drag.y-e.clientY;if(Math.abs(delta)<6&&!state.sheetDragged)return;state.sheetDragged=true;const max=document.querySelector('main').clientHeight-document.querySelector('.time-dock').offsetHeight-120;const height=Math.max(150,Math.min(max,drag.height+delta));sheet.style.setProperty('--sheet-height',`${height}px`);sheet.classList.add('expanded');sheetButton.setAttribute('aria-expanded','true');});
     sheetButton.addEventListener('pointerup',()=>{drag=null;});
     sheetButton.addEventListener('pointercancel',()=>{drag=null;state.sheetDragged=false;});
-    sheetButton.onclick=()=>{if(state.sheetDragged){state.sheetDragged=false;return;}const expanded=sheetButton.getAttribute('aria-expanded')!=='true';sheetButton.setAttribute('aria-expanded',String(expanded));sheet.classList.toggle('expanded',expanded);sheetButton.textContent=`${expanded?'收合事件 ▾':'探索事件 ▴'} · ${$('event-count').textContent}`;renderLabels();};
+    sheetButton.onclick=()=>{if(state.sheetDragged){state.sheetDragged=false;return;}const expanded=sheetButton.getAttribute('aria-expanded')!=='true';sheetButton.setAttribute('aria-expanded',String(expanded));sheet.classList.toggle('expanded',expanded);if(expanded){$('map-legend').classList.remove('legend-open');$('legend-toggle').setAttribute('aria-expanded','false');$('time-options').hidden=true;$('time-options-toggle').setAttribute('aria-expanded','false');$('time-options-toggle').textContent='設定 ▴';}sheetButton.textContent=`${expanded?'收合事件 ▾':'探索事件 ▴'} · ${$('event-count').textContent}`;renderLabels();};
     for(const [name,[tint,symbol]] of Object.entries(categories)) {
       const button=document.createElement('button');button.type='button';button.className='category-chip';button.dataset.category=name;button.style.setProperty('--event-color',tint);button.setAttribute('aria-pressed','true');button.innerHTML=`<span aria-hidden="true">${symbol}</span> ${name}`;
       button.onclick=()=>{enabledCategories.has(name)?enabledCategories.delete(name):enabledCategories.add(name);button.setAttribute('aria-pressed',String(enabledCategories.has(name)));syncCategories();};

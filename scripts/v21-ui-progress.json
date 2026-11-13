@@ -1,0 +1,168 @@
+{
+  "task25": {
+    "target": 9,
+    "completed": 9,
+    "status": "complete",
+    "items": {
+      "1-visual-baseline": "done",
+      "2-fonts-and-type-scale": "done",
+      "3-surfaces-spacing-motion": "done",
+      "4-masthead-layout": "done",
+      "5-event-chronology": "done",
+      "6-reader-as-article": "done",
+      "7-timeline-and-time-settings": "done",
+      "8-dialogs-popup-and-states": "done",
+      "9-performance-budget": "done"
+    },
+    "notes": "方向 C 完成。三尺寸 72 張對照；20/20 定稿驗證通過，完整資料與事件驗證保留。冷啟動最大 +2.71%，互動 P95 最大 +0.60%，均低於 +10%；字體轉移與請求時機見 V21-STATUS.md。未 commit／未 push／未 deploy。",
+    "performance": {
+      "budgetRatio": 1.1,
+      "browser": [
+        "156.0.8078.4"
+      ],
+      "viewports": [
+        {
+          "width": 1280,
+          "coldMs": {
+            "baseline": 630.5999999977648,
+            "after": 608.2000000029802,
+            "ratio": 0.9644782746671995
+          },
+          "interactionP95Ms": {
+            "panZoom": {
+              "baseline": 16.799999999999727,
+              "after": 16.700000000000273,
+              "ratio": 0.9940476190476515
+            },
+            "release": {
+              "baseline": 16.799999999999727,
+              "after": 16.799999999999727,
+              "ratio": 1.0
+            },
+            "playback": {
+              "baseline": 16.799999999999272,
+              "after": 16.700000000000728,
+              "ratio": 0.9940476190477054
+            }
+          },
+          "fontTransferMedianBytes": 2789036,
+          "fontRequestCountMedian": 13,
+          "fontFirstRequestMedianMs": 15.300000000745058,
+          "fontTotalTransferAfterInteractionsMedianBytes": 6190448,
+          "fontFiles": [
+            "noto-sans-tc-0.6ba6d42a31df5b0e.woff2",
+            "noto-sans-tc-10.e11932cf89e84ab5.woff2",
+            "noto-sans-tc-11.7074ce4033681ca9.woff2",
+            "noto-sans-tc-12.669739042ec104b1.woff2",
+            "noto-sans-tc-13.67dae74f9cfce5d5.woff2",
+            "noto-sans-tc-14.3ad4d7fc6c19a87e.woff2",
+            "noto-sans-tc-15.c1ef947161944583.woff2",
+            "noto-sans-tc-16.8266413af36a3167.woff2",
+            "noto-sans-tc-17.c4d1bf1472a4c72a.woff2",
+            "noto-sans-tc-18.0e2dafd398735cd8.woff2",
+            "noto-sans-tc-8.3c21e4dca220075e.woff2",
+            "noto-sans-tc-9.41f142bd37e370c3.woff2",
+            "noto-serif-tc-0.b7706c6edea04bf5.woff2"
+          ]
+        },
+        {
+          "width": 390,
+          "coldMs": {
+            "baseline": 549.5,
+            "after": 564.4000000022352,
+            "ratio": 1.0271155596037036
+          },
+          "interactionP95Ms": {
+            "panZoom": {
+              "baseline": 16.700000000000273,
+              "after": 16.799999999999727,
+              "ratio": 1.005988023952063
+            },
+            "release": {
+              "baseline": 16.799999999999272,
+              "after": 16.700000000000728,
+              "ratio": 0.9940476190477054
+            },
+            "playback": {
+              "baseline": 16.800000000000182,
+              "after": 16.700000000000728,
+              "ratio": 0.9940476190476516
+            }
+          },
+          "fontTransferMedianBytes": 2789036,
+          "fontRequestCountMedian": 13,
+          "fontFirstRequestMedianMs": 16.300000000745058,
+          "fontTotalTransferAfterInteractionsMedianBytes": 2817624,
+          "fontFiles": [
+            "noto-sans-tc-0.6ba6d42a31df5b0e.woff2",
+            "noto-sans-tc-10.e11932cf89e84ab5.woff2",
+            "noto-sans-tc-11.7074ce4033681ca9.woff2",
+            "noto-sans-tc-12.669739042ec104b1.woff2",
+            "noto-sans-tc-13.67dae74f9cfce5d5.woff2",
+            "noto-sans-tc-14.3ad4d7fc6c19a87e.woff2",
+            "noto-sans-tc-15.c1ef947161944583.woff2",
+            "noto-sans-tc-16.8266413af36a3167.woff2",
+            "noto-sans-tc-17.c4d1bf1472a4c72a.woff2",
+            "noto-sans-tc-18.0e2dafd398735cd8.woff2",
+            "noto-sans-tc-8.3c21e4dca220075e.woff2",
+            "noto-sans-tc-9.41f142bd37e370c3.woff2",
+            "noto-serif-tc-0.b7706c6edea04bf5.woff2"
+          ]
+        },
+        {
+          "width": 320,
+          "coldMs": {
+            "baseline": 548,
+            "after": 547.6999999992549,
+            "ratio": 0.999452554743166
+          },
+          "interactionP95Ms": {
+            "panZoom": {
+              "baseline": 16.700000000000273,
+              "after": 16.700000000000273,
+              "ratio": 1.0
+            },
+            "release": {
+              "baseline": 16.700000000000728,
+              "after": 16.700000000000728,
+              "ratio": 1.0
+            },
+            "playback": {
+              "baseline": 16.700000000000728,
+              "after": 16.700000000000728,
+              "ratio": 1.0
+            }
+          },
+          "fontTransferMedianBytes": 2789036,
+          "fontRequestCountMedian": 13,
+          "fontFirstRequestMedianMs": 21.399999998509884,
+          "fontTotalTransferAfterInteractionsMedianBytes": 2789036,
+          "fontFiles": [
+            "noto-sans-tc-0.6ba6d42a31df5b0e.woff2",
+            "noto-sans-tc-10.e11932cf89e84ab5.woff2",
+            "noto-sans-tc-11.7074ce4033681ca9.woff2",
+            "noto-sans-tc-12.669739042ec104b1.woff2",
+            "noto-sans-tc-13.67dae74f9cfce5d5.woff2",
+            "noto-sans-tc-14.3ad4d7fc6c19a87e.woff2",
+            "noto-sans-tc-15.c1ef947161944583.woff2",
+            "noto-sans-tc-16.8266413af36a3167.woff2",
+            "noto-sans-tc-17.c4d1bf1472a4c72a.woff2",
+            "noto-sans-tc-18.0e2dafd398735cd8.woff2",
+            "noto-sans-tc-8.3c21e4dca220075e.woff2",
+            "noto-sans-tc-9.41f142bd37e370c3.woff2",
+            "noto-serif-tc-0.b7706c6edea04bf5.woff2"
+          ]
+        }
+      ],
+      "passed": true
+    },
+    "verification": {
+      "build": "passed",
+      "validate": "passed",
+      "browserAndPerformanceChecks": 20,
+      "passed": 20,
+      "beforeScreenshots": 36,
+      "afterScreenshots": 36
+    }
+  }
+}

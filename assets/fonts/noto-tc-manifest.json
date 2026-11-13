@@ -1,0 +1,462 @@
+[
+  {
+    "file": "noto-sans-tc-0.woff2",
+    "bytes": 134704,
+    "codepoints": 1001
+  },
+  {
+    "file": "noto-sans-tc-1.woff2",
+    "bytes": 10804,
+    "codepoints": 183
+  },
+  {
+    "file": "noto-sans-tc-2.woff2",
+    "bytes": 4060,
+    "codepoints": 92
+  },
+  {
+    "file": "noto-sans-tc-3.woff2",
+    "bytes": 31500,
+    "codepoints": 644
+  },
+  {
+    "file": "noto-sans-tc-4.woff2",
+    "bytes": 33380,
+    "codepoints": 353
+  },
+  {
+    "file": "noto-sans-tc-5.woff2",
+    "bytes": 142080,
+    "codepoints": 1108
+  },
+  {
+    "file": "noto-sans-tc-6.woff2",
+    "bytes": 39896,
+    "codepoints": 198
+  },
+  {
+    "file": "noto-sans-tc-7.woff2",
+    "bytes": 33032,
+    "codepoints": 158
+  },
+  {
+    "file": "noto-sans-tc-8.woff2",
+    "bytes": 57056,
+    "codepoints": 394
+  },
+  {
+    "file": "noto-sans-tc-9.woff2",
+    "bytes": 197996,
+    "codepoints": 1394
+  },
+  {
+    "file": "noto-sans-tc-10.woff2",
+    "bytes": 225460,
+    "codepoints": 1434
+  },
+  {
+    "file": "noto-sans-tc-11.woff2",
+    "bytes": 227656,
+    "codepoints": 1465
+  },
+  {
+    "file": "noto-sans-tc-12.woff2",
+    "bytes": 260552,
+    "codepoints": 1534
+  },
+  {
+    "file": "noto-sans-tc-13.woff2",
+    "bytes": 260136,
+    "codepoints": 1551
+  },
+  {
+    "file": "noto-sans-tc-14.woff2",
+    "bytes": 260824,
+    "codepoints": 1399
+  },
+  {
+    "file": "noto-sans-tc-15.woff2",
+    "bytes": 260604,
+    "codepoints": 1575
+  },
+  {
+    "file": "noto-sans-tc-16.woff2",
+    "bytes": 228004,
+    "codepoints": 1338
+  },
+  {
+    "file": "noto-sans-tc-17.woff2",
+    "bytes": 235636,
+    "codepoints": 1357
+  },
+  {
+    "file": "noto-sans-tc-18.woff2",
+    "bytes": 256404,
+    "codepoints": 1256
+  },
+  {
+    "file": "noto-sans-tc-19.woff2",
+    "bytes": 28288,
+    "codepoints": 363
+  },
+  {
+    "file": "noto-sans-tc-20.woff2",
+    "bytes": 18452,
+    "codepoints": 225
+  },
+  {
+    "file": "noto-sans-tc-21.woff2",
+    "bytes": 16120,
+    "codepoints": 88
+  },
+  {
+    "file": "noto-sans-tc-22.woff2",
+    "bytes": 21804,
+    "codepoints": 133
+  },
+  {
+    "file": "noto-sans-tc-23.woff2",
+    "bytes": 28116,
+    "codepoints": 132
+  },
+  {
+    "file": "noto-sans-tc-24.woff2",
+    "bytes": 20668,
+    "codepoints": 93
+  },
+  {
+    "file": "noto-sans-tc-25.woff2",
+    "bytes": 12300,
+    "codepoints": 59
+  },
+  {
+    "file": "noto-sans-tc-26.woff2",
+    "bytes": 15252,
+    "codepoints": 65
+  },
+  {
+    "file": "noto-sans-tc-27.woff2",
+    "bytes": 20936,
+    "codepoints": 102
+  },
+  {
+    "file": "noto-sans-tc-28.woff2",
+    "bytes": 15944,
+    "codepoints": 76
+  },
+  {
+    "file": "noto-sans-tc-29.woff2",
+    "bytes": 23644,
+    "codepoints": 100
+  },
+  {
+    "file": "noto-sans-tc-30.woff2",
+    "bytes": 28188,
+    "codepoints": 146
+  },
+  {
+    "file": "noto-sans-tc-31.woff2",
+    "bytes": 12320,
+    "codepoints": 61
+  },
+  {
+    "file": "noto-sans-tc-32.woff2",
+    "bytes": 13232,
+    "codepoints": 53
+  },
+  {
+    "file": "noto-sans-tc-33.woff2",
+    "bytes": 13952,
+    "codepoints": 60
+  },
+  {
+    "file": "noto-sans-tc-34.woff2",
+    "bytes": 22664,
+    "codepoints": 113
+  },
+  {
+    "file": "noto-sans-tc-35.woff2",
+    "bytes": 15440,
+    "codepoints": 58
+  },
+  {
+    "file": "noto-sans-tc-36.woff2",
+    "bytes": 11168,
+    "codepoints": 50
+  },
+  {
+    "file": "noto-sans-tc-37.woff2",
+    "bytes": 12740,
+    "codepoints": 59
+  },
+  {
+    "file": "noto-sans-tc-38.woff2",
+    "bytes": 30256,
+    "codepoints": 130
+  },
+  {
+    "file": "noto-sans-tc-39.woff2",
+    "bytes": 10196,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-sans-tc-40.woff2",
+    "bytes": 11424,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-sans-tc-41.woff2",
+    "bytes": 12608,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-sans-tc-42.woff2",
+    "bytes": 1112,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-sans-tc-43.woff2",
+    "bytes": 836,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-sans-tc-44.woff2",
+    "bytes": 3312,
+    "codepoints": 12
+  },
+  {
+    "file": "noto-sans-tc-45.woff2",
+    "bytes": 1748,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-sans-tc-46.woff2",
+    "bytes": 1980,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-serif-tc-0.woff2",
+    "bytes": 180104,
+    "codepoints": 1001
+  },
+  {
+    "file": "noto-serif-tc-1.woff2",
+    "bytes": 15340,
+    "codepoints": 183
+  },
+  {
+    "file": "noto-serif-tc-2.woff2",
+    "bytes": 5144,
+    "codepoints": 92
+  },
+  {
+    "file": "noto-serif-tc-3.woff2",
+    "bytes": 36644,
+    "codepoints": 644
+  },
+  {
+    "file": "noto-serif-tc-4.woff2",
+    "bytes": 42868,
+    "codepoints": 353
+  },
+  {
+    "file": "noto-serif-tc-5.woff2",
+    "bytes": 207960,
+    "codepoints": 1108
+  },
+  {
+    "file": "noto-serif-tc-6.woff2",
+    "bytes": 51956,
+    "codepoints": 197
+  },
+  {
+    "file": "noto-serif-tc-7.woff2",
+    "bytes": 43284,
+    "codepoints": 158
+  },
+  {
+    "file": "noto-serif-tc-8.woff2",
+    "bytes": 74116,
+    "codepoints": 394
+  },
+  {
+    "file": "noto-serif-tc-9.woff2",
+    "bytes": 271524,
+    "codepoints": 1394
+  },
+  {
+    "file": "noto-serif-tc-10.woff2",
+    "bytes": 305032,
+    "codepoints": 1435
+  },
+  {
+    "file": "noto-serif-tc-11.woff2",
+    "bytes": 303776,
+    "codepoints": 1465
+  },
+  {
+    "file": "noto-serif-tc-12.woff2",
+    "bytes": 353424,
+    "codepoints": 1534
+  },
+  {
+    "file": "noto-serif-tc-13.woff2",
+    "bytes": 351144,
+    "codepoints": 1551
+  },
+  {
+    "file": "noto-serif-tc-14.woff2",
+    "bytes": 355160,
+    "codepoints": 1399
+  },
+  {
+    "file": "noto-serif-tc-15.woff2",
+    "bytes": 352540,
+    "codepoints": 1575
+  },
+  {
+    "file": "noto-serif-tc-16.woff2",
+    "bytes": 313168,
+    "codepoints": 1338
+  },
+  {
+    "file": "noto-serif-tc-17.woff2",
+    "bytes": 328840,
+    "codepoints": 1357
+  },
+  {
+    "file": "noto-serif-tc-18.woff2",
+    "bytes": 360800,
+    "codepoints": 1256
+  },
+  {
+    "file": "noto-serif-tc-19.woff2",
+    "bytes": 44036,
+    "codepoints": 370
+  },
+  {
+    "file": "noto-serif-tc-20.woff2",
+    "bytes": 25116,
+    "codepoints": 225
+  },
+  {
+    "file": "noto-serif-tc-21.woff2",
+    "bytes": 20944,
+    "codepoints": 88
+  },
+  {
+    "file": "noto-serif-tc-22.woff2",
+    "bytes": 30240,
+    "codepoints": 133
+  },
+  {
+    "file": "noto-serif-tc-23.woff2",
+    "bytes": 36476,
+    "codepoints": 132
+  },
+  {
+    "file": "noto-serif-tc-24.woff2",
+    "bytes": 27352,
+    "codepoints": 93
+  },
+  {
+    "file": "noto-serif-tc-25.woff2",
+    "bytes": 15148,
+    "codepoints": 59
+  },
+  {
+    "file": "noto-serif-tc-26.woff2",
+    "bytes": 20028,
+    "codepoints": 65
+  },
+  {
+    "file": "noto-serif-tc-27.woff2",
+    "bytes": 27172,
+    "codepoints": 102
+  },
+  {
+    "file": "noto-serif-tc-28.woff2",
+    "bytes": 21944,
+    "codepoints": 76
+  },
+  {
+    "file": "noto-serif-tc-29.woff2",
+    "bytes": 31664,
+    "codepoints": 100
+  },
+  {
+    "file": "noto-serif-tc-30.woff2",
+    "bytes": 37988,
+    "codepoints": 146
+  },
+  {
+    "file": "noto-serif-tc-31.woff2",
+    "bytes": 16892,
+    "codepoints": 61
+  },
+  {
+    "file": "noto-serif-tc-32.woff2",
+    "bytes": 17016,
+    "codepoints": 52
+  },
+  {
+    "file": "noto-serif-tc-33.woff2",
+    "bytes": 18984,
+    "codepoints": 60
+  },
+  {
+    "file": "noto-serif-tc-34.woff2",
+    "bytes": 30656,
+    "codepoints": 113
+  },
+  {
+    "file": "noto-serif-tc-35.woff2",
+    "bytes": 20164,
+    "codepoints": 58
+  },
+  {
+    "file": "noto-serif-tc-36.woff2",
+    "bytes": 14780,
+    "codepoints": 49
+  },
+  {
+    "file": "noto-serif-tc-37.woff2",
+    "bytes": 17680,
+    "codepoints": 59
+  },
+  {
+    "file": "noto-serif-tc-38.woff2",
+    "bytes": 41000,
+    "codepoints": 130
+  },
+  {
+    "file": "noto-serif-tc-39.woff2",
+    "bytes": 14040,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-serif-tc-40.woff2",
+    "bytes": 14984,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-serif-tc-41.woff2",
+    "bytes": 17576,
+    "codepoints": 43
+  },
+  {
+    "file": "noto-serif-tc-42.woff2",
+    "bytes": 1264,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-serif-tc-43.woff2",
+    "bytes": 796,
+    "codepoints": 1
+  },
+  {
+    "file": "noto-serif-tc-44.woff2",
+    "bytes": 4096,
+    "codepoints": 12
+  }
+]

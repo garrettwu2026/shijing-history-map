@@ -13,7 +13,13 @@ for(const a of await links.all()){assert.equal(await a.getAttribute('target'),'_
 }
 console.log('v17 popup links passed');
 await page.close();page=await browser.newPage();const requests=[];page.on('request',r=>{if(r.url().endsWith('.woff2'))requests.push(r.url())});
-await page.goto('http://localhost:8000/?year=200&polity='+catalog.index['Roman Empire']);await page.locator('.popup-title').waitFor();assert.equal(requests.length,0);
+await page.goto('http://localhost:8000/?year=200&polity='+catalog.index['Roman Empire']);await page.locator('.popup-title').waitFor();
+// TASK25 explicitly loads Noto TC. Preserve the lazy multilingual-font gate:
+// a Roman popup must request zero optional fonts; the two required TC families
+// are checked independently for real custom glyphs by verify-v21-ui.cjs.
+assert.equal(requests.filter(u=>! /\/noto-(?:sans|serif)-tc-\d+(?:\.[a-f0-9]{16})?\.woff2$/.test(u)).length,0);
+await page.evaluate(()=>document.fonts.ready);
+assert(await page.evaluate(()=>['Noto Sans TC','Noto Serif TC'].every(name=>[...document.fonts].some(f=>f.family===name&&f.status==='loaded'))));
 for(const [key,year] of [['Qing Empire',1800],['Mongol Empire',1210]]){
 await page.goto(`http://localhost:8000/?year=${year}&polity=${catalog.index[key]}`);await page.locator('.mongolian-text').waitFor();
 const result=await page.evaluate(async()=>{

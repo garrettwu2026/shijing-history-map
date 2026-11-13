@@ -1,0 +1,11 @@
+Noto Sans TC 400, Noto Serif TC 500 — SIL Open Font License 1.1.
+Downloaded 2026-11-12 from official Google Fonts CSS API; self-hosted.
+https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&family=Noto+Serif+TC:wght@500&display=swap
+https://fonts.gstatic.com/s/notosanstc/v40/-nFuOG829Oofr2wohFbTp9ifNAn722rq0MXz76Cy_Co.ttf
+https://fonts.gstatic.com/s/notoseriftc/v37/XLYzIZb5bJNDGYxLBibeHZ0BnHwmuanx8cUaGX9oMOpD.ttf
+Licenses: LICENSE-Noto-Sans-TC.txt, LICENSE-Noto-Serif-TC.txt.
+Rebuild: PYTHONPATH=<fonttools+brotli> python3 scripts/v21-build-fonts.py <sans.ttf> <serif.ttf>
+All upstream cmap codepoints are retained, with disjoint unicode-range sets.
+Common UI text is in chunk 0, remainder is split by Unicode block and requested only on use.
+One weight per family; browser may synthesize emphasis. No font preload.
+Existing Mongolian and multilingual system fallback remains available.
